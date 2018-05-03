@@ -17,6 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/puffin/texture.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/puffin/child_texture.png");
 
 	public RenderPuffin(RenderManager rm) {
 		super(rm, new ModelPuffin(), 0.4F);
@@ -24,7 +25,12 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	
     protected ResourceLocation getEntityTexture(EntityPuffin entity)
     {
+    	if(entity.isChild()) {
+    		return getTextureOfVarChild(entity.getAnimalType());
+    	}
+    	else {
 		return getTextureOfVar(entity.getAnimalType());
+    	}
     }
 
 	@Override
@@ -33,6 +39,14 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 			case 0:
 			default:
 				return texture;
+		}
+	}
+	
+	public ResourceLocation getTextureOfVarChild(int varient) {
+		switch (varient) {
+			case 0:
+			default:
+				return texturechild;
 		}
 	}
 	

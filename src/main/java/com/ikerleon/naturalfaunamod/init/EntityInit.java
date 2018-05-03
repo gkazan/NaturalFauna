@@ -16,10 +16,10 @@ public class EntityInit {
 	}
 
 	private static void registerEntity() {
-		createEntity(EntityPuffin.class, "Puffin");
+		createEntity(EntityPuffin.class, "puffin");
 	}
 	
-	private static void createEntity(Class entityClass, String entityName) {
+	private static void createEntity(Class entityClass , String entityName) {
 		EntityRegistry.registerModEntity(new ResourceLocation(NFReference.MOD_ID + ":" + entityName), entityClass, entityName, id++, NaturalFaunaMain.instance, 50, 1, true);
 		NaturalFaunaMain.addAnimal(entityClass);
 	}
