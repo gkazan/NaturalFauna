@@ -53,13 +53,13 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public class LayerHippo implements LayerRenderer<EntityPuffin> {
+	public class LayerPuffin implements LayerRenderer<EntityPuffin> {
 	    private final RenderPuffin render;
 	    private final ModelPuffin modelBaby = new ModelPuffin();
 	    private final ModelPuffin modelBabyWater = new ModelPuffin();
 	    private final ModelPuffin modelWater = new ModelPuffin();
 		 
-	    public LayerHippo(RenderPuffin re)
+	    public LayerPuffin(RenderPuffin re)
 	    {
 	        this.render = re;
 	    }

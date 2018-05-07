@@ -7,8 +7,10 @@ import org.zawamod.init.ZAWAItems;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -17,9 +19,11 @@ public class EntityPuffin extends ZAWABaseLand {
 	
 	public EntityPuffin(World worldIn) {		
 		super(worldIn, 0.26D, false);
-		this.setSize(0.5F, 0.5F);
+		this.setSize(0.30F, 0.30F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
+        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.26D));
+        this.tasks.addTask(0, new EntityAIWander(this, 0.26D));
 	}
     
     public float getEyeHeight()
