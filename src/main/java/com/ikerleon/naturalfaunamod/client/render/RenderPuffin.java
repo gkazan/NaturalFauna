@@ -5,6 +5,7 @@ import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelPuffin;
+import com.ikerleon.naturalfaunamod.client.model.ModelPuffinWater;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 
 import net.minecraft.client.renderer.entity.Render;
@@ -57,7 +58,7 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	    private final RenderPuffin render;
 	    private final ModelPuffin modelBaby = new ModelPuffin();
 	    private final ModelPuffin modelBabyWater = new ModelPuffin();
-	    private final ModelPuffin modelWater = new ModelPuffin();
+	    private final ModelPuffinWater modelWater = new ModelPuffinWater();
 		 
 	    public LayerPuffin(RenderPuffin re)
 	    {

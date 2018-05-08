@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.init;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.NaturalFaunaMain;
+import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +17,8 @@ public class EntityInit {
 	}
 
 	private static void registerEntity() {
-		createEntity(EntityPuffin.class, "puffin");
+		createEntity(EntityPuffin.class, "atlantic_puffin");
+		createEntity(EntityCourser.class, "cream-coloured_courser");
 	}
 	
 	private static void createEntity(Class entityClass , String entityName) {
