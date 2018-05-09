@@ -2,8 +2,6 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import org.zawamod.client.model.llibrary.MowzieModelBase;
 import org.zawamod.client.model.llibrary.MowzieModelRenderer;
-
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 

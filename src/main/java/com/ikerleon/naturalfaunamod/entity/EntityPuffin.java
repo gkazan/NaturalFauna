@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 public class EntityPuffin extends ZAWABaseLand {
 	
 	public EntityPuffin(World worldIn) {		
-		super(worldIn, 0.26D, false);
+		super(worldIn, 0.26D);
 		this.setSize(0.30F, 0.30F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
@@ -32,7 +32,7 @@ public class EntityPuffin extends ZAWABaseLand {
     }
 	
 	@Override
-	public int setVarients() {
+	public int setVariants() {
 		return 1;
 	}
 	

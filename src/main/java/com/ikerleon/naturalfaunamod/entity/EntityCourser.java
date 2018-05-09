@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 public class EntityCourser extends ZAWABaseLand {
 	
 	public EntityCourser(World worldIn) {		
-		super(worldIn, 0.30D, false);
+		super(worldIn, 0.30D);
 		this.setSize(0.30F, 0.40F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.30D));
@@ -31,7 +31,7 @@ public class EntityCourser extends ZAWABaseLand {
     }
 	
 	@Override
-	public int setVarients() {
+	public int setVariants() {
 		return 1;
 	}
 	

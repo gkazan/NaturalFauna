@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.init;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.NaturalFaunaMain;
+import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 
@@ -19,6 +20,7 @@ public class EntityInit {
 	private static void registerEntity() {
 		createEntity(EntityPuffin.class, "atlantic_puffin");
 		createEntity(EntityCourser.class, "cream-coloured_courser");
+		createEntity(EntityAvocet.class, "avocet");
 	}
 	
 	private static void createEntity(Class entityClass , String entityName) {

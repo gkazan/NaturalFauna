@@ -8,5 +8,5 @@ public class NFReference {
 	public static final String MCVERSION = "1.12.2";
 	public static final String SERVER_PROXY_CLASS = "com.ikerleon.naturalfaunamod.proxies.CommonProxy";
 	public static final String CLIENT_PROXY_CLASS = "com.ikerleon.naturalfaunamod.proxies.ClientProxy";
-	public static final String DENPEND = "required-after:zawa@[1.12.2-1.0.3,);";
+	public static final String DENPEND = "required-after:zawa@[1.12.2-1.1.0,);";
 }
