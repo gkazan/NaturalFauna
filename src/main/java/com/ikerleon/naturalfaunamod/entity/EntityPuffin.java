@@ -23,7 +23,6 @@ public class EntityPuffin extends ZAWABaseLand {
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.26D));
-        this.tasks.addTask(0, new EntityAIWander(this, 0.26D));
 	}
     
     public float getEyeHeight()
@@ -32,7 +31,7 @@ public class EntityPuffin extends ZAWABaseLand {
     }
 	
 	@Override
-	public int setVariants() {
+	public int setVarients() {
 		return 1;
 	}
 	

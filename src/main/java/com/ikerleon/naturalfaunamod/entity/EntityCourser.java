@@ -22,7 +22,6 @@ public class EntityCourser extends ZAWABaseLand {
 		this.setSize(0.30F, 0.40F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.30D));
-        this.tasks.addTask(0, new EntityAIWander(this, 0.30D));
 	}
     
     public float getEyeHeight()
@@ -31,7 +30,7 @@ public class EntityCourser extends ZAWABaseLand {
     }
 	
 	@Override
-	public int setVariants() {
+	public int setVarients() {
 		return 1;
 	}
 	
@@ -72,7 +71,7 @@ public class EntityCourser extends ZAWABaseLand {
 	
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
-		return new EntityPuffin(this.world);
+		return new EntityCourser(this.world);
 	}
 
 	@Override
