@@ -6,6 +6,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
 import com.ikerleon.naturalfaunamod.entity.EntityCamel;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityGreySeal;
+import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 
 import net.minecraft.util.ResourceLocation;
@@ -25,6 +26,7 @@ public class EntityInit {
 		createEntity(EntityAvocet.class, "avocet");
 		createEntity(EntityCamel.class, "camel");
 		createEntity(EntityGreySeal.class, "grey_seal");
+		createEntity(EntityHyena.class, "spotted_hyena");
 	}
 	
 	private static void createEntity(Class entityClass , String entityName) {

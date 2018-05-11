@@ -1,5 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.model;
 
+import org.lwjgl.opengl.GL11;
+
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -88,6 +90,11 @@ public class ModelCamel extends ModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+    	float scaleFactor= 1.5F;
+    	
+    	GL11.glPushMatrix();
+		GL11.glTranslatef(0F, 1.5F-1.5F*scaleFactor, 0F); 
+    	GL11.glScalef(scaleFactor, scaleFactor, scaleFactor);
         this.shape15.render(f5);
         this.shape9.render(f5);
         this.shape3.render(f5);
@@ -104,6 +111,7 @@ public class ModelCamel extends ModelBase {
         this.shape4.render(f5);
         this.shape13.render(f5);
         this.shape1.render(f5);
+        GL11.glPopMatrix();
     }
 
     /**

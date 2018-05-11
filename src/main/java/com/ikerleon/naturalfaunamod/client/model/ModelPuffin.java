@@ -33,6 +33,10 @@ public class ModelPuffin extends MowzieModelBase {
         this.peak.setRotationPoint(-0.5F, -1.12F, -0.92F);
         this.peak.addBox(0.0F, 0.0F, -3.0F, 1, 1, 3, 0.0F);
         this.setRotateAngle(peak, -0.18203784098300857F, 0.0F, 0.0F);
+        this.head = new MowzieModelRenderer(this, 1, 25);
+        this.head.setRotationPoint(0.0F, -1.6F, -0.3F);
+        this.head.addBox(-1.5F, -3.0F, -2.0F, 3, 3, 3, 0.0F);
+        this.setRotateAngle(head, -0.04834562028F, 0.0F, 0.0F);
         this.neck = new MowzieModelRenderer(this, 19, 27);
         this.neck.setRotationPoint(0.0F, 0.8F, -0.2F);
         this.neck.addBox(-1.0F, -2.5F, -1.5F, 2, 3, 2, 0.0F);
@@ -77,10 +81,6 @@ public class ModelPuffin extends MowzieModelBase {
         this.tail2.setRotationPoint(0.0F, 0.5F, 0.0F);
         this.tail2.addBox(-1.0F, 0.0F, 0.0F, 2, 1, 3, 0.0F);
         this.setRotateAngle(tail2, -0.10227629416686772F, 0.0F, 0.0F);
-        this.head = new MowzieModelRenderer(this, 1, 25);
-        this.head.setRotationPoint(0.0F, 0.0F, -1.5F);
-        this.head.addBox(-1.5F, -3.0F, -2.0F, 3, 3, 3, 0.0F);
-        this.setRotateAngle(head, 0.7330382858376184F, 0.0F, 0.0F);
         this.head.addChild(this.peak);
         this.body.addChild(this.neck);
         this.head.addChild(this.peak2);
@@ -93,7 +93,8 @@ public class ModelPuffin extends MowzieModelBase {
         this.body.addChild(this.body2);
         this.rightleg.addChild(this.rightfoot);
         this.tail.addChild(this.tail2);
-        this.body.addChild(this.head);
+        this.neck.addChild(this.head);
+        
         
         updateDefaultPose();
      }
@@ -119,12 +120,11 @@ public class ModelPuffin extends MowzieModelBase {
      	super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
      	resetToDefaultPose();
      	
-     	f=entity.ticksExisted;
-     	f1=0.5F;
      	
-     	float globalSpeed = 0.4f;
+     	
+     	float globalSpeed = 2f;
      	float globalHeight = 0.5f;
-     	float globalDegree = 1;
+     	float globalDegree = 1F;
      	
      	bob(body, 1 * globalSpeed, 0.5f * globalHeight, false, f, f1);
      	
@@ -134,6 +134,8 @@ public class ModelPuffin extends MowzieModelBase {
      	walk(rightfoot, 0.5f * globalSpeed, 0.5f * globalDegree, true, 2.5f, 0f, f, f1);
      	walk(body2, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
      	walk(neck, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
+     	
+     	flap(body, globalSpeed*1f, 0.25f*globalDegree, false, 0f, 0f, f, f1 );
      }
 }
      

@@ -13,11 +13,11 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class EntityCamel extends ZAWABaseLand {
+public class EntityHyena extends ZAWABaseLand {
 	
-	public EntityCamel(World worldIn) {		
+	public EntityHyena(World worldIn) {		
 		super(worldIn, 0.28D);
-		this.setSize(2F, 2F);
+		this.setSize(1.35F, 1.2F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
@@ -30,12 +30,12 @@ public class EntityCamel extends ZAWABaseLand {
 	
 	@Override
 	public int setVarients() {
-		return 1;
+		return 3;
 	}
 	
 	@Override
 	public boolean isFoodItem(ItemStack stack) {
-		return BreedItems.HerbivoreItems(stack);
+		return BreedItems.CarnivoreItems(stack);
 	}
 	
 	//TODO Change this to the proper egg later
@@ -46,12 +46,12 @@ public class EntityCamel extends ZAWABaseLand {
 	
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.unglate_kibble, 1);
+		return new ItemStack(ZAWAItems.canine_kibble, 1);
 	}
 	
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.unglate_vial, 1);
+		return new ItemStack(ZAWAItems.canine_vial, 1);
 	}
 	
 	protected void applyEntityAttributes() {
@@ -62,18 +62,19 @@ public class EntityCamel extends ZAWABaseLand {
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		if(this.isBurning())
-			this.dropItem(ZAWAItems.large_meat_cooked, 1);
+			this.dropItem(ZAWAItems.carnivore_meat_cooked, 1);
 		else
-			this.dropItem(ZAWAItems.large_meat_raw, 1);
+			this.dropItem(ZAWAItems.carnivore_meat_raw, 1);
+		this.dropItem(ZAWAItems.thick_fur, 1);
 	}
 	
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
-		return new EntityCamel(this.world);
+		return new EntityHyena(this.world);
 	}
 
 	@Override
 	public EnumNature setNature() {
-		return EnumNature.NEUTRAL;
+		return EnumNature.AGGRESSIVE;
 	}
 }

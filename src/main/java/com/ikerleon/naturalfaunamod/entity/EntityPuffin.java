@@ -5,24 +5,26 @@ import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.init.NFItems;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 public class EntityPuffin extends ZAWABaseLand {
 	
 	public EntityPuffin(World worldIn) {		
-		super(worldIn, 0.26D);
-		this.setSize(0.30F, 0.30F);
+		super(worldIn, 0.20D);
+		this.setSize(0.5F, 0.5F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.26D));
+        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.20D));
 	}
     
     public float getEyeHeight()
@@ -40,11 +42,10 @@ public class EntityPuffin extends ZAWABaseLand {
 		return BreedItems.PescatarianItems(stack);
 	}
 	
-	//TODO Change this to the proper egg later
-/*	@Override
+	@Override
 	public ItemStack getPickedResult(RayTraceResult target) {
-		return new ItemStack(ZAWAItems.fiji_banded_iguana_egg, 1);
-	}*/
+		return new ItemStack(NFItems.puffin_egg, 1);
+	}
 	
 	@Override
 	public ItemStack setTameItem() {
@@ -59,7 +60,7 @@ public class EntityPuffin extends ZAWABaseLand {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(7.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.26D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20D);
 	}
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {

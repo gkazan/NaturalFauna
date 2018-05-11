@@ -5,10 +5,7 @@ import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelCamel;
-import com.ikerleon.naturalfaunamod.client.model.ModelCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityCamel;
-import com.ikerleon.naturalfaunamod.entity.EntityCourser;
-import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
