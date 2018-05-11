@@ -119,12 +119,14 @@ public class ModelPuffin extends MowzieModelBase {
      {
      	super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
      	resetToDefaultPose();
-     	
-     	
-     	
+
      	float globalSpeed = 2f;
      	float globalHeight = 0.5f;
      	float globalDegree = 1F;
+     	
+     	this.head.rotateAngleX = f4 * 0.017453292F;
+        this.head.rotateAngleY = f3 * 0.017453292F;
+
      	
      	bob(body, 1 * globalSpeed, 0.5f * globalHeight, false, f, f1);
      	
