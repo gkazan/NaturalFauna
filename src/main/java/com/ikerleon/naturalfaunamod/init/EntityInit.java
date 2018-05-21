@@ -4,6 +4,7 @@ import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.NaturalFaunaMain;
 import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
 import com.ikerleon.naturalfaunamod.entity.EntityCamel;
+import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityGreySeal;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
@@ -27,6 +28,7 @@ public class EntityInit {
 		createEntity(EntityCamel.class, "camel");
 		createEntity(EntityGreySeal.class, "grey_seal");
 		createEntity(EntityHyena.class, "spotted_hyena");
+		createEntity(EntityCantabricCapercaillie.class, "cantabric_capercaillie");
 	}
 	
 	private static void createEntity(Class entityClass , String entityName) {

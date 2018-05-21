@@ -4,7 +4,7 @@ import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
-import com.ikerleon.naturalfaunamod.client.model.ModelCourser;
+import com.ikerleon.naturalfaunamod.client.model.ModelAvocet;
 import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
 
 import net.minecraft.client.renderer.entity.Render;
@@ -21,7 +21,7 @@ public class RenderAvocet extends RenderLivingZAWA<EntityAvocet> {
 	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/avocet/child_texture.png");
 
 	public RenderAvocet(RenderManager rm) {
-		super(rm, new ModelCourser(), 0.4F);
+		super(rm, new ModelAvocet(), 0.4F);
 	}
 	
 	
@@ -53,10 +53,10 @@ public class RenderAvocet extends RenderLivingZAWA<EntityAvocet> {
 		}
 	}
 
-    public static class RenderFactory implements IRenderFactory<EntityAvocet>{
-	@Override
-	public Render<? super EntityAvocet> createRenderFor(RenderManager manager) {
-		return new RenderAvocet(manager);
+	public static class RenderFactory implements IRenderFactory<EntityAvocet>{
+		@Override
+		public Render<? super EntityAvocet> createRenderFor(RenderManager manager) {
+			return new RenderAvocet(manager);
+		    }
 	    }
-    }
 }

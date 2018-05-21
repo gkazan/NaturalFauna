@@ -1,11 +1,10 @@
 package com.ikerleon.naturalfaunamod.entity;
 
 import org.zawamod.entity.base.ZAWABaseLand;
+
 import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
 import org.zawamod.init.ZAWAItems;
-
-import com.ikerleon.naturalfaunamod.init.NFItems;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -43,11 +42,6 @@ public class EntityPuffin extends ZAWABaseLand {
 	@Override
 	public boolean isFoodItem(ItemStack stack) {
 		return BreedItems.PescatarianItems(stack);
-	}
-	
-	@Override
-	public ItemStack getPickedResult(RayTraceResult target) {
-		return new ItemStack(NFItems.puffin_egg, 1);
 	}
 	
 	@Override

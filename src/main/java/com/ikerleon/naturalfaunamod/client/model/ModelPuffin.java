@@ -122,7 +122,9 @@ public class ModelPuffin extends MowzieModelBase {
 
      	float globalSpeed = 2f;
      	float globalHeight = 0.5f;
-     	float globalDegree = 1F;
+     	float globalDegree = 2.5F;
+     	
+     	
      	
      	this.head.rotateAngleX = f4 * 0.017453292F;
         this.head.rotateAngleY = f3 * 0.017453292F;
@@ -137,7 +139,7 @@ public class ModelPuffin extends MowzieModelBase {
      	walk(body2, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
      	walk(neck, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
      	
-     	flap(body, globalSpeed*1f, 0.25f*globalDegree, false, 0f, 0f, f, f1 );
+     	flap(body, globalSpeed*1f, 0.15f*globalDegree, false, 0f, 0f, f, f1 );
      }
 }
      
