@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
+import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelCantabricCapercaillie;
@@ -16,15 +17,21 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabricCapercaillie> {
 	
-	public static final ResourceLocation texturemain = new ResourceLocation(NFReference.MOD_ID, "textures/entity/urogallo/urogallo.png");
+	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/capercaillie/texture.png");
+
 
 	public RenderCantabricCapercaillie(RenderManager rm) {
 		super(rm, new ModelCantabricCapercaillie(), 0.4F);
 	}
 	
-    protected ResourceLocation getEntityTexture(EntityCantabricCapercaillie entity)
+	protected ResourceLocation getEntityTexture(EntityCantabricCapercaillie entity)
     {
+    	if(entity.isChild()) {
+    		return ZAWARenderUtils.none;
+    	}
+    	else {
     		return getTextureOfVar(entity.getAnimalType());
+    	}
     }
 
 	@Override
@@ -32,7 +39,7 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 		switch (varient) {
 			case 0:
 			default:
-				return texturemain;
+				return texture;
 		}
 	}
 	
