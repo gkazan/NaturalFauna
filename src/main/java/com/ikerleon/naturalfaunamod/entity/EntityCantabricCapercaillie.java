@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.entity;
 
-import org.zawamod.entity.base.ZAWABaseFlying;
+import java.util.Random;
+
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
@@ -18,6 +19,13 @@ import net.minecraft.world.World;
 
 public class EntityCantabricCapercaillie extends ZAWABaseLand {
 	
+	  public int celoNum;
+	  private int chance = 50;
+	  Random random = new Random();
+	  private EntityCantabricCapercaillie.CantabricCapercaillieState state;
+
+
+	
 	public EntityCantabricCapercaillie(World worldIn) {		
 		super(worldIn, 0.20F);
 		this.setSize(0.7F, 0.7F);
@@ -31,7 +39,47 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
     {
         return this.height * 0.85F - 0.1F;
     }
-	
+
+    public enum CantabricCapercaillieState
+    {
+      CELO, NORMAL;
+    	  
+      private CantabricCapercaillieState() {}
+    }
+    
+    public void setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState state) {
+        this.state = state;
+    }
+    
+    public EntityCantabricCapercaillie.CantabricCapercaillieState getStatus() {
+        return this.state;
+      }
+    
+    public void StatusRandomizer()
+    {
+      if ((!this.inWater) &&(this.onGround)) {
+        if ((this.celoNum != 2)) {
+          this.celoNum = (this.random.nextInt(this.chance) + 1);
+        }
+        else
+        {
+          this.celoNum = (this.random.nextInt(this.chance) + 1);
+        }
+        if (this.celoNum <= 25)
+        {
+          setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.CELO);
+        }
+        else if (((this.state == EntityCantabricCapercaillie.CantabricCapercaillieState.CELO)))
+        {
+          setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL);
+        }
+      }
+      else {
+        setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL);
+      }
+      super.onLivingUpdate();;  
+     }
+
 	@Override
 	public int setVarients() {
 		return 1;
