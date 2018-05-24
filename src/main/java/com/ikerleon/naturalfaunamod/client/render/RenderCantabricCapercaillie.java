@@ -33,7 +33,7 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	
 	protected ResourceLocation getEntityTexture(EntityCantabricCapercaillie entity)
     {
-    	if(entity.isChild()) {
+    	if(entity.getStatus() != EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL) {
     		return ZAWARenderUtils.none;
     	}
     	else {
@@ -51,33 +51,36 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public class LayerCantabricCapercaillie implements LayerRenderer<EntityCantabricCapercaillie> {
-	    private final RenderCantabricCapercaillie render;
-	    private final ModelCantabricCapercaillieCelo modelCelo = new ModelCantabricCapercaillieCelo();
-		 
-	    public LayerCantabricCapercaillie(RenderCantabricCapercaillie re)
+	public class LayerCantabricCapercaillie
+	  implements LayerRenderer<EntityCantabricCapercaillie>
+	{
+	  private final RenderCantabricCapercaillie render;
+	  private final ModelCantabricCapercaillieCelo modelF = new ModelCantabricCapercaillieCelo();
+	  
+	  public LayerCantabricCapercaillie(RenderCantabricCapercaillie re)
+	  {
+	    this.render = re;
+	  }
+	  
+	  public void doRenderLayer(EntityCantabricCapercaillie kat, float f, float f1, float f2, float f3, float f4, float f5, float f6)
+	  {
+	    if (!kat.isInvisible())
 	    {
-	        this.render = re;
+	      if (kat.getStatus() == EntityCantabricCapercaillie.CantabricCapercaillieState.CELO) {
+	        this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));
+	        this.modelF.setModelAttributes(this.render.getMainModel());
+	        this.modelF.render(kat, f, f1, f2, f3, f4, f6);
+	        this.modelF.setRotationAngles(f, f1, f3, f4, f5, f6, kat);
+	      }
 	    }
-	 
-	    public void doRenderLayer(EntityCantabricCapercaillie kat, float f, float f1, float f2, float f3, float f4, float f5, float f6)
-	    {	    	
-	        if (!kat.isInvisible())
-	        {
-	        	if (kat.getStatus() == EntityCantabricCapercaillie.CantabricCapercaillieState.CELO){
-	        		this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));
-		            this.modelCelo.setModelAttributes(this.render.getMainModel());
-		            this.modelCelo.setRotationAngles(f,f1,f3,f4,f5,f6, kat);
-		            this.modelCelo.render(kat, f, f1, f2, f3, f4, f6);
-	            }
-	        }
-	    } 
-	    
-	    @Override
-		public boolean shouldCombineTextures() {
-			return false;
-		}  
-	}    
+	  }
+	  
+	  public boolean shouldCombineTextures()
+	  {
+	    return true;
+	  }
+	}
+  
 	
 	public static class RenderFactory implements IRenderFactory<EntityCantabricCapercaillie>{
 		@Override

@@ -1,7 +1,5 @@
 package com.ikerleon.naturalfaunamod.handlers;
 
-import com.ikerleon.naturalfaunamod.NFReference;
-
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
@@ -14,16 +12,14 @@ public class SoundHandler {
 	public static void init() {
 		size=SoundEvent.REGISTRY.getKeys().size();
 		
-		CAPERCAILLIE_LEKKING = register("capercaillie.lekking");
+		CAPERCAILLIE_LEKKING = registerSound("capercaillie.lekking");
 	}
 	
-	public static SoundEvent register(String name) {
-		ResourceLocation location=new ResourceLocation(NFReference.MOD_ID, ":" + name);
-		SoundEvent e = new SoundEvent(location);
-		
-		SoundEvent.REGISTRY.register(size, location, e);
-		net.minecraftforge.fml.common.registry.ForgeRegistries.SOUND_EVENTS.register(e);
-		size++;
-		return e;
-	}
+	  private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("faunanatural:" + s);
+	    SoundEvent event = new SoundEvent(l);
+	    event.setRegistryName(s);
+	    net.minecraftforge.fml.common.registry.ForgeRegistries.SOUND_EVENTS.register(event);
+	    return event;
+	  }
+
 }

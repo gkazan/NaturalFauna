@@ -17,6 +17,7 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityCantabricCapercaillie extends ZAWABaseLand {
@@ -34,7 +35,6 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 		this.setSize(0.7F, 0.7F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.20D));
         this.tasks.addTask(0, new EntityAILookIdle(this));
 	}
     
@@ -62,7 +62,7 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
     public void onLivingUpdate()
     {
       if ((!this.inWater) &&(this.onGround)) {
-        if ((this.celoNum != 2)) {
+        if ((this.celoNum != 2) || (this.norNum != 2)) {
           this.celoNum = (this.random.nextInt(this.chance) + 1);
         }
         else
@@ -82,7 +82,8 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
         setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL);
       }
       if(this.state==EntityCantabricCapercaillie.CantabricCapercaillieState.CELO) {
-    	  this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.8D);
+    	  this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.08D);
+    	  this.playSound(SoundHandler.CAPERCAILLIE_LEKKING, 1.0F, 1.0F);
       }
       super.onLivingUpdate();;  
      }
@@ -120,6 +121,12 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 			this.dropItem(ZAWAItems.bird_meat, 1);
 		this.dropItem(Items.FEATHER, 1);
 	}
+	
+	protected SoundEvent getlivingSound()
+	  {
+	    return SoundHandler.CAPERCAILLIE_LEKKING;
+	  }
+
 	
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
