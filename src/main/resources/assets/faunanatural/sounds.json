@@ -1,7 +1,3 @@
 {
-"ambient.capercaillie.lekking": { 
-"category": "ambient",  
-"subtitle": "ambient.capercaillie.lekking" }
-"sounds": [{"name": "faunanatural:entity/capercaillie.lekking", "stream": true}],
-}
+"capercaillie.lekking": { "category":"ambient", "sounds":[{"name": "faunanatural:capercaillie.lekking", "stream": true}]},
 }

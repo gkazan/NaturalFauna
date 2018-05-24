@@ -14,7 +14,7 @@ public class SoundHandler {
 	public static void init() {
 		size=SoundEvent.REGISTRY.getKeys().size();
 		
-		CAPERCAILLIE_LEKKING = register("ambient.capercaillie.lekking");
+		CAPERCAILLIE_LEKKING = register("capercaillie.lekking");
 	}
 	
 	public static SoundEvent register(String name) {
