@@ -7,6 +7,8 @@ import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
@@ -78,6 +80,10 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
       }
       else {
         setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL);
+      }
+      if(this.state==EntityCantabricCapercaillie.CantabricCapercaillieState.CELO) {
+    	  this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.8D);
+    	  this.playSound(getSplashSound(), 1.0F, 1.0F);
       }
       super.onLivingUpdate();;  
      }

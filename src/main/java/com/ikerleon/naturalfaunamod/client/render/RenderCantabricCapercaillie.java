@@ -54,7 +54,6 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	public class LayerCantabricCapercaillie implements LayerRenderer<EntityCantabricCapercaillie> {
 	    private final RenderCantabricCapercaillie render;
 	    private final ModelCantabricCapercaillieCelo modelCelo = new ModelCantabricCapercaillieCelo();
-	    private final ModelCantabricCapercaillie modelF = new ModelCantabricCapercaillie();
 		 
 	    public LayerCantabricCapercaillie(RenderCantabricCapercaillie re)
 	    {
@@ -76,7 +75,7 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	    
 	    @Override
 		public boolean shouldCombineTextures() {
-			return true;
+			return false;
 		}  
 	}    
 	

@@ -4,6 +4,7 @@ import org.zawamod.ZAWAAddon;
 import org.zawamod.ZAWAAddonHandler;
 import org.zawamod.entity.base.ZAWABaseLand;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.proxies.CommonProxy;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -41,7 +42,7 @@ public class NaturalFaunaMain {
 	
 	@EventHandler()
 	public static void init(FMLInitializationEvent event) {
-		
+		proxy.init(event);
 	}
 	
 	@EventHandler()
