@@ -20,7 +20,8 @@ import net.minecraft.world.World;
 public class EntityCantabricCapercaillie extends ZAWABaseLand {
 	
 	  public int celoNum;
-	  private int chance = 50;
+	  public int norNum;
+	  private int chance = 150;
 	  Random random = new Random();
 	  private EntityCantabricCapercaillie.CantabricCapercaillieState state;
 
@@ -55,7 +56,8 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
         return this.state;
       }
     
-    public void StatusRandomizer()
+    @Override
+    public void onLivingUpdate()
     {
       if ((!this.inWater) &&(this.onGround)) {
         if ((this.celoNum != 2)) {
@@ -65,11 +67,11 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
         {
           this.celoNum = (this.random.nextInt(this.chance) + 1);
         }
-        if (this.celoNum <= 25)
+        if (this.celoNum == 2)
         {
           setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.CELO);
         }
-        else if (((this.state == EntityCantabricCapercaillie.CantabricCapercaillieState.CELO)))
+        else if ((this.state == EntityCantabricCapercaillie.CantabricCapercaillieState.CELO) && (this.norNum == 2))
         {
           setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL);
         }
