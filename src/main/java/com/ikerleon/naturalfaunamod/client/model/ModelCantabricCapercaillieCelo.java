@@ -138,12 +138,19 @@ public class ModelCantabricCapercaillieCelo extends MowzieModelBase {
     	super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     	resetToDefaultPose();
 
-    	float globalSpeed = 1f;
+    	float globalSpeed = 2f;
     	float globalHeight = 0.5f;
     	float globalDegree = 2.5F;
     	
-    	walk(Head, globalSpeed+0.5F, globalDegree, false, 0.0F, 3F, entity.ticksExisted, 0.1F);
-    	walk(LeftLeg, 0.5f * globalSpeed, 0.8f * globalDegree, false, 0, 0.2f, f, f1);
-     	walk(RightLeg, 0.5f * globalSpeed, 0.8f * globalDegree, true, 0, 0.2f, f, f1);
+    	bob(Body, globalSpeed, globalHeight, true, f, f1);
+    	
+    	walk(LeftLeg, 2f * globalSpeed, 0.5f * globalDegree, false, 0, 0.2f, f, f1);
+     	walk(RightLeg, 2f * globalSpeed, 0.5f * globalDegree, true, 0, 0.2f, f, f1);
+     	walk(Body2, 1f * globalSpeed, 0.25f * globalDegree, false, 0, 0f, f, f1);
+     	walk(Neck, 1f * globalSpeed, 0.25f * globalDegree, false, 0, 0f, f, f1);
+     	
+    	walk(Head, globalSpeed*0.5F, globalDegree, false, 0.0F, 3F, entity.ticksExisted, 0.1F);
+    	walk(Peak, globalSpeed*0.5F, 0.4F* globalDegree, false, 0.0F, 3F, entity.ticksExisted, 0.1F);
+    	walk(PeakBase, globalSpeed*0.5F, globalDegree, true, 0.0F, 3F, entity.ticksExisted, 0.1F);
     }
 }

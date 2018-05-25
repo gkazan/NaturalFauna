@@ -133,6 +133,17 @@ public class ModelCantabricCapercaillie extends MowzieModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) 
     {
     	super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    	resetToDefaultPose();	
+    	resetToDefaultPose();
+    	
+    	float globalSpeed = 2f;
+    	float globalHeight = 0.5f;
+    	float globalDegree = 2.5F;
+    	
+    	bob(Body, globalSpeed, globalHeight, true, f, f1);
+    	
+    	walk(LeftLeg, 2f * globalSpeed, 0.5f * globalDegree, false, 0, 0.2f, f, f1);
+     	walk(RightLeg, 2f * globalSpeed, 0.5f * globalDegree, true, 0, 0.2f, f, f1);
+     	walk(Neck, 1f * globalSpeed, 0.25f * globalDegree, false, 0, 0f, f, f1);
+     	walk(Body2, 1f * globalSpeed, 0.35f * globalDegree, false, 0, 0f, f, f1);
     }
 }

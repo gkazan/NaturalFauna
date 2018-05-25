@@ -16,7 +16,7 @@ public class CommonProxy {
 	}
 	
 	public void init(FMLInitializationEvent event) {
-		SoundHandler.init();
+		SoundHandler.registerSounds();
 	}
 	
 	public void postInit(FMLPostInitializationEvent event) {

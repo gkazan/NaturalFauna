@@ -5,16 +5,20 @@ import java.util.Random;
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
+import org.zawamod.entity.land.EntityBengalTiger;
 import org.zawamod.init.ZAWAItems;
+import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
@@ -24,18 +28,17 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 	
 	  public int celoNum;
 	  public int norNum;
-	  private int chance = 150;
+	  private int chance = 700;
 	  Random random = new Random();
 	  private EntityCantabricCapercaillie.CantabricCapercaillieState state;
 
-
-	
 	public EntityCantabricCapercaillie(World worldIn) {		
 		super(worldIn, 0.20F);
 		this.setSize(0.7F, 0.7F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAILookIdle(this));
+        this.tasks.addTask(0, new ZAWABaseLand.AIAvoidEntity(this, EntityPlayer.class, 10.0F, 1D, 1D));
 	}
     
     public float getEyeHeight()
@@ -61,13 +64,18 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
     @Override
     public void onLivingUpdate()
     {
-      if ((!this.inWater) &&(this.onGround)) {
+    	/*World world=worldObj;
+    	long i = world.getWorldTime();*/
+    	
+      if ((!this.inWater) && (this.onGround)/* && ((i >= 14000))*/) {
         if ((this.celoNum != 2) || (this.norNum != 2)) {
           this.celoNum = (this.random.nextInt(this.chance) + 1);
+          this.norNum = (this.random.nextInt(this.chance) + 1);
         }
         else
         {
           this.celoNum = (this.random.nextInt(this.chance) + 1);
+          this.norNum = (this.random.nextInt(this.chance) + 1);
         }
         if (this.celoNum == 2)
         {
@@ -82,7 +90,7 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
         setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL);
       }
       if(this.state==EntityCantabricCapercaillie.CantabricCapercaillieState.CELO) {
-    	  this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.08D);
+    	  this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.12D);
     	  this.playSound(SoundHandler.CAPERCAILLIE_LEKKING, 1.0F, 1.0F);
       }
       super.onLivingUpdate();;  
@@ -122,12 +130,6 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 		this.dropItem(Items.FEATHER, 1);
 	}
 	
-	protected SoundEvent getlivingSound()
-	  {
-	    return SoundHandler.CAPERCAILLIE_LEKKING;
-	  }
-
-	
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
 		return new EntityCantabricCapercaillie(this.world);
@@ -135,6 +137,6 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 
 	@Override
 	public EnumNature setNature() {
-		return EnumNature.TERRITORIAL;
+		return EnumNature.PASSIVE;
 	}
 }
