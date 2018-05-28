@@ -48,12 +48,6 @@ public class EntityGreySeal extends ZAWABaseWaterOld {
 	    return true;
 	  }
 	
-	//TODO Change this to the proper egg later
-/*	@Override
-	public ItemStack getPickedResult(RayTraceResult target) {
-		return new ItemStack(ZAWAItems.fiji_banded_iguana_egg, 1);
-	}*/
-	
 	@Override
 	public ItemStack setTameItem() {
 		return new ItemStack(ZAWAItems.pinniped_kibble, 1);

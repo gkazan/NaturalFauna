@@ -17,7 +17,7 @@ public class EntityHyena extends ZAWABaseLand {
 	
 	public EntityHyena(World worldIn) {		
 		super(worldIn, 0.28D);
-		this.setSize(1.35F, 1.2F);
+		this.setSize(1F, 1.2F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
@@ -30,19 +30,13 @@ public class EntityHyena extends ZAWABaseLand {
 	
 	@Override
 	public int setVarients() {
-		return 3;
+		return 5;
 	}
 	
 	@Override
 	public boolean isFoodItem(ItemStack stack) {
 		return BreedItems.CarnivoreItems(stack);
 	}
-	
-	//TODO Change this to the proper egg later
-/*	@Override
-	public ItemStack getPickedResult(RayTraceResult target) {
-		return new ItemStack(ZAWAItems.fiji_banded_iguana_egg, 1);
-	}*/
 	
 	@Override
 	public ItemStack setTameItem() {
@@ -56,7 +50,7 @@ public class EntityHyena extends ZAWABaseLand {
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28D);
 	}
 	

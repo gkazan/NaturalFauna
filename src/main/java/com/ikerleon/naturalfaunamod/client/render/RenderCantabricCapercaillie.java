@@ -9,6 +9,7 @@ import com.ikerleon.naturalfaunamod.client.model.ModelCantabricCapercaillieCelo;
 import com.ikerleon.naturalfaunamod.client.model.ModelPuffin;
 import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;

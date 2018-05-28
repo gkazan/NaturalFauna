@@ -19,9 +19,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderHyena extends RenderLivingZAWA<EntityHyena> {
 	
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texture.png");
-	public static final ResourceLocation texture_2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texture_2.png");
-	public static final ResourceLocation texture_3 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texture_3.png");
-
+	public static final ResourceLocation texture_2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texture2.png");
+	public static final ResourceLocation texture_3 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texture3.png");
+	public static final ResourceLocation texture_4 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texture4.png");
+	public static final ResourceLocation texture_5 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texture5.png");
+	
 	public RenderHyena(RenderManager rm) {
 		super(rm, new ModelHyena(), 0.4F);
 	}
@@ -45,6 +47,10 @@ public class RenderHyena extends RenderLivingZAWA<EntityHyena> {
 				return texture_2;
 			case 2:
 				return texture_3;
+			case 3:
+				return texture_4;
+			case 4:
+				return texture_5;
 			
 		}
 	}

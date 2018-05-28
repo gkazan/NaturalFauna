@@ -1,26 +1,29 @@
 package com.ikerleon.naturalfaunamod.entity;
 
 import org.zawamod.entity.base.ZAWABaseLand;
-import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
+import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.init.ZAWAItems;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class EntityCamel extends ZAWABaseLand {
+public class EntityLittleBustard extends ZAWABaseLand {
 	
-	public EntityCamel(World worldIn) {		
-		super(worldIn, 0.28D);
-		this.setSize(2F, 2F);
+	public EntityLittleBustard(World worldIn) {		
+		super(worldIn, 0.20D);
+		this.setSize(0.5F, 1.0F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
+        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.20D));
+        this.tasks.addTask(0, new EntityAILookIdle(this));
 	}
     
     public float getEyeHeight()
@@ -35,39 +38,40 @@ public class EntityCamel extends ZAWABaseLand {
 	
 	@Override
 	public boolean isFoodItem(ItemStack stack) {
-		return BreedItems.HerbivoreItems(stack);
+		return BreedItems.InsectivoreItems(stack);
 	}
 	
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.unglate_kibble, 1);
+		return new ItemStack(ZAWAItems.bird_kibble, 1);
 	}
 	
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.unglate_vial, 1);
+		return new ItemStack(ZAWAItems.bird_vial, 1);
 	}
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20D);
 	}
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		if(this.isBurning())
-			this.dropItem(ZAWAItems.large_meat_cooked, 1);
+			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
 		else
-			this.dropItem(ZAWAItems.large_meat_raw, 1);
+			this.dropItem(ZAWAItems.bird_meat, 1);
+		this.dropItem(Items.FEATHER, 1);
 	}
 	
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
-		return new EntityCamel(this.world);
+		return new EntityLittleBustard(this.world);
 	}
 
 	@Override
 	public EnumNature setNature() {
-		return EnumNature.NEUTRAL;
+		return EnumNature.PASSIVE;
 	}
 }

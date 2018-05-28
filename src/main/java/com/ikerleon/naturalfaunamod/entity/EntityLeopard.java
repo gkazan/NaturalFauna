@@ -1,5 +1,7 @@
 package com.ikerleon.naturalfaunamod.entity;
 
+import java.util.Random;
+
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
@@ -13,11 +15,14 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class EntityCamel extends ZAWABaseLand {
+public class EntityLeopard extends ZAWABaseLand {
 	
-	public EntityCamel(World worldIn) {		
+	Random random = new Random();
+	public final int melanicTexture=random.nextInt(1000) + 1;
+	
+	public EntityLeopard(World worldIn) {
 		super(worldIn, 0.28D);
-		this.setSize(2F, 2F);
+		this.setSize(1F, 1.2F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
@@ -30,44 +35,45 @@ public class EntityCamel extends ZAWABaseLand {
 	
 	@Override
 	public int setVarients() {
-		return 1;
+		return 3;
 	}
 	
 	@Override
 	public boolean isFoodItem(ItemStack stack) {
-		return BreedItems.HerbivoreItems(stack);
+		return BreedItems.CarnivoreItems(stack);
 	}
 	
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.unglate_kibble, 1);
+		return new ItemStack(ZAWAItems.big_cat_kibble, 1);
 	}
 	
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.unglate_vial, 1);
+		return new ItemStack(ZAWAItems.bigcat_vial, 1);
 	}
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28D);
 	}
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		if(this.isBurning())
-			this.dropItem(ZAWAItems.large_meat_cooked, 1);
+			this.dropItem(ZAWAItems.carnivore_meat_cooked, 1);
 		else
-			this.dropItem(ZAWAItems.large_meat_raw, 1);
+			this.dropItem(ZAWAItems.carnivore_meat_raw, 1);
+		this.dropItem(ZAWAItems.amur_leopard_hide, 1);
 	}
 	
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
-		return new EntityCamel(this.world);
+		return new EntityLeopard(this.world);
 	}
 
 	@Override
 	public EnumNature setNature() {
-		return EnumNature.NEUTRAL;
+		return EnumNature.AGGRESSIVE;
 	}
 }

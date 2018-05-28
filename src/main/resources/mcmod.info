@@ -1,6 +1,6 @@
 [
 {
-  "modid": "nf",
+  "modid": "faunanatural",
   "name": "NaturalFauna",
   "description": "A ZAWA addon that will provide it some other animals",
   "version": "1.0.0",
@@ -8,7 +8,7 @@
   "url": "",
   "updateUrl": "",
   "authorList": ["Ikerleon02", "SoggyMoustache"],
-  "credits": "The Forge and FML guys, for making this example",
+  "credits": "Starcook le perroquet for modding, texturing and basically create this mod, Douillet and Haflar_7 for modelling such fantastic animals, Doctor Hyena and Lukamas233 for modelling and texturing many naturalFauna animals",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

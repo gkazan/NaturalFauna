@@ -18,7 +18,7 @@ public class EntityAvocet extends ZAWABaseLand {
 	
 	public EntityAvocet(World worldIn) {		
 		super(worldIn, 0.26D);
-		this.setSize(0.30F, 0.30F);
+		this.setSize(0.5F, 0.9F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.26D));
@@ -38,12 +38,6 @@ public class EntityAvocet extends ZAWABaseLand {
 	public boolean isFoodItem(ItemStack stack) {
 		return BreedItems.InsectivoreItems(stack);
 	}
-	
-	//TODO Change this to the proper egg later
-/*	@Override
-	public ItemStack getPickedResult(RayTraceResult target) {
-		return new ItemStack(ZAWAItems.fiji_banded_iguana_egg, 1);
-	}*/
 	
 	@Override
 	public ItemStack setTameItem() {

@@ -1,34 +1,34 @@
 package com.ikerleon.naturalfaunamod.entity;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
+
+import javax.swing.Timer;
 
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
-import org.zawamod.entity.land.EntityBengalTiger;
 import org.zawamod.init.ZAWAItems;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIAvoidEntity;
-import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityCantabricCapercaillie extends ZAWABaseLand {
 	
 	  public int celoNum;
 	  public int norNum;
+	  public int lekNum;
 	  private int chance = 700;
+	  private World world;
 	  Random random = new Random();
 	  private EntityCantabricCapercaillie.CantabricCapercaillieState state;
 
@@ -38,7 +38,17 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAILookIdle(this));
-        this.tasks.addTask(0, new ZAWABaseLand.AIAvoidEntity(this, EntityPlayer.class, 10.0F, 1D, 1D));
+        this.world=worldIn;
+	}
+	
+	@Override
+	public ItemStack setTameItem() {
+		return new ItemStack(ZAWAItems.bird_kibble, 1);
+	}
+	
+	@Override
+	public ItemStack setVial() {
+		return new ItemStack(ZAWAItems.bird_vial, 1);
 	}
     
     public float getEyeHeight()
@@ -59,15 +69,22 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
     
     public EntityCantabricCapercaillie.CantabricCapercaillieState getStatus() {
         return this.state;
-      }
+      } 
+    
+    Timer lekTimer = new Timer (8500, new ActionListener () 
+    { 
+        public void actionPerformed(ActionEvent e) 
+        { 
+            lekNum=1;
+         } 
+    });
     
     @Override
     public void onLivingUpdate()
     {
-    	/*World world=worldObj;
-    	long i = world.getWorldTime();*/
+    	long i = world.getWorldTime();
     	
-      if ((!this.inWater) && (this.onGround)/* && ((i >= 14000))*/) {
+      if ((!this.inWater) && (this.onGround)) {
         if ((this.celoNum != 2) || (this.norNum != 2)) {
           this.celoNum = (this.random.nextInt(this.chance) + 1);
           this.norNum = (this.random.nextInt(this.chance) + 1);
@@ -77,25 +94,31 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
           this.celoNum = (this.random.nextInt(this.chance) + 1);
           this.norNum = (this.random.nextInt(this.chance) + 1);
         }
-        if (this.celoNum == 2)
+        if ((this.celoNum == 2) && (i >= 14000))
         {
           setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.CELO);
         }
-        else if ((this.state == EntityCantabricCapercaillie.CantabricCapercaillieState.CELO) && (this.norNum == 2))
+        else if ((this.state == EntityCantabricCapercaillie.CantabricCapercaillieState.CELO) && (this.norNum == 2) || (i < 14000))
         {
           setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL);
+          this.lekNum=1;
         }
       }
       else {
         setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL);
+        this.lekNum=1;
       }
-      if(this.state==EntityCantabricCapercaillie.CantabricCapercaillieState.CELO) {
+      if(this.state==EntityCantabricCapercaillie.CantabricCapercaillieState.CELO ) {
     	  this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.12D);
-    	  this.playSound(SoundHandler.CAPERCAILLIE_LEKKING, 1.0F, 1.0F);
+    	  if(lekNum==1) {
+    		  this.playSound(SoundHandler.CAPERCAILLIE_LEKKING, 1.0F, 1.0F);
+    		  lekNum=0;
+    		  lekTimer.start();
+    	  }
       }
       super.onLivingUpdate();;  
      }
-
+    
 	@Override
 	public int setVarients() {
 		return 1;
@@ -103,17 +126,7 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 	
 	@Override
 	public boolean isFoodItem(ItemStack stack) {
-		return BreedItems.OmnivoreItems(stack);
-	}
-	
-	@Override
-	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.bird_kibble, 1);
-	}
-	
-	@Override
-	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.bird_vial, 1);
+		return BreedItems.LeafEaterItems(stack);
 	}
 	
 	protected void applyEntityAttributes() {
