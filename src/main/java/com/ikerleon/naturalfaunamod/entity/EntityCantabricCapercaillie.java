@@ -9,6 +9,7 @@ import javax.swing.Timer;
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
+import org.zawamod.entity.data.Gender;
 import org.zawamod.init.ZAWAItems;
 
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
@@ -26,7 +27,7 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 	
 	  public int celoNum;
 	  public int norNum;
-	  public int lekNum;
+	  public int lekNum=1;
 	  private int chance = 700;
 	  private World world;
 	  Random random = new Random();
@@ -45,6 +46,13 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 	public ItemStack setTameItem() {
 		return new ItemStack(ZAWAItems.bird_kibble, 1);
 	}
+	
+	@Override
+	public boolean sexualDimorphism()
+	{
+	  return true;
+	}
+
 	
 	@Override
 	public ItemStack setVial() {
@@ -84,7 +92,7 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
     {
     	long i = world.getWorldTime();
     	
-      if ((!this.inWater) && (this.onGround)) {
+      if ((!this.inWater) && (this.onGround) && (this.getGender()==Gender.MALE)) {
         if ((this.celoNum != 2) || (this.norNum != 2)) {
           this.celoNum = (this.random.nextInt(this.chance) + 1);
           this.norNum = (this.random.nextInt(this.chance) + 1);
@@ -101,7 +109,6 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
         else if ((this.state == EntityCantabricCapercaillie.CantabricCapercaillieState.CELO) && (this.norNum == 2) || (i < 14000))
         {
           setStatus(EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL);
-          this.lekNum=1;
         }
       }
       else {
