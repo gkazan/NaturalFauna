@@ -40,7 +40,7 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
     		return ZAWARenderUtils.none;
     	}
     	else {
-            return getTextureOfVar(entity.setVarients());
+            return getTextureOfVar(entity.getAnimalType());
     	}
     }
 	

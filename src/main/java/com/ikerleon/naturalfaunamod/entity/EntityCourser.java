@@ -28,7 +28,7 @@ public class EntityCourser extends ZAWABaseLand {
     }
 	
 	@Override
-	public int setVarients() {
+	public int setVariants() {
 		return 1;
 	}
 	

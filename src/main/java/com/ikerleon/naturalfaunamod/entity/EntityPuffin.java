@@ -35,7 +35,7 @@ public class EntityPuffin extends ZAWABaseLand {
     }
 	
 	@Override
-	public int setVarients() {
+	public int setVariants() {
 		return 1;
 	}
 	

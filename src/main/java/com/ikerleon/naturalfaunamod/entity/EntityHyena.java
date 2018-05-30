@@ -29,7 +29,7 @@ public class EntityHyena extends ZAWABaseLand {
     }
 	
 	@Override
-	public int setVarients() {
+	public int setVariants() {
 		return 5;
 	}
 	

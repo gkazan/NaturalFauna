@@ -32,7 +32,7 @@ public class EntityLittleBustard extends ZAWABaseLand {
     }
 	
 	@Override
-	public int setVarients() {
+	public int setVariants() {
 		return 1;
 	}
 	

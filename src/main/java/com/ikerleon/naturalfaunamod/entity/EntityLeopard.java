@@ -34,7 +34,7 @@ public class EntityLeopard extends ZAWABaseLand {
     }
 	
 	@Override
-	public int setVarients() {
+	public int setVariants() {
 		return 3;
 	}
 	
