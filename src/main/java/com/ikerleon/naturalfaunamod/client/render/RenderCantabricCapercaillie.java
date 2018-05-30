@@ -77,10 +77,14 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	        this.modelF.setRotationAngles(f, f1, f3, f4, f5, f6, kat);
 	      }
 	      if (kat.getGender()==Gender.FEMALE) {
+	    	    GlStateManager.pushMatrix();
+	    	    GlStateManager.scale(0.7F, 0.7F, 0.7F);
+	    	    GlStateManager.translate(0.0F, 0.6F, 0.0F);
 		        this.render.bindTexture(this.render.textureFemale);
 		        this.modelfemale.setModelAttributes(this.render.getMainModel());
 		        this.modelfemale.render(kat, f, f1, f2, f3, f4, f6);
 		        this.modelfemale.setRotationAngles(f, f1, f3, f4, f5, f6, kat);
+		        GlStateManager.popMatrix();
 		      }
 	    }
 	  }
