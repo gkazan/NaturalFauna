@@ -17,11 +17,11 @@ import net.minecraft.world.World;
 public class EntityGrantsGazelle extends ZAWABaseLand {
 	
 	public EntityGrantsGazelle(World worldIn) {		
-		super(worldIn, 0.29D);
-		this.setSize(2F, 2F);
+		super(worldIn, 0.28D);
+		this.setSize(1F, 1.3F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.29D));
+        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
         this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityAfricanLion.class, 10.0F, 2.2D, 2.2D));
         this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityLeopard.class, 10.0F, 2.2D, 2.2D));
         this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityHyena.class, 10.0F, 2.2D, 2.2D));
@@ -55,7 +55,7 @@ public class EntityGrantsGazelle extends ZAWABaseLand {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.29D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28D);
 	}
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {

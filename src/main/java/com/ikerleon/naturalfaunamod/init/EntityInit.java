@@ -10,6 +10,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
 import com.ikerleon.naturalfaunamod.entity.EntityGreySeal;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
+import com.ikerleon.naturalfaunamod.entity.EntityJackfish;
 import com.ikerleon.naturalfaunamod.entity.EntityLeopard;
 import com.ikerleon.naturalfaunamod.entity.EntityLittleBustard;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
@@ -37,6 +38,7 @@ public class EntityInit {
 		createEntity(EntityLeopard.class, "leopard", 13215598, 3481856);
 		createEntity(EntityBarbaryLion.class, "barbary_lion", 14072706, 6307848);
 		createEntity(EntityGrantsGazelle.class, "grants_gazelle", 16767134, 16771012);
+		createEntity(EntityJackfish.class, "jack_fish", 13227237, 4213595);
 	}
 	
 	private static void createEntity(Class entityClass , String entityName, int Color1,int Color2) {

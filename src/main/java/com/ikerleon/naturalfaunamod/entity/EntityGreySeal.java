@@ -1,8 +1,8 @@
 package com.ikerleon.naturalfaunamod.entity;
 
-import org.zawamod.entity.base.ZAWABaseWaterOld;
 import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
+import org.zawamod.entity.water.EntityPacificWalrus;
 import org.zawamod.init.ZAWAItems;
 
 import net.minecraft.entity.EntityAgeable;
@@ -13,10 +13,10 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class EntityGreySeal extends ZAWABaseWaterOld {
+public class EntityGreySeal extends EntityPacificWalrus {
 	
 	public EntityGreySeal(World worldIn) {		
-		super(worldIn, false);
+		super(worldIn);
 		this.setSize(1.5F, 0.6F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
