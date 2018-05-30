@@ -5,6 +5,7 @@ import com.ikerleon.naturalfaunamod.client.render.RenderBarbaryLion;
 import com.ikerleon.naturalfaunamod.client.render.RenderCamel;
 import com.ikerleon.naturalfaunamod.client.render.RenderCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.client.render.RenderCourser;
+import com.ikerleon.naturalfaunamod.client.render.RenderGrantsGazelle;
 import com.ikerleon.naturalfaunamod.client.render.RenderGreySeal;
 import com.ikerleon.naturalfaunamod.client.render.RenderHyena;
 import com.ikerleon.naturalfaunamod.client.render.RenderLeopard;
@@ -15,6 +16,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityBarbaryLion;
 import com.ikerleon.naturalfaunamod.entity.EntityCamel;
 import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
+import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
 import com.ikerleon.naturalfaunamod.entity.EntityGreySeal;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityLeopard;
@@ -39,5 +41,6 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityLittleBustard.class, new RenderLittleBustard.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityLeopard.class, new RenderLeopard.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBarbaryLion.class, new RenderBarbaryLion.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityGrantsGazelle.class, new RenderGrantsGazelle.RenderFactory());
 	}
 }
