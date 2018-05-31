@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 
+import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelJackFish;
 import com.ikerleon.naturalfaunamod.entity.EntityJackfish;
 
@@ -17,13 +18,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderJackfish
   extends RenderLivingZAWA<EntityJackfish>
 {
-  public static final ResourceLocation texture = new ResourceLocation("textures/entity/jackfish/texture.png");
+  public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/jackfish/texture.png");
   
   public RenderJackfish(RenderManager m)
   {
     super(m, new ModelJackFish(), 0.0F);
   }
-  
   protected void preRenderCallback(EntityJackfish entitylivingbaseIn, float partialTickTime)
   {
 	GlStateManager.translate(0, 0.3F, 0);
@@ -37,7 +37,11 @@ public class RenderJackfish
   
   public ResourceLocation getTextureOfVar(int varient)
   {
-    return texture;
+	switch (varient) {
+	  case 0:
+	  default:
+	     return texture;
+	}
   }
   
   public static class RenderFactory implements IRenderFactory<EntityJackfish>{
