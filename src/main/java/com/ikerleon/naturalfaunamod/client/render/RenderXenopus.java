@@ -4,8 +4,8 @@ import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
-import com.ikerleon.naturalfaunamod.client.model.ModelCamel;
-import com.ikerleon.naturalfaunamod.entity.EntityCamel;
+import com.ikerleon.naturalfaunamod.client.model.ModelXenopus;
+import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -15,21 +15,21 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderCamel extends RenderLivingZAWA<EntityCamel> {
+public class RenderXenopus extends RenderLivingZAWA<EntityXenopus> {
 	
-	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/camel/texture.png");
+	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/xenopus/texture.png");
 
-	public RenderCamel(RenderManager rm) {
-		super(rm, new ModelCamel(), 0.4F);
+	public RenderXenopus(RenderManager rm) {
+		super(rm, new ModelXenopus(), 0.4F);
 	}
 
-    protected ResourceLocation getEntityTexture(EntityCamel entity)
+    protected ResourceLocation getEntityTexture(EntityXenopus entity)
     {
     	if(entity.isChild()) {
     		return ZAWARenderUtils.none;
     	}
     	else {
-    		return getTextureOfVar(entity.getAnimalType());
+    		return getTextureOfVar(0);
     	}
     }
 
@@ -42,10 +42,10 @@ public class RenderCamel extends RenderLivingZAWA<EntityCamel> {
 		}
 	}
 	
-    public static class RenderFactory implements IRenderFactory<EntityCamel>{
+    public static class RenderFactory implements IRenderFactory<EntityXenopus>{
 	@Override
-	public Render<? super EntityCamel> createRenderFor(RenderManager manager) {
-		return new RenderCamel(manager);
+	public Render<? super EntityXenopus> createRenderFor(RenderManager manager) {
+		return new RenderXenopus(manager);
 	    }
     }
 }

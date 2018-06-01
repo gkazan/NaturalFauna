@@ -4,8 +4,8 @@ import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
-import com.ikerleon.naturalfaunamod.client.model.ModelAvocet;
-import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
+import com.ikerleon.naturalfaunamod.client.model.ModelKoriBustard;
+import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -15,18 +15,17 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderAvocet extends RenderLivingZAWA<EntityAvocet> {
+public class RenderKoriBustard extends RenderLivingZAWA<EntityKoriBustard> {
 	
-	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/avocet/texture.png");
-	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/avocet/child_texture.png");
+	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/koribustard/texture.png");
+	public static final ResourceLocation texture2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/koribustard/texture.png");
 
-	public RenderAvocet(RenderManager rm) {
-		super(rm, new ModelAvocet(), 0.4F);
+
+	public RenderKoriBustard(RenderManager rm) {
+		super(rm, new ModelKoriBustard(), 0.4F);
 	}
 	
-	
-	
-    protected ResourceLocation getEntityTexture(EntityAvocet entity)
+	protected ResourceLocation getEntityTexture(EntityKoriBustard entity)
     {
     	if(entity.isChild()) {
     		return ZAWARenderUtils.none;
@@ -42,13 +41,16 @@ public class RenderAvocet extends RenderLivingZAWA<EntityAvocet> {
 			case 0:
 			default:
 				return texture;
+			case 1:
+				return texture2;
 		}
 	}
-
-	public static class RenderFactory implements IRenderFactory<EntityAvocet>{
+  
+	
+	public static class RenderFactory implements IRenderFactory<EntityKoriBustard>{
 		@Override
-		public Render<? super EntityAvocet> createRenderFor(RenderManager manager) {
-			return new RenderAvocet(manager);
+		public Render<? super EntityKoriBustard> createRenderFor(RenderManager manager) {
+			return new RenderKoriBustard(manager);
 		    }
 	    }
 }

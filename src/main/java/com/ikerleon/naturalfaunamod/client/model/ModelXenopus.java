@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
  * Xenopus - Starcook
  * Created using Tabula 7.0.0
  */
-public class Xenopus extends ModelBase {
+public class ModelXenopus extends ModelBase {
     public ModelRenderer shape1;
     public ModelRenderer shape3;
     public ModelRenderer shape4;
@@ -26,7 +26,7 @@ public class Xenopus extends ModelBase {
     public ModelRenderer shape11;
     public ModelRenderer shape15;
 
-    public Xenopus() {
+    public ModelXenopus() {
         this.textureWidth = 125;
         this.textureHeight = 125;
         this.shape9 = new ModelRenderer(this, 6, 30);

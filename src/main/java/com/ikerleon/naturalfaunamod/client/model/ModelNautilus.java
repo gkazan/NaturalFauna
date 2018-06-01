@@ -3,6 +3,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 import org.zawamod.client.model.llibrary.MowzieModelBase;
 import org.zawamod.client.model.llibrary.MowzieModelRenderer;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelNautilus extends MowzieModelBase
@@ -78,11 +79,11 @@ public class ModelNautilus extends MowzieModelBase
       Shape5.mirror = true;
       setRotation(Shape5, -0.1115358F, 1.041001F, 0F);
   }
-  
+  @Override
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
   {
-    super.render(entity, f, f1, f2, f3, f4, f5);
-    setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+  	GlStateManager.pushMatrix();
+  	GlStateManager.translate(0F, 0.2F, 0F); 
     coquille.render(f5);
     clapet.render(f5);
     dessous.render(f5);
@@ -92,6 +93,7 @@ public class ModelNautilus extends MowzieModelBase
     Shape1.render(f5);
     Shape4.render(f5);
     Shape5.render(f5);
+    GlStateManager.popMatrix();
   }
   
   private void setRotation(MowzieModelRenderer model, float x, float y, float z)
@@ -100,10 +102,6 @@ public class ModelNautilus extends MowzieModelBase
     model.rotateAngleY = y;
     model.rotateAngleZ = z;
   }
-  
-  public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
-  {
-    super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-  }
+
 
 }

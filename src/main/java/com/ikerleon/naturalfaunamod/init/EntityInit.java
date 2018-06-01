@@ -4,6 +4,7 @@ import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.NaturalFaunaMain;
 import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
 import com.ikerleon.naturalfaunamod.entity.EntityBarbaryLion;
+import com.ikerleon.naturalfaunamod.entity.EntityBlueGnu;
 import com.ikerleon.naturalfaunamod.entity.EntityCamel;
 import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
@@ -11,9 +12,15 @@ import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
 import com.ikerleon.naturalfaunamod.entity.EntityGreySeal;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityJackfish;
+import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
 import com.ikerleon.naturalfaunamod.entity.EntityLeopard;
 import com.ikerleon.naturalfaunamod.entity.EntityLittleBustard;
+import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
+import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
+import com.ikerleon.naturalfaunamod.entity.EntityPuma;
+import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
+import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -39,6 +46,13 @@ public class EntityInit {
 		createEntity(EntityBarbaryLion.class, "barbary_lion", 14072706, 6307848);
 		createEntity(EntityGrantsGazelle.class, "grants_gazelle", 16767134, 16771012);
 		createEntity(EntityJackfish.class, "jack_fish", 13227237, 4213595);
+		createEntity(EntityNautilus.class, "nautilus", 14840691, 16777215);
+		createEntity(EntityPuma.class, "puma", 13870196, 16378843);
+		createEntity(EntityBlueGnu.class, "blue_gnu", 4145750, 15916216);
+		createEntity(EntityKoriBustard.class, "kori_bustard", 14074788, 3158063);
+		createEntity(EntityOstrich.class, "common_ostrich", 0, 16777215);
+		createEntity(EntityRoeDeer.class, "european_roe_deer", 7024896, 9858120);
+		createEntity(EntityXenopus.class, "xenopus_frog", 16375134, 16773032);
 	}
 	
 	private static void createEntity(Class entityClass , String entityName, int Color1,int Color2) {

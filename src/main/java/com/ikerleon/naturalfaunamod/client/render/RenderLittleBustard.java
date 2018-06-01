@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
+import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelLittleBustard;
@@ -25,7 +26,12 @@ public class RenderLittleBustard extends RenderLivingZAWA<EntityLittleBustard> {
 	
 	protected ResourceLocation getEntityTexture(EntityLittleBustard entity)
     {
-    	return getTextureOfVar(entity.getAnimalType());
+    	if(entity.isChild()) {
+    		return ZAWARenderUtils.none;
+    	}
+    	else {
+    		return getTextureOfVar(entity.getAnimalType());
+    	}
     }
 
 	@Override

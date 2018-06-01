@@ -7,6 +7,7 @@ import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelLeopard;
 import com.ikerleon.naturalfaunamod.entity.EntityLeopard;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -39,7 +40,14 @@ public class RenderLeopard extends RenderLivingZAWA<EntityLeopard> {
     	return getTextureOfVar(entity.getAnimalType());
     	}
     }
-
+    
+    protected void preRenderCallback(EntityLeopard entitylivingbaseIn, float partialTickTime)
+    {
+      GlStateManager.scale(0.8D, 0.8D, 0.8D);
+      GlStateManager.translate(0.0F, -0.15F, 0.0F);
+      super.preRenderCallback(entitylivingbaseIn, partialTickTime);
+    }
+    
 	@Override
 	public ResourceLocation getTextureOfVar(int varient) {
 		switch (varient) {

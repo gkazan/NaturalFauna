@@ -4,8 +4,8 @@ import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
-import com.ikerleon.naturalfaunamod.client.model.ModelAvocet;
-import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
+import com.ikerleon.naturalfaunamod.client.model.ModelRoeDeer;
+import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -15,18 +15,15 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderAvocet extends RenderLivingZAWA<EntityAvocet> {
+public class RenderRoeDeer extends RenderLivingZAWA<EntityRoeDeer> {
 	
-	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/avocet/texture.png");
-	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/avocet/child_texture.png");
+	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/roedeer/texture.png");
 
-	public RenderAvocet(RenderManager rm) {
-		super(rm, new ModelAvocet(), 0.4F);
+	public RenderRoeDeer(RenderManager rm) {
+		super(rm, new ModelRoeDeer(), 0.4F);
 	}
-	
-	
-	
-    protected ResourceLocation getEntityTexture(EntityAvocet entity)
+
+    protected ResourceLocation getEntityTexture(EntityRoeDeer entity)
     {
     	if(entity.isChild()) {
     		return ZAWARenderUtils.none;
@@ -44,11 +41,11 @@ public class RenderAvocet extends RenderLivingZAWA<EntityAvocet> {
 				return texture;
 		}
 	}
-
-	public static class RenderFactory implements IRenderFactory<EntityAvocet>{
-		@Override
-		public Render<? super EntityAvocet> createRenderFor(RenderManager manager) {
-			return new RenderAvocet(manager);
-		    }
+	
+    public static class RenderFactory implements IRenderFactory<EntityRoeDeer>{
+	@Override
+	public Render<? super EntityRoeDeer> createRenderFor(RenderManager manager) {
+		return new RenderRoeDeer(manager);
 	    }
+    }
 }

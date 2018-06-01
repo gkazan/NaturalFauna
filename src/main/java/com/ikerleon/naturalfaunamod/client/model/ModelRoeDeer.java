@@ -3,6 +3,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 import org.zawamod.client.model.llibrary.MowzieModelBase;
 import org.zawamod.client.model.llibrary.MowzieModelRenderer;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelRoeDeer extends MowzieModelBase
@@ -107,10 +108,14 @@ public class ModelRoeDeer extends MowzieModelBase
       setRotation(corne_gauche, 0.3717861F, 0F, 0F);
   }
   
+  @Override
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
   {
-    super.render(entity, f, f1, f2, f3, f4, f5);
-    setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+    float scaleFactor= 0.6F;
+	
+	GlStateManager.pushMatrix();
+	GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor); 
+	GlStateManager.translate(0F, 1F, 0F); 
     ventre.render(f5);
     patte_avant_gauche.render(f5);
     patte_avant_droite.render(f5);
@@ -124,6 +129,8 @@ public class ModelRoeDeer extends MowzieModelBase
     oreille_droite.render(f5);
     corne_droite.render(f5);
     corne_gauche.render(f5);
+	GlStateManager.popMatrix();
+    
   }
   
   private void setRotation(MowzieModelRenderer model, float x, float y, float z)
@@ -132,10 +139,4 @@ public class ModelRoeDeer extends MowzieModelBase
     model.rotateAngleY = y;
     model.rotateAngleZ = z;
   }
-  
-  public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
-  {
-    super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-  }
-
 }

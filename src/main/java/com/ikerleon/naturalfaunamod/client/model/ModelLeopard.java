@@ -3,6 +3,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 import org.zawamod.client.model.llibrary.MowzieModelBase;
 import org.zawamod.client.model.llibrary.MowzieModelRenderer;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelLeopard extends 	MowzieModelBase {
@@ -78,7 +79,13 @@ public class ModelLeopard extends 	MowzieModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+    	float scaleFactor= 1.3F;
+    	
+    	GlStateManager.pushMatrix();
+    	GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
+    	GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
         this.shape1.render(f5);
+        GlStateManager.popMatrix();
     }
 
     /**

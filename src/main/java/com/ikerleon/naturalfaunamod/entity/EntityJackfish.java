@@ -13,7 +13,7 @@ extends EntityFishBase
 public EntityJackfish(World worldIn)
 {
   super(worldIn, false);
-  setSize(0.4F, 0.4F);
+  setSize(0.7F, 0.4F);
 }
 
 protected void applyEntityAttributes()

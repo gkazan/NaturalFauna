@@ -44,14 +44,6 @@ public class RenderCourser extends RenderLivingZAWA<EntityCourser> {
 				return texture;
 		}
 	}
-	
-	public ResourceLocation getTextureOfVarChild(int varient) {
-		switch (varient) {
-			case 0:
-			default:
-				return texturechild;
-		}
-	}
 
     public static class RenderFactory implements IRenderFactory<EntityCourser>{
 	@Override

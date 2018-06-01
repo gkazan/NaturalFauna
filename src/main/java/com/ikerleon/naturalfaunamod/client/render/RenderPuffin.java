@@ -44,14 +44,6 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 		}
 	}
 	
-	public ResourceLocation getTextureOfVarChild(int varient) {
-		switch (varient) {
-			case 0:
-			default:
-				return texturechild;
-		}
-	}
-	
 	@SideOnly(Side.CLIENT)
 	public class LayerPuffin implements LayerRenderer<EntityPuffin> {
 	    private final RenderPuffin render;

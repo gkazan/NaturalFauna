@@ -5,7 +5,6 @@ import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelGrantsGazelle;
-import com.ikerleon.naturalfaunamod.entity.EntityCamel;
 import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
 
 import net.minecraft.client.renderer.entity.Render;

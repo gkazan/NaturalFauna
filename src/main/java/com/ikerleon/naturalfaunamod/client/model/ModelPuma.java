@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 /**
@@ -147,6 +148,11 @@ public class ModelPuma extends ModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+    	float scaleFactor= 1.5F;
+    	
+    	GlStateManager.pushMatrix();
+    	GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
+    	GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
         this.shape4.render(f5);
         this.shape23.render(f5);
         this.shape8.render(f5);
@@ -174,6 +180,7 @@ public class ModelPuma extends ModelBase {
         this.shape9.render(f5);
         this.shape22_1.render(f5);
         this.shape1.render(f5);
+        GlStateManager.popMatrix();
     }
 
     /**

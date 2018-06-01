@@ -6,6 +6,7 @@ import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelBarbaryLion;
+import com.ikerleon.naturalfaunamod.client.model.ModelBarbaryLionFemale;
 import com.ikerleon.naturalfaunamod.entity.EntityBarbaryLion;
 
 import net.minecraft.client.renderer.entity.Render;
@@ -61,7 +62,7 @@ public class RenderBarbaryLion extends RenderLivingZAWA<EntityBarbaryLion> {
 	  implements LayerRenderer<EntityBarbaryLion>
 	{
 	  private final RenderBarbaryLion render;
-	  private final ModelBarbaryLion modelfemale = new ModelBarbaryLion();
+	  private final ModelBarbaryLionFemale modelfemale = new ModelBarbaryLionFemale();
 	  
 	  public LayerBarbaryLion(RenderBarbaryLion re)
 	  {

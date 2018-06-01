@@ -26,7 +26,8 @@ public class RenderJackfish
   }
   protected void preRenderCallback(EntityJackfish entitylivingbaseIn, float partialTickTime)
   {
-	GlStateManager.translate(0, 0.3F, 0);
+    GlStateManager.scale(1.3D, 1.3D, 1.3D);
+    GlStateManager.translate(0, 0.4D, 0);
     super.preRenderCallback(entitylivingbaseIn, partialTickTime);
   }
   
