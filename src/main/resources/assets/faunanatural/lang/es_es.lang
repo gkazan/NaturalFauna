@@ -18,3 +18,6 @@ entity.common_ostrich.name=Avestruz común
 entity.european_roe_deer.name=Corzo europeo
 entity.xenopus_frog.name=Rana Xenopus
 
+item.capercaillie_feather.name=Pluma de urogallo
+
+itemGroup.natural_fauna_feathers_tab=Natural Fauna: Plumas

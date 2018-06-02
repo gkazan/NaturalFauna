@@ -39,6 +39,9 @@ import com.ikerleon.naturalfaunamod.entity.EntityPuma;
 import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
 import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy{
@@ -66,5 +69,10 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityOstrich.class, new RenderOstrich.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityRoeDeer.class, new RenderRoeDeer.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityXenopus.class, new RenderXenopus.RenderFactory());
+	}
+	
+	@Override
+	public void registerItemRenderer(Item item, int meta, String id){
+		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
 	}
 }

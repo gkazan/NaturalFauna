@@ -3,6 +3,7 @@ package com.ikerleon.naturalfaunamod.entity;
 import org.zawamod.entity.ai.EntityAIAttackEnts;
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.data.AnimalData.EnumNature;
+import org.zawamod.entity.land.EntityAmurLeopard;
 import org.zawamod.entity.land.EntityBlackRhinoceros;
 import org.zawamod.entity.land.EntityGrevysZebra;
 import org.zawamod.entity.land.EntityMeerkat;
@@ -31,14 +32,11 @@ import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class EntityHyena extends ZAWABaseLand {
+public class EntityHyena extends EntityAmurLeopard {
 	
 	public EntityHyena(World worldIn) {		
-		super(worldIn, 0.28D);
-		this.setSize(1F, 1.2F);
+		super(worldIn);
 		this.targetTasks.addTask(4, new EntityAIAttackEnts(this, EntityLiving.class, false, new EntityHyenaAttack(this)));
-        this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
 	}
 	
 	public class EntityHyenaAttack

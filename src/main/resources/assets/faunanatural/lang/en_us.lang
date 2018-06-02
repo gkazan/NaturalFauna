@@ -18,3 +18,7 @@ entity.common_ostrich.name=Common ostrich
 entity.european_roe_deer.name=European roe deer
 entity.xenopus_frog.name=Xenopus frog
 
+item.capercaillie_feather.name=Capercaillie feather
+
+itemGroup.natural_fauna_feathers_tab=Natural Fauna: Feathers
+

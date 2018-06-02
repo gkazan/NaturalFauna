@@ -6,6 +6,7 @@ import org.zawamod.entity.ai.EntityAIAttackEnts;
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
+import org.zawamod.entity.land.EntityAmurLeopard;
 import org.zawamod.entity.land.EntityBlackRhinoceros;
 import org.zawamod.entity.land.EntityGrevysZebra;
 import org.zawamod.entity.land.EntityMeerkat;
@@ -36,7 +37,7 @@ import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateClimber;
 import net.minecraft.world.World;
 
-public class EntityLeopard extends ZAWABaseLand {
+public class EntityLeopard extends EntityAmurLeopard {
 	
 	private static final DataParameter<Byte> CLIMBING = EntityDataManager.<Byte>createKey(EntityLeopard.class, DataSerializers.BYTE);
 	
@@ -44,11 +45,8 @@ public class EntityLeopard extends ZAWABaseLand {
 	public final int melanicTexture=random.nextInt(1000) + 1;
 	
 	public EntityLeopard(World worldIn) {
-		super(worldIn, 0.28D);
-		this.setSize(1F, 1.2F);
-		this.targetTasks.addTask(4, new EntityAIAttackEnts(this, EntityLiving.class, false, new EntityLeopardAttack(this)));
-        this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
+		super(worldIn);
+		this.targetTasks.addTask(4, new EntityAIAttackEnts(this, EntityLiving.class, false, new EntityLeopard.EntityLeopardAttack(this)));
 	}
 	
 	public class EntityLeopardAttack
@@ -97,7 +95,11 @@ public class EntityLeopard extends ZAWABaseLand {
 	            this.setBesideClimbableBlock(this.collidedHorizontally);
 	        }
 	    }
-
+	    
+	    public boolean isOnLadder()
+	    {
+	        return this.isBesideClimbableBlock();
+	    }    
 	  
 	  public boolean isBesideClimbableBlock()
 	    {
