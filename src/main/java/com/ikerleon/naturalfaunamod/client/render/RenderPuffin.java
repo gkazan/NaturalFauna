@@ -7,6 +7,7 @@ import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelPuffin;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
@@ -23,11 +24,12 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 
 	public RenderPuffin(RenderManager rm) {
 		super(rm, new ModelPuffin(), 0.4F);
+		this.addLayer(new LayerPuffin(this));
 	}
 	
     protected ResourceLocation getEntityTexture(EntityPuffin entity)
     {
-    	if(entity.isChild() || entity.isInWater()) {
+    	if(entity.isChild() /*|| entity.isInWater()*/) {
     		return ZAWARenderUtils.none;
     	}
     	else {
@@ -48,8 +50,6 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	public class LayerPuffin implements LayerRenderer<EntityPuffin> {
 	    private final RenderPuffin render;
 	    private final ModelPuffin modelBaby = new ModelPuffin();
-	    private final ModelPuffin modelBabyWater = new ModelPuffin();
-	    private final ModelPuffin modelWater = new ModelPuffin();
 		 
 	    public LayerPuffin(RenderPuffin re)
 	    {
@@ -60,30 +60,22 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	    {	    	
 	        if (!kat.isInvisible())
 	        {
-	        	if(kat.isChild() && kat.isInWater()) {
-		            this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));
-		            this.modelBabyWater.setModelAttributes(this.render.getMainModel());
-		            this.modelBabyWater.setRotationAngles(f,f1,f3,f4,f5,f6, kat);
-		            this.modelBabyWater.render(kat, f, f1, f2, f3, f4, f6);
-	        	}
-	        	else if(kat.isChild()) {
-		            this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));
+	        	if(kat.isChild()) {
+	        		GlStateManager.pushMatrix();
+		    	    GlStateManager.scale(0.6F, 0.6F, 0.6F);
+		    	    GlStateManager.translate(0.0F, 1F, 0.0F);
+		            this.render.bindTexture(this.render.texturechild);
 		            this.modelBaby.setModelAttributes(this.render.getMainModel());
 		            this.modelBaby.setRotationAngles(f,f1,f3,f4,f5,f6, kat);
 		            this.modelBaby.render(kat, f, f1, f2, f3, f4, f6);
-	        	}
-	        	else if(kat.isInWater()) {
-	        		this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));
-		            this.modelWater.setModelAttributes(this.render.getMainModel());
-		            this.modelWater.setRotationAngles(f,f1,f3,f4,f5,f6, kat);
-		            this.modelWater.render(kat, f, f1, f2, f3, f4, f6);
-	        	}
+			        GlStateManager.popMatrix();
+	        	}	
 	        }
 	    }
-	    
+
 		@Override
 		public boolean shouldCombineTextures() {
-			return true;
+			return false;
 		}
 	}
 	

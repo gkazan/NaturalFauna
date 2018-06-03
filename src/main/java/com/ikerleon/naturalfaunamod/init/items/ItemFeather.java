@@ -19,6 +19,6 @@ public class ItemFeather extends Item implements IHasModel
 
   @Override
   public void registerModels() {
-    NaturalFaunaMain.proxy.registerItemRenderer(this, 0, "inventory");
+    NaturalFaunaMain.proxy.registerItemRenderer(this, 0, "inventory");;
   }
 }

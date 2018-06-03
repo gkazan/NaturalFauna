@@ -5,6 +5,8 @@ import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.init.ItemInit;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
@@ -58,7 +60,7 @@ public class EntityCourser extends ZAWABaseLand {
 			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.bird_meat, 1);
-		this.dropItem(Items.FEATHER, 1);
+		this.dropItem(ItemInit.COURSER_FEATHER, 1);
 	}
 	
 	@Override

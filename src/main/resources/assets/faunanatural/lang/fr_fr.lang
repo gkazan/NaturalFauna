@@ -18,6 +18,6 @@ entity.common_ostrich.name=Autruche d'Afrique
 entity.european_roe_deer.name=Chevreuil
 entity.xenopus_frog.name=Xenopus
 
-item.capercaillie_feather.name=Capercaillie feather
+item.feather_capercaillie.name=Plume du grand tétras
 
-itemGroup.natural_fauna_feathers_tab=Natural Fauna: Plumas
+itemGroup.natural_fauna_feathers_tab=Natural Fauna: Plumes

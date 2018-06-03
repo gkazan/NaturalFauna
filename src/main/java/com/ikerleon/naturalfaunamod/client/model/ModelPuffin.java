@@ -4,6 +4,7 @@ import org.zawamod.client.model.llibrary.MowzieModelBase;
 import org.zawamod.client.model.llibrary.MowzieModelRenderer;
 
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 /**
@@ -102,7 +103,13 @@ public class ModelPuffin extends MowzieModelBase {
      @Override
      public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
      	setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-         this.body.render(f5);
+        float scaleFactor= 1.2F;
+    	
+    	GlStateManager.pushMatrix();
+    	GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
+    	GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+        this.body.render(f5);
+        GlStateManager.popMatrix();
      }
 
      /**
@@ -123,12 +130,9 @@ public class ModelPuffin extends MowzieModelBase {
      	float globalSpeed = 2f;
      	float globalHeight = 0.5f;
      	float globalDegree = 2.5F;
-     	
-     	
-     	
-     	this.head.rotateAngleX = f4 * 0.017453292F;
-        this.head.rotateAngleY = f3 * 0.017453292F;
-
+   
+        this.head.rotateAngleX = (f4 / 57.295776F);
+        this.head.rotateAngleY = (f3 / 57.295776F);
      	
      	bob(body, 1 * globalSpeed, 0.5f * globalHeight, false, f, f1);
      	
@@ -140,6 +144,12 @@ public class ModelPuffin extends MowzieModelBase {
      	walk(neck, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
      	
      	flap(body, globalSpeed*1f, 0.15f*globalDegree, false, 0f, 0f, f, f1 );
+
+     	walk(neck, 0.17f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
+     	walk(head, 0.17f, 0.1f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
+     	walk(body2, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
+     	walk(leftwing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
+     	walk(rightwing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
      }
 }
      
