@@ -18,6 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderPuma extends RenderLivingZAWA<EntityPuma> {
 	
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/puma/texture.png");
+	public static final ResourceLocation texture2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/puma/texture2.png");
 
 	public RenderPuma(RenderManager rm) {
 		super(rm, new ModelPuma(), 0.4F);
@@ -39,6 +40,8 @@ public class RenderPuma extends RenderLivingZAWA<EntityPuma> {
 			case 0:
 			default:
 				return texture;
+			case 1:
+				return texture2;
 		}
 	}
 

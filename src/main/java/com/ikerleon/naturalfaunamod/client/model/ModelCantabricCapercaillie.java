@@ -145,5 +145,10 @@ public class ModelCantabricCapercaillie extends MowzieModelBase {
      	walk(RightLeg, 2f * globalSpeed, 0.5f * globalDegree, true, 0, 0.2f, f, f1);
      	walk(Neck, 1f * globalSpeed, 0.25f * globalDegree, false, 0, 0f, f, f1);
      	walk(Body2, 1f * globalSpeed, 0.35f * globalDegree, false, 0, 0f, f, f1);
+     	
+     	walk(Neck, 0.17f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
+     	walk(Body2, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
+     	walk(LeftWing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
+     	walk(RightWing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
     }
 }

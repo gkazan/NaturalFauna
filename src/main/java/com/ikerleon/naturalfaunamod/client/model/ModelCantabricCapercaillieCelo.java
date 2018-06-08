@@ -152,5 +152,9 @@ public class ModelCantabricCapercaillieCelo extends MowzieModelBase {
     	walk(Head, globalSpeed*0.5F, globalDegree, false, 0.0F, 3F, entity.ticksExisted, 0.1F);
     	walk(Peak, globalSpeed*0.5F, 0.4F* globalDegree, false, 0.0F, 3F, entity.ticksExisted, 0.1F);
     	walk(PeakBase, globalSpeed*0.5F, globalDegree, true, 0.0F, 3F, entity.ticksExisted, 0.1F);
+    	walk(Neck, 0.17f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
+     	walk(Body2, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
+     	walk(LeftWing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
+     	walk(RightWing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
     }
 }

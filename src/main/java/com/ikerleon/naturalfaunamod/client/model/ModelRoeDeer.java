@@ -1,142 +1,119 @@
 package com.ikerleon.naturalfaunamod.client.model;
 
-import org.zawamod.client.model.llibrary.MowzieModelBase;
-import org.zawamod.client.model.llibrary.MowzieModelRenderer;
-
-import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelRoeDeer extends MowzieModelBase
-{
-  //fields
-    MowzieModelRenderer ventre;
-    MowzieModelRenderer patte_avant_gauche;
-    MowzieModelRenderer patte_avant_droite;
-    MowzieModelRenderer patte_arriere_gauche;
-    MowzieModelRenderer patte_arriere_droite;
-    MowzieModelRenderer coup;
-    MowzieModelRenderer tete;
-    MowzieModelRenderer Museau;
-    MowzieModelRenderer front;
-    MowzieModelRenderer oreille_gauche;
-    MowzieModelRenderer oreille_droite;
-    MowzieModelRenderer corne_droite;
-    MowzieModelRenderer corne_gauche;
-  
-  public ModelRoeDeer()
-  {
-    textureWidth = 128;
-    textureHeight = 256;
-    
-      ventre = new MowzieModelRenderer(this, 55, 117);
-      ventre.addBox(0F, 0F, 0F, 10, 10, 26);
-      ventre.setRotationPoint(-8F, 0F, 0F);
-      ventre.setTextureSize(128, 256);
-      ventre.mirror = true;
-      setRotation(ventre, 0F, 0F, 0F);
-      patte_avant_gauche = new MowzieModelRenderer(this, 106, 1);
-      patte_avant_gauche.addBox(-2F, 0F, -3F, 5, 21, 5);
-      patte_avant_gauche.setRotationPoint(0F, 3F, 4F);
-      patte_avant_gauche.setTextureSize(128, 256);
-      patte_avant_gauche.mirror = true;
-      setRotation(patte_avant_gauche, 0F, 0F, 0F);
-      patte_avant_droite = new MowzieModelRenderer(this, 24, 0);
-      patte_avant_droite.addBox(-3F, 0F, -3F, 5, 20, 5);
-      patte_avant_droite.setRotationPoint(-6F, 4F, 4F);
-      patte_avant_droite.setTextureSize(128, 256);
-      patte_avant_droite.mirror = true;
-      setRotation(patte_avant_droite, 0F, 0F, 0F);
-      patte_arriere_gauche = new MowzieModelRenderer(this, 82, 0);
-      patte_arriere_gauche.addBox(-2F, 0F, -2F, 5, 21, 5);
-      patte_arriere_gauche.setRotationPoint(0F, 3F, 22F);
-      patte_arriere_gauche.setTextureSize(128, 256);
-      patte_arriere_gauche.mirror = true;
-      setRotation(patte_arriere_gauche, 0F, 0F, 0F);
-      patte_arriere_droite = new MowzieModelRenderer(this, 53, 0);
-      patte_arriere_droite.addBox(-3F, 0F, -3F, 5, 21, 5);
-      patte_arriere_droite.setRotationPoint(-6F, 4F, 23F);
-      patte_arriere_droite.setTextureSize(128, 256);
-      patte_arriere_droite.mirror = true;
-      setRotation(patte_arriere_droite, 0F, 0F, 0F);
-      coup = new MowzieModelRenderer(this, 85, 34);
-      coup.addBox(-3F, -2F, -12F, 6, 5, 12);
-      coup.setRotationPoint(-3F, 4F, 3F);
-      coup.setTextureSize(128, 256);
-      coup.mirror = true;
-      setRotation(coup, -0.669215F, 0F, 0F);
-      tete = new MowzieModelRenderer(this, 47, 33);
-      tete.addBox(-4F, -2F, -9F, 6, 5, 9);
-      tete.setRotationPoint(-2F, -3F, -5F);
-      tete.setTextureSize(128, 256);
-      tete.mirror = true;
-      setRotation(tete, 0.0743572F, 0F, 0F);
-      Museau = new MowzieModelRenderer(this, 24, 33);
-      Museau.addBox(-2F, -2F, -6F, 4, 4, 6);
-      Museau.setRotationPoint(-3F, -2F, -12F);
-      Museau.setTextureSize(128, 256);
-      Museau.mirror = true;
-      setRotation(Museau, 0.0743572F, 0F, 0F);
-      front = new MowzieModelRenderer(this, 0, 107);
-      front.addBox(-3F, -2F, -3F, 5, 5, 6);
-      front.setRotationPoint(-2.333333F, -4F, -9F);
-      front.setTextureSize(128, 256);
-      front.mirror = true;
-      setRotation(front, 0.1115358F, 0F, 0F);
-      oreille_gauche = new MowzieModelRenderer(this, 0, 85);
-      oreille_gauche.addBox(0F, -4F, 0F, 2, 4, 1);
-      oreille_gauche.setRotationPoint(-2F, -5F, -6F);
-      oreille_gauche.setTextureSize(128, 256);
-      oreille_gauche.mirror = true;
-      setRotation(oreille_gauche, 0F, 0F, 0F);
-      oreille_droite = new MowzieModelRenderer(this, 0, 76);
-      oreille_droite.addBox(0F, 0F, 0F, 2, 4, 1);
-      oreille_droite.setRotationPoint(-6F, -9F, -6F);
-      oreille_droite.setTextureSize(128, 256);
-      oreille_droite.mirror = true;
-      setRotation(oreille_droite, 0F, 0F, 0F);
-      corne_droite = new MowzieModelRenderer(this, 0, 61);
-      corne_droite.addBox(0F, -5F, 0F, 1, 6, 1);
-      corne_droite.setRotationPoint(-5F, -5F, -10F);
-      corne_droite.setTextureSize(128, 256);
-      corne_droite.mirror = true;
-      setRotation(corne_droite, 0.3717861F, 0F, 0F);
-      corne_gauche = new MowzieModelRenderer(this, 0, 47);
-      corne_gauche.addBox(0F, 0F, 0F, 1, 6, 1);
-      corne_gauche.setRotationPoint(-2F, -10F, -12F);
-      corne_gauche.setTextureSize(128, 256);
-      corne_gauche.mirror = true;
-      setRotation(corne_gauche, 0.3717861F, 0F, 0F);
-  }
-  
-  @Override
-  public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-  {
-    float scaleFactor= 0.6F;
-	
-	GlStateManager.pushMatrix();
-	GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor); 
-	GlStateManager.translate(0F, 1F, 0F); 
-    ventre.render(f5);
-    patte_avant_gauche.render(f5);
-    patte_avant_droite.render(f5);
-    patte_arriere_gauche.render(f5);
-    patte_arriere_droite.render(f5);
-    coup.render(f5);
-    tete.render(f5);
-    Museau.render(f5);
-    front.render(f5);
-    oreille_gauche.render(f5);
-    oreille_droite.render(f5);
-    corne_droite.render(f5);
-    corne_gauche.render(f5);
-	GlStateManager.popMatrix();
-    
-  }
-  
-  private void setRotation(MowzieModelRenderer model, float x, float y, float z)
-  {
-    model.rotateAngleX = x;
-    model.rotateAngleY = y;
-    model.rotateAngleZ = z;
-  }
+/**
+ * Roe Deer - Doctor Hyena
+ * Created using Tabula 7.0.0
+ */
+public class ModelRoeDeer extends ModelBase {
+    public ModelRenderer shape1;
+    public ModelRenderer shape2;
+    public ModelRenderer shape14;
+    public ModelRenderer shape14_1;
+    public ModelRenderer shape14_2;
+    public ModelRenderer shape14_3;
+    public ModelRenderer shape3;
+    public ModelRenderer shape4;
+    public ModelRenderer shape5;
+    public ModelRenderer shape5_1;
+    public ModelRenderer shape15;
+    public ModelRenderer shape15_1;
+    public ModelRenderer shape15_2;
+    public ModelRenderer shape15_3;
+    public ModelRenderer shape5_2;
+    public ModelRenderer shape5_3;
+
+    public ModelRoeDeer() {
+        this.textureWidth = 80;
+        this.textureHeight = 80;
+        this.shape14 = new ModelRenderer(this, 0, 0);
+        this.shape14.setRotationPoint(0.9F, 5.1F, 1.3F);
+        this.shape14.addBox(-1.0F, 0.0F, -1.0F, 2, 11, 2, 0.0F);
+        this.shape14_3 = new ModelRenderer(this, 53, 28);
+        this.shape14_3.setRotationPoint(7.1F, 4.1F, 12.5F);
+        this.shape14_3.addBox(-1.0F, 0.0F, 0.0F, 2, 7, 4, 0.0F);
+        this.shape1 = new ModelRenderer(this, 0, 0);
+        this.shape1.setRotationPoint(-5.0F, 8.0F, -7.0F);
+        this.shape1.addBox(0.0F, 0.0F, 0.0F, 8, 8, 17, 0.0F);
+        this.shape15 = new ModelRenderer(this, 10, 8);
+        this.shape15.setRotationPoint(-2.3F, -8.0F, -0.5F);
+        this.shape15.addBox(0.0F, 0.0F, 0.0F, 1, 7, 1, 0.0F);
+        this.setRotateAngle(shape15, -0.18203784098300857F, 0.0F, 0.0F);
+        this.shape15_1 = new ModelRenderer(this, 10, 8);
+        this.shape15_1.setRotationPoint(1.8F, -8.0F, -0.5F);
+        this.shape15_1.addBox(0.0F, 0.0F, 0.0F, 1, 7, 1, 0.0F);
+        this.setRotateAngle(shape15_1, -0.18203784098300857F, 0.0F, 0.0F);
+        this.shape5_1 = new ModelRenderer(this, 55, 0);
+        this.shape5_1.setRotationPoint(3.2F, -3.4F, -0.5F);
+        this.shape5_1.addBox(0.0F, 0.0F, 0.0F, 1, 3, 2, 0.0F);
+        this.setRotateAngle(shape5_1, -0.36425021489121656F, 1.0927506446736497F, 0.136659280431156F);
+        this.shape14_1 = new ModelRenderer(this, 67, 0);
+        this.shape14_1.setRotationPoint(7.1F, 5.1F, 1.3F);
+        this.shape14_1.addBox(-1.0F, 0.0F, -1.0F, 2, 11, 2, 0.0F);
+        this.shape3 = new ModelRenderer(this, 0, 28);
+        this.shape3.setRotationPoint(-0.2F, -1.0F, -6.4F);
+        this.shape3.addBox(-2.8F, -2.5F, -5.0F, 6, 5, 5, 0.0F);
+        this.setRotateAngle(shape3, 0.7618362184955249F, 0.0F, 0.0F);
+        this.shape4 = new ModelRenderer(this, 24, 28);
+        this.shape4.setRotationPoint(-1.6F, -0.4F, -8.0F);
+        this.shape4.addBox(0.0F, 0.0F, 0.0F, 4, 3, 4, 0.0F);
+        this.setRotateAngle(shape4, 0.136659280431156F, 0.0F, 0.0F);
+        this.shape5_3 = new ModelRenderer(this, 0, 42);
+        this.shape5_3.setRotationPoint(0.0F, 5.0F, 2.7F);
+        this.shape5_3.addBox(-1.0F, 0.0F, 0.0F, 2, 7, 2, 0.0F);
+        this.shape14_2 = new ModelRenderer(this, 59, 43);
+        this.shape14_2.setRotationPoint(0.9F, 4.1F, 12.5F);
+        this.shape14_2.addBox(-1.0F, 0.0F, 0.0F, 2, 7, 4, 0.0F);
+        this.shape5 = new ModelRenderer(this, 37, 0);
+        this.shape5.setRotationPoint(-3.2F, -3.5F, -1.4F);
+        this.shape5.addBox(0.0F, 0.0F, 0.0F, 1, 3, 2, 0.0F);
+        this.setRotateAngle(shape5, -0.3574434308084387F, -1.0927506446736497F, -0.136659280431156F);
+        this.shape5_2 = new ModelRenderer(this, 62, 23);
+        this.shape5_2.setRotationPoint(0.1F, 5.0F, 2.7F);
+        this.shape5_2.addBox(-1.0F, 0.0F, 0.0F, 2, 7, 2, 0.0F);
+        this.shape15_2 = new ModelRenderer(this, 11, 2);
+        this.shape15_2.setRotationPoint(0.5F, 2.2F, -0.5F);
+        this.shape15_2.addBox(-0.5F, -1.5F, -0.5F, 1, 3, 1, 0.0F);
+        this.setRotateAngle(shape15_2, 0.7285004297824331F, 0.0F, 0.0F);
+        this.shape15_3 = new ModelRenderer(this, 11, 2);
+        this.shape15_3.setRotationPoint(0.5F, 2.2F, -0.5F);
+        this.shape15_3.addBox(-0.5F, -1.5F, -0.5F, 1, 3, 1, 0.0F);
+        this.setRotateAngle(shape15_3, 0.7285004297824331F, 0.0F, 0.0F);
+        this.shape2 = new ModelRenderer(this, 37, 0);
+        this.shape2.setRotationPoint(4.0F, 3.0F, 2.1F);
+        this.shape2.addBox(-2.5F, -2.5F, -8.0F, 5, 5, 8, 0.0F);
+        this.setRotateAngle(shape2, -0.6829473363053812F, 0.0F, 0.0F);
+        this.shape1.addChild(this.shape14);
+        this.shape1.addChild(this.shape14_3);
+        this.shape3.addChild(this.shape15);
+        this.shape3.addChild(this.shape15_1);
+        this.shape3.addChild(this.shape5_1);
+        this.shape1.addChild(this.shape14_1);
+        this.shape2.addChild(this.shape3);
+        this.shape3.addChild(this.shape4);
+        this.shape14_3.addChild(this.shape5_3);
+        this.shape1.addChild(this.shape14_2);
+        this.shape3.addChild(this.shape5);
+        this.shape14_2.addChild(this.shape5_2);
+        this.shape15.addChild(this.shape15_2);
+        this.shape15_1.addChild(this.shape15_3);
+        this.shape1.addChild(this.shape2);
+    }
+
+    @Override
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+        this.shape1.render(f5);
+    }
+
+    /**
+     * This is a helper function from Tabula to set the rotation of model parts
+     */
+    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        modelRenderer.rotateAngleX = x;
+        modelRenderer.rotateAngleY = y;
+        modelRenderer.rotateAngleZ = z;
+    }
 }

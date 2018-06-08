@@ -3,8 +3,10 @@ package com.ikerleon.naturalfaunamod.proxies;
 import com.ikerleon.naturalfaunamod.client.render.RenderAvocet;
 import com.ikerleon.naturalfaunamod.client.render.RenderBarbaryLion;
 import com.ikerleon.naturalfaunamod.client.render.RenderBlueGnu;
+import com.ikerleon.naturalfaunamod.client.render.RenderBushbuck;
 import com.ikerleon.naturalfaunamod.client.render.RenderCamel;
 import com.ikerleon.naturalfaunamod.client.render.RenderCantabricCapercaillie;
+import com.ikerleon.naturalfaunamod.client.render.RenderCheetah;
 import com.ikerleon.naturalfaunamod.client.render.RenderCourser;
 import com.ikerleon.naturalfaunamod.client.render.RenderGrantsGazelle;
 import com.ikerleon.naturalfaunamod.client.render.RenderGreySeal;
@@ -22,8 +24,10 @@ import com.ikerleon.naturalfaunamod.client.render.RenderXenopus;
 import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
 import com.ikerleon.naturalfaunamod.entity.EntityBarbaryLion;
 import com.ikerleon.naturalfaunamod.entity.EntityBlueGnu;
+import com.ikerleon.naturalfaunamod.entity.EntityBushbuck;
 import com.ikerleon.naturalfaunamod.entity.EntityCamel;
 import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
+import com.ikerleon.naturalfaunamod.entity.EntityCheetah;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
 import com.ikerleon.naturalfaunamod.entity.EntityGreySeal;
@@ -69,6 +73,8 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityOstrich.class, new RenderOstrich.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityRoeDeer.class, new RenderRoeDeer.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityXenopus.class, new RenderXenopus.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityBushbuck.class, new RenderBushbuck.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityCheetah.class, new RenderCheetah.RenderFactory());
 	}
 	
 	@Override

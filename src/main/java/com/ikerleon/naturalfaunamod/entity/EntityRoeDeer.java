@@ -30,7 +30,13 @@ public class EntityRoeDeer extends ZAWABaseLand {
 	
 	@Override
 	public int setVariants() {
-		return 1;
+		return 2;
+	}
+	
+	@Override
+	public boolean sexualDimorphism()
+	{
+	  return true;
 	}
 	
 	@Override

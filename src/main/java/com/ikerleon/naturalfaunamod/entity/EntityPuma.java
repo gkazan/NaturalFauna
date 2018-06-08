@@ -30,7 +30,7 @@ public class EntityPuma extends ZAWABaseLand {
 	
 	@Override
 	public int setVariants() {
-		return 1;
+		return 2;
 	}
 	
 	@Override

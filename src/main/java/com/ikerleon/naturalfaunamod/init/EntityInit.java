@@ -5,8 +5,10 @@ import com.ikerleon.naturalfaunamod.NaturalFaunaMain;
 import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
 import com.ikerleon.naturalfaunamod.entity.EntityBarbaryLion;
 import com.ikerleon.naturalfaunamod.entity.EntityBlueGnu;
+import com.ikerleon.naturalfaunamod.entity.EntityBushbuck;
 import com.ikerleon.naturalfaunamod.entity.EntityCamel;
 import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
+import com.ikerleon.naturalfaunamod.entity.EntityCheetah;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
 import com.ikerleon.naturalfaunamod.entity.EntityGreySeal;
@@ -53,6 +55,8 @@ public class EntityInit {
 		createEntity(EntityOstrich.class, "common_ostrich", 0, 16777215);
 		createEntity(EntityRoeDeer.class, "european_roe_deer", 7024896, 9858120);
 		createEntity(EntityXenopus.class, "xenopus_frog", 16375134, 16773032);
+		createEntity(EntityBushbuck.class, "cape_bushbuck", 7356945, 8347969);
+		createEntity(EntityCheetah.class, "african_cheetah", 16769440, 2959648);
 	}
 	
 	private static void createEntity(Class entityClass , String entityName, int Color1,int Color2) {
