@@ -3,7 +3,6 @@ package com.ikerleon.naturalfaunamod.entity;
 import java.util.Random;
 
 import org.zawamod.entity.ai.EntityAIAttackEnts;
-import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
 import org.zawamod.entity.land.EntityAmurLeopard;
@@ -20,8 +19,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIFollowParent;
-import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.EntityHorse;
@@ -42,7 +39,7 @@ public class EntityLeopard extends EntityAmurLeopard {
 	private static final DataParameter<Byte> CLIMBING = EntityDataManager.<Byte>createKey(EntityLeopard.class, DataSerializers.BYTE);
 	
 	Random random = new Random();
-	public final int melanicTexture=random.nextInt(1000) + 1;
+	public final int melanicTexture=random.nextInt(25) + 1;
 	
 	public EntityLeopard(World worldIn) {
 		super(worldIn);

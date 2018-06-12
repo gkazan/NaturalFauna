@@ -1,5 +1,7 @@
 package com.ikerleon.naturalfaunamod.entity;
 
+import java.util.Random;
+
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
@@ -14,6 +16,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class EntityCheetah extends ZAWABaseLand {
+	
+	Random random = new Random();
+	public final int kingTexture=random.nextInt(20) + 1;
+	public final int spotlessTexture=random.nextInt(20) + 1;
 	
 	public EntityCheetah(World worldIn) {		
 		super(worldIn, 0.28D);

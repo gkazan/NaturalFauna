@@ -5,6 +5,7 @@ import org.zawamod.entity.data.AnimalData.EnumNature;
 import org.zawamod.entity.data.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
@@ -14,6 +15,8 @@ import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityAvocet extends ZAWABaseLand {
@@ -35,6 +38,19 @@ public class EntityAvocet extends ZAWABaseLand {
 	public int setVariants() {
 		return 1;
 	}
+	
+	@Override
+	protected SoundEvent getAmbientSound()
+	{
+	    return SoundHandler.AVOCET_LIVING;
+	}
+	
+	@Override
+	protected SoundEvent getHurtSound(DamageSource s)
+	{
+	    return SoundHandler.AVOCET_HURT;
+	}
+	
 	
 	@Override
 	public boolean isFoodItem(ItemStack stack) {

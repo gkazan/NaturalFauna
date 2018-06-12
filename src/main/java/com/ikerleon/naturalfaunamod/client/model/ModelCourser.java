@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 /**
@@ -124,7 +125,13 @@ public class ModelCourser extends ModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+        float scaleFactor= 0.7F;
+    	
+    	GlStateManager.pushMatrix();
+    	GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
+    	GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
         this.shape2.render(f5);
+        GlStateManager.popMatrix();
     }
 
     /**

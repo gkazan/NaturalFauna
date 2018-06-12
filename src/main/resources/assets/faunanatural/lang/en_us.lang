@@ -1,6 +1,6 @@
 entity.atlantic_puffin.name=Atlantic puffin
 entity.cream-coloured_courser.name=Cream-coloured courser
-entity.avocet.name=Common avocet
+entity.avocet.name=Pied avocet
 entity.spotted_hyena.name=Spotted hyena
 entity.cantabric_capercaillie.name=Cantabrian capercaillie
 entity.camel.name=Bactrian camel
@@ -17,8 +17,16 @@ entity.kori_bustard.name=Kori bustard
 entity.common_ostrich.name=Common ostrich
 entity.european_roe_deer.name=European roe deer
 entity.xenopus_frog.name=Xenopus frog
+entity.cape_bushbuck.name=Cape bushbuck
+entity.african_cheetah.name=African cheetah
 
 item.feather_capercaillie.name=Capercaillie feather
+item.feather_avocet.name=Avocet feather
+item.feather_courser.name=Cream-coloured courser feather
+item.feather_kori_bustard.name=Kori bustard feather
+item.feather_little_bustard.name=Little bustard feather
+item.feather_ostrich.name=Ostrich feather
+item.feather_puffin.name=Puffin feather
 
 itemGroup.natural_fauna_feathers_tab=Natural Fauna: Feathers
 

@@ -11,7 +11,7 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
-import net.minecraft.init.Items;
+import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -22,6 +22,7 @@ public class EntityCourser extends ZAWABaseLand {
 		this.setSize(0.5F, 1F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.30D));
+        this.tasks.addTask(0, new EntityAISwimming(this));
 	}
     
     public float getEyeHeight()
@@ -31,7 +32,7 @@ public class EntityCourser extends ZAWABaseLand {
 	
 	@Override
 	public int setVariants() {
-		return 1;
+		return 3;
 	}
 	
 	@Override

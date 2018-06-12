@@ -17,7 +17,16 @@ entity.kori_bustard.name=Avutarda kori
 entity.common_ostrich.name=Avestruz común
 entity.european_roe_deer.name=Corzo europeo
 entity.xenopus_frog.name=Rana Xenopus
+entity.cape_bushbuck.name=Bushbuck septentrional
+entity.african_cheetah.name=Guepardo africano
 
 item.feather_capercaillie.name=Pluma de urogallo
+item.feather_avocet.name=Pluma de avoceta
+item.feather_courser.name=Pluma de corredor sahariano
+item.feather_kori_bustard.name=Pluma de avutarda kori
+item.feather_little_bustard.name=Pluma de sisón común
+item.feather_ostrich.name=Pluma de avestruz
+item.feather_puffin.name=Pluma de frailecillo atlántico
+
 
 itemGroup.natural_fauna_feathers_tab=Natural Fauna: Plumas

@@ -17,7 +17,15 @@ entity.kori_bustard.name=Outarde kori
 entity.common_ostrich.name=Autruche d'Afrique
 entity.european_roe_deer.name=Chevreuil
 entity.xenopus_frog.name=Xenopus
+entity.cape_bushbuck.name=Guib harnaché
+entity.african_cheetah.name=Guépard africain
 
 item.feather_capercaillie.name=Plume du grand tétras
+item.feather_avocet.name=Plume de la avocette
+item.feather_courser.name=Plume du courvite isabelle
+item.feather_kori_bustard.name=Plume de la outarde kori
+item.feather_little_bustard.name=Plume du outarde canepetière
+item.feather_ostrich.name=Plume de la autruche d'Afrique
+item.feather_puffin.name=Plume du macareux moine
 
 itemGroup.natural_fauna_feathers_tab=Natural Fauna: Plumes

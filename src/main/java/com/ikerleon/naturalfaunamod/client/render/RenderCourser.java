@@ -18,8 +18,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderCourser extends RenderLivingZAWA<EntityCourser> {
 	
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/courser/texture.png");
-	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/courser/child_texture.png");
-
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/courser/texturechild.png");
+	public static final ResourceLocation texture2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/courser/texture2.png");
+	public static final ResourceLocation texture3 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/courser/texture3.png");
+	
 	public RenderCourser(RenderManager rm) {
 		super(rm, new ModelCourser(), 0.4F);
 	}
@@ -42,6 +44,10 @@ public class RenderCourser extends RenderLivingZAWA<EntityCourser> {
 			case 0:
 			default:
 				return texture;
+			case 1:
+				return texture2;
+			case 2:
+				return texture3;
 		}
 	}
 

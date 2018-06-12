@@ -22,7 +22,7 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
 	
 	public static final ResourceLocation texturemale = new ResourceLocation(NFReference.MOD_ID, "textures/entity/cheetah/texture.png");
 	public static final ResourceLocation texturemale2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/cheetah/texture2.png");
-	public static final ResourceLocation texturemale3 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/cheetah/texture3.png");
+	public static final ResourceLocation texturespotless = new ResourceLocation(NFReference.MOD_ID, "textures/entity/cheetah/texturespotless.png");
 	public static final ResourceLocation texturemale4 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/cheetah/texture4.png");
 	public static final ResourceLocation texturemale5 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/cheetah/texture5.png");
 	public static final ResourceLocation texturefemale = new ResourceLocation(NFReference.MOD_ID, "textures/entity/cheetah/texturefemale.png");
@@ -43,7 +43,15 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
     		return ZAWARenderUtils.none;
     	}
     	else {
+    		if(entity.kingTexture==2) {
+    			return textureking;
+    		}
+    		else if(entity.spotlessTexture==2) {
+    			return texturespotless;
+    		}
+    		else {
     		return getTextureOfVar(entity.getAnimalType());
+    		}
     	}
     }
 
@@ -55,7 +63,7 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
 			case 1:
 				return texturemale2;
 			case 2:
-				return texturemale3;
+				return texturemale;
 			case 3:
 				return texturemale4;
 			case 4:
@@ -78,7 +86,7 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
 	  
 	  public void doRenderLayer(EntityCheetah kat, float f, float f1, float f2, float f3, float f4, float f5, float f6)
 	  {
-		  if (!kat.isInvisible() && !kat.isChild())
+		  if (!kat.isInvisible() && !kat.isChild() && kat.spotlessTexture != 2 && kat.kingTexture != 2)
 		    {
 		      if (kat.getGender()==Gender.FEMALE) {
 		    	  switch (kat.getAnimalType()) {
