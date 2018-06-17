@@ -20,8 +20,9 @@ public class RenderBlueGnu extends RenderLivingZAWA<EntityBlueGnu> {
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gnu/texture.png");
 	public static final ResourceLocation texture2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gnu/texture2.png");
 	public static final ResourceLocation texture3 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gnu/texture3.png");
-	public static final ResourceLocation texture4 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gnu/texture4.png");
-	public static final ResourceLocation texture5 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gnu/texture5.png");
+	public static final ResourceLocation texturegolden = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gnu/texture4.png");
+	public static final ResourceLocation texturealbino = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gnu/texture5.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gnu/texturechild.png");
 	
 	public RenderBlueGnu(RenderManager rm) {
 		super(rm, new ModelBlueGnu(), 0.4F);
@@ -30,10 +31,18 @@ public class RenderBlueGnu extends RenderLivingZAWA<EntityBlueGnu> {
     protected ResourceLocation getEntityTexture(EntityBlueGnu entity)
     {
     	if(entity.isChild()) {
-    		return ZAWARenderUtils.none;
+    		return texturechild;
     	}
     	else {
+    		if(entity.goldenTexture==2) {
+    			return texturegolden;
+    		}
+    		else if(entity.albinoTexture==2) {
+    			return texturealbino;
+    		}
+    		else {
     		return getTextureOfVar(entity.getAnimalType());
+    		}
     	}
     }
 
@@ -46,10 +55,6 @@ public class RenderBlueGnu extends RenderLivingZAWA<EntityBlueGnu> {
 				return texture2;
 			case 2:
 				return texture3;
-			case 3:
-				return texture4;
-			case 4:
-				return texture5;
 		}
 	}
 	

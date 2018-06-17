@@ -1,5 +1,5 @@
 {
-   "entity.capercaillie.lekking":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/capercaillie/lekking", "stream": true}]}
-   "entity.avocet.ambient":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/avocet/living", "stream": true}]}
+   "entity.capercaillie.lekking":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/capercaillie/lekking", "stream": true}]},
+   "entity.avocet.ambient":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/avocet/living", "stream": true}]},
    "entity.avocet.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/avocet/hurt", "stream": true}]}
 }

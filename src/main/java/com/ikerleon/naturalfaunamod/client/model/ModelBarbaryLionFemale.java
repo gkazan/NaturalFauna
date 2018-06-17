@@ -3,6 +3,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 /**
  * BarbaryLioness - Doctor Hyena
@@ -89,13 +90,26 @@ public class ModelBarbaryLionFemale extends ModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
         this.shape1.render(f5);
     }
+    
+    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) 
+    {
+        this.shape7.rotateAngleY = (f3 * 0.017453292F);
+        this.shape7.rotateAngleX = (f4 * 0.017453292F);
 
-    /**
-     * This is a helper function from Tabula to set the rotation of model parts
-     */
-    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-        modelRenderer.rotateAngleX = x;
-        modelRenderer.rotateAngleY = y;
-        modelRenderer.rotateAngleZ = z;
+        this.shape2_1.rotateAngleX = (MathHelper.cos(f * 0.333F + 3.1415927F) * 1.4F * f1);
+        this.shape2.rotateAngleX = (MathHelper.cos(f * 0.333F) * 1.4F * f1);
+        this.shape4.rotateAngleX = (MathHelper.cos(f * 0.333F + 3.1415927F) * 1.4F * f1);
+        this.shape4_1.rotateAngleX = (MathHelper.cos(f * 0.333F) * 1.4F * f1);
+        
+        this.shape11.rotateAngleZ = (MathHelper.cos(entity.ticksExisted * 0.2F) * 0.2F * 0.5F);
+        this.shape12.rotateAngleZ = (MathHelper.cos(entity.ticksExisted * 0.15F) * 0.4F * 0.5F);
+        
+        this.shape6.rotateAngleX = (MathHelper.cos(entity.ticksExisted * 0.1F) * 0.08F * 0.5F);
+    }
+
+    public void setRotateAngle(ModelRenderer ModelRenderer, float x, float y, float z) {
+        ModelRenderer.rotateAngleX = x;
+        ModelRenderer.rotateAngleY = y;
+        ModelRenderer.rotateAngleZ = z;
     }
 }

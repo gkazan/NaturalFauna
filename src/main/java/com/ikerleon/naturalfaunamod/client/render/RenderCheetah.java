@@ -34,13 +34,12 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
 	
 	public RenderCheetah(RenderManager rm) {
 		super(rm, new ModelCheetah(), 0.4F);
-		addLayer(new LayerCheetah(this));
 	}
 
     protected ResourceLocation getEntityTexture(EntityCheetah entity)
     {
-    	if(entity.isChild() || entity.getGender()==Gender.FEMALE) {
-    		return ZAWARenderUtils.none;
+    	if(entity.isChild()) {
+    		return texturechild;
     	}
     	else {
     		if(entity.kingTexture==2) {
@@ -49,6 +48,20 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
     		else if(entity.spotlessTexture==2) {
     			return texturespotless;
     		}
+    		else if(entity.getGender()==Gender.FEMALE){
+    			switch (entity.getAnimalType()) {
+    			case 0:
+    				default: return texturefemale;
+    			case 1:
+    				return texturefemale2;
+    			case 2:
+    				return texturefemale;
+    			case 3:
+    				return texturefemale4;
+    			case 4:
+    				return texturefemale;
+    		    }
+        	}
     		else {
     		return getTextureOfVar(entity.getAnimalType());
     		}
@@ -69,55 +82,6 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
 			case 4:
 				return texturemale5;
 		}
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public class LayerCheetah
-	  implements LayerRenderer<EntityCheetah>
-	{
-	  private final RenderCheetah render;
-	  private final ModelCheetah modelfemale = new ModelCheetah();
-	  private final ModelCheetah modelchild = new ModelCheetah();
-	  
-	  public LayerCheetah(RenderCheetah re)
-	  {
-	    this.render = re;
-	  }
-	  
-	  public void doRenderLayer(EntityCheetah kat, float f, float f1, float f2, float f3, float f4, float f5, float f6)
-	  {
-		  if (!kat.isInvisible() && !kat.isChild() && kat.spotlessTexture != 2 && kat.kingTexture != 2)
-		    {
-		      if (kat.getGender()==Gender.FEMALE) {
-		    	  switch (kat.getAnimalType()) {
-		          case 0: default:  this.render.bindTexture(render.texturefemale); break;
-		          case 1:  this.render.bindTexture(render.texturefemale2); break;
-		          case 2:  this.render.bindTexture(render.texturefemale3); break;
-		          case 3:  this.render.bindTexture(render.texturefemale4); break;
-		          case 4:  this.render.bindTexture(render.texturefemale); break;
-		    	  }
-			        this.modelfemale.setModelAttributes(this.render.getMainModel());
-			        this.modelfemale.render(kat, f, f1, f2, f3, f4, f6);
-			        this.modelfemale.setRotationAngles(f, f1, f3, f4, f5, f6, kat);     
-			        }
-		    }
-		    if (!kat.isInvisible() && kat.isChild()) {
-		      if(kat.isChild()) {
-	      		    GlStateManager.pushMatrix();
-		    	    GlStateManager.scale(0.6F, 0.6F, 0.6F);
-		    	    GlStateManager.translate(0.0F, 1F, 0.0F);
-		    	    this.render.bindTexture(render.texturechild);
-			        this.modelchild.setModelAttributes(this.render.getMainModel());
-			        this.modelchild.render(kat, f, f1, f2, f3, f4, f6);
-			        this.modelchild.setRotationAngles(f, f1, f3, f4, f5, f6, kat); 
-			        GlStateManager.popMatrix();
-		      }
-		    }
-	  }
-	  @Override
-      public boolean shouldCombineTextures() {
-		  return false;
-	}
 	}
 	
     public static class RenderFactory implements IRenderFactory<EntityCheetah>{

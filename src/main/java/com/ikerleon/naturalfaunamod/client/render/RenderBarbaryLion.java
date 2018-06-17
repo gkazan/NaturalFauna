@@ -9,6 +9,7 @@ import com.ikerleon.naturalfaunamod.client.model.ModelBarbaryLion;
 import com.ikerleon.naturalfaunamod.client.model.ModelBarbaryLionFemale;
 import com.ikerleon.naturalfaunamod.entity.EntityBarbaryLion;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
@@ -27,6 +28,7 @@ public class RenderBarbaryLion extends RenderLivingZAWA<EntityBarbaryLion> {
 	public static final ResourceLocation texturefemale2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/barbarylion/texturefemale2.png");
 	public static final ResourceLocation texturefemale3 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/barbarylion/texturefemale3.png");
 	public static final ResourceLocation texturefemale4 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/barbarylion/texturefemale4.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/barbarylion/texturechild.png");
 	
 	public RenderBarbaryLion(RenderManager rm) {
 		super(rm, new ModelBarbaryLion(), 0.4F);
@@ -35,8 +37,14 @@ public class RenderBarbaryLion extends RenderLivingZAWA<EntityBarbaryLion> {
 
     protected ResourceLocation getEntityTexture(EntityBarbaryLion entity)
     {
-    	if(entity.isChild() || entity.getGender()==Gender.FEMALE) {
+    	if(entity.getGender()==Gender.FEMALE && entity.isChild()==false) {
     		return ZAWARenderUtils.none;
+    	}
+        else if((entity.getGender()==Gender.FEMALE && entity.isChild())) {
+    		return texturechild;
+    	}
+    	else if(entity.isChild()){
+    		return texturechild;
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());
@@ -71,7 +79,7 @@ public class RenderBarbaryLion extends RenderLivingZAWA<EntityBarbaryLion> {
 	  
 	  public void doRenderLayer(EntityBarbaryLion kat, float f, float f1, float f2, float f3, float f4, float f5, float f6)
 	  {
-	    if (!kat.isInvisible())
+	    if (!kat.isInvisible() && kat.isChild()==false && kat.getGender()==Gender.FEMALE)
 	    {
 	      if (kat.getGender()==Gender.FEMALE) {
 	    	  switch (kat.getAnimalType()) {
@@ -80,12 +88,13 @@ public class RenderBarbaryLion extends RenderLivingZAWA<EntityBarbaryLion> {
 	          case 2:  this.render.bindTexture(render.texturefemale3); break;
 	          case 3:  this.render.bindTexture(render.texturefemale4);
 	    	  }
+	      }
+		        this.modelfemale.setRotationAngles(f, f1, f3, f4, f5, f6, kat); 
 		        this.modelfemale.setModelAttributes(this.render.getMainModel());
-		        this.modelfemale.render(kat, f, f1, f2, f3, f4, f6);
-		        this.modelfemale.setRotationAngles(f, f1, f3, f4, f5, f6, kat);     
+		        this.modelfemale.render(kat, f, f1, f2, f3, f4, f6);    
 		        }
-	    }
 	  }
+	    
 	  @Override
       public boolean shouldCombineTextures() {
 		  return false;

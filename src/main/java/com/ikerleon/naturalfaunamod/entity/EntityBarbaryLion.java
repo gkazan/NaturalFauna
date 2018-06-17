@@ -17,7 +17,7 @@ public class EntityBarbaryLion extends ZAWABaseLand {
 	
 	public EntityBarbaryLion(World worldIn) {		
 		super(worldIn, 0.28D);
-		this.setSize(1.8F, 1.7F);
+		this.setSize(1.2F, 1.1F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
