@@ -1,5 +1,9 @@
 {
    "entity.capercaillie.lekking":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/capercaillie/lekking", "stream": true}]},
+   "entity.capercaillie.female_living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/capercaillie/female_living", "stream": true}]},
    "entity.avocet.ambient":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/avocet/living", "stream": true}]},
-   "entity.avocet.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/avocet/hurt", "stream": true}]}
+   "entity.avocet.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/avocet/hurt", "stream": true}]},
+   "entity.hyena.ambient":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/hyena/living", "stream": true}]},
+   "entity.hyena.death":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/hyena/death", "stream": true}]},
+   "entity.hyena.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/hyena/hurt", "stream": true}]}
 }

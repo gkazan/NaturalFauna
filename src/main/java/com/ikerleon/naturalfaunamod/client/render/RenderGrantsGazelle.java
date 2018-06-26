@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelGrantsGazelle;
@@ -21,6 +20,7 @@ public class RenderGrantsGazelle extends RenderLivingZAWA<EntityGrantsGazelle> {
 	public static final ResourceLocation texture2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gazelle/texture2.png");
 	public static final ResourceLocation texture3 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gazelle/texture3.png");
 	public static final ResourceLocation texture4 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gazelle/texture4.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/gazelle/texturechild.png");
 	
 	public RenderGrantsGazelle(RenderManager rm) {
 		super(rm, new ModelGrantsGazelle(), 0.4F);
@@ -29,7 +29,7 @@ public class RenderGrantsGazelle extends RenderLivingZAWA<EntityGrantsGazelle> {
     protected ResourceLocation getEntityTexture(EntityGrantsGazelle entity)
     {
     	if(entity.isChild()) {
-    		return ZAWARenderUtils.none;
+    		return texturechild;
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());

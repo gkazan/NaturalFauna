@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelHyena;
@@ -23,6 +22,7 @@ public class RenderHyena extends RenderLivingZAWA<EntityHyena> {
 	public static final ResourceLocation texture_3 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texture3.png");
 	public static final ResourceLocation texture_4 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texture4.png");
 	public static final ResourceLocation texture_5 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texture5.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/hyena/texturechild.png");
 	
 	public RenderHyena(RenderManager rm) {
 		super(rm, new ModelHyena(), 0.4F);
@@ -31,7 +31,7 @@ public class RenderHyena extends RenderLivingZAWA<EntityHyena> {
     protected ResourceLocation getEntityTexture(EntityHyena entity)
     {
     	if(entity.isChild()) {
-    		return ZAWARenderUtils.none;
+    		return texturechild;
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());

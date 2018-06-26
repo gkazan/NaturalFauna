@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelCourser;
@@ -31,7 +30,7 @@ public class RenderCourser extends RenderLivingZAWA<EntityCourser> {
     protected ResourceLocation getEntityTexture(EntityCourser entity)
     {
     	if(entity.isChild()) {
-    		return ZAWARenderUtils.none;
+    		return texturechild;
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());

@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelGreySeal;
@@ -25,12 +24,7 @@ public class RenderGreySeal extends RenderLivingZAWA<EntityGreySeal> {
 
     protected ResourceLocation getEntityTexture(EntityGreySeal entity)
     {
-    	if(entity.isChild()) {
-    		return ZAWARenderUtils.none;
-    	}
-    	else {
     		return getTextureOfVar(entity.getAnimalType());
-    	}
     }
 
 	@Override

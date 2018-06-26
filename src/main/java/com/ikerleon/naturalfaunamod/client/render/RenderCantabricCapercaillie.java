@@ -1,22 +1,17 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.entity.data.Gender;
+import org.zawamod.entity.core.Gender;
 import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.client.model.ModelCantabricCapercaillieCelo;
-import com.ikerleon.naturalfaunamod.client.model.ModelPuffin;
 import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
-import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
-import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.layers.LayerCape;
-import net.minecraft.client.renderer.entity.layers.LayerLlamaDecor;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
@@ -28,7 +23,8 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/capercaillie/texture.png");
 	public static final ResourceLocation textureFemale = new ResourceLocation(NFReference.MOD_ID, "textures/entity/capercaillie/texturefemale.png"); 
-
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/capercaillie/texturechild.png"); 
+	
 	public RenderCantabricCapercaillie(RenderManager rm) {
 		super(rm, new ModelCantabricCapercaillie(), 0.4F);
 		this.addLayer(new LayerCantabricCapercaillie(this));
@@ -36,8 +32,11 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	
 	protected ResourceLocation getEntityTexture(EntityCantabricCapercaillie entity)
     {
-    	if((entity.getStatus() != EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL) || (entity.getGender()==Gender.FEMALE)) {
+    	if((entity.getStatus() != EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL) || (entity.getGender()==Gender.FEMALE && entity.isChild()==false)) {
     		return ZAWARenderUtils.none;
+    	}
+    	else if(entity.isChild()) {
+    		return texturechild;
     	}
     	else {
             return getTextureOfVar(entity.getAnimalType());
@@ -68,7 +67,7 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	  
 	  public void doRenderLayer(EntityCantabricCapercaillie kat, float f, float f1, float f2, float f3, float f4, float f5, float f6)
 	  {
-	    if (!kat.isInvisible())
+	    if (!kat.isInvisible() && kat.isChild()==false)
 	    {
 	      if (kat.getStatus() == EntityCantabricCapercaillie.CantabricCapercaillieState.CELO) {
 	        this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));

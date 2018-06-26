@@ -1,42 +1,37 @@
 package com.ikerleon.naturalfaunamod.entity;
 
 import org.zawamod.entity.ai.EntityAIAttackEnts;
-import org.zawamod.entity.base.ZAWABaseLand;
-import org.zawamod.entity.data.AnimalData.EnumNature;
+import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.land.EntityAmurLeopard;
-import org.zawamod.entity.land.EntityBlackRhinoceros;
-import org.zawamod.entity.land.EntityGrevysZebra;
 import org.zawamod.entity.land.EntityMeerkat;
-import org.zawamod.entity.land.EntityNileHippo;
-import org.zawamod.entity.land.EntityReticulatedGiraffe;
-import org.zawamod.entity.data.BreedItems;
+import org.zawamod.entity.core.BreedItems;
+import org.zawamod.entity.core.Gender;
 import org.zawamod.init.ZAWAItems;
 
 import com.google.common.base.Predicate;
-import com.ikerleon.naturalfaunamod.entity.EntityLeopard.EntityLeopardAttack;
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIFollowParent;
-import net.minecraft.entity.ai.EntityAIHurtByTarget;
-import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityHyena extends EntityAmurLeopard {
 	
+	  private World world;
+	
 	public EntityHyena(World worldIn) {		
 		super(worldIn);
 		this.targetTasks.addTask(4, new EntityAIAttackEnts(this, EntityLiving.class, false, new EntityHyenaAttack(this)));
+        this.world=worldIn;
 	}
 	
 	public class EntityHyenaAttack
@@ -63,6 +58,31 @@ public class EntityHyena extends EntityAmurLeopard {
 	public int setVariants() {
 		return 5;
 	}
+	
+	@Override
+	protected SoundEvent getAmbientSound()
+	{
+		long i = world.getWorldTime();
+		
+	    if((i>=14000)) {
+	    	return SoundHandler.HYENA_LIVING;
+	    }
+	    else {
+	    	return null;
+	    }
+	}
+	
+	@Override
+	protected SoundEvent getHurtSound(DamageSource s)
+	{
+	    return SoundHandler.HYENA_HURT;
+	}
+	
+	@Override
+    protected SoundEvent getDeathSound()
+    {
+        return SoundHandler.HYENA_DEATH;
+    }
 	
 	@Override
 	public boolean isFoodItem(ItemStack stack) {

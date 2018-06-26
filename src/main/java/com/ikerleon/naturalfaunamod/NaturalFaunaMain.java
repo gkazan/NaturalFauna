@@ -1,10 +1,8 @@
 package com.ikerleon.naturalfaunamod;
 
-import org.zawamod.ZAWAAddon;
-import org.zawamod.ZAWAAddonHandler;
+import org.zawamod.addon.*;
 import org.zawamod.entity.base.ZAWABaseLand;
 
-import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 import com.ikerleon.naturalfaunamod.proxies.CommonProxy;
 

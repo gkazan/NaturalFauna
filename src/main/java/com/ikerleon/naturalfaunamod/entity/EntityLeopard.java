@@ -3,8 +3,8 @@ package com.ikerleon.naturalfaunamod.entity;
 import java.util.Random;
 
 import org.zawamod.entity.ai.EntityAIAttackEnts;
-import org.zawamod.entity.data.AnimalData.EnumNature;
-import org.zawamod.entity.data.BreedItems;
+import org.zawamod.entity.core.AnimalData.EnumNature;
+import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.land.EntityAmurLeopard;
 import org.zawamod.entity.land.EntityBlackRhinoceros;
 import org.zawamod.entity.land.EntityGrevysZebra;

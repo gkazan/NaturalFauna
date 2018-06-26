@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
@@ -88,7 +89,13 @@ public class ModelBarbaryLionFemale extends ModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+        float scaleFactor= 1.3F;
+    	
+    	GlStateManager.pushMatrix();
+    	GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
+    	GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
         this.shape1.render(f5);
+        GlStateManager.popMatrix();
     }
     
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) 

@@ -2,7 +2,7 @@
 bin
 *.launch
 .settings
-.metadata
+.metacore
 .classpath
 .project
 

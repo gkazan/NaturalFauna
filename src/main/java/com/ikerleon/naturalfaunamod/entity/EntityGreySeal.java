@@ -1,7 +1,7 @@
 package com.ikerleon.naturalfaunamod.entity;
 
-import org.zawamod.entity.data.AnimalData.EnumNature;
-import org.zawamod.entity.data.BreedItems;
+import org.zawamod.entity.core.AnimalData.EnumNature;
+import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.water.EntityPacificWalrus;
 import org.zawamod.init.ZAWAItems;
 

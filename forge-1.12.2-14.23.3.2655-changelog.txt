@@ -111,7 +111,7 @@ Build 1.12.2-14.23.2.2634:
 
 Build 1.12.2-14.23.2.2633:
 	malte0811:
-		Fix NBT data loss when shift-clicking stacked items in the enchantment
+		Fix NBT core loss when shift-clicking stacked items in the enchantment
 		table (MC-17431) (#4817)
 
 Build 1.12.2-14.23.2.2632:
@@ -180,7 +180,7 @@ Build 1.12.2-14.23.2.2617:
 	bs2609: Maintain deterministic order in deserialised Forge blockstates (#4748)
 
 Build 1.12.2-14.23.2.2616:
-	goto.minecraft: Add function to BufferBuilder to directly insert byte data. Closes #4722
+	goto.minecraft: Add function to BufferBuilder to directly insert byte core. Closes #4722
 
 Build 1.12.2-14.23.2.2615:
 	bs2609: Clean up some GUI code and change magic numbers to GL constants (#4734)
@@ -303,14 +303,14 @@ Build 1.12.2-14.23.1.2589:
 
 Build 1.11.2-13.20.1.2588:
 	bs2609:
-		[1.11] Fix dormant chunk cache allowing entity data to be overwritten
+		[1.11] Fix dormant chunk cache allowing entity core to be overwritten
 		(#4672)
 
 Build 1.12.2-14.23.1.2587:
-	bs2609: Fix dormant chunk cache allowing entity data to be overwritten (#4528)
+	bs2609: Fix dormant chunk cache allowing entity core to be overwritten (#4528)
 
 Build 1.12.2-14.23.1.2586:
-	bs2609: Fix dimension data not being saved (#4667)
+	bs2609: Fix dimension core not being saved (#4667)
 
 Build 1.12.2-14.23.1.2585:
 	bartek.bok: Don't copy state from variant to multi-part model (#4629)
@@ -570,7 +570,7 @@ Build 1.12.2-14.23.0.2523:
 
 Build 1.12.2-14.23.0.2522:
 	bs2609: Recalculate chunk height map minimum on load (#4453)
-	bs2609: Fix killing blow causing combat tracker to lose data (MC-121048) (#4452)
+	bs2609: Fix killing blow causing combat tracker to lose core (MC-121048) (#4452)
 
 Build 1.12.2-14.23.0.2521:
 	bs2609: Improve performance of inserting into inventory wrappers (#4468)
@@ -584,7 +584,7 @@ Build 1.12.2-14.23.0.2520:
 		#4474
 
 Build 1.12.2-14.23.0.2519:
-	bs2609: Add caching of data for flat lighting (#4358)
+	bs2609: Add caching of core for flat lighting (#4358)
 
 Build 1.12.2-14.23.0.2518:
 	bs2609:
@@ -604,7 +604,7 @@ Build 1.12.2-14.23.0.2514:
 	mincrmatt12: [1.12.x] [Animation API] Add rotation origin variable (#4466)
 
 Build 1.11.2-13.20.1.2513:
-	bs2609: Save/restore dormant chunk entity data from NBT (#3940)
+	bs2609: Save/restore dormant chunk entity core from NBT (#3940)
 
 Build 1.12.2-14.23.0.2512:
 	bs2609: Fix some warnings produced by test mods (#4456)
@@ -662,10 +662,10 @@ Build 1.12.2-14.23.0.2498:
 	bs2609:
 		Improve performance of vertex format mapping by caching hashcodes
 		(#4370)
-	bs2609: Fix some chunk data packets being created unnecessarily (#4414)
+	bs2609: Fix some chunk core packets being created unnecessarily (#4414)
 
 Build 1.12.2-14.23.0.2497:
-	bs2609: Store entity data for dormant chunks using NBT (#4162)
+	bs2609: Store entity core for dormant chunks using NBT (#4162)
 
 Build 1.12.2-14.23.0.2496:
 	williewillus:
@@ -776,7 +776,7 @@ Build 1.12.1-14.22.0.2472:
 	dualspiral: Insert FML handler before Vanilla connection handshake completes (#4380)
 
 Build 1.12.1-14.22.0.2471:
-	williewillus: Fix vanilla map pixel data being used in various places (#4068)
+	williewillus: Fix vanilla map pixel core being used in various places (#4068)
 	bs2609: Adjust float (un)packing functions to be slightly more accurate (#4316)
 	marvinroesch99:
 		Add support instructions to be displayed when creating an issue on
@@ -807,7 +807,7 @@ Build 1.12.1-14.22.0.2466:
 		FieldWrapper.MapWrapper (#4334)
 
 Build 1.12.1-14.22.0.2465:
-	LexManos: Fix issue saving observers using different metadata then vanilla.
+	LexManos: Fix issue saving observers using different metacore then vanilla.
 
 Build 1.12.1-14.22.0.2464:
 	Barteks2x: Fix netty warning spam when sending >1MB packets (#4363)
@@ -1038,7 +1038,7 @@ Build 1.12-14.21.1.2412:
 Build 1.12-14.21.1.2411:
 	LexManos: Fire recipe registry event after json recipes are loaded.
 	LexManos:
-		Send remap event when data is frozen to notify modders to bake things.
+		Send remap event when core is frozen to notify modders to bake things.
 		Fixes search not working when connecting to vanilla servers.
 
 Build 1.12-14.21.1.2410:
@@ -1280,7 +1280,7 @@ Build 1.12-14.21.0.2350:
 	tterrag1098: Make ForgeRegistry iterator sorted. Closes #4058 (#4059)
 
 Build 1.12-14.21.0.2349:
-	LexManos: Loosen up registry locks until data freeze.
+	LexManos: Loosen up registry locks until core freeze.
 
 Build 1.12-14.21.0.2348:
 	LexManos:
@@ -1308,7 +1308,7 @@ Build 1.12-14.21.0.2348:
 		register custom things needed before the construction of blocks or items
 		such as Fluids. TODO: Move Fluids to a real registry. @ObjectHolder can
 		now be used on private fields. Reworked FMLModIdMappingEvent to include
-		data for all registries. Tile Entities are now registrable.
+		core for all registries. Tile Entities are now registrable.
 	LexManos: Fixup some registry tests, dummies are now persisted across syncing.
 	LexManos:
 		Disable substitution test, substitutions are not managed the way they
@@ -1392,7 +1392,7 @@ Build 1.12-14.21.0.2332:
 
 Build 1.12-14.21.0.2331:
 	LexManos:
-		Filter any recipe starting with _, Such names are reserved for metadata.
+		Filter any recipe starting with _, Such names are reserved for metacore.
 		Actually implement conditions for recipes.
 
 Build 1.12-14.21.0.2330:
@@ -1443,7 +1443,7 @@ Build 1.11.2-13.20.0.2314:
 	Choonster.2010: Fix IItemHandler wrappers returned by EntityLivingBase (#3942)
 
 Build 1.11.2-13.20.0.2313:
-	mezz: Fix getShareTag replacing data on the server (#3776) Closes #3682
+	mezz: Fix getShareTag replacing core on the server (#3776) Closes #3682
 
 Build 1.11.2-13.20.0.2312:
 	LexManos:
@@ -2087,9 +2087,9 @@ Build 1.11-13.19.0.2186:
 		Properly filter out annotations that are for multiple mods in the same
 		mod source. This prevents disabled mods from getting their proxies
 		injected. Also prevents mods from getting their proxies injected
-		multiple times. Effects the @EventBusSubscriber, @Instance, @Metadata,
+		multiple times. Effects the @EventBusSubscriber, @Instance, @Metacore,
 		@SidedProxy annotations. If the target modid is not in the annotation
-		data, and there are multiple mods in the source, it will attempt to find
+		core, and there are multiple mods in the source, it will attempt to find
 		it by matching the annotations's class names. This is a potentially
 		breaking change. Review your logs for "skipping" messages.
 
@@ -2210,7 +2210,7 @@ Build 1.11-13.19.0.2169:
 
 Build 1.11-13.19.0.2168:
 	LexManos:
-		First pass at exposing data fixers to modders. Each mod gets its own
+		First pass at exposing core fixers to modders. Each mod gets its own
 		version number, mods SHOULD NOT rely on other mod's fixers, just care
 		about yourself. Walkers can use IDataFixerData to retrieve their
 		version.
@@ -2694,7 +2694,7 @@ Build 1.10.2-12.18.1.2056:
 Build 1.10.2-12.18.1.2055:
 	florian:
 		Make InventoryHelper#spawnItemStack use ItemStack#splitStack to avoid
-		losing capability data. (#3163)
+		losing capability core. (#3163)
 
 Build 1.10.2-12.18.1.2054:
 	sebastian:
@@ -3080,7 +3080,7 @@ Build 1.9.4-12.17.0.1975:
 	shadowfacts: Fix broken EntityItem merging for Items with capabilities
 	diesieben07:
 		Make ASMDataTable more useful: (#2911)
-		- EnumHolder now has getters for it's data
+		- EnumHolder now has getters for it's core
 		- enum arrays work now
 		- nested annotations work now outside of being in arrays
 		(cherry picked from commit f10f750)
@@ -3088,7 +3088,7 @@ Build 1.9.4-12.17.0.1975:
 Build 1.9.4-12.17.0.1974-1.9.4:
 	diesieben07:
 		Make ASMDataTable more useful: (#2911)
-		- EnumHolder now has getters for it's data
+		- EnumHolder now has getters for it's core
 		- enum arrays work now
 		- nested annotations work now outside of being in arrays
 
@@ -3124,7 +3124,7 @@ Build 1.9.4-12.17.0.1964:
 
 Build 1.9.4-12.17.0.1963:
 	mezz:
-		Fix #2961 Capability data is not preserved by fluid handler interactions
+		Fix #2961 Capability core is not preserved by fluid handler interactions
 		(#2976)
 
 Build 1.9.4-12.17.0.1962:
@@ -3262,7 +3262,7 @@ Build 1.9.4-12.17.0.1937:
 		Entities are now packed in the ChunkData packet. Forge intends to work
 		around this to better support large moded worlds, but for the time being
 		modders should implement the new function carefully and only send what
-		data they need to! Minecraft's codebase now has annotations, these are
+		core they need to! Minecraft's codebase now has annotations, these are
 		directly from Mojang and should be adheared to! Added support for
 		package-info.java's containing @Nullable information for all MC code
 		base.
@@ -3295,7 +3295,7 @@ Build 1.9.4-12.17.0.1937:
 		Make unit test for EnumHelper more robust and less spammy. Now detects
 		missing accessors as well.
 	the.f1repl4ce: Switch new constructor to use floats (#2904)
-	tterrag1098: Add hook for TE data sync on client (#2893)
+	tterrag1098: Add hook for TE core sync on client (#2893)
 	cpw:
 		Strip Optional from the class signature as well, since that's loaded by
 		the TypeToken registry code and might cause a crash.
@@ -3425,7 +3425,7 @@ Build 1.9-12.16.1.1923:
 	shadowfacts: Pass the correct position into isSideSolid in BlockRailBase#canPlaceBlockAt (#2919)
 
 Build 1.9.4-12.17.0.1922-1.9.4:
-	tterrag1098: Add hook for TE data sync on client (#2893)
+	tterrag1098: Add hook for TE core sync on client (#2893)
 
 Build 1.9.4-12.17.0.1921-1.9.4:
 	the.f1repl4ce: Switch new constructor to use floats (#2904)
@@ -4566,7 +4566,7 @@ Build 1.8.9-11.15.1.1750:
 		Capture getLightOpacity prior to removing the tile entity.
 
 Build 1.8.9-11.15.1.1749:
-	LexManos: Fix loading of world ID maps for worlds without dummy data. Closes #2477
+	LexManos: Fix loading of world ID maps for worlds without dummy core. Closes #2477
 
 Build 1.8.9-11.15.1.1748:
 	bernhard.bonigl: Fix customized bucket names not getting translated correctly
@@ -4890,7 +4890,7 @@ Build 1.8.9-11.15.0.1687:
 	fry: Added progress bar for the ModelLoader.
 
 Build 1.8.9-11.15.0.1686:
-	fry: Model loader improvements: adding custom data/textures to models that don't need them doesn't cause a error now, since it's common to put those in the defaults section of the blockstate json; you can get IModel associated with the variant now - using ModelLoaderRegistry.getModel; MultiLayerModel should now respect transformations applied to it, and respect part transformations.
+	fry: Model loader improvements: adding custom core/textures to models that don't need them doesn't cause a error now, since it's common to put those in the defaults section of the blockstate json; you can get IModel associated with the variant now - using ModelLoaderRegistry.getModel; MultiLayerModel should now respect transformations applied to it, and respect part transformations.
 	fry: Derp.
 
 Build 1.8.9-11.15.0.1684:
@@ -5140,7 +5140,7 @@ Build 1.8.8-11.15.0.1655:
 	fry: Forge pipeline will now take original model lightmap into account, if present.
 	fry: Delayed quad list resolution in MultiModel, fixes NPE in MultiLayerModel.
 	fry: LightUtil.pack and .unpack now work correctly with unpacked arrays of size <4.
-	fry: Fix dependency resolution for models with custom data/textures.
+	fry: Fix dependency resolution for models with custom core/textures.
 	jadran.kotnik: Fix client side commands adding parts of the color codes on autocomplete (prefix "7" and suffix "r").
 	fry: Fixed NPE caused by accessing undefined layer in MultiLayerModel.
 	bernhard.bonigl:
@@ -5157,7 +5157,7 @@ Build 1.8.8-11.15.0.1655:
 	cpw: Fix up persistent substitution. Should close #2259
 	cpw:
 		Blocks are no longer erased from the registry if the mod isn't present. This means that modded blocks can potentially retain their IDs
-		even if they are temporarily not present in the game. Currently TileEntity data associated with the block is erased.
+		even if they are temporarily not present in the game. Currently TileEntity core associated with the block is erased.
 	cpw: Try and fix registry NPE when substitution is active.
 	cpw: Capture ItemBlock remaps.
 	cpw: Actually use the delegate for the itemblock
@@ -5210,7 +5210,7 @@ Build 1.8.8-11.15.0.1644-1.8.8:
 Build 1.8.8-11.15.0.1643-1.8.8:
 	cpw:
 		Blocks are no longer erased from the registry if the mod isn't present. This means that modded blocks can potentially retain their IDs
-		even if they are temporarily not present in the game. Currently TileEntity data associated with the block is erased.
+		even if they are temporarily not present in the game. Currently TileEntity core associated with the block is erased.
 
 Build 1.8.8-11.15.0.1642-1.8.8:
 	cpw: Fix up persistent substitution. Should close #2259
@@ -5241,7 +5241,7 @@ Build 1.8.8-11.15.0.1636-1.8.8:
 	jadran.kotnik: Fix client side commands adding parts of the color codes on autocomplete (prefix "7" and suffix "r").
 
 Build 1.8.8-11.15.0.1635-1.8.8:
-	fry: Fix dependency resolution for models with custom data/textures.
+	fry: Fix dependency resolution for models with custom core/textures.
 
 Build 1.8.8-11.15.0.1634-1.8.8:
 	fry: LightUtil.pack and .unpack now work correctly with unpacked arrays of size <4.
@@ -5633,7 +5633,7 @@ Build 1.8-11.14.3.1524:
 Build 1.8-11.14.3.1523:
 	fry:
 		Model pipeline system.
-		Should replace all ad-hoc quad generation methods in forge, and make IBakedModel -> WorldRenderer data transfer faster. Added IVertexConsumer + helper classes; lighting that works correctly for non-axis-aligned faces using the new infrastructure. Changed smooth lighting algorithm, now it should work correctly for everything.
+		Should replace all ad-hoc quad generation methods in forge, and make IBakedModel -> WorldRenderer core transfer faster. Added IVertexConsumer + helper classes; lighting that works correctly for non-axis-aligned faces using the new infrastructure. Changed smooth lighting algorithm, now it should work correctly for everything.
 		New block lighter can be disabled in the forge config options.
 	fry: Added back in the lost class
 
@@ -5820,7 +5820,7 @@ Build 1.7.10-10.13.4.1481-1.7.10:
 	cpw: ObjectHolder works great, but it should be a lot less spammy about failed lookups. They're usually mod options.
 
 Build 1.8-11.14.3.1480:
-	LexManos: More descripotive error if Patcher is passed invalid data for vanilla classes.
+	LexManos: More descripotive error if Patcher is passed invalid core for vanilla classes.
 
 Build 1.8-11.14.3.1479:
 	fry: Fixed perspective transformations for item models.
@@ -5881,7 +5881,7 @@ Build 1.8-11.14.3.1468:
 		New system in EntityRegistry to allow modders to register spawn eggs.
 		For entites that do not use the global ID system.
 		{Which no mod entity should}
-		Vanilla spawn eggs will now detect a 'entity_name' entry in it's NBT data and use that for spawning/rendering.
+		Vanilla spawn eggs will now detect a 'entity_name' entry in it's NBT core and use that for spawning/rendering.
 
 Build 1.8-11.14.3.1467:
 	foka_12: Change permission levels on ore recipes parameters
@@ -5938,7 +5938,7 @@ Build 1.7.10-10.13.4.1456-1.7.10:
 		
 		Fixes #1747
 		
-		If the dat file isn't in the dimension specific folder but is present in the vanilla data folder then copy it over.
+		If the dat file isn't in the dimension specific folder but is present in the vanilla core folder then copy it over.
 	LexManos: Make FML Gui classes use GlStateManager. Closes FML#615
 	LexManos: Fixed Wavefront Object Importer reading files with integer values. Closes #1651, #1654
 
@@ -5958,7 +5958,7 @@ Build 1.8-11.14.3.1450:
 	LexManos: Quiet ClassPatchManager debug spam by default. Reenable using -Dfml.debugClassPatchManager=true.
 	LexManos: Quiet FMLControlledNamespacedRegistry debug spam by default. Reenable using -Dfml.debugRegistryEntries=true.
 	LexManos: Quiet CrashReport class pre-loading debug, no flag to re-enable.
-	LexManos: Cleanup mod signature data table. Easily seperating those mods with signatures vs those with none.
+	LexManos: Cleanup mod signature core table. Easily seperating those mods with signatures vs those with none.
 	LexManos: Cleanup mod state dump to be easier to read by displaying the states in abreviation and placing them before the mod info.
 
 Build 1.8-11.14.3.1449:
@@ -5972,7 +5972,7 @@ Build 1.7.10-10.13.4.1447-1.7.10:
 	LexManos: Quiet ClassPatchManager debug spam by default. Reenable using -Dfml.debugClassPatchManager=true.
 	LexManos: Quiet FMLControlledNamespacedRegistry debug spam by default. Reenable using -Dfml.debugRegistryEntries=true.
 	LexManos: Quiet CrashReport class pre-loading debug, no flag to re-enable.
-	LexManos: Cleanup mod signature data table. Easily seperating those mods with signatures vs those with none.
+	LexManos: Cleanup mod signature core table. Easily seperating those mods with signatures vs those with none.
 
 Build 1.8-11.14.3.1446:
 	LexManos: Copy over parent's modelSet value in variants as well.
@@ -6187,7 +6187,7 @@ Build 1.8-11.14.2.1421:
 		
 		Signed-off-by: King Lemming <kinglemming@gmail.com>
 	cpw:
-		Fixed NBTSizeTracker missing a lot of data being read. Also made new NBT object allocation claim 32-bits in the size tracker.
+		Fixed NBTSizeTracker missing a lot of core being read. Also made new NBT object allocation claim 32-bits in the size tracker.
 		
 		(cherry picked from commit de066a86da281d381b0e3ab9e83682720327049c)
 		
@@ -6462,7 +6462,7 @@ Build 1.7.10-10.13.3.1377-1.7.10:
 
 Build 1.7.10-10.13.3.1376-1.7.10:
 	cpw:
-		Fixed NBTSizeTracker missing a lot of data being read. Also made new NBT object allocation claim 32-bits in the size tracker.
+		Fixed NBTSizeTracker missing a lot of core being read. Also made new NBT object allocation claim 32-bits in the size tracker.
 		
 		(cherry picked from commit de066a86da281d381b0e3ab9e83682720327049c)
 		
@@ -6471,7 +6471,7 @@ Build 1.7.10-10.13.3.1376-1.7.10:
 			patches/minecraft/net/minecraft/nbt/NBTTagList.java.patch
 
 Build 1.8-11.14.1.1375:
-	LexManos: Fixed NBTSizeTracker missing a lot of data being read. Also made new NBT object allocation claim 32-bits in the size tracker.
+	LexManos: Fixed NBTSizeTracker missing a lot of core being read. Also made new NBT object allocation claim 32-bits in the size tracker.
 
 Build 1.7.10-10.13.3.1374-1.7.10:
 	kinglemming:
@@ -6645,7 +6645,7 @@ Build 1.8-11.14.1.1350:
 		MinecraftForge/FML@c6bbd0e82de3d8f7993d70aa7be3f883b3afbc47 Forgot that I need a noarg ctor. I'm so rusty.
 		MinecraftForge/FML@6edc1635de163c41b6b5dfe02bee13d6a9c5aa4d Need to load the dimension from disk - do it without filling out the player so that the normal player loading (including events) works properly
 	cpw:
-		MinecraftForge/FML@4ca6f6e19f3c3147fcf48c58669f55478a9a1345 What a dumb oversight. One needs to copy the active substitution set to the active gamedata. Doesn't work well otherwise.
+		MinecraftForge/FML@4ca6f6e19f3c3147fcf48c58669f55478a9a1345 What a dumb oversight. One needs to copy the active substitution set to the active gamecore. Doesn't work well otherwise.
 		MinecraftForge/FML@6f6cec96be73b4c94999cf60dc00741f3f3c2cc2 Substitutions need to be activated when they're registered, otherwise they won't appear in world, ever.
 		MinecraftForge/FML@13ac015f0c36b8e2091ae332c556be315429f4c8 Change iterator behaviour for the registry - include substitutions in the standard iterator, so that vanilla MC methods visit them (so they can get textures etc). The fml special one only visits the absolute set, used mostly for sanity checking and serialization.
 	LexManos:
@@ -6663,7 +6663,7 @@ Build 1.8-11.14.1.1350:
 		MinecraftForge/FML@6011419fa055c1375d05189f9bf0d86705c9c0ec Clean up my patch. Terrible person I am..
 		MinecraftForge/FML@c6bbd0e82de3d8f7993d70aa7be3f883b3afbc47 Forgot that I need a noarg ctor. I'm so rusty.
 		MinecraftForge/FML@6edc1635de163c41b6b5dfe02bee13d6a9c5aa4d Need to load the dimension from disk - do it without filling out the player so that the normal player loading (including events) works properly
-		MinecraftForge/FML@4ca6f6e19f3c3147fcf48c58669f55478a9a1345 What a dumb oversight. One needs to copy the active substitution set to the active gamedata. Doesn't work well otherwise.
+		MinecraftForge/FML@4ca6f6e19f3c3147fcf48c58669f55478a9a1345 What a dumb oversight. One needs to copy the active substitution set to the active gamecore. Doesn't work well otherwise.
 		MinecraftForge/FML@6f6cec96be73b4c94999cf60dc00741f3f3c2cc2 Substitutions need to be activated when they're registered, otherwise they won't appear in world, ever.
 		MinecraftForge/FML@13ac015f0c36b8e2091ae332c556be315429f4c8 Change iterator behaviour for the registry - include substitutions in the standard iterator, so that vanilla MC methods visit them (so they can get textures etc). The fml special one only visits the absolute set, used mostly for sanity checking and serialization.
 		MinecraftForge/FML@24cb4a42c4e4bddde95c0e49d1f8b8bcc20c626d Enhance output of common FML errors in crash reports and server GUI.
@@ -6713,7 +6713,7 @@ Build 1.7.10-10.13.2.1343-1.7.10:
 
 Build 1.7.10-10.13.2.1342-1.7.10:
 	cpw:
-		MinecraftForge/FML@4ca6f6e19f3c3147fcf48c58669f55478a9a1345 What a dumb oversight. One needs to copy the active substitution set to the active gamedata. Doesn't work well otherwise.
+		MinecraftForge/FML@4ca6f6e19f3c3147fcf48c58669f55478a9a1345 What a dumb oversight. One needs to copy the active substitution set to the active gamecore. Doesn't work well otherwise.
 		MinecraftForge/FML@6f6cec96be73b4c94999cf60dc00741f3f3c2cc2 Substitutions need to be activated when they're registered, otherwise they won't appear in world, ever.
 		MinecraftForge/FML@13ac015f0c36b8e2091ae332c556be315429f4c8 Change iterator behaviour for the registry - include substitutions in the standard iterator, so that vanilla MC methods visit them (so they can get textures etc). The fml special one only visits the absolute set, used mostly for sanity checking and serialization.
 
@@ -6852,7 +6852,7 @@ Build 1.8-11.14.1.1310:
 	fry: Updated FML
 
 Build 1.8-11.14.1.1309:
-	fry: fix ModelLoader.setCustomModelResourceLocation not storing same item with different metadata values
+	fry: fix ModelLoader.setCustomModelResourceLocation not storing same item with different metacore values
 
 Build 1.8-11.14.1.1308:
 	LexManos: Fixed debugging Dedicated server in Forge Dev workspace.
@@ -6888,7 +6888,7 @@ Build 1.8-11.14.0.1299:
 
 Build 1.8-11.14.0.1298:
 	LexManos: Fixed ItemFrames not having a model. Closes #1678
-	LexManos: Updated FML: MinecraftForge/FML@22c9656196dbbea8ed983663d536c3ca272d7282 Reset S->C CustomPayload data after Write, allowing the same packet to be written multiple times.
+	LexManos: Updated FML: MinecraftForge/FML@22c9656196dbbea8ed983663d536c3ca272d7282 Reset S->C CustomPayload core after Write, allowing the same packet to be written multiple times.
 
 Build 1.8-11.14.0.1297:
 	LexManos: Fixed domain support in ArmorMaterial texture name. Closes #1675
@@ -6905,7 +6905,7 @@ Build 1.8-11.14.0.1296:
 		Fluid Rendering has been disabled for the time being, to be re-evaulated and a test mod created for it.
 		Minecraft now uses a Model based system for rendering blocks and Items. The intention is to expand the model format to better suit modder's needed once it is evaulated.
 		As such, The model loaders from Forge have been removed, to be replaced by expanding vanilla's model format.
-		Metadata has been extracted out in Minecraft to IBlockState, which holds a list of properties instead of magic number metadata. DO NOT listen to the fearmongering, you can do EVERYTHING with block states you could previously with metadata.
+		Metacore has been extracted out in Minecraft to IBlockState, which holds a list of properties instead of magic number metacore. DO NOT listen to the fearmongering, you can do EVERYTHING with block states you could previously with metacore.
 		Stencil Bits are disabled entirely by for the main Display, Modders must enable and recreate the FrameBuffer if they wish to use Stencil Bits.
 	LexManos: Fix local variable conflict in Forge patch and latest MCP mappings.
 	LexManos: Fix fog colors, Closes #1524
@@ -6949,7 +6949,7 @@ Build 1.8-11.14.0.1296:
 	LexManos: Add LivingHealEvent called from EntityLivingBase.heal()
 	LexManos: Added PotionBrewEvent.Pre/Post. To allow for modification and cancelation of Brewing.
 	LexManos: Add quartz_ore tool init, more mojang special casing -.-
-	LexManos: Changed ToolMaterial's repair material to ItemStack version to allow metadata sensitive versions.
+	LexManos: Changed ToolMaterial's repair material to ItemStack version to allow metacore sensitive versions.
 	LexManos: Improved Control of Enchantment.canApplyTogether() in Mod Enchantments, allowing both enchantments to determine if they can apply together.
 	LexManos: Expand PlayerWakupEvent to expose the three parameters passed into EntityPlayer.wakeUp.
 	LexManos: Unbind Shaped/Shapeless Ore Recipies from Array list to normal List.
@@ -6979,7 +6979,7 @@ Build 1.8-11.14.0.1296:
 	LexManos: Call World.init from DimensionManager.initDimension Closes #1551
 	LexManos: Made Chunk.fillBlock respect TileEntity.shouldRefresh.
 	LexManos: Fix value passed for Item.getModel useRemaining argument. Closes #1623
-	LexManos: Silently eat exceptions when getting a TE's rendering bounding box, this 'fixes' Bukkit servers screwing up world data and causing clients to crash.
+	LexManos: Silently eat exceptions when getting a TE's rendering bounding box, this 'fixes' Bukkit servers screwing up world core and causing clients to crash.
 	jadran.kotnik: Fixed NPE when canceling ClientChatRecievedEvent. Fixes #1644
 	Parker Young: Re-enabled Icon setting for Fluids
 	LexManos:
@@ -7065,7 +7065,7 @@ Build 1.7.10-10.13.2.1291:
 	lukastenbrink:
 		Fix fluid tanks incorrectly reading NBT when empty
 		
-		If the Empty flag was set, the tank would not correctly read the data, keeping the outdated FluidStack instead. This is especially relevant with updatable TileFluidHandler TEs.
+		If the Empty flag was set, the tank would not correctly read the core, keeping the outdated FluidStack instead. This is especially relevant with upcoreble TileFluidHandler TEs.
 
 Build 1.8-11.14.0.1290-1.8:
 	LexManos:
@@ -7081,7 +7081,7 @@ Build 1.8-11.14.0.1288-1.8:
 	jadran.kotnik: Fixed NPE when canceling ClientChatRecievedEvent. Fixes #1644
 
 Build 1.8-11.14.0.1287-1.8:
-	LexManos: Silently eat exceptions when getting a TE's rendering bounding box, this 'fixes' Bukkit servers screwing up world data and causing clients to crash.
+	LexManos: Silently eat exceptions when getting a TE's rendering bounding box, this 'fixes' Bukkit servers screwing up world core and causing clients to crash.
 
 Build 1.7.10-10.13.2.1286:
 	asiekierka: fix shouldRefresh being too broad in tile entity update
@@ -7176,14 +7176,14 @@ Build 1.8-11.14.0.1261-1.8:
 
 Build 1.8-11.14.0.1259-1.8:
 	LexManos: Add quartz_ore tool init, more mojang special casing -.-
-	LexManos: Changed ToolMaterial's repair material to ItemStack version to allow metadata sensitive versions.
+	LexManos: Changed ToolMaterial's repair material to ItemStack version to allow metacore sensitive versions.
 	LexManos: Improved Control of Enchantment.canApplyTogether() in Mod Enchantments, allowing both enchantments to determine if they can apply together.
 	LexManos: Expand PlayerWakupEvent to expose the three parameters passed into EntityPlayer.wakeUp.
 
 Build 1.7.10-10.13.2.1258:
 	LexManos: Add quartz_ore tool init, more mojang special casing -.- Closes #1333 and Closes #1335
 	LexManos: Fix invalid argument being passed to Block.isNormalCube from World.updateNeighbors. Closes #1339 and Closes #1346
-	LexManos: Changed ToolMaterial's repair material to ItemStack version to allow metadata sensitive versions. Closes #1355
+	LexManos: Changed ToolMaterial's repair material to ItemStack version to allow metacore sensitive versions. Closes #1355
 	LexManos: Improved Control of Enchantment.canApplyTogether() in Mod Enchantments, allowing both enchantments to determine if they can apply together. Closes #1434
 	LexManos: Expand PlayerWakupEvent to expose the three parameters passed into EntityPlayer.wakeUp. Closes #1486
 
@@ -7371,7 +7371,7 @@ Build 1.7.10-10.13.1.1219:
 		both PlaceEvent and MultiPlaceEvent in order to record a snapshot of block space before it is altered. This
 		allows us to restore the block(s) if an event is cancelled. The class also provides the ability to restore a snapshot
 		to any location using the restoreToLocation method. This should be helpful to many mods that are looking to be able
-		to capture block data then restore it to back to any location required.
+		to capture block core then restore it to back to any location required.
 
 Build 1.7.10-10.13.1.1217:
 	cpw:
@@ -7382,7 +7382,7 @@ Build 1.7.10-10.13.1.1217:
 		MinecraftForge/FML@a2908e5c596bb5502bf455d468d2b1ead0520f55 Clean up a bunch of compiler warnings.
 		MinecraftForge/FML@7f67523d870ae150071c67b002597542eb206725 Update realms to 1.3.2
 		MinecraftForge/FML@73f23c24b85240458f352f248e885684aaff4743 Merge branch 'std-redir' of github.com:Emberwalker/FML
-		MinecraftForge/FML@1c6b25df740a64c94d9ba05dd7e4412515abf5bb If an IO exception comes from the datawatcher, spew it all over the console don't discard it silently. Should stop pixelmon blaming forge for their mistakes.
+		MinecraftForge/FML@1c6b25df740a64c94d9ba05dd7e4412515abf5bb If an IO exception comes from the corewatcher, spew it all over the console don't discard it silently. Should stop pixelmon blaming forge for their mistakes.
 		MinecraftForge/FML@e77da9eb2f5c58a494ed100dd4c1dd1a0c341dbf And fix the read side too, incase someone is trying to bitbang and failing.
 		MinecraftForge/FML@305d8950c9332c7a7f290db05e6f18ef328016e2 Make LogContext optional. This can be useful for debugging mod issues, but Apache's implementation in log4j2 is responsible for a very significant % of the overall runtime. Quite frankly this is shockingly bad performance from what is supposed to be a high performance logging framework. Anyway, until we can figure out if we can fix it, we're turning it off by default.
 		MinecraftForge/FML@bdfca1c8ed463a6053526c7a46a990007711e3d0 Make more noise when people screw up mod downloading and put .jar.zip in their mod folders.
@@ -7491,7 +7491,7 @@ Build 1.7.10-10.13.0.1206:
 
 Build 1.7.10-10.13.0.1205:
 	cpw:
-		Attempt to properly resolve this daft metadata and TE nonsense. This might be mod impacting, if you maintain a reference to a TE via neighbour update calls - you
+		Attempt to properly resolve this daft metacore and TE nonsense. This might be mod impacting, if you maintain a reference to a TE via neighbour update calls - you
 		might see two TEs for a single setblock where previously you saw one. This is a phantom TE being created by badly written neighbour triggers - I'm looking at you
 		redstone.
 		
@@ -7519,7 +7519,7 @@ Build 1.7.10-10.13.0.1200:
 Build 1.7.10-10.13.0.1199:
 	vazkii: Fixed items with more than 2 render passes rendering weird in first person
 	LexManos: Fix patch screwup in Skyboy's Fishing PR -.-
-	LexManos: Fix metadata for every permutation -.- Closes #1294
+	LexManos: Fix metacore for every permutation -.- Closes #1294
 	t.tomkins:
 		Legacy Liquid Load Fix
 		
@@ -7614,7 +7614,7 @@ Build 1.7.10-10.13.0.1180:
 		Updated FML:
 		MinecraftForge/FML@ab52901b8b47a525e2719cf280327e97bad7f91e Force preferIPv4Stack to true early in the load chain to combat netty loopback issues.
 		MinecraftForge/FML@11893fbbb76569417a415ae794494b8c1150a716 Add system property to skip doing world backups when game registry changes. This is SEVERLY ill-advised, if you do this DO NOT ask for any support.
-		MinecraftForge/FML@fdb6b34b8fc3f1e0c6beb7bfb940a01a309f1603 Update authlib and realms to latest json data.
+		MinecraftForge/FML@fdb6b34b8fc3f1e0c6beb7bfb940a01a309f1603 Update authlib and realms to latest json core.
 		MinecraftForge/FML@b3a74882b4d0d704d7061b9d896febb59ab0c269 added slider controls for numerics. default control is textbox, but slider can be used as a custom list entry class. fixed constructor javadocs in GuiConfig
 		MinecraftForge/FML@7c6d1f7568885ff677e34692ff87b1f0826dfd48 Merge pull request #468 from bspkrs/master
 		MinecraftForge/FML@692d955c1a5b6d0b8601ae88632ef42136d37393 Update tweaker login to use authlib.
@@ -7661,7 +7661,7 @@ Build 1.7.10-10.13.0.1174:
 
 Build 1.7.10-10.13.0.1172:
 	LexManos: Made EmeraldOre respect isReplaceableOreGen. Closes #1157
-	LexManos: Added World to ChunkProviderEvent.ReplaceBiomeBlocks, and exposed metadata to End and Nether generation events. Close #1201
+	LexManos: Added World to ChunkProviderEvent.ReplaceBiomeBlocks, and exposed metacore to End and Nether generation events. Close #1201
 
 Build 1.7.10-10.13.0.1171:
 	tterrag1098:
@@ -7896,7 +7896,7 @@ Build 1.7.2-10.12.2.1123:
 		These two facts make it possible to offload chunks loaded for this reason
 		to another thread. However, not all parts of chunk loading can happen off
 		the main thread. For this we use the new AsynchronousExecutor system to
-		split chunk loading in to three pieces. The first is loading data from
+		split chunk loading in to three pieces. The first is loading core from
 		disk, decompressing it, and parsing it in to an NBT structure.  The second
 		piece is creating entities and tile entities in the chunk and adding them
 		to the world, this is still done on the main thread. The third piece is
@@ -7942,7 +7942,7 @@ Build 1.7.2-10.12.1.1119:
 	LexManos: Changed dustLapis to gemLapis to make OM SHUT THE HELL UP.
 
 Build 1.7.2-10.12.1.1118:
-	LexManos: Fixed missed metadata offset, and now cache return values of getOres for speed.
+	LexManos: Fixed missed metacore offset, and now cache return values of getOres for speed.
 
 Build 1.7.2-10.12.1.1117:
 	cojomax99: World fog color and density can now be controlled through an event
@@ -8067,7 +8067,7 @@ Build 1.7.2-10.12.1.1085:
 		Added deprecation to amountless constructors
 
 Build 1.7.2-10.12.1.1084:
-	LexManos: Fixed Stems not droping a random number of seeds based on metadata, Closes #1087
+	LexManos: Fixed Stems not droping a random number of seeds based on metacore, Closes #1087
 
 Build 1.7.2-10.12.1.1083:
 	xcompwiz:
@@ -8175,7 +8175,7 @@ Build 1.7.2-10.12.1.1065:
 		was inverted. While this is not a huge deal and could be worked around
 		by simply inverting your return value, it does mean its no longer
 		consistent with the function name and javadocs.
-	bioxx2007: Adds a new ReplaceBiomeBlocks Event constructor that supplies the metadata array if applicable and updates the ChunkProviderGenerate class to pass in the metadata array.
+	bioxx2007: Adds a new ReplaceBiomeBlocks Event constructor that supplies the metacore array if applicable and updates the ChunkProviderGenerate class to pass in the metacore array.
 
 Build 1.7.2-10.12.1.1061:
 	bspkrs: get a spelling checker :P
@@ -8250,7 +8250,7 @@ Build 1.7.2-10.12.0.1050:
 
 Build 1.7.2-10.12.0.1049:
 	LexManos: Add position to BreakSpeed event. Closes #621
-	LexManos: Advanced Model Loader available server-side for data driven models. To be cleanuped and re-evaluated in 1.8. Closes #773
+	LexManos: Advanced Model Loader available server-side for core driven models. To be cleanuped and re-evaluated in 1.8. Closes #773
 
 Build 1.7.2-10.12.0.1048:
 	Abrar Syed: COnverted patches to SRG names
@@ -8333,7 +8333,7 @@ Build 1.7.2-10.12.0.1028:
 	LexManos: Cull FakePlayers when worlds are unloaded.
 
 Build 1.7.2-10.12.0.1027:
-	LexManos: Use correct tag types when reading Forced Chunk data. Fixes ticket loading. Closes #964
+	LexManos: Use correct tag types when reading Forced Chunk core. Fixes ticket loading. Closes #964
 
 Build 1.7.2-10.12.0.1026:
 	LexManos: Fixed FluidContainerRegisry.contansFluid closes #845
@@ -8384,7 +8384,7 @@ Build 1.7.2-10.12.0.1017:
 	LexManos: Adds a WeatherRender in the style of SkyRender, Closes #844
 
 Build 1.7.2-10.12.0.1016:
-	LexManos: Move change of metadata to immediatly after change of Block, should prevent any 'invalid' tile entities from breaking created. Reference: #897
+	LexManos: Move change of metacore to immediatly after change of Block, should prevent any 'invalid' tile entities from breaking created. Reference: #897
 
 Build 1.7.2-10.12.0.1015:
 	LexManos: New PlayerUseItemEvents, Start, Stop, Tick and Finish. See PlayerUseItemEvent.java for more details. Closes #924
@@ -8408,7 +8408,7 @@ Build 1.7.2-10.12.0.1012:
 		MinecraftForge/FML@741e172ffe163f0dd3018e1474af46ef0696396a Log4j2 doesn't need debug level logging for itself anymore
 
 Build 1.7.2-10.12.0.1011:
-	Christian: MinecraftForge/FML@458b0620b43116c943549a0f060c7e8830c2d77a Log the bad packet in a prettier way. Also, don't show the authlib debug data in the log file.
+	Christian: MinecraftForge/FML@458b0620b43116c943549a0f060c7e8830c2d77a Log the bad packet in a prettier way. Also, don't show the authlib debug core in the log file.
 
 Build 1.7.2-10.12.0.1010:
 	LexManos: Add BookCloning to the recipe sorter.
@@ -8651,7 +8651,7 @@ Build 1.7.2-10.12.0.967:
 		MinecraftForge/FML@9c96a0a10a5cbe34786be8fd41f9818b5ac929bc More network stuff, partially done id syncing.
 		MinecraftForge/FML@2aaaeba15eabdec189daa8662e9ffdf0b5a09dbe ID loading from the server save now works.
 	LexManos: Kill liquids finally.
-	LexManos: Bump data for 1.7 start.
+	LexManos: Bump core for 1.7 start.
 	LexManos: Some work on 1.7, waiting for Abrar to fix a few things.
 	LexManos:
 		Updated FML:
@@ -8709,7 +8709,7 @@ Build 1.7.2-10.12.0.967:
 		Changed InitNoiseGensEvent to pass a NoiseGenerator array instead of
 		NoiseGeneratorOctaves due to new NoiseGeneratorPerlin in
 		ChunkProviderGenerate.
-		Fixed worldgen crash caused by wrong metadata in Chunk patch.
+		Fixed worldgen crash caused by wrong metacore in Chunk patch.
 	LexManos: Get object based on identity not name.
 	LexManos: Forge uses the FORGE channel for packets.
 	LexManos: Fix MethodNotFound crash when shutting down internal server.
@@ -8885,7 +8885,7 @@ Build 1.6.4-9.11.1.934:
 Build 1.6.4-9.11.1.933:
 	Christian:
 		Updated FML:
-		MinecraftForge/FML@da4337efbfa07b35f5883107768f9ba2f1b24b9b Fix up handling the new method signature data for NetworkCheckHandlers
+		MinecraftForge/FML@da4337efbfa07b35f5883107768f9ba2f1b24b9b Fix up handling the new method signature core for NetworkCheckHandlers
 
 Build 1.6.4-9.11.1.931:
 	Christian:
@@ -8990,7 +8990,7 @@ Build 1.6.4-9.11.0.905:
 	LexManos: Set densityDir in BlockFluidBase's constructor, closes #737
 
 Build 1.6.4-9.11.0.904:
-	LexManos: Fix placement of snow cover over metadata 6. Closes #724
+	LexManos: Fix placement of snow cover over metacore 6. Closes #724
 
 Build 1.6.4-9.11.0.903:
 	LexManos:
@@ -9114,7 +9114,7 @@ Build 1.6.3-9.11.0.877:
 		MinecraftForge/FML@82d896a35e08be5712bdc15bdb93e5d4fc0ddd46 Make final transformers actually work on methods as well.
 
 Build 1.6.3-9.11.0.876:
-	LexManos: Move the Structure data save files to per-world data folders. Vanilla saves them to the global folder which will potentially cause conflicts if two worlds generate 'Villages'. Which in the modded world is highly likely. Refer back to the long standing vanilla issue where nether 'villages' would override the overworlds villages, it's the same situation.
+	LexManos: Move the Structure core save files to per-world core folders. Vanilla saves them to the global folder which will potentially cause conflicts if two worlds generate 'Villages'. Which in the modded world is highly likely. Refer back to the long standing vanilla issue where nether 'villages' would override the overworlds villages, it's the same situation.
 
 Build 1.6.3-9.11.0.875:
 	LexManos: Make MapGenStructureIO name registration functions public, Any mod that has anything extending StructureStart or StructureComponent must register there classes and create a default (no parameter) constructor.
@@ -9131,7 +9131,7 @@ Build 1.6.3-9.11.0.873:
 		MinecraftForge/FML@e77d2547ad447025729ae7f3cccaaf343c4c86f9 Update for pre-ninja 1.6.3 update
 		MinecraftForge/FML@34493b0d99e2cf2bdca080ff226f2dfeedb1cf51 Update for real 1.6.3 update
 		MinecraftForge/FML@95afc95b248ecc69bc6ffcc5a95912820d8f4066 Update mcp mod info
-		MinecraftForge/FML@ff75416a325717770a5cf457c859bfb0abcbe281 Update mc_versions data and commands patch and eclipse workspace
+		MinecraftForge/FML@ff75416a325717770a5cf457c859bfb0abcbe281 Update mc_versions core and commands patch and eclipse workspace
 		MinecraftForge/FML@8f2e67558127f16d92399ea97cbcb0df46d52e19 Update the src distro's eclipse workspace.
 	LexManos: Bump version for new MC version.
 	LexManos: Actually push the submodule update -.-
@@ -9275,7 +9275,7 @@ Build 1.6.2-9.10.1.849:
 		Update forge for MCP naming updates
 		
 		Updated FML:
-		MinecraftForge/FML@d0c6e92900590f578b80d9a6c00fa28fd333d3bf Update MCP data
+		MinecraftForge/FML@d0c6e92900590f578b80d9a6c00fa28fd333d3bf Update MCP core
 	Christian: Update version to 9.10.1 for mcp naming changes.
 
 Build 1.6.2-9.10.0.848:
@@ -9410,7 +9410,7 @@ Build 1.6.2-9.10.0.819:
 Build 1.6.2-9.10.0.818:
 	LexManos:
 		Updated FML:
-		MinecraftForge/FML@f275a24b43559cfdced243ff77e9848c9d458362 Add in some reverse lookup methods for game registry data
+		MinecraftForge/FML@f275a24b43559cfdced243ff77e9848c9d458362 Add in some reverse lookup methods for game registry core
 		MinecraftForge/FML@cb05c8c4aa60a131de92f0a21c06697c8f8896a8 Add missing SideOnly in BaseMod
 		MinecraftForge/FML@1857064afa9ace796440c19f3275637a6e659375 Merge pull request #266 from grompe/patch-1
 		MinecraftForge/FML@182aa9c0cbe61ac69b0d428ead1dc817dd2a2e71 Fixed install.sh not passing arguments to install.py
@@ -9552,11 +9552,11 @@ Build 1.6.2-9.10.0.791:
 
 Build 1.6.2-9.10.0.790:
 	Adubbz:
-		Made eating particles compatible with metadata
+		Made eating particles compatible with metacore
 		
 		Removed extra spaces
 		
-		Made eating particles compatible with metadata
+		Made eating particles compatible with metacore
 	Christian:
 		Updated FML:
 		MinecraftForge/FML@e44e8b3112bd56c716a00c19d0be2f15d9128b70 Force a global asset scan prior to mod construction : you should be able to reference assets anywhere in your mod now.
@@ -9623,7 +9623,7 @@ Build 1.6.2-9.10.0.777:
 		Drop two domain related fixes that have been applied in vanilla.
 		
 		Updated FML:
-		MinecraftForge/FML@c47d08c89dfcacb96e36c427593174e08dcb4224 Tweak debug data on patched classes
+		MinecraftForge/FML@c47d08c89dfcacb96e36c427593174e08dcb4224 Tweak debug core on patched classes
 		MinecraftForge/FML@dbf5fe38cee04288e92d57f8782114b452245bce We now generate an adler32 checksum for each patched file and verify at load time that they match. Mismatch won't crash, but will emit a big warning..
 		MinecraftForge/FML@e88a0cd13f63904f7317e1a73880611f58820389 Update for stealth update. Thanks mojang!
 		MinecraftForge/FML@2336002f20e9412a7663781b23c51de0eff6a692 The game is going to exit in face of patch mismatch, unless you force it to run with fml.ignorePatchDiscrepancies in the system properties.
@@ -9642,7 +9642,7 @@ Build 1.6.1-8.9.0.775:
 		Updated FML:
 		MinecraftForge/FML@c97ac284a5e7dbdbccbad2f7ccc95252c4aef239 Update ModLoaderFuelHelper.java
 		MinecraftForge/FML@3a200e901e34ade679e4485307f57bee725bbe94 Fix coremod injection into main system. Should stop double-dipping coremods.
-		MinecraftForge/FML@2676c8999cbede05b5475ba68bfc25467a67d4fc Update mcp data. fixes #248
+		MinecraftForge/FML@2676c8999cbede05b5475ba68bfc25467a67d4fc Update mcp core. fixes #248
 		MinecraftForge/FML@5990e29af7b70e343dfd9cf38bb3e033e71a4489 Merge pull request #247 from jk-5/patch-1
 		MinecraftForge/FML@adc89722770b7319884619cadc6f10cc9050df24 Add cascadedTweaks. This will allow simple coexistence for any other mod framework using the tweaker system as well. Hi Voxel and LiteLoader!
 
@@ -9696,7 +9696,7 @@ Build 1.6.1-8.9.0.769-newliquid:
 		
 		Updated FML:
 		MinecraftForge/FML@22738de028a9ba51d43d73857dfb8969985566f0 Attempt to properly fix deadlock if the internal server derps. It should never hang now. Damn you fast computer..
-		MinecraftForge/FML@05a854cd2af53ca822ee8b249b0b3bbe44f94675 Small tweaks to the mcp data. Nothing major..
+		MinecraftForge/FML@05a854cd2af53ca822ee8b249b0b3bbe44f94675 Small tweaks to the mcp core. Nothing major..
 	mitchel.pyl: Fix tripwire patches for solid sides
 	LexManos: Added EntityLiving to Block.isLadder arguments, deperacating older version. New parameter has the possibility of being null, so modders must take care. Closes #608
 	LexManos: Add air checks to BlockSand falling and Piston pushing. Please report any other issues with custom 'Air' blocks in issue #602
@@ -9724,10 +9724,10 @@ Build 1.6.1-8.9.0.769-newliquid:
 		n, But I couldn't find an exact reference to this executable. I'm going to assume it under public domain and distribuiting it here is fine. If not someone pleas
 		e direct me to the apropriate license and I will act accordingly.
 		MinecraftForge/FML@70cfe24e67adf6872ef1501599e2115e420c2539 Fix wrong project name in distro eclipse launch.
-		MinecraftForge/FML@7a004087f79b94bc92f29d50eb71288b6c1c968c Add deobf data to src dist. Dont create deobf jar as we ship the lzma Added *.lzma to .gitignore
+		MinecraftForge/FML@7a004087f79b94bc92f29d50eb71288b6c1c968c Add deobf core to src dist. Dont create deobf jar as we ship the lzma Added *.lzma to .gitignore
 	LexManos:
 		Updated FML:
-		MinecraftForge/FML@110cf372eb5aa85df20b248976f1acdefa85e102 Add deobf data to merge-common, workspace is now actually runnable!
+		MinecraftForge/FML@110cf372eb5aa85df20b248976f1acdefa85e102 Add deobf core to merge-common, workspace is now actually runnable!
 	LexManos: Support dirty submodules in changelog script.
 	LexManos: 1.6.1 Update
 	LexManos: Add new launch configs to dev workspace.
@@ -9735,7 +9735,7 @@ Build 1.6.1-8.9.0.769-newliquid:
 	LexManos:
 		Updated FML:
 		MinecraftForge/FML@c418da353f6a8420b095fa737e8b0eae270d31ae Cleanup coremod code, server side working now.
-	LexManos: Update release script to generate binary patches and include deobf data.
+	LexManos: Update release script to generate binary patches and include deobf core.
 	LexManos: Deprecation sweep and update version to 8.9 to reflect 1.6.1 update.
 	LexManos: MinecraftForge/FML@7fecf2ad6bdd918149a3c43453f6a78bd11e5404 Update mcp URL.
 	LexManos: Try absolute path, to not confuse jenkins.
@@ -9795,7 +9795,7 @@ Build 1.6.1-8.9.0.769-newliquid:
 		Updated FML:
 		MinecraftForge/FML@155e8468180c93f1886a64028628764b1b22dd58 Add in support for mods/<mcversion> as a mod location. Also drop coremods as a location. They go in mods too now.
 		MinecraftForge/FML@3f4bf61ae6757605b27078c7321de9f640876836 Update key
-		MinecraftForge/FML@4545beb49d5348d8632e42965627b9837115525b Add deobf-data to setup env.
+		MinecraftForge/FML@4545beb49d5348d8632e42965627b9837115525b Add deobf-core to setup env.
 		MinecraftForge/FML@e24f94951741709329208f738000b72933302a24 Fix eclipse workspaces and launch configurations.
 		MinecraftForge/FML@532bee7ce1c4392ee11f0389d98f0c2be6240aa0 Update to new MCP bugfix version, Fixes: Missing Armor/Item rendering, and Boss health mapping issues.
 	LexManos:
@@ -9837,7 +9837,7 @@ Build 1.6.1-8.9.0.763:
 		Updated FML:
 		MinecraftForge/FML@155e8468180c93f1886a64028628764b1b22dd58 Add in support for mods/<mcversion> as a mod location. Also drop coremods as a location. They go in mods too now.
 		MinecraftForge/FML@3f4bf61ae6757605b27078c7321de9f640876836 Update key
-		MinecraftForge/FML@4545beb49d5348d8632e42965627b9837115525b Add deobf-data to setup env.
+		MinecraftForge/FML@4545beb49d5348d8632e42965627b9837115525b Add deobf-core to setup env.
 		MinecraftForge/FML@e24f94951741709329208f738000b72933302a24 Fix eclipse workspaces and launch configurations.
 		MinecraftForge/FML@532bee7ce1c4392ee11f0389d98f0c2be6240aa0 Update to new MCP bugfix version, Fixes: Missing Armor/Item rendering, and Boss health mapping issues.
 
@@ -9940,10 +9940,10 @@ Build 1.6.1-8.9.0.749:
 		n, But I couldn't find an exact reference to this executable. I'm going to assume it under public domain and distribuiting it here is fine. If not someone pleas
 		e direct me to the apropriate license and I will act accordingly.
 		MinecraftForge/FML@70cfe24e67adf6872ef1501599e2115e420c2539 Fix wrong project name in distro eclipse launch.
-		MinecraftForge/FML@7a004087f79b94bc92f29d50eb71288b6c1c968c Add deobf data to src dist. Dont create deobf jar as we ship the lzma Added *.lzma to .gitignore
+		MinecraftForge/FML@7a004087f79b94bc92f29d50eb71288b6c1c968c Add deobf core to src dist. Dont create deobf jar as we ship the lzma Added *.lzma to .gitignore
 	LexManos:
 		Updated FML:
-		MinecraftForge/FML@110cf372eb5aa85df20b248976f1acdefa85e102 Add deobf data to merge-common, workspace is now actually runnable!
+		MinecraftForge/FML@110cf372eb5aa85df20b248976f1acdefa85e102 Add deobf core to merge-common, workspace is now actually runnable!
 	LexManos: Support dirty submodules in changelog script.
 	LexManos: 1.6.1 Update
 	LexManos: Add new launch configs to dev workspace.
@@ -9951,7 +9951,7 @@ Build 1.6.1-8.9.0.749:
 	LexManos:
 		Updated FML:
 		MinecraftForge/FML@c418da353f6a8420b095fa737e8b0eae270d31ae Cleanup coremod code, server side working now.
-	LexManos: Update release script to generate binary patches and include deobf data.
+	LexManos: Update release script to generate binary patches and include deobf core.
 	LexManos: Deprecation sweep and update version to 8.9 to reflect 1.6.1 update.
 	LexManos: MinecraftForge/FML@7fecf2ad6bdd918149a3c43453f6a78bd11e5404 Update mcp URL.
 	LexManos: Try absolute path, to not confuse jenkins.
@@ -9979,7 +9979,7 @@ Build 1.5.2-7.8.0.734:
 		
 		Updated FML:
 		MinecraftForge/FML@22738de028a9ba51d43d73857dfb8969985566f0 Attempt to properly fix deadlock if the internal server derps. It should never hang now. Damn you fast computer..
-		MinecraftForge/FML@05a854cd2af53ca822ee8b249b0b3bbe44f94675 Small tweaks to the mcp data. Nothing major..
+		MinecraftForge/FML@05a854cd2af53ca822ee8b249b0b3bbe44f94675 Small tweaks to the mcp core. Nothing major..
 
 Build 1.5.2-7.8.0.733:
 	Christian: Make glass panes and iron fences connect to block sides based on solidity. This does change IBlockAccess, so anything with a custom IBlockAccess may need to implement the new method.
@@ -10265,10 +10265,10 @@ Build 1.5.1-7.7.1.666:
 		MinecraftForge/FML@677a6e578e84109702365da4a784f9a57d8c9957 Fix scala supporting SidedProxy. It should work now.
 		MinecraftForge/FML@334a76de75f2b417f04c23526c7e66ceb48e0de2 Update FMLDeobfuscatingRemapper.java
 		MinecraftForge/FML@42f1d8795599e0d1a516a1fdd7488a09b77e4565 Merge pull request #224 from Glought/master
-		MinecraftForge/FML@2dcabe01232b48009acbca6724565598761f561b Add a to string to fmlmodcontainer: should mean less derpy cyclic dependency data
+		MinecraftForge/FML@2dcabe01232b48009acbca6724565598761f561b Add a to string to fmlmodcontainer: should mean less derpy cyclic dependency core
 		MinecraftForge/FML@11ac46daebe901a6012a09ba5f6fe44af5b1be06 Fixing the GameRegistry. Now it is possible to register a Block with a BlockItem using following code: MyBlock myBlock = new MyBlock(); GameRegistry.registerBlock(myBlock, MyBlockItem.class, "myBlock"); where MyBlockItem class has one constructor with signature: public MyBlockItem(int id, Block block)
 		MinecraftForge/FML@c3fda11d100f9db7c32ef212ac37eade3e35d701 Merge pull request #225 from MarcinSc/master
-	Christian: Add forge/FML data to the f3 screen.
+	Christian: Add forge/FML core to the f3 screen.
 
 Build 1.5.1-7.7.1.665:
 	LexManos:
@@ -10330,7 +10330,7 @@ Build 1.5.1-7.7.1.653:
 	LexManos: Fix AIOOB in crash report stack trimming.
 
 Build 1.5.1-7.7.1.652:
-	pahimar: Fix a derp in that we provision the various arrays for a face, even if we are not going to parse data into it. Solves NPEs for when obj models that don't have texture coordinates attempt to render.
+	pahimar: Fix a derp in that we provision the various arrays for a face, even if we are not going to parse core into it. Solves NPEs for when obj models that don't have texture coordinates attempt to render.
 	pahimar: Missed a bit
 
 Build 1.5.1-7.7.1.651:
@@ -10340,7 +10340,7 @@ Build 1.5.1-7.7.1.650:
 	Christian: Fix offset in AdvancedModelLoader. *doh*
 
 Build 1.5.1-7.7.1.649:
-	LexManos: Added NBT data to liquid stacks. Closes #501
+	LexManos: Added NBT core to liquid stacks. Closes #501
 	LexManos: Added a small method in the Block.java to specify the amount of enchanting power it can supply to an enchanting table. Closes #508
 
 Build 1.5.1-7.7.1.648:
@@ -10368,7 +10368,7 @@ Build 1.5.1-7.7.1.642:
 		Fix performance of texture uploads
 		
 		Updated FML:
-		MinecraftForge/FML@00c788308881a07a683e17e2e9382313f3719b45 Very significant improvement in performance by using glSubImage to upload data. Inspired by frequent complaints about performance of hires texture packs. They probably still need a beefy system but should work. Hopefully I can figure out why the subImage GL side copy isn't working properly for an even more significant speed boost. But this gets things started.
+		MinecraftForge/FML@00c788308881a07a683e17e2e9382313f3719b45 Very significant improvement in performance by using glSubImage to upload core. Inspired by frequent complaints about performance of hires texture packs. They probably still need a beefy system but should work. Hopefully I can figure out why the subImage GL side copy isn't working properly for an even more significant speed boost. But this gets things started.
 		MinecraftForge/FML@57ad221cc6d9605b9d521f86620c2a31f922ac24 And add the patches *sigh*
 	Christian:
 		Updated FML:
@@ -10394,10 +10394,10 @@ Build 1.5.1-7.7.1.637:
 
 Build 1.5.1-7.7.1.636:
 	froggytheturtle:
-		This allows the result of the explosion to take into account metadata,
+		This allows the result of the explosion to take into account metacore,
 		tile entities, or even to cancel it altogether.
 		
-		Allowed block exploding to take into account tile entity and metadata
+		Allowed block exploding to take into account tile entity and metacore
 	LexManos: New hook to allow Items to provide there own armor models. Closes #487
 
 Build 1.5.1-7.7.1.635:
@@ -10460,7 +10460,7 @@ Build 1.5.1-7.7.1.621:
 	Christian: Sanity check the item ID for loaded liquid stacks better.
 
 Build 1.5.1-7.7.1.620:
-	Christian: Make liquidstacks immutable in their type data. Sorry about this, but it makes things a lot easier.
+	Christian: Make liquidstacks immutable in their type core. Sorry about this, but it makes things a lot easier.
 	Christian: Add in persistence code for LiquidTank. Using it should protect against liquids that get removed f.e. Closes #395
 
 Build 1.5.1-7.7.1.618:
@@ -10580,7 +10580,7 @@ Build 1.5.1-7.7.0.605:
 Build 1.5.1-7.7.0.604:
 	Christian:
 		Allow itemstack sensitive damage computation for attacks. Should allow
-		storing data in the nbt :)
+		storing core in the nbt :)
 
 Build 1.5.1-7.7.0.603:
 	Christian:
@@ -10628,7 +10628,7 @@ Build 1.5-7.7.0.594:
 		Updated FML:
 		MinecraftForge/FML@5cc90f060caace93c0bf041d3cc37208f425f623 Fix the logger to treat newlines better, hopefully. Closes #199
 		MinecraftForge/FML@5e3af8ac0e18cfa3a92f9ba726ec1a6b55e87d97 Use the relaunch log, for class circularity safety.
-		MinecraftForge/FML@ce949e6099fe2a63ee6774acd6e55aa55d3b3673 Support simple mc version test in coremods, only effective through jar loading. Also, log some more data about the environment.
+		MinecraftForge/FML@ce949e6099fe2a63ee6774acd6e55aa55d3b3673 Support simple mc version test in coremods, only effective through jar loading. Also, log some more core about the environment.
 
 Build 1.5-7.7.0.593:
 	LexManos:
@@ -10774,7 +10774,7 @@ Build 1.5-7.7.0.565:
 Build 1.5-7.7.0.563:
 	Christian:
 		Updated FML:
-		MinecraftForge/FML@25f3fcad4654d19637878bdfb2b70a9586fb3fc9 Fix up some relauncher stuff: the vanilla applet works now, as do other applets. Deobf data is resolveable for them too.
+		MinecraftForge/FML@25f3fcad4654d19637878bdfb2b70a9586fb3fc9 Fix up some relauncher stuff: the vanilla applet works now, as do other applets. Deobf core is resolveable for them too.
 
 Build 1.5-7.7.0.562:
 	LexManos:
@@ -10833,8 +10833,8 @@ Build 1.5-7.7.0.559:
 		Merge commit '695b080197bd577cc34fe6dbc72b74f4a74b2d5c' into snapshot15
 		Testing cherry picking.
 	LexManos:
-		Sync up with FML, Will not run nativly as you need deobfusication_data.zip in your libs folder.
-		We have not setup the download for that yet, to make it yourself just zip joined.srg name it deobfusication_data.zip and put it in lib
+		Sync up with FML, Will not run nativly as you need deobfusication_core.zip in your libs folder.
+		We have not setup the download for that yet, to make it yourself just zip joined.srg name it deobfusication_core.zip and put it in lib
 	LexManos: Not supposed to have debug stuff...
 	LexManos: Updated Forge to s13w09c
 	Christian: Fix up patches for FML, also, add in FML as a submodule rather than a zip
@@ -10850,7 +10850,7 @@ Build 1.5-7.7.0.559:
 		MinecraftForge/FML@e74087ee430633475c3ca058e54e3ef242a9d6aa Ignore again, testing submodule.
 	LexManos: Removed GNUWin32 files and uneeded files seince FML is now a submodule.
 	LexManos: Remove window helper batch files.
-	LexManos: Update python scripts to reflect that FML is now a submodule. Delete updateasmdata as it's in /fml/ now. Build should work once again.
+	LexManos: Update python scripts to reflect that FML is now a submodule. Delete updateasmcore as it's in /fml/ now. Build should work once again.
 	LexManos: Change FML module to read-only connection.
 	Christian: Update submodule
 	LexManos: Copy over some needed files for debugging.
@@ -10880,7 +10880,7 @@ Build 1.5-7.7.0.559:
 	LexManos: Readd second render pass to TileEntities and Entities, patches were missed when merging in master branch. As note, CB can DIAF.
 	LexManos: Fix compile error, forget to flush to disc.
 	LexManos: Make release quit on compile error.
-	Christian: Clean up Access Transformer mapping data
+	Christian: Clean up Access Transformer mapping core
 	Christian:
 		Updated FML:
 		MinecraftForge/FML@e9ff699c2dcd787a3e0ebaa427c625a48de4c9fb Refresh the renderengine after modloading is complete. Should fix issues with out-of-place texture registration by mods.
@@ -10892,7 +10892,7 @@ Build 1.5-7.7.0.559:
 		Updated to 1.5 Pre-release
 		Updated FML:
 		MinecraftForge/FML@2d98835db8c6a7665ef55117d60ab4318876836b Scala support! It's still primitive, I hope that people will like it. I do :)
-		MinecraftForge/FML@5bfaf7c1700191b6ed8f4752c9a95bf8c25323ef Global object registry, also, support the new itemblockwithmetadata constructor
+		MinecraftForge/FML@5bfaf7c1700191b6ed8f4752c9a95bf8c25323ef Global object registry, also, support the new itemblockwithmetacore constructor
 		MinecraftForge/FML@80a40c03e644840d827eb7d67ff97f6558eaa2e4 Update to MCP 1.5 and minecraft 1.5.
 		MinecraftForge/FML@b3e854a15d7c50b4967be8237df5fdace95a15ee Update for new MCP with srg reobf.
 	LexManos: Fix typos.
@@ -10905,7 +10905,7 @@ Build 1.5-7.7.0.559:
 	LexManos: Fix reobf call.
 
 Build 1.5-7.7.0.558-snapshot15:
-	Christian: Clean up Access Transformer mapping data
+	Christian: Clean up Access Transformer mapping core
 	Christian:
 		Updated FML:
 		MinecraftForge/FML@e9ff699c2dcd787a3e0ebaa427c625a48de4c9fb Refresh the renderengine after modloading is complete. Should fix issues with out-of-place texture registration by mods.
@@ -10917,7 +10917,7 @@ Build 1.5-7.7.0.558-snapshot15:
 		Updated to 1.5 Pre-release
 		Updated FML:
 		MinecraftForge/FML@2d98835db8c6a7665ef55117d60ab4318876836b Scala support! It's still primitive, I hope that people will like it. I do :)
-		MinecraftForge/FML@5bfaf7c1700191b6ed8f4752c9a95bf8c25323ef Global object registry, also, support the new itemblockwithmetadata constructor
+		MinecraftForge/FML@5bfaf7c1700191b6ed8f4752c9a95bf8c25323ef Global object registry, also, support the new itemblockwithmetacore constructor
 		MinecraftForge/FML@80a40c03e644840d827eb7d67ff97f6558eaa2e4 Update to MCP 1.5 and minecraft 1.5.
 		MinecraftForge/FML@b3e854a15d7c50b4967be8237df5fdace95a15ee Update for new MCP with srg reobf.
 	LexManos: Fix typos.
@@ -10997,7 +10997,7 @@ Build 13w09c-7.7.0.542-snapshot15:
 		MinecraftForge/FML@e74087ee430633475c3ca058e54e3ef242a9d6aa Ignore again, testing submodule.
 	LexManos: Removed GNUWin32 files and uneeded files seince FML is now a submodule.
 	LexManos: Remove window helper batch files.
-	LexManos: Update python scripts to reflect that FML is now a submodule. Delete updateasmdata as it's in /fml/ now. Build should work once again.
+	LexManos: Update python scripts to reflect that FML is now a submodule. Delete updateasmcore as it's in /fml/ now. Build should work once again.
 	LexManos: Change FML module to read-only connection.
 
 Build 13w09c-7.7.0.539-snapshot15:
@@ -11008,8 +11008,8 @@ Build 13w05b-7.7.0.538-snapshot15:
 
 Build 13w05b-7.7.0.537-snapshot15:
 	LexManos:
-		Sync up with FML, Will not run nativly as you need deobfusication_data.zip in your libs folder.
-		We have not setup the download for that yet, to make it yourself just zip joined.srg name it deobfusication_data.zip and put it in lib
+		Sync up with FML, Will not run nativly as you need deobfusication_core.zip in your libs folder.
+		We have not setup the download for that yet, to make it yourself just zip joined.srg name it deobfusication_core.zip and put it in lib
 
 Build 13w02b-7.7.0.536-snapshot15:
 	mehvids: Gave entities and tile entities access to the second render pass for translucency.
@@ -11379,7 +11379,7 @@ Build 1.4.7-6.6.0.499:
 	LexManos: Fix check in getItem() to allow lowest item ID #361
 
 Build 1.4.7-6.6.0.497:
-	LexManos: Added getter for Metadata smelting list, because, why not.. PR: #352
+	LexManos: Added getter for Metacore smelting list, because, why not.. PR: #352
 	LexManos: Fixed incorrect lighting in some cases. Closes issue #349
 	LexManos:
 		Added event hooks to control to allow mod control of mob spawning. PR: #337
@@ -11479,7 +11479,7 @@ Build 1.4.6-6.5.0.477:
 	LexManos:
 		Move chunk compression to the network thread in Packet 51 and 56
 		
-		This will reduce the server load considerably by doing the chunk data compression in writePacketData, which will be run from the network thread.
+		This will reduce the server load considerably by doing the chunk core compression in writePacketData, which will be run from the network thread.
 		
 		The chunk compression can easily use 1/4th of the overall server thread CPU time if someone is exploring much, especially when moving quickly (e.g. with quantum leggings).
 		
@@ -11776,14 +11776,14 @@ Build 1.4.5-6.4.1.403:
 	xcompwiz:
 		Adds a more intelligent chunk constructor
 		
-		Adds a chunk constructor with full block id range, that's metadata
+		Adds a chunk constructor with full block id range, that's metacore
 		sensitive, has intelligent coord ordering, and which allows for
 		generation at greater heights than 127.
 	xcompwiz: Fixes some weird formatting
 	zach:
 		Fixes ordering for z & x loops (proper array increment order)
 		
-		The ordering before would skip about in the ids and metadata arrays.  This runs linearly and should improve performance.
+		The ordering before would skip about in the ids and metacore arrays.  This runs linearly and should improve performance.
 		Done live on github
 
 Build 1.4.5-6.4.1.402:
@@ -11816,7 +11816,7 @@ Build 1.4.5-6.4.0.397:
 
 Build 1.4.5-6.4.0.396:
 	ohai.iChun:
-		Add check that Entity saves to disk before saving entity to saved chunkloading data.
+		Add check that Entity saves to disk before saving entity to saved chunkloading core.
 		
 		Returning false to addEntityID prevents the entity from being saved (cred to LexManos)
 		Entities which do not save to disk but are chunkloaders causes errors the next time the world loads. This ought to fix it.
@@ -11899,7 +11899,7 @@ Build 6.4.0.379:
 		23a2513 Fix up derpy file name handling: closes #127 Fix up duping childmods: cl
 		a6eaa2b Fix spelling issue.
 		c6a0741 FML setup should now download and verify all the minecraft files needed
-		5a1930e Small fix to some MCP metadata for pre2
+		5a1930e Small fix to some MCP metacore for pre2
 		418deba Update to MC 1.4.4
 		4ff2cff Fix bug when a modloader mod is run on a dedicated server and has a conn
 
@@ -11944,7 +11944,7 @@ Build 6.3.0.372:
 Build 6.3.0.371:
 	Christian:
 		Add an ItemStack sensitive version of getIconForRenderPass, defers to
-		existing by default. Should allow NBT data to affect multipass icon rendering.
+		existing by default. Should allow NBT core to affect multipass icon rendering.
 
 Build 6.3.0.370:
 	Christian: Change getLeft to getRotation, around any axis.
@@ -11970,7 +11970,7 @@ Build 6.3.0.364:
 		Tweak forgedirection for a couple of naming constants
 
 Build 6.3.0.363:
-	Christian: Add toLeft rotational data to ForgeDirection
+	Christian: Add toLeft rotational core to ForgeDirection
 
 Build 6.3.0.362:
 	LexManos: New field in ForgeDirection to hold just the valid directions. And made getOrientation a bit more efficient.
@@ -12024,7 +12024,7 @@ Build 6.0.1.351:
 	Christian:
 		This update fixes some world corrupting vanilla error handling, mostly caused by
 		mods doing something derpy. Hopefully, your world saves will thank me.
-		Note that if the mod does derp, it's data is lost. It's not FML or Minecraft Forge's
+		Note that if the mod does derp, it's core is lost. It's not FML or Minecraft Forge's
 		responsibility if "DirtChest 2000 Mk5" can't write their TileEntity method correctly
 		and you lose your 100000 diamonds.
 		
@@ -12052,7 +12052,7 @@ Build 6.0.1.345:
 	LexManos: Remove some debug code
 	LexManos: New hook to allow items to be on multiple creative tabs PR 176
 	LexManos: Fix issue where scroll bar would not render when switching tab pages.
-	LexManos: Added metadata sensitve experience to furnace recipies and added Item callback to determine experience gain.
+	LexManos: Added metacore sensitve experience to furnace recipies and added Item callback to determine experience gain.
 	LexManos: Exposed functions for adding superflat presets.
 	LexManos: New hook to allow for custom beacon support blocks.
 	CovertJaguar:
@@ -12067,14 +12067,14 @@ Build 6.0.1.343:
 	csendek: Add event to cancel or change chat messages sent from server
 
 Build 6.0.1.342:
-	LexManos: Pickblock will new compare NBT data, should allow mods to refine there result better.
+	LexManos: Pickblock will new compare NBT core, should allow mods to refine there result better.
 	LexManos: Added system to place all configs that use Forge's Configuration function into a single file on disc. Optional config to enable this. Blame MattaBase for this idea..
 
 Build 6.0.1.341:
 	LexManos: Fix ItemSeed placement to take into account the IPlantable interface.
 
 Build 6.0.1.339:
-	LexManos: Added a per-world MapStorage feature that provides a method to store data files associated with a specific world, as well as fixes the issue with villagers loosing there village. {Where villagers wouldn't go inside at night}
+	LexManos: Added a per-world MapStorage feature that provides a method to store core files associated with a specific world, as well as fixes the issue with villagers loosing there village. {Where villagers wouldn't go inside at night}
 
 Build 6.0.1.338:
 	pahimar: Update patches/common/net/minecraft/src/SlotCrafting.java.patch
@@ -12303,7 +12303,7 @@ Build 4.2.5.299:
 		Remove dead WorldInfo patch. Tweak dimension code a bit for better naming, and use the new FML world loading facilities
 		Update FML: d0e7c9e
 		d0e7c9e Update patches *sigh*
-		f3e1cac Add in a savehandler strategy for reading and writing data to the world save. This service is only available to coremods via the WorldAccessConta
+		f3e1cac Add in a savehandler strategy for reading and writing core to the world save. This service is only available to coremods via the WorldAccessConta
 		51fb513 Add in some bukkit supporting code. Most of this is unimplemented until the bukkit coremod is complete.
 		65c9fdd New stuff on the ModLoader! Risu has been busy. Closes #114
 		c1d4458 Mods can now declare a range of minecraft versions they will run against
@@ -12370,7 +12370,7 @@ Build 4.1.4.284:
 	Christian:
 		Update FML: dd39ae5
 		dd7502a Fix parent child counts showing properly. Closes #107 thanks scott!
-		b36d447 It's useMetadata, not usesMetadata. thanks myrathi and psx. closes #110
+		b36d447 It's useMetacore, not usesMetacore. thanks myrathi and psx. closes #110
 		efb1066 Fix random shuffling when manipulating biomes by using a LinkedHashSet to preserve iteration order. Closes #111
 	Christian:
 		Some more tweaks to the chunkloading code. The world.load event fires slightly later- once the entity watcher is
@@ -12552,7 +12552,7 @@ Build 4.0.0.249:
 		e6abb69 Fix up tiny packet handler to actually work
 		e862052 Allow javax to be shipped by mods. Should allow some more modloader mods to work unaltered
 		4071ad1 Add in a little bit of protocol cleanup. Start work on allowing multiple protocol versions
-		6061964 Give a way to build the packet131mapdata packet correctly populated
+		6061964 Give a way to build the packet131mapcore packet correctly populated
 		b818769 Capture and leverage Packet131MapData
 
 Build 4.0.0.248:
@@ -12595,7 +12595,7 @@ Build 4.0.0.242:
 		c90a853 Fix up addRenderer to catch exceptions from the basemod, also, addrenderer now supplies a list of the default renderers from MC for editing and will note the
 		18069d8 Change download location for FML libraries to files.minecraftforge.net, add an encoding param to the javac command line to force utf 8
 		a40f4a7 Add in random jar/zip files to the classpath. UGH this is so fucking ugly it's not funny.
-		5b6460b Use a null socket and try to prefer the result of getLocalHost in the broadcast data.
+		5b6460b Use a null socket and try to prefer the result of getLocalHost in the broadcast core.
 
 Build 4.0.0.240:
 	Christian:
@@ -12678,7 +12678,7 @@ Build 4.0.0.229:
 Build 4.0.0.228:
 	Christian:
 		Update FML: 62dbfb3
-		62dbfb3 Fix metadata
+		62dbfb3 Fix metacore
 
 Build 4.0.0.227:
 	Christian:
@@ -12824,7 +12824,7 @@ Build 4.0.0.204:
 		78efd1a Tidy up server launch - reflection not required anymore
 		eee0a99 Also, log what the directory discoverer finds for mcmod.info
 		10c96c3 And log the exception if it has a problem reading the jar file
-		07cc3fb Fix jar loader failing to inject any metadata at all if mcmod.info is not found.
+		07cc3fb Fix jar loader failing to inject any metacore at all if mcmod.info is not found.
 		e31f143 Change install.cmd to install.bat, why, cuz people are .... Updated readme to mention needing server and client.
 
 Build 4.0.0.200:
@@ -12929,7 +12929,7 @@ Build 4.0.0.172:
 	LexManos: inital push of updated setup script and cleaned up forge.py
 	LexManos: Dump old mcp config
 	LexManos: New Start.java which allows the user to login using a legit account for testing on servers.
-	LexManos: Committing inital work on generating sanitized MCP conf data.
+	LexManos: Committing inital work on generating sanitized MCP conf core.
 	LexManos: Add the direct copied files from MCP conf
 	LexManos: Add newids to that list
 	LexManos: Helper function grab all unique searge names that are shared client and server
@@ -12941,7 +12941,7 @@ Build 4.0.0.172:
 		Moved logo to new client folder
 		Added blank Access Transformer config for Forge
 		Implemented version storage
-		Added basic dummy FML mod container to remove the need for mod metadata file
+		Added basic dummy FML mod container to remove the need for mod metacore file
 		Added beggining work on Forge event system
 		Updated and moved EnumHelper
 	LexManos: Updated update_patches.py, and made first patch!
@@ -13002,7 +13002,7 @@ Build 3.3.8.162:
 
 Build 3.3.8.161:
 	LexManos: Fixed a improper rounding in EntityMinecart
-	LexManos: Made WorldGenMinable metadata sensitive.
+	LexManos: Made WorldGenMinable metacore sensitive.
 
 Build 3.3.8.160:
 	Christian: Update fml to 175- fixes some weird ticking behaviours for ML mods, adds in new ticking behaviours for smart mods
@@ -13018,7 +13018,7 @@ Build 3.3.8.158:
 Build 3.3.8.157:
 	Christian:
 		Fix server check "blockHasTileEntity" used to determine if getDescriptionPacket
-		is sent for the block to be metadata sensitive. Thanks iChun!
+		is sent for the block to be metacore sensitive. Thanks iChun!
 
 Build 3.3.8.156:
 	Christian: Fix ghost players who appear if they don't have the 4096 fix installed
@@ -13228,7 +13228,7 @@ Build 3.1.2.92:
 	LexManos: Exposed TileEntityData packet to TileEntities. And added helper sender function.
 
 Build 3.1.2.91:
-	LexManos: Added metadata sensitive Chunk constructor for Bioxx
+	LexManos: Added metacore sensitive Chunk constructor for Bioxx
 
 Build 3.1.2.90:
 	LexManos: Added MinecraftApplet.clas to the force output list because users cant understand the concept of only replacing files they are told to. And bumped version to 3.1.2
@@ -13237,7 +13237,7 @@ Build 3.0.1.89:
 	LexManos: made the ID in PacketEntitySpawn unsigned.
 	LexManos: Added generic packet sending function to MinecraftForge class.
 	LexManos: Fixed shift-clicking issue with items that utilized the new ItemStack sensitive smelting system.
-	LexManos: Implemented a 'small' packet system for those mods that need to send rapid, small data packets and who are concered about the overhead of the 250 payload packet. It uses packet 131.
+	LexManos: Implemented a 'small' packet system for those mods that need to send rapid, small core packets and who are concered about the overhead of the 250 payload packet. It uses packet 131.
 
 Build 3.0.1.88:
 	LexManos: Implemented  RichardG's Paged Achivement list GUI modifications.
@@ -13260,7 +13260,7 @@ Build 3.0.1.83:
 		Changed entity Forge spawning code works to be more in line with normal spawning:
 		(World, double, double double) constructor is nolonger called, normal (World) constructor, and setPositionAndRotation is called afterwords.
 		yaw, pitch, and yawHead is sent (if the entity isn't a EntityLiving yawHead isn't used)
-		The datawatcher data is also sent like a normal Entity.
+		The corewatcher core is also sent like a normal Entity.
 
 Build 3.0.1.82:
 	LexManos: Fixed bug in BlockFire's old fields.
@@ -13358,7 +13358,7 @@ Build 1.4.1.62:
 	LexManos: Added rider sit pull request.
 
 Build 1.4.1.61:
-	LexManos: Fixed NPE on CustomPayload packets with 0 data
+	LexManos: Fixed NPE on CustomPayload packets with 0 core
 	LexManos: Changed logic in Configuration to allow for extended block ID mods easier access to change that. Just use reflection to change Configuration.configBlocks to whatever length you want.
 	LexManos: Implemented Pheenixm pull request allowing for more control over the camera.
 	LexManos:

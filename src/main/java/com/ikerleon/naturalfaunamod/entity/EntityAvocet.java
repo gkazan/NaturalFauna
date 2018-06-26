@@ -1,8 +1,8 @@
 package com.ikerleon.naturalfaunamod.entity;
 
 import org.zawamod.entity.base.ZAWABaseLand;
-import org.zawamod.entity.data.AnimalData.EnumNature;
-import org.zawamod.entity.data.BreedItems;
+import org.zawamod.entity.core.AnimalData.EnumNature;
+import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
@@ -13,7 +13,6 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
