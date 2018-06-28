@@ -22,6 +22,8 @@ public class SoundHandler {
 	public static SoundEvent LITTLE_BUSTARD_SONG;
 	public static SoundEvent ROE_DEER_LIVING;
 	public static SoundEvent ROE_DEER_HURT;
+	public static SoundEvent OSTRICH_BOOMING;
+	public static SoundEvent PUMA_HURT;
 
 	
 	public static void registerSounds() {
@@ -41,6 +43,8 @@ public class SoundHandler {
 		LITTLE_BUSTARD_SONG = registerSound("entity.littlebustard.song");
 		ROE_DEER_LIVING = registerSound("entity.roedeer.living");
 		ROE_DEER_HURT = registerSound("entity.roedeer.hurt");
+		OSTRICH_BOOMING = registerSound("entity.ostrich.booming");
+		PUMA_HURT = registerSound("entity.puma.hurt");
 	}
 	
 	  private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("faunanatural:" + s);

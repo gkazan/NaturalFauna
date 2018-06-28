@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelKoriBustard;
@@ -19,6 +18,7 @@ public class RenderKoriBustard extends RenderLivingZAWA<EntityKoriBustard> {
 	
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/koribustard/texture.png");
 	public static final ResourceLocation texture2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/koribustard/texture.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/koribustard/texturechild.png");
 
 
 	public RenderKoriBustard(RenderManager rm) {
@@ -28,7 +28,7 @@ public class RenderKoriBustard extends RenderLivingZAWA<EntityKoriBustard> {
 	protected ResourceLocation getEntityTexture(EntityKoriBustard entity)
     {
     	if(entity.isChild()) {
-    		return ZAWARenderUtils.none;
+    		return texturechild;
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());

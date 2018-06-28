@@ -1,10 +1,13 @@
 package com.ikerleon.naturalfaunamod.entity;
 
+import java.util.Random;
+
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
@@ -13,11 +16,14 @@ import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityOstrich extends ZAWABaseLand {
+	
+	  Random random = new Random();
+	  public int boomingNum;
 	
 	public EntityOstrich(World worldIn) {		
 		super(worldIn, 0.20D);
@@ -36,6 +42,41 @@ public class EntityOstrich extends ZAWABaseLand {
 	@Override
 	public int setVariants() {
 		return 1;
+	}
+	
+	@Override
+	protected SoundEvent getAmbientSound()
+	{
+		long i = world.getWorldTime();
+		
+		boomingNum=random.nextInt(15) + 1;
+		
+		if((this.isChild()==false)) {
+	    if(i>=3000) {
+	    	if(i>=22000) {
+	    		if(boomingNum==2) {
+		    	    return SoundHandler.OSTRICH_BOOMING;
+		    	}
+		    	else {
+		    		return null;
+		    	}
+	    	}
+	    	else {
+	    		return null;
+	    	}
+	    }
+	    else {
+	    	if(boomingNum==2) {
+	    	    return SoundHandler.OSTRICH_BOOMING;
+	    	}
+	    	else {
+	    		return null;
+	    	}
+	    }
+		}
+		else {
+			return null;
+		}
 	}
 	
 	@Override

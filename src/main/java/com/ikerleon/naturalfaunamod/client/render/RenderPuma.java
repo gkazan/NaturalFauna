@@ -18,6 +18,7 @@ public class RenderPuma extends RenderLivingZAWA<EntityPuma> {
 	
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/puma/texture.png");
 	public static final ResourceLocation texture2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/puma/texture2.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/puma/texturechild.png");
 
 	public RenderPuma(RenderManager rm) {
 		super(rm, new ModelPuma(), 0.4F);
@@ -26,7 +27,7 @@ public class RenderPuma extends RenderLivingZAWA<EntityPuma> {
     protected ResourceLocation getEntityTexture(EntityPuma entity)
     {
     	if(entity.isChild()) {
-    		return getTextureOfVar(entity.getAnimalType());
+    		return texturechild;
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());

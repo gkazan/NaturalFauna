@@ -3,6 +3,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 import org.zawamod.client.model.llibrary.AdvancedModelBase;
 import org.zawamod.client.model.llibrary.AdvancedModelRenderer;
 
+import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
@@ -34,14 +35,14 @@ public class ModelGrantsGazelle extends AdvancedModelBase {
     public ModelGrantsGazelle() {
         this.textureWidth = 64;
         this.textureHeight = 64;
-        this.shape16 = new AdvancedModelRenderer(this, 54, 16);
-        this.shape16.setRotationPoint(0.5F, -1.8F, -1.2F);
-        this.shape16.addBox(0.0F, 0.0F, -0.5F, 2, 2, 1, 0.0F);
-        this.setRotateAngle(shape16, 0.045553093477052F, -0.2617993877991494F, -0.9105382707654417F);
         this.shape16_1 = new AdvancedModelRenderer(this, 54, 19);
         this.shape16_1.setRotationPoint(-0.5F, -1.8F, -1.2F);
         this.shape16_1.addBox(0.0F, -2.0F, -0.5F, 2, 2, 1, 0.0F);
         this.setRotateAngle(shape16_1, 0.0F, -0.2617993877991494F, -2.231054382824351F);
+        this.shape16 = new AdvancedModelRenderer(this, 0, 0);
+        this.shape16.setRotationPoint(0.5F, -1.6F, -0.8F);
+        this.shape16.addBox(0.0F, 0.0F, -0.5F, 2, 2, 1, 0.0F);
+        this.setRotateAngle(shape16, -0.045553093477052F, 0.0F, -1.0471975511965976F);
         this.shape15_2 = new AdvancedModelRenderer(this, 59, 21);
         this.shape15_2.setRotationPoint(1.0F, -2.0F, 0.0F);
         this.shape15_2.addBox(-0.5F, -1.5F, -0.5F, 1, 2, 1, 0.0F);
