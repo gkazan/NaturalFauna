@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  
+  "pattern": [
+    "b",
+    "o"
+  ],
+  
+  "key": {
+    "b": {
+      "item": "faunanatural:tooth_carnivore"
+    },
+    
+    "o": {
+      "item": "minecraft:stick"
+    }
+  },
+  
+  "result": {
+    "item": "faunanatural:dagger_tooth"
+  }
+}

@@ -29,8 +29,11 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	
     protected ResourceLocation getEntityTexture(EntityPuffin entity)
     {
-    	if(entity.isChild() || entity.isInWater()) {
+    	if(entity.isInWater()) {
     		return ZAWARenderUtils.none;
+    	}
+    	else if(entity.isChild()) {
+    		return texturechild;
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());
@@ -60,7 +63,7 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	    {	    	
 	        if (!kat.isInvisible())
 	        {
-	        	if(kat.isInWater() && !kat.isChild()) {
+	        	if(kat.isInWater() && kat.isChild()==false) {
 	        		this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));
 		            this.modelW.setModelAttributes(this.render.getMainModel());
 		            this.modelW.setRotationAngles(f,f1,f3,f4,f5,f6, kat);

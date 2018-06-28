@@ -2,9 +2,11 @@ package com.ikerleon.naturalfaunamod.entity;
 
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.core.BreedItems;
+import org.zawamod.entity.core.Gender;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
@@ -13,11 +15,13 @@ import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityLittleBustard extends ZAWABaseLand {
+	
+	private World world;
 	
 	public EntityLittleBustard(World worldIn) {		
 		super(worldIn, 0.20D);
@@ -26,16 +30,46 @@ public class EntityLittleBustard extends ZAWABaseLand {
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.20D));
         this.tasks.addTask(0, new EntityAILookIdle(this));
+        
+        this.world=worldIn;
 	}
     
     public float getEyeHeight()
     {
         return this.height * 0.85F - 0.1F;
     }
+    
+	@Override
+	public boolean sexualDimorphism()
+	{
+	  return true;
+	}
 	
 	@Override
 	public int setVariants() {
 		return 1;
+	}
+	
+	@Override
+	protected SoundEvent getAmbientSound()
+	{
+		long i = world.getWorldTime();
+		if((this.getGender()==Gender.MALE)&&(this.isChild()==false)) {
+	    if(i>=6000) {
+	    	if(i>=23000) {
+	    	return SoundHandler.LITTLE_BUSTARD_SONG;
+	    	}
+	    	else {
+	    		return null;
+	    	}
+	    }
+	    else {
+	    	return SoundHandler.LITTLE_BUSTARD_SONG;
+	    }
+		}
+		else {
+			return null;
+		}
 	}
 	
 	@Override

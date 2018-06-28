@@ -5,12 +5,15 @@ import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.water.EntityPacificWalrus;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityGreySeal extends EntityPacificWalrus {
@@ -31,6 +34,16 @@ public class EntityGreySeal extends EntityPacificWalrus {
 	@Override
 	public int setVariants() {
 		return 1;
+	}
+	@Override
+	protected SoundEvent getAmbientSound()
+	{
+		if(this.isChild()==false) {
+		     return SoundHandler.SEAL_LIVING;
+		}
+		else {
+			return null;
+		}
 	}
 	
 	@Override

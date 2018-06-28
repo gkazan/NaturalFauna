@@ -5,6 +5,8 @@ import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.init.ItemInit;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
@@ -17,7 +19,7 @@ public class EntityPuma extends ZAWABaseLand {
 	
 	public EntityPuma(World worldIn) {		
 		super(worldIn, 0.28D);
-		this.setSize(1.8F, 1.7F);
+		this.setSize(1.6F, 1.3F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
@@ -60,6 +62,7 @@ public class EntityPuma extends ZAWABaseLand {
 		else
 			this.dropItem(ZAWAItems.carnivore_meat_raw, 1);
 		this.dropItem(ZAWAItems.thick_fur, 1);
+		this.dropItem(ItemInit.CARNIVORE_TOOTH, 1);
 	}
 	
 	@Override

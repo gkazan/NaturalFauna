@@ -2,16 +2,13 @@ package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 import org.zawamod.entity.core.Gender;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelRoeDeer;
 import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
 
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
@@ -24,6 +21,7 @@ public class RenderRoeDeer extends RenderLivingZAWA<EntityRoeDeer> {
 	public static final ResourceLocation texture2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/roedeer/texture2.png");
 	public static final ResourceLocation texturefemale = new ResourceLocation(NFReference.MOD_ID, "textures/entity/roedeer/texturefemale.png");
 	public static final ResourceLocation texturefemale2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/roedeer/texturefemale2.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/roedeer/texturechild.png");
 
 	public RenderRoeDeer(RenderManager rm) {
 		super(rm, new ModelRoeDeer(), 0.4F);
@@ -31,8 +29,17 @@ public class RenderRoeDeer extends RenderLivingZAWA<EntityRoeDeer> {
 
     protected ResourceLocation getEntityTexture(EntityRoeDeer entity)
     {
-    	if(entity.isChild() || entity.getGender()==Gender.FEMALE) {
-    		return ZAWARenderUtils.none;
+    	if(entity.isChild()) {
+    		return texturechild;
+    	}
+    	else if(entity.getGender()==Gender.FEMALE) {
+    		switch (entity.getAnimalType()) {
+			case 0:
+			default:
+				return texturefemale;
+			case 1:
+				return texturefemale2;
+		    }
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());

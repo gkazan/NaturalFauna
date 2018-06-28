@@ -15,6 +15,14 @@ public class SoundHandler {
 	public static SoundEvent HYENA_LIVING;
 	public static SoundEvent HYENA_HURT;
 	public static SoundEvent HYENA_DEATH;
+	public static SoundEvent GNU_LIVING;
+	public static SoundEvent GNU_HURT;
+	public static SoundEvent COURSER_HURT;
+	public static SoundEvent SEAL_LIVING;
+	public static SoundEvent LITTLE_BUSTARD_SONG;
+	public static SoundEvent ROE_DEER_LIVING;
+	public static SoundEvent ROE_DEER_HURT;
+
 	
 	public static void registerSounds() {
 		size=SoundEvent.REGISTRY.getKeys().size();
@@ -26,6 +34,13 @@ public class SoundHandler {
 		HYENA_LIVING = registerSound("entity.hyena.ambient");
 		HYENA_HURT = registerSound("entity.hyena.hurt");
 		HYENA_DEATH = registerSound("entity.hyena.death");
+		GNU_LIVING = registerSound("entity.gnu.living");
+		GNU_HURT = registerSound("entity.gnu.hurt");
+		COURSER_HURT = registerSound("entity.courser.hurt");
+		SEAL_LIVING = registerSound("entity.greyseal.living");
+		LITTLE_BUSTARD_SONG = registerSound("entity.littlebustard.song");
+		ROE_DEER_LIVING = registerSound("entity.roedeer.living");
+		ROE_DEER_HURT = registerSound("entity.roedeer.hurt");
 	}
 	
 	  private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("faunanatural:" + s);

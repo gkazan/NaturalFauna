@@ -5,5 +5,13 @@
    "entity.avocet.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/avocet/hurt", "stream": true}]},
    "entity.hyena.ambient":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/hyena/living", "stream": true}]},
    "entity.hyena.death":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/hyena/death", "stream": true}]},
-   "entity.hyena.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/hyena/hurt", "stream": true}]}
+   "entity.hyena.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/hyena/hurt", "stream": true}]},
+   "entity.gnu.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/gnu/living", "stream": true}]},
+   "entity.gnu.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/gnu/hurt", "stream": true}]},
+   "entity.courser.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/courser/hurt", "stream": true}]},
+   "entity.greyseal.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/greyseal/living", "stream": true}]},
+   "entity.littlebustard.song":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/littlebustard/song", "stream": true}]},
+   "entity.roedeer.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/roedeer/living", "stream": true}]},
+   "entity.roedeer.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/roedeer/hurt", "stream": true}]}
+   
 }

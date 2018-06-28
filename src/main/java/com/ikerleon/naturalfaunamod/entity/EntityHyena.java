@@ -5,11 +5,11 @@ import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.land.EntityAmurLeopard;
 import org.zawamod.entity.land.EntityMeerkat;
 import org.zawamod.entity.core.BreedItems;
-import org.zawamod.entity.core.Gender;
 import org.zawamod.init.ZAWAItems;
 
 import com.google.common.base.Predicate;
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
+import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
@@ -110,7 +110,8 @@ public class EntityHyena extends EntityAmurLeopard {
 			this.dropItem(ZAWAItems.carnivore_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.carnivore_meat_raw, 1);
-		this.dropItem(ZAWAItems.thick_fur, 1);
+		this.dropItem(ItemInit.HYENA_FUR, 1);
+		this.dropItem(ItemInit.CARNIVORE_TOOTH, 1);
 	}
 	
 	@Override

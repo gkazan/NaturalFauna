@@ -6,8 +6,6 @@ entity.cantabric_capercaillie.name=Urogallo cantábrico
 entity.camel.name=Camello bactriano
 entity.grey_seal.name=Foca gris
 entity.little_bustard.name=Sisón común
-entity.leopard.name=Leopardo africano
-entity.barbary_lion.name=León del Atlas
 entity.grants_gazelle.name=Gacela de Grant
 entity.jack_fish.name=Jurel común
 entity.nautilus.name=Nautilus
@@ -27,6 +25,15 @@ item.feather_kori_bustard.name=Pluma de avutarda kori
 item.feather_little_bustard.name=Pluma de sisón común
 item.feather_ostrich.name=Pluma de avestruz
 item.feather_puffin.name=Pluma de frailecillo atlántico
+item.dagger_horn.name=Daga de cuerno
+item.dagger_tooth.name=Daga de diente de carnívoro
+item.horn.name=Cuerno
+item.tooth_carnivore.name=Diente de carnívoro
+item.fur_cheetah.name=Pelaje de guepardo
+item.fur_hyena.name=Pelaje de hiena
+item.hide_gnu.name=Piel de ñu
+item.hide_gazelle.name=Piel de gazela
 
 
 itemGroup.natural_fauna_feathers_tab=Natural Fauna: Plumas
+itemGroup.natural_fauna_items_tab=Natural Fauna: Objetos

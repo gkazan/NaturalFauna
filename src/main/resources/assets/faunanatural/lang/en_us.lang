@@ -6,9 +6,7 @@ entity.cantabric_capercaillie.name=Cantabrian capercaillie
 entity.camel.name=Bactrian camel
 entity.grey_seal.name=Grey seal
 entity.little_bustard.name=Little bustard
-entity.leopard.name=African leopard
-entity.barbary_lion.name=Barbary lion
-entity.grants_gazelle.name=Grant´s gazelle
+entity.grants_gazelle.name=Grant's gazelle
 entity.jack_fish.name=Jack Fish
 entity.nautilus.name=Nautilus
 entity.puma.name=Puma
@@ -27,6 +25,15 @@ item.feather_kori_bustard.name=Kori bustard feather
 item.feather_little_bustard.name=Little bustard feather
 item.feather_ostrich.name=Ostrich feather
 item.feather_puffin.name=Puffin feather
+item.dagger_horn.name=Horn dagger
+item.dagger_tooth.name=Carnivore tooth dagger
+item.horn.name=Horn
+item.tooth_carnivore.name=Carnivore tooth
+item.fur_cheetah.name=Cheetah fur
+item.fur_hyena.name=Hyena fur
+item.hide_gnu.name=Gnu hide
+item.hide_gazelle.name=Gazelle hide
 
 itemGroup.natural_fauna_feathers_tab=Natural Fauna: Feathers
+itemGroup.natural_fauna_items_tab=Natural Fauna: Items
 

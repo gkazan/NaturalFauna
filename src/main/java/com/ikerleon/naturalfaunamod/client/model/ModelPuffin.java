@@ -103,18 +103,26 @@ public class ModelPuffin extends AdvancedModelBase {
      @Override
      public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
      	setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        float scaleFactor= 1.2F;
+     	if(this.isChild) {
+    		float scaleFactor= 0.5F;
+    	    	
+    	    GlStateManager.pushMatrix();
+    	    GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
+    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+    	    this.body.render(f5);
+    	    GlStateManager.popMatrix();
+    	}
+    	else {
+            float scaleFactor= 1.2F;
     	
-    	GlStateManager.pushMatrix();
-    	GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
-    	GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
-        this.body.render(f5);
-        GlStateManager.popMatrix();
+    	    GlStateManager.pushMatrix();
+    	    GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
+    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+            this.body.render(f5);
+            GlStateManager.popMatrix();
+    	}
      }
 
-     /**
-      * This is a helper function from Tabula to set the rotation of model parts
-      */
      public void setRotateAngle(ModelRenderer ModelRenderer, float x, float y, float z) {
          ModelRenderer.rotateAngleX = x;
          ModelRenderer.rotateAngleY = y;

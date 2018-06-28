@@ -8,12 +8,17 @@ import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.land.EntityAfricanLion;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
+import com.ikerleon.naturalfaunamod.init.ItemInit;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityBlueGnu extends ZAWABaseLand {
@@ -29,7 +34,6 @@ public class EntityBlueGnu extends ZAWABaseLand {
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
         this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityAfricanLion.class, 10.0F, 2.2D, 2.2D));
-        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityLeopard.class, 10.0F, 2.2D, 2.2D));
         this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityHyena.class, 10.0F, 2.2D, 2.2D));
 	}
     
@@ -41,6 +45,18 @@ public class EntityBlueGnu extends ZAWABaseLand {
 	@Override
 	public int setVariants() {
 		return 3;
+	}
+	
+	@Override
+	protected SoundEvent getAmbientSound()
+	{
+		return SoundHandler.GNU_LIVING;
+	}
+	
+	@Override
+	protected SoundEvent getHurtSound(DamageSource s)
+	{
+	    return SoundHandler.GNU_HURT;
 	}
 	
 	@Override
@@ -69,6 +85,8 @@ public class EntityBlueGnu extends ZAWABaseLand {
 			this.dropItem(ZAWAItems.large_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.large_meat_raw, 1);
+		this.dropItem(ItemInit.GNU_HIDE, 1);
+		this.dropItem(ItemInit.HORN, 1);
 	}
 	
 	@Override

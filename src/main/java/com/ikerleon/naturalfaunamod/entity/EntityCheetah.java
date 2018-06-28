@@ -7,6 +7,8 @@ import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.init.ItemInit;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
@@ -71,7 +73,8 @@ public class EntityCheetah extends ZAWABaseLand {
 			this.dropItem(ZAWAItems.carnivore_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.carnivore_meat_raw, 1);
-		this.dropItem(ZAWAItems.thick_fur, 1);
+		this.dropItem(ItemInit.CHEETAH_FUR, 1);
+		this.dropItem(ItemInit.CARNIVORE_TOOTH, 1);
 	}
 	
 	@Override

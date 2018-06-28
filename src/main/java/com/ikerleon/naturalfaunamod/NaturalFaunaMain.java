@@ -57,4 +57,11 @@ public class NaturalFaunaMain {
 			return new ItemStack(ItemInit.CAPERCAILLIE_FEATHER);
 		}
 	};
+	
+	public static CreativeTabs tabItems = new CreativeTabs("natural_fauna_items_tab") {
+		@Override
+		public ItemStack getTabIconItem() {
+			return new ItemStack(ItemInit.CARNIVORE_TOOTH);
+		}
+	};
 }

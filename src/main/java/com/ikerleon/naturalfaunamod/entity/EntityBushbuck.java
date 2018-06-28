@@ -3,8 +3,11 @@ package com.ikerleon.naturalfaunamod.entity;
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
+import org.zawamod.entity.core.Gender;
 import org.zawamod.entity.land.EntityAfricanLion;
 import org.zawamod.init.ZAWAItems;
+
+import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -23,7 +26,6 @@ public class EntityBushbuck extends ZAWABaseLand {
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
         this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityAfricanLion.class, 10.0F, 2.2D, 2.2D));
-        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityLeopard.class, 10.0F, 2.2D, 2.2D));
         this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityHyena.class, 10.0F, 2.2D, 2.2D));
 	}
     
@@ -69,6 +71,9 @@ public class EntityBushbuck extends ZAWABaseLand {
 			this.dropItem(ZAWAItems.large_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.large_meat_raw, 1);
+		if(this.getGender()==Gender.MALE) {
+			this.dropItem(ItemInit.HORN, 1);
+		}
 	}
 	
 	@Override

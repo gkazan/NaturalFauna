@@ -5,6 +5,7 @@ import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
@@ -13,6 +14,8 @@ import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityCourser extends ZAWABaseLand {
@@ -33,6 +36,12 @@ public class EntityCourser extends ZAWABaseLand {
 	@Override
 	public int setVariants() {
 		return 3;
+	}
+	
+	@Override
+	protected SoundEvent getHurtSound(DamageSource s)
+	{
+	    return SoundHandler.COURSER_HURT;
 	}
 	
 	@Override

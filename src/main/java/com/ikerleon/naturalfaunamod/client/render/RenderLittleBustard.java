@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
+import org.zawamod.entity.core.Gender;
 import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
@@ -18,6 +19,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderLittleBustard extends RenderLivingZAWA<EntityLittleBustard> {
 	
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/littlebustard/texture.png");
+	public static final ResourceLocation texturefemale = new ResourceLocation(NFReference.MOD_ID, "textures/entity/littlebustard/texturefemale.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/littlebustard/texturechild.png");
 
 
 	public RenderLittleBustard(RenderManager rm) {
@@ -27,7 +30,10 @@ public class RenderLittleBustard extends RenderLivingZAWA<EntityLittleBustard> {
 	protected ResourceLocation getEntityTexture(EntityLittleBustard entity)
     {
     	if(entity.isChild()) {
-    		return ZAWARenderUtils.none;
+    		return texturechild;
+    	}
+    	else if(entity.getGender()==Gender.FEMALE) {
+    		return texturefemale;
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());

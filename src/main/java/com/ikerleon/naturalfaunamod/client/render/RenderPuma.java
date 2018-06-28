@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelPuma;
@@ -27,7 +26,7 @@ public class RenderPuma extends RenderLivingZAWA<EntityPuma> {
     protected ResourceLocation getEntityTexture(EntityPuma entity)
     {
     	if(entity.isChild()) {
-    		return ZAWARenderUtils.none;
+    		return getTextureOfVar(entity.getAnimalType());
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());
