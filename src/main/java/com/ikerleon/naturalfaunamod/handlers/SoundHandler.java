@@ -24,9 +24,13 @@ public class SoundHandler {
 	public static SoundEvent ROE_DEER_HURT;
 	public static SoundEvent OSTRICH_BOOMING;
 	public static SoundEvent PUMA_HURT;
+	public static SoundEvent BUSHBUCK_HURT;
+	public static SoundEvent GAZELLE_HURT;
+	public static SoundEvent CHEETAH_CHIRP;
 
 	
 	public static void registerSounds() {
+		
 		size=SoundEvent.REGISTRY.getKeys().size();
 		
 		CAPERCAILLIE_LEKKING = registerSound("entity.capercaillie.lekking");
@@ -45,6 +49,9 @@ public class SoundHandler {
 		ROE_DEER_HURT = registerSound("entity.roedeer.hurt");
 		OSTRICH_BOOMING = registerSound("entity.ostrich.booming");
 		PUMA_HURT = registerSound("entity.puma.hurt");
+		BUSHBUCK_HURT = registerSound("entity.bushbuck.hurt");
+		GAZELLE_HURT = registerSound("entity.gazelle.hurt");
+		CHEETAH_CHIRP = registerSound("entity.cheetah.chirp");
 	}
 	
 	  private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("faunanatural:" + s);

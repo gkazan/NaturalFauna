@@ -14,5 +14,8 @@
    "entity.roedeer.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/roedeer/living", "stream": true}]},
    "entity.roedeer.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/roedeer/hurt", "stream": true}]},
    "entity.ostrich.booming":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/ostrich/booming", "stream": true}]},
-   "entity.puma.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/puma/hurt", "stream": true}]}
+   "entity.puma.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/puma/hurt", "stream": true}]},
+   "entity.bushbuck.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/bushbuck/hurt", "stream": true}]},
+   "entity.gazelle.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/gazelle/hurt", "stream": true}]},
+   "entity.cheetah.chirp":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/cheetah/chirp", "stream": true}]}
 }

@@ -134,7 +134,7 @@ public class ModelRoeDeer extends AdvancedModelBase {
     {
     	resetToDefaultPose();
 
-    	float globalSpeed = 2f;
+    	float globalSpeed = 1.75f;
     	float globalHeight = 0.5f;
     	float globalDegree = 1F;
     	

@@ -12,7 +12,6 @@ import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
 import com.ikerleon.naturalfaunamod.entity.EntityGreySeal;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
-import com.ikerleon.naturalfaunamod.entity.EntityJackfish;
 import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
 import com.ikerleon.naturalfaunamod.entity.EntityLittleBustard;
 import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
@@ -43,7 +42,6 @@ public class EntityInit {
 		createEntity(EntityCantabricCapercaillie.class, "cantabric_capercaillie", 0, 15534345);
 		createEntity(EntityLittleBustard.class, "little_bustard", 11900255, 16777215);
 		createEntity(EntityGrantsGazelle.class, "grants_gazelle", 16767134, 16771012);
-		createEntity(EntityJackfish.class, "jack_fish", 13227237, 4213595);
 		createEntity(EntityNautilus.class, "nautilus", 14840691, 16777215);
 		createEntity(EntityPuma.class, "puma", 13870196, 16378843);
 		createEntity(EntityBlueGnu.class, "blue_gnu", 4145750, 15916216);

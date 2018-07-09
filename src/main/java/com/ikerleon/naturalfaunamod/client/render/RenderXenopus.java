@@ -7,6 +7,7 @@ import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelXenopus;
 import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -21,6 +22,12 @@ public class RenderXenopus extends RenderLivingZAWA<EntityXenopus> {
 
 	public RenderXenopus(RenderManager rm) {
 		super(rm, new ModelXenopus(), 0.4F);
+	}
+	
+	protected void preRenderCallback(EntityXenopus entitylivingbaseIn, float partialTickTime)
+	{
+	    GlStateManager.rotate (180,0,1,0);
+	    super.preRenderCallback(entitylivingbaseIn, partialTickTime);
 	}
 
     protected ResourceLocation getEntityTexture(EntityXenopus entity)

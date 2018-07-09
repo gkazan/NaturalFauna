@@ -33,8 +33,8 @@ public class EntityBlueGnu extends ZAWABaseLand {
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
-        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityAfricanLion.class, 10.0F, 2.2D, 2.2D));
-        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityHyena.class, 10.0F, 2.2D, 2.2D));
+        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity<>(this, EntityAfricanLion.class, 10.0F, 2.2D, 2.2D));
+        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity<>(this, EntityHyena.class, 10.0F, 2.2D, 2.2D));
 	}
     
     public float getEyeHeight()

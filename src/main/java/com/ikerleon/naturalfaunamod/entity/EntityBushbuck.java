@@ -7,6 +7,7 @@ import org.zawamod.entity.core.Gender;
 import org.zawamod.entity.land.EntityAfricanLion;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
@@ -15,6 +16,8 @@ import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityBushbuck extends ZAWABaseLand {
@@ -25,8 +28,8 @@ public class EntityBushbuck extends ZAWABaseLand {
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
-        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityAfricanLion.class, 10.0F, 2.2D, 2.2D));
-        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity(this, EntityHyena.class, 10.0F, 2.2D, 2.2D));
+        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity<>(this, EntityAfricanLion.class, 10.0F, 2.2D, 2.2D));
+        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity<>(this, EntityHyena.class, 10.0F, 2.2D, 2.2D));
 	}
     
     public float getEyeHeight()
@@ -37,6 +40,12 @@ public class EntityBushbuck extends ZAWABaseLand {
 	@Override
 	public int setVariants() {
 		return 2;
+	}
+	
+	@Override
+	protected SoundEvent getHurtSound(DamageSource s)
+	{
+	    return SoundHandler.BUSHBUCK_HURT;
 	}
 	
 	@Override

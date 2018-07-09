@@ -40,9 +40,9 @@ public class ModelGrantsGazelle extends AdvancedModelBase {
         this.shape16_1.addBox(0.0F, -2.0F, -0.5F, 2, 2, 1, 0.0F);
         this.setRotateAngle(shape16_1, 0.0F, -0.2617993877991494F, -2.231054382824351F);
         this.shape16 = new AdvancedModelRenderer(this, 0, 0);
-        this.shape16.setRotationPoint(0.5F, -1.6F, -0.8F);
-        this.shape16.addBox(0.0F, 0.0F, -0.5F, 2, 2, 1, 0.0F);
-        this.setRotateAngle(shape16, -0.045553093477052F, 0.0F, -1.0471975511965976F);
+        this.shape16.setRotationPoint(0.4F, -2.0F, -1.3F);
+        this.shape16.addBox(0.0F, -2.0F, -0.5F, 2, 2, 1, 0.0F);
+        this.setRotateAngle(shape16, -0.40980330836826856F, 0.0F, 0.7740535232594852F);
         this.shape15_2 = new AdvancedModelRenderer(this, 59, 21);
         this.shape15_2.setRotationPoint(1.0F, -2.0F, 0.0F);
         this.shape15_2.addBox(-0.5F, -1.5F, -0.5F, 1, 2, 1, 0.0F);
@@ -105,8 +105,8 @@ public class ModelGrantsGazelle extends AdvancedModelBase {
         this.shape17.setRotationPoint(0F, 0F, 0F);
         this.shape17.addBox(0.0F, 0.0F, -0.5F, 2, 2, 1, 0.0F);
         this.setRotateAngle(shape16, -0.6108652381980153F, 0.0F, 0.0F);
-        this.head.addChild(this.shape16);
         this.head.addChild(this.shape16_1);
+        this.head.addChild(this.shape16);
         this.shape15.addChild(this.shape15_2);
         this.Body.addChild(this.Leg3);
         this.Body.addChild(this.Leg2);
@@ -154,7 +154,7 @@ public class ModelGrantsGazelle extends AdvancedModelBase {
     {
     	resetToDefaultPose();
 
-    	float globalSpeed = 2f;
+    	float globalSpeed = 1.75f;
     	float globalHeight = 0.5f;
     	float globalDegree = 1F;
     	

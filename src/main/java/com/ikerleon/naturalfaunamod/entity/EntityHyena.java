@@ -35,7 +35,7 @@ public class EntityHyena extends EntityAmurLeopard {
 	}
 	
 	public class EntityHyenaAttack
-	  implements Predicate
+	  implements Predicate<Object>
 	  {
 		EntityHyenaAttack(EntityHyena this$0) {}
 	    
@@ -64,7 +64,7 @@ public class EntityHyena extends EntityAmurLeopard {
 	{
 		long i = world.getWorldTime();
 		
-	    if((i>=14000)) {
+	    if((i>=14000)&&(this.isChild()==false)) {
 	    	return SoundHandler.HYENA_LIVING;
 	    }
 	    else {

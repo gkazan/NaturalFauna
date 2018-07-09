@@ -3,6 +3,7 @@ package com.ikerleon.naturalfaunamod.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.items.ItemDagger;
 import com.ikerleon.naturalfaunamod.init.items.ItemFeather;
 import com.ikerleon.naturalfaunamod.init.items.ItemNaturalFauna;
@@ -12,13 +13,13 @@ import net.minecraft.item.Item;
 public class ItemInit {
 	  public static final List<Item> ITEMS = new ArrayList<Item>();
 
-	  public static Item CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie");
-	  public static Item AVOCET_FEATHER = new ItemFeather("feather_avocet");
-	  public static Item COURSER_FEATHER = new ItemFeather("feather_courser");
-	  public static Item KORIBUSTARD_FEATHER = new ItemFeather("feather_kori_bustard");
-	  public static Item LITTLEBUSTARD_FEATHER = new ItemFeather("feather_little_bustard");
-	  public static Item OSTRICH_FEATHER = new ItemFeather("feather_ostrich");
-	  public static Item PUFFIN_FEATHER = new ItemFeather("feather_puffin");
+	  public static ItemFeather CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie", SoundHandler.CAPERCAILLIE_LEKKING);
+	  public static ItemFeather AVOCET_FEATHER = new ItemFeather("feather_avocet", SoundHandler.CAPERCAILLIE_LEKKING);
+	  public static ItemFeather COURSER_FEATHER = new ItemFeather("feather_courser", SoundHandler.CAPERCAILLIE_LEKKING);
+	  public static ItemFeather KORIBUSTARD_FEATHER = new ItemFeather("feather_kori_bustard", SoundHandler.CAPERCAILLIE_LEKKING);
+	  public static ItemFeather LITTLEBUSTARD_FEATHER = new ItemFeather("feather_little_bustard", SoundHandler.CAPERCAILLIE_LEKKING);
+	  public static ItemFeather OSTRICH_FEATHER = new ItemFeather("feather_ostrich", SoundHandler.CAPERCAILLIE_LEKKING);
+	  public static ItemFeather PUFFIN_FEATHER = new ItemFeather("feather_puffin", SoundHandler.CAPERCAILLIE_LEKKING);
 	  public static Item HORN_DAGGER = new ItemDagger("dagger_horn");
 	  public static Item TOOTH_DAGGER = new ItemDagger("dagger_tooth");
 	  public static Item CARNIVORE_TOOTH = new ItemNaturalFauna("tooth_carnivore");

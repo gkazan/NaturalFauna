@@ -7,6 +7,7 @@ import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
@@ -15,11 +16,13 @@ import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityCheetah extends ZAWABaseLand {
 	
 	Random random = new Random();
+	public int chirpNum;
 	public final int kingTexture=random.nextInt(20) + 1;
 	public final int spotlessTexture=random.nextInt(20) + 1;
 	
@@ -39,6 +42,19 @@ public class EntityCheetah extends ZAWABaseLand {
 	@Override
 	public int setVariants() {
 		return 5;
+	}
+	
+	@Override
+	protected SoundEvent getAmbientSound()
+	{
+		chirpNum=random.nextInt(35);
+		
+		if(chirpNum==2) {
+			return SoundHandler.CHEETAH_CHIRP;
+		}
+		else {
+			return null;
+		}
 	}
 	
 	@Override
