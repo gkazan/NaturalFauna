@@ -13,11 +13,11 @@ public class CommonProxy {
 	
 	public void preInit(FMLPreInitializationEvent event)
 	{	
+		SoundHandler.registerSounds();
 		EntityInit.register();
 	}
 	
 	public void init(FMLInitializationEvent event) {
-		SoundHandler.registerSounds();
 	}
 	
 	public void postInit(FMLPostInitializationEvent event) {

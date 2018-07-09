@@ -18,7 +18,8 @@ entity.xenopus_frog.name=Xenopus frog
 entity.cape_bushbuck.name=Cape bushbuck
 entity.african_cheetah.name=African cheetah
 
-item.feather_capercaillie.name=Capercaillie feather
+item.feather_capercaillie_male.name=Male capercaillie feather
+item.feather_capercaillie_female.name=Female capercaillie feather
 item.feather_avocet.name=Avocet feather
 item.feather_courser.name=Cream-coloured courser feather
 item.feather_kori_bustard.name=Kori bustard feather

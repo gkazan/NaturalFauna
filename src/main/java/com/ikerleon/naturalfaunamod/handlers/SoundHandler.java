@@ -27,6 +27,7 @@ public class SoundHandler {
 	public static SoundEvent BUSHBUCK_HURT;
 	public static SoundEvent GAZELLE_HURT;
 	public static SoundEvent CHEETAH_CHIRP;
+	public static SoundEvent PUFFIN_CALL;
 
 	
 	public static void registerSounds() {
@@ -52,6 +53,7 @@ public class SoundHandler {
 		BUSHBUCK_HURT = registerSound("entity.bushbuck.hurt");
 		GAZELLE_HURT = registerSound("entity.gazelle.hurt");
 		CHEETAH_CHIRP = registerSound("entity.cheetah.chirp");
+		PUFFIN_CALL = registerSound("entity.puffin.living");
 	}
 	
 	  private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("faunanatural:" + s);

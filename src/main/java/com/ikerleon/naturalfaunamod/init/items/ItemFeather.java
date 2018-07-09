@@ -8,6 +8,9 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemRecord;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.text.translation.I18n;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemFeather extends ItemRecord implements IHasModel
 {
@@ -30,5 +33,11 @@ public class ItemFeather extends ItemRecord implements IHasModel
   public EnumRarity getRarity(ItemStack stack)
   {
       return EnumRarity.COMMON;
+  }
+  
+  @SideOnly(Side.CLIENT)
+  public String getRecordNameLocal()
+  {
+      return I18n.translateToLocal("");
   }
 }

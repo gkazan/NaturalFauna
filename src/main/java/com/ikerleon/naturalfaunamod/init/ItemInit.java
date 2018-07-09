@@ -13,7 +13,8 @@ import net.minecraft.item.Item;
 public class ItemInit {
 	  public static final List<Item> ITEMS = new ArrayList<Item>();
 
-	  public static ItemFeather CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie", SoundHandler.CAPERCAILLIE_LEKKING);
+	  public static ItemFeather MALE_CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie_male", SoundHandler.CAPERCAILLIE_LEKKING);
+	  public static ItemFeather FEMALE_CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie_female", SoundHandler.CAPERCAILLIE_LEKKING);
 	  public static ItemFeather AVOCET_FEATHER = new ItemFeather("feather_avocet", SoundHandler.CAPERCAILLIE_LEKKING);
 	  public static ItemFeather COURSER_FEATHER = new ItemFeather("feather_courser", SoundHandler.CAPERCAILLIE_LEKKING);
 	  public static ItemFeather KORIBUSTARD_FEATHER = new ItemFeather("feather_kori_bustard", SoundHandler.CAPERCAILLIE_LEKKING);

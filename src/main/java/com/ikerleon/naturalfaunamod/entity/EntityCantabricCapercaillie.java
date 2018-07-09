@@ -180,7 +180,12 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.bird_meat, 1);
-		this.dropItem(ItemInit.CAPERCAILLIE_FEATHER, 1);
+		if(this.getGender()==Gender.MALE) {
+			this.dropItem(ItemInit.MALE_CAPERCAILLIE_FEATHER, 1);
+		}
+		else {
+			this.dropItem(ItemInit.FEMALE_CAPERCAILLIE_FEATHER, 1);
+		}
 	}
 	
 	@Override

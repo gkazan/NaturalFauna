@@ -18,7 +18,8 @@ entity.xenopus_frog.name=Rana Xenopus
 entity.cape_bushbuck.name=Bushbuck septentrional
 entity.african_cheetah.name=Guepardo africano
 
-item.feather_capercaillie.name=Pluma de urogallo
+item.feather_capercaillie_male.name=Pluma de urogallo macho
+item.feather_capercaillie_female.name=Pluma de urogallo hembra
 item.feather_avocet.name=Pluma de avoceta
 item.feather_courser.name=Pluma de corredor sahariano
 item.feather_kori_bustard.name=Pluma de avutarda kori

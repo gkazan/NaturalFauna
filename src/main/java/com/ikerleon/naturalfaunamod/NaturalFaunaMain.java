@@ -54,7 +54,7 @@ public class NaturalFaunaMain {
 	public static CreativeTabs tabFeathers = new CreativeTabs("natural_fauna_feathers_tab") {
 		@Override
 		public ItemStack getTabIconItem() {
-			return new ItemStack(ItemInit.CAPERCAILLIE_FEATHER);
+			return new ItemStack(ItemInit.MALE_CAPERCAILLIE_FEATHER);
 		}
 	};
 	

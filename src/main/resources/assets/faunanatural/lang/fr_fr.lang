@@ -18,7 +18,8 @@ entity.xenopus_frog.name=Xenopus
 entity.cape_bushbuck.name=Guib harnaché
 entity.african_cheetah.name=Guépard africain
 
-item.feather_capercaillie.name=Plume du grand tétras
+item.feather_capercaillie_male.name=Plume du grand tétras mâle
+item.feather_capercaillie_female.name=Plume du grand tétras femelle
 item.feather_avocet.name=Plume de la avocette
 item.feather_courser.name=Plume du courvite isabelle
 item.feather_kori_bustard.name=Plume de la outarde kori
