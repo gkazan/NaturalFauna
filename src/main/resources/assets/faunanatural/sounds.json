@@ -18,5 +18,14 @@
    "entity.bushbuck.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/bushbuck/hurt", "stream": true}]},
    "entity.gazelle.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/gazelle/hurt", "stream": true}]},
    "entity.cheetah.chirp":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/cheetah/chirp", "stream": true}]},
-   "entity.puffin.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/puffin/living", "stream": true}]}
+   "entity.puffin.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/puffin/living", "stream": true}]},
+   "stream.male_capercaillie_stream":{"category":"ambient", "sounds":[{"name": "faunanatural:stream/male_capercaillie_stream", "stream": true}]},
+   "stream.female_capercaillie_stream":{"category":"ambient", "sounds":[{"name": "faunanatural:stream/female_capercaillie_stream", "stream": true}]},
+   "stream.avocet_stream":{"category":"ambient", "sounds":[{"name": "faunanatural:stream/avocet_stream", "stream": true}]},
+   "stream.courser_stream":{"category":"ambient", "sounds":[{"name": "faunanatural:stream/courser_stream", "stream": true}]},
+   "stream.koribustard_stream":{"category":"ambient", "sounds":[{"name": "faunanatural:stream/koribustard_stream", "stream": true}]},
+   "stream.littlebustard_stream":{"category":"ambient", "sounds":[{"name": "faunanatural:stream/littlebustard_stream", "stream": true}]},
+   "stream.ostrich_stream":{"category":"ambient", "sounds":[{"name": "faunanatural:stream/ostrich_stream", "stream": true}]},
+   "stream.puffin_stream":{"category":"ambient", "sounds":[{"name": "faunanatural:stream/puffin_stream", "stream": true}]}
+    
 }

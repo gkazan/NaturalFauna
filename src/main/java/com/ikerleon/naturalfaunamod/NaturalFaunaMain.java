@@ -1,19 +1,20 @@
 package com.ikerleon.naturalfaunamod;
 
-import org.zawamod.addon.*;
+import org.zawamod.addon.ZAWAAddon;
+import org.zawamod.addon.ZAWAAddonHandler;
 import org.zawamod.entity.base.ZAWABaseLand;
 
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 import com.ikerleon.naturalfaunamod.proxies.CommonProxy;
 
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = NFReference.MOD_ID, name = NFReference.NAME, version = NFReference.VERSION, dependencies = NFReference.DENPEND)
 public class NaturalFaunaMain {

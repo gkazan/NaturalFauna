@@ -13,14 +13,14 @@ import net.minecraft.item.Item;
 public class ItemInit {
 	  public static final List<Item> ITEMS = new ArrayList<Item>();
 
-	  public static ItemFeather MALE_CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie_male", SoundHandler.CAPERCAILLIE_LEKKING);
-	  public static ItemFeather FEMALE_CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie_female", SoundHandler.CAPERCAILLIE_LEKKING);
-	  public static ItemFeather AVOCET_FEATHER = new ItemFeather("feather_avocet", SoundHandler.CAPERCAILLIE_LEKKING);
-	  public static ItemFeather COURSER_FEATHER = new ItemFeather("feather_courser", SoundHandler.CAPERCAILLIE_LEKKING);
-	  public static ItemFeather KORIBUSTARD_FEATHER = new ItemFeather("feather_kori_bustard", SoundHandler.CAPERCAILLIE_LEKKING);
-	  public static ItemFeather LITTLEBUSTARD_FEATHER = new ItemFeather("feather_little_bustard", SoundHandler.CAPERCAILLIE_LEKKING);
-	  public static ItemFeather OSTRICH_FEATHER = new ItemFeather("feather_ostrich", SoundHandler.CAPERCAILLIE_LEKKING);
-	  public static ItemFeather PUFFIN_FEATHER = new ItemFeather("feather_puffin", SoundHandler.CAPERCAILLIE_LEKKING);
+	  public static ItemFeather MALE_CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie_male", SoundHandler.MALE_CAPERCAILLIE_STREAM);
+	  public static ItemFeather FEMALE_CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie_female", SoundHandler.FEMALE_CAPERCAILLIE_STREAM);
+	  public static ItemFeather AVOCET_FEATHER = new ItemFeather("feather_avocet", SoundHandler.AVOCET_STREAM);
+	  public static ItemFeather COURSER_FEATHER = new ItemFeather("feather_courser", SoundHandler.COURSER_STREAM);
+	  public static ItemFeather KORIBUSTARD_FEATHER = new ItemFeather("feather_kori_bustard", SoundHandler.KORIBUSTARD_STREAM);
+	  public static ItemFeather LITTLEBUSTARD_FEATHER = new ItemFeather("feather_little_bustard", SoundHandler.LITTLEBUSTARD_STREAM);
+	  public static ItemFeather OSTRICH_FEATHER = new ItemFeather("feather_ostrich", SoundHandler.OSTRICH_STREAM);
+	  public static ItemFeather PUFFIN_FEATHER = new ItemFeather("feather_puffin", SoundHandler.PUFFIN_STREAM);
 	  public static Item HORN_DAGGER = new ItemDagger("dagger_horn");
 	  public static Item TOOTH_DAGGER = new ItemDagger("dagger_tooth");
 	  public static Item CARNIVORE_TOOTH = new ItemNaturalFauna("tooth_carnivore");
