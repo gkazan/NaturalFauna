@@ -8,6 +8,7 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemRecord;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -37,6 +38,6 @@ public class ItemFeather extends ItemRecord implements IHasModel
   @SideOnly(Side.CLIENT)
   public String getRecordNameLocal()
   {
-      return null;
+      return I18n.translateToLocal("Feathers with a secret function!");
   }
 }

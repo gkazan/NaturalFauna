@@ -62,14 +62,14 @@ public class SoundHandler {
 		GAZELLE_HURT = registerSound("entity.gazelle.hurt");
 		CHEETAH_CHIRP = registerSound("entity.cheetah.chirp");
 		PUFFIN_CALL = registerSound("entity.puffin.living");
-		MALE_CAPERCAILLIE_STREAM = registerSound("stream.male_capercaillie_stream");
-		FEMALE_CAPERCAILLIE_STREAM = registerSound("stream.female_capercaillie_stream");
-		AVOCET_STREAM = registerSound("stream.avocet_stream");
-		COURSER_STREAM = registerSound("stream.courser_stream");
-		KORIBUSTARD_STREAM = registerSound("stream.koribustard_stream");
-		LITTLEBUSTARD_STREAM = registerSound("stream.littlebustard_stream");
-		OSTRICH_STREAM = registerSound("stream.ostrich_stream");
-		PUFFIN_STREAM = registerSound("stream.puffin_stream");
+		MALE_CAPERCAILLIE_STREAM = registerSound("record.male_capercaillie_record");
+		FEMALE_CAPERCAILLIE_STREAM = registerSound("record.female_capercaillie_record");
+		AVOCET_STREAM = registerSound("record.avocet_record");
+		COURSER_STREAM = registerSound("record.courser_record");
+		KORIBUSTARD_STREAM = registerSound("record.koribustard_record");
+		LITTLEBUSTARD_STREAM = registerSound("record.littlebustard_record");
+		OSTRICH_STREAM = registerSound("record.ostrich_record");
+		PUFFIN_STREAM = registerSound("record.puffin_record");
 	}
 	
 	  private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("faunanatural:" + s);
