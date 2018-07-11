@@ -25,7 +25,7 @@ public class RenderRedBilledTropicbird extends RenderLivingZAWA<EntityRedBilledT
 	
 	protected ResourceLocation getEntityTexture(EntityRedBilledTropicbird entity)
     {
-		if(!entity.isChild() && !entity.onGround) {
+		if(!entity.isChild() && entity.onGround==false && entity.isInWater()==false) {
 			return ZAWARenderUtils.none;
 		}
 	    else {
@@ -60,7 +60,7 @@ public class RenderRedBilledTropicbird extends RenderLivingZAWA<EntityRedBilledT
 		@Override
 		public void doRenderLayer(EntityRedBilledTropicbird e, float f, float f1, float f2, float f3, float f4, float f5, float f6) {
 			if(!e.isInvisible()) {
-				if(!e.onGround && !e.isChild()) {
+				if(e.onGround==false && !e.isChild() && e.isInWater()==false) {
 					this.render.bindTexture(this.render.getTextureOfVar(e.getAnimalType()));
 			        this.modelF.setModelAttributes(this.render.getMainModel());
 			        this.modelF.render(e, f, f1, f2, f3, f4, f6);

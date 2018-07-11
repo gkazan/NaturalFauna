@@ -47,7 +47,7 @@ public class EntityKoriBustard extends ZAWABaseFlying {
 	
 	public int setFlyTicks()
 	{
-	    return 1;
+	    return 5;
 	}
 	
 	@Override
