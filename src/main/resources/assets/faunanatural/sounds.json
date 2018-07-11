@@ -20,6 +20,8 @@
    "entity.cheetah.chirp":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/cheetah/chirp", "stream": true}]},
    "entity.puffin.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/puffin/living", "stream": true}]},
    "entity.koribustard.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/koribustard/flying", "stream": true}]},
+   "entity.capercaillie.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/capercaillie/flying", "stream": true}]},
+   
    "record.male_capercaillie_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/male_capercaillie_record", "stream": true}]},
    "record.female_capercaillie_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/female_capercaillie_record", "stream": true}]},
    "record.avocet_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/avocet_record", "stream": true}]},

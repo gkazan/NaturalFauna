@@ -68,7 +68,7 @@ public class EntityKoriBustard extends ZAWABaseFlying {
 	@Override
 	protected SoundEvent getAmbientSound()
 	{
-	    if(!this.onGround && !this.isChild()) {
+	    if(this.onGround==false && this.isInWater()==false && !this.isChild()) {
 	    	return SoundHandler.KORIBUSTARD_FLYING;
 	    }
 	    else {

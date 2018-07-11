@@ -6,7 +6,7 @@ import java.util.Random;
 
 import javax.swing.Timer;
 
-import org.zawamod.entity.base.ZAWABaseLand;
+import org.zawamod.entity.base.ZAWABaseFlying;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.core.Gender;
@@ -21,10 +21,11 @@ import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityCantabricCapercaillie extends ZAWABaseLand {
+public class EntityCantabricCapercaillie extends ZAWABaseFlying {
 	
 	  public int celoNum;
 	  public int norNum;
@@ -32,12 +33,13 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 	  public int lekNum=1;
 	  private int chance = 700;
 	  private World world;
+	  private int standNum;
 	  Random random = new Random();
 	  Random random2 = new Random();
 	  private EntityCantabricCapercaillie.CantabricCapercaillieState state;
 
 	public EntityCantabricCapercaillie(World worldIn) {		
-		super(worldIn, 0.20F);
+		super(worldIn);
 		this.setSize(0.7F, 0.7F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
@@ -71,6 +73,9 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
 		    	return null;
 		    }
 	    }
+	    if(this.onGround==false && this.isInWater()==false && !this.isChild()) {
+	    	return SoundHandler.CAPERCAILLIE_FLYING;
+	    }
 	    else {
 	    	return null;
 	    }
@@ -85,6 +90,11 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
     {
         return this.height * 0.85F - 0.1F;
     }
+    
+	public int setFlyTicks()
+	{
+	    return 3;
+	}
 
     public enum CantabricCapercaillieState
     {
@@ -146,8 +156,24 @@ public class EntityCantabricCapercaillie extends ZAWABaseLand {
     		  lekTimer.start();
     	  }
       }
-      super.onLivingUpdate();;  
+    	  
+     this.standNum=rand.nextInt(45);
+  		
+     if(this.stand && this.standNum==2) {
+  		this.stand=false;
      }
+     super.onLivingUpdate();
+     
+     }
+    
+    @Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		this.stand=true;
+		if(!this.isChild()) {
+			this.playSound(SoundHandler.CAPERCAILLIE_FLYING, 1, 1);
+		}
+		return super.attackEntityFrom(source, amount);
+	}
     
 	@Override
 	public int setVariants() {
