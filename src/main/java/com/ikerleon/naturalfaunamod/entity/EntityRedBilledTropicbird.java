@@ -1,14 +1,9 @@
 package com.ikerleon.naturalfaunamod.entity;
 
-import java.util.Random;
-
 import org.zawamod.entity.base.ZAWABaseFlying;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.init.ZAWAItems;
-
-import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
-import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -17,18 +12,13 @@ import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityKoriBustard extends ZAWABaseFlying {
-	
-	private int standNum;
-	protected Random rand = new Random();
+public class EntityRedBilledTropicbird extends ZAWABaseFlying{
 
-	public EntityKoriBustard(World worldIn) {		
+	public EntityRedBilledTropicbird(World worldIn) {		
 		super(worldIn);
-		this.setSize(1F, 1.0F);
+		this.setSize(0.75F, 0.5F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.20D));
@@ -42,17 +32,17 @@ public class EntityKoriBustard extends ZAWABaseFlying {
 	
 	@Override
 	public int setVariants() {
-		return 2;
+		return 1;
 	}
 	
 	public int setFlyTicks()
 	{
-	    return 1;
+	    return 350;
 	}
 	
 	@Override
 	public boolean isFoodItem(ItemStack stack) {
-		return BreedItems.InsectivoreItems(stack);
+		return BreedItems.PescatarianItems(stack);
 	}
 	
 	@Override
@@ -66,20 +56,20 @@ public class EntityKoriBustard extends ZAWABaseFlying {
 	}
 	
 	@Override
-	protected SoundEvent getAmbientSound()
-	{
-	    if(!this.onGround && !this.isChild()) {
-	    	return SoundHandler.KORIBUSTARD_FLYING;
-	    }
-	    else {
-	    	return null;
-	    }
+	public void onLivingUpdate() {
+		if(this.onGround) {
+			this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.0D);
+		}
+		else {
+			this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20D);
+		}
+		super.onLivingUpdate();
 	}
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(14.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.0D);
 	}
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
@@ -87,29 +77,11 @@ public class EntityKoriBustard extends ZAWABaseFlying {
 			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.bird_meat, 1);
-		this.dropItem(ItemInit.KORIBUSTARD_FEATHER, 1);
-	}
-	@Override
-	public void onLivingUpdate() {
-		this.standNum=rand.nextInt(45);
-		
-		if(this.stand && this.standNum==2) {
-			this.stand=false;
-		}
-		super.onLivingUpdate();
-	}
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		this.stand=true;
-		if(!this.isChild()) {
-			this.playSound(SoundHandler.KORIBUSTARD_FLYING, 1, 1);
-		}
-		return super.attackEntityFrom(source, amount);
 	}
 	
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
-		return new EntityKoriBustard(this.world);
+		return new EntityRedBilledTropicbird(this.world);
 	}
 
 	@Override

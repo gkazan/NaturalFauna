@@ -28,6 +28,8 @@ public class SoundHandler {
 	public static SoundEvent GAZELLE_HURT;
 	public static SoundEvent CHEETAH_CHIRP;
 	public static SoundEvent PUFFIN_CALL;
+	public static SoundEvent KORIBUSTARD_FLYING;
+	
 	public static SoundEvent MALE_CAPERCAILLIE_STREAM;
 	public static SoundEvent FEMALE_CAPERCAILLIE_STREAM;
 	public static SoundEvent AVOCET_STREAM;
@@ -62,6 +64,8 @@ public class SoundHandler {
 		GAZELLE_HURT = registerSound("entity.gazelle.hurt");
 		CHEETAH_CHIRP = registerSound("entity.cheetah.chirp");
 		PUFFIN_CALL = registerSound("entity.puffin.living");
+		KORIBUSTARD_FLYING = registerSound("entity.koribustard.flying");
+		
 		MALE_CAPERCAILLIE_STREAM = registerSound("record.male_capercaillie_record");
 		FEMALE_CAPERCAILLIE_STREAM = registerSound("record.female_capercaillie_record");
 		AVOCET_STREAM = registerSound("record.avocet_record");

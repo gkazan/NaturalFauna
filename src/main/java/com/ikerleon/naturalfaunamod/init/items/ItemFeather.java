@@ -17,7 +17,7 @@ public class ItemFeather extends ItemRecord implements IHasModel
   public ItemFeather(String unloc, SoundEvent sound)
   {
 	super(unloc, sound);
-	maxStackSize=64;
+	maxStackSize=1;
     setUnlocalizedName(unloc);
     setRegistryName(unloc);
     setCreativeTab(NaturalFaunaMain.tabFeathers);

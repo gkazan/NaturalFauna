@@ -3,13 +3,14 @@ package com.ikerleon.naturalfaunamod.entity;
 import java.util.Random;
 
 import org.zawamod.entity.base.ZAWABaseLand;
-import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.core.AnimalData.EnumNature;
+import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
@@ -24,6 +25,8 @@ public class EntityOstrich extends ZAWABaseLand {
 	
 	  Random random = new Random();
 	  public int boomingNum;
+	  
+	  private boolean isThreatening=false;
 	
 	public EntityOstrich(World worldIn) {		
 		super(worldIn, 0.20D);
@@ -112,6 +115,13 @@ public class EntityOstrich extends ZAWABaseLand {
 		else
 			this.dropItem(ZAWAItems.bird_meat, 1);
 		this.dropItem(ItemInit.OSTRICH_FEATHER, 1);
+	}
+	
+	@Override
+	public void onLivingUpdate() {
+		double distance = 6.0D;
+	    Entity entityFound = null;
+		super.onLivingUpdate();
 	}
 	
 	@Override
