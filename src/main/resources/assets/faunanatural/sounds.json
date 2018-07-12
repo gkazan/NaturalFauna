@@ -21,6 +21,11 @@
    "entity.puffin.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/puffin/living", "stream": true}]},
    "entity.koribustard.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/koribustard/flying", "stream": true}]},
    "entity.capercaillie.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/capercaillie/flying", "stream": true}]},
+   "entity.hornbill.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/hornbill/living", "stream": true}]},
+   "entity.hornbill.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/hornbill/hurt", "stream": true}]},
+   "entity.turaco.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/turaco/living", "stream": true}]},
+   "entity.turaco.living2":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/turaco/living2", "stream": true}]},
+   "entity.turaco.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/turaco/flying", "stream": true}]},
    
    "record.male_capercaillie_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/male_capercaillie_record", "stream": true}]},
    "record.female_capercaillie_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/female_capercaillie_record", "stream": true}]},
@@ -29,5 +34,7 @@
    "record.koribustard_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/koribustard_record", "stream": true}]},
    "record.littlebustard_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/littlebustard_record", "stream": true}]},
    "record.ostrich_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/ostrich_record", "stream": true}]},
-   "record.puffin_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/puffin_record", "stream": true}]}
+   "record.hornbill_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/redbilledhornbill_record", "stream": true}]},
+   "record.puffin_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/puffin_record", "stream": true}]},
+   "record.turaco_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/turaco_record", "stream": true}]}
 }

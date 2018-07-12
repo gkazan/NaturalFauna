@@ -16,8 +16,10 @@ import com.ikerleon.naturalfaunamod.client.render.RenderNautilus;
 import com.ikerleon.naturalfaunamod.client.render.RenderOstrich;
 import com.ikerleon.naturalfaunamod.client.render.RenderPuffin;
 import com.ikerleon.naturalfaunamod.client.render.RenderPuma;
+import com.ikerleon.naturalfaunamod.client.render.RenderRedBilledHornbill;
 import com.ikerleon.naturalfaunamod.client.render.RenderRedBilledTropicbird;
 import com.ikerleon.naturalfaunamod.client.render.RenderRoeDeer;
+import com.ikerleon.naturalfaunamod.client.render.RenderTuraco;
 import com.ikerleon.naturalfaunamod.client.render.RenderXenopus;
 import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
 import com.ikerleon.naturalfaunamod.entity.EntityBlueGnu;
@@ -35,8 +37,10 @@ import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
 import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 import com.ikerleon.naturalfaunamod.entity.EntityPuma;
+import com.ikerleon.naturalfaunamod.entity.EntityRedBilledHornbill;
 import com.ikerleon.naturalfaunamod.entity.EntityRedBilledTropicbird;
 import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
+import com.ikerleon.naturalfaunamod.entity.EntityTuraco;
 import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -69,6 +73,8 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityBushbuck.class, new RenderBushbuck.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityCheetah.class, new RenderCheetah.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityRedBilledTropicbird.class, new RenderRedBilledTropicbird.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityRedBilledHornbill.class, new RenderRedBilledHornbill.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityTuraco.class, new RenderTuraco.RenderFactory());
 	}
 	
 	@Override

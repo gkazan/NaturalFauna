@@ -30,6 +30,11 @@ public class SoundHandler {
 	public static SoundEvent PUFFIN_CALL;
 	public static SoundEvent KORIBUSTARD_FLYING;
 	public static SoundEvent CAPERCAILLIE_FLYING;
+	public static SoundEvent HORNBILL_LIVING;
+	public static SoundEvent HORNBILL_HURT;
+	public static SoundEvent TURACO_FLYING;
+	public static SoundEvent TURACO_LIVING;
+	public static SoundEvent TURACO_LIVING2;
 	
 	public static SoundEvent MALE_CAPERCAILLIE_STREAM;
 	public static SoundEvent FEMALE_CAPERCAILLIE_STREAM;
@@ -39,6 +44,8 @@ public class SoundHandler {
 	public static SoundEvent LITTLEBUSTARD_STREAM;
 	public static SoundEvent OSTRICH_STREAM;
 	public static SoundEvent PUFFIN_STREAM;
+	public static SoundEvent HORNBILL_STREAM;
+	public static SoundEvent TURACO_STREAM;
 
 	
 	public static void registerSounds() {
@@ -67,6 +74,11 @@ public class SoundHandler {
 		PUFFIN_CALL = registerSound("entity.puffin.living");
 		KORIBUSTARD_FLYING = registerSound("entity.koribustard.flying");
 		CAPERCAILLIE_FLYING = registerSound("entity.capercaillie.flying");
+		HORNBILL_LIVING = registerSound("entity.hornbill.living");
+		HORNBILL_HURT = registerSound("entity.hornbill.hurt");
+		TURACO_LIVING = registerSound("entity.turaco.living");
+		TURACO_LIVING2 = registerSound("entity.turaco.living2");
+		TURACO_FLYING = registerSound("entity.turaco.flying");
 		
 		MALE_CAPERCAILLIE_STREAM = registerSound("record.male_capercaillie_record");
 		FEMALE_CAPERCAILLIE_STREAM = registerSound("record.female_capercaillie_record");
@@ -76,6 +88,8 @@ public class SoundHandler {
 		LITTLEBUSTARD_STREAM = registerSound("record.littlebustard_record");
 		OSTRICH_STREAM = registerSound("record.ostrich_record");
 		PUFFIN_STREAM = registerSound("record.puffin_record");
+		HORNBILL_STREAM = registerSound("record.hornbill_record");
+		TURACO_STREAM = registerSound("record.turaco_record");
 	}
 	
 	  private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("faunanatural:" + s);

@@ -5,6 +5,7 @@ import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelPuffin;
+import com.ikerleon.naturalfaunamod.client.model.ModelPuffinFlying;
 import com.ikerleon.naturalfaunamod.client.model.ModelPuffinWater;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 
@@ -29,7 +30,7 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	
     protected ResourceLocation getEntityTexture(EntityPuffin entity)
     {
-    	if(entity.isInWater()) {
+    	if(!entity.isChild() && !entity.onGround) {
     		return ZAWARenderUtils.none;
     	}
     	else if(entity.isChild()) {
@@ -53,6 +54,7 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	public class LayerPuffin implements LayerRenderer<EntityPuffin> {
 	    private final RenderPuffin render;
 	    private final ModelPuffinWater modelW = new ModelPuffinWater();
+	    private final ModelPuffinFlying modelF = new ModelPuffinFlying();
 
 	    public LayerPuffin(RenderPuffin re)
 	    {
@@ -69,6 +71,17 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 		            this.modelW.setRotationAngles(f,f1,f3,f4,f5,f6, kat);
 		            this.modelW.render(kat, f, f1, f2, f3, f4, f6);
 	        	}
+	        	if(!kat.onGround && !kat.isChild()) {
+	        		if(kat.isInWater()) {
+	        			this.render.bindTexture(ZAWARenderUtils.none);
+	        		}
+	        		else {
+	        			this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));
+	        		}					
+			        this.modelF.setModelAttributes(this.render.getMainModel());
+			        this.modelF.render(kat, f, f1, f2, f3, f4, f6);
+			        this.modelF.setRotationAngles(f, f1, f3, f4, f5, f6, kat);
+				}
 	        }
 	    }
 

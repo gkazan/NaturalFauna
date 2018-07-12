@@ -21,6 +21,7 @@ public class ItemInit {
 	  public static ItemFeather LITTLEBUSTARD_FEATHER = new ItemFeather("feather_little_bustard", SoundHandler.LITTLEBUSTARD_STREAM);
 	  public static ItemFeather OSTRICH_FEATHER = new ItemFeather("feather_ostrich", SoundHandler.OSTRICH_STREAM);
 	  public static ItemFeather PUFFIN_FEATHER = new ItemFeather("feather_puffin", SoundHandler.PUFFIN_STREAM);
+	  public static ItemFeather REDBILLEDHORNBILL_FEATHER = new ItemFeather("feather_redbilledhornbill", SoundHandler.HORNBILL_STREAM);
 	  public static Item HORN_DAGGER = new ItemDagger("dagger_horn");
 	  public static Item TOOTH_DAGGER = new ItemDagger("dagger_tooth");
 	  public static Item CARNIVORE_TOOTH = new ItemNaturalFauna("tooth_carnivore");

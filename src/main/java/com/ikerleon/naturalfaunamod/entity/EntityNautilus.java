@@ -3,15 +3,11 @@ package com.ikerleon.naturalfaunamod.entity;
 import org.zawamod.entity.base.ZAWABaseWater;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.init.ZAWAItems;
-import org.zawamod.util.ZAWAUtils;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public class EntityNautilus extends ZAWABaseWater {

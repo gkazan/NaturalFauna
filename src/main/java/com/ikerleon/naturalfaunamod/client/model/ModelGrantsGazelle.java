@@ -3,7 +3,6 @@ package com.ikerleon.naturalfaunamod.client.model;
 import org.zawamod.client.model.llibrary.AdvancedModelBase;
 import org.zawamod.client.model.llibrary.AdvancedModelRenderer;
 
-import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 

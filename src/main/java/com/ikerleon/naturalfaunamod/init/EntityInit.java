@@ -18,8 +18,10 @@ import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
 import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 import com.ikerleon.naturalfaunamod.entity.EntityPuma;
+import com.ikerleon.naturalfaunamod.entity.EntityRedBilledHornbill;
 import com.ikerleon.naturalfaunamod.entity.EntityRedBilledTropicbird;
 import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
+import com.ikerleon.naturalfaunamod.entity.EntityTuraco;
 import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 
 import net.minecraft.util.ResourceLocation;
@@ -53,6 +55,8 @@ public class EntityInit {
 		createEntity(EntityBushbuck.class, "cape_bushbuck", 7356945, 8347969);
 		createEntity(EntityCheetah.class, "african_cheetah", 16769440, 2959648);
 		createEntity(EntityRedBilledTropicbird.class, "Red-Billed_Tropicbird", 16777215, 5197391);
+		createEntity(EntityRedBilledHornbill.class, "Red-Billed_hornbill", 14208687, 14854656);
+		createEntity(EntityTuraco.class, "turaco", 4362558, 4946595);
 	}
 	
 	private static void createEntity(Class entityClass , String entityName, int Color1,int Color2) {

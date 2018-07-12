@@ -1,6 +1,6 @@
 package com.ikerleon.naturalfaunamod.entity;
 
-import org.zawamod.entity.base.ZAWABaseLand;
+import org.zawamod.entity.base.ZAWABaseFlying;
 
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
@@ -14,13 +14,16 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityPuffin extends ZAWABaseLand {
+public class EntityPuffin extends ZAWABaseFlying {
+	
+	  private int standNum;
 	
 	public EntityPuffin(World worldIn) {		
-		super(worldIn, 0.20D);
+		super(worldIn);
 		this.setSize(0.5F, 0.5F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
@@ -36,10 +39,25 @@ public class EntityPuffin extends ZAWABaseLand {
 		return 1;
 	}
 	
+	public int setFlyTicks()
+	{
+	    return 4;
+	}
+	
+	@Override
+	public boolean getWaterBelow(World arg0, int arg1, int arg2) {
+		return false;
+	}
+	
 	@Override
 	protected SoundEvent getAmbientSound()
 	{
-	    return SoundHandler.PUFFIN_CALL;
+		if(this.onGround && !this.isChild()) {
+	        return SoundHandler.PUFFIN_CALL;
+		}
+		else {
+			return null;
+		}
 	}
 	
 	@Override
@@ -61,6 +79,22 @@ public class EntityPuffin extends ZAWABaseLand {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(7.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20D);
+	}
+	
+	@Override
+	public void onLivingUpdate() {
+		this.standNum=rand.nextInt(45);
+  		
+	     if(this.stand && this.standNum==2) {
+	  		this.stand=false;
+	     }
+		super.onLivingUpdate();
+	}
+	
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		this.stand=true;
+		return super.attackEntityFrom(source, amount);
 	}
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
