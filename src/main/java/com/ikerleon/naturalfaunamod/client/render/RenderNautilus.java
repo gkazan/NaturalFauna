@@ -7,6 +7,7 @@ import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelNautilus;
 import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -22,6 +23,14 @@ public class RenderNautilus extends RenderLivingZAWA<EntityNautilus> {
 	public RenderNautilus(RenderManager rm) {
 		super(rm, new ModelNautilus(), 0.4F);
 	}
+	
+	protected void preRenderCallback(EntityNautilus entitylivingbaseIn, float partialTickTime)
+	{
+		if(!entitylivingbaseIn.isInWater() && !entitylivingbaseIn.isInLava())
+	    GlStateManager.rotate (90,0,0,1);
+		GlStateManager.translate (-0.1,0.2,0.3);
+	    super.preRenderCallback(entitylivingbaseIn, partialTickTime);
+	}
 
     protected ResourceLocation getEntityTexture(EntityNautilus entity)
     {
@@ -29,7 +38,7 @@ public class RenderNautilus extends RenderLivingZAWA<EntityNautilus> {
     		return ZAWARenderUtils.none;
     	}
     	else {
-    		return getTextureOfVar(0);
+    		return getTextureOfVar(entity.getAnimalType());
     	}
     }
 

@@ -13,6 +13,7 @@ import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityChicken;
@@ -21,7 +22,9 @@ import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 public class EntityHyena extends EntityAmurLeopard {
@@ -57,6 +60,14 @@ public class EntityHyena extends EntityAmurLeopard {
 	@Override
 	public int setVariants() {
 		return 3;
+	}
+	
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target) {
+		ResourceLocation name = EntityList.getKey(this);
+		ItemStack stack = new ItemStack(net.minecraft.init.Items.SPAWN_EGG);
+        net.minecraft.item.ItemMonsterPlacer.applyEntityIdToItemStack(stack, name);
+        return stack;
 	}
 	
 	@Override

@@ -8,12 +8,15 @@ import org.zawamod.init.ZAWAItems;
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 public class EntityGreySeal extends EntityPacificWalrus {
@@ -60,6 +63,14 @@ public class EntityGreySeal extends EntityPacificWalrus {
 	  {
 	    return true;
 	  }
+	
+	@Override
+	public ItemStack getPickedResult(RayTraceResult target) {
+		ResourceLocation name = EntityList.getKey(this);
+		ItemStack stack = new ItemStack(net.minecraft.init.Items.SPAWN_EGG);
+        net.minecraft.item.ItemMonsterPlacer.applyEntityIdToItemStack(stack, name);
+        return stack;
+	}
 	
 	@Override
 	public ItemStack setTameItem() {

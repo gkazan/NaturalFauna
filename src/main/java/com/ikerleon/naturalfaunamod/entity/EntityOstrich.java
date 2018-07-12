@@ -17,9 +17,11 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
@@ -144,21 +146,19 @@ public class EntityOstrich extends ZAWABaseLand {
 	      }
 	    }
 	    
-	    if (!isChild() && getGender()==Gender.MALE)
+	    if (isChild()==false && getGender()==Gender.MALE)
 	    {
-	      if (entityFound2 instanceof EntityPlayer) {
+	      if (entityFound2 instanceof EntityPlayer && this.getGender()==Gender.MALE) {
 	        this.isThreatening = true;
 	      }
 	      else {
 	        this.isThreatening = false;
 	      }
 	      if (this.isThreatening) {
-	        getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.26D);
+	        getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.27D);
 	      } else
-	        getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.24D);
+	        getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.22D);
 	    }
-
-
 		super.onLivingUpdate();
 	}
 	
