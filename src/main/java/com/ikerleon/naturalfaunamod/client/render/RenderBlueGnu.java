@@ -1,13 +1,16 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
+import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelBlueGnu;
+import com.ikerleon.naturalfaunamod.client.model.ModelBlueGnuChild;
 import com.ikerleon.naturalfaunamod.entity.EntityBlueGnu;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
@@ -25,12 +28,13 @@ public class RenderBlueGnu extends RenderLivingZAWA<EntityBlueGnu> {
 	
 	public RenderBlueGnu(RenderManager rm) {
 		super(rm, new ModelBlueGnu(), 0.4F);
+		addLayer(new LayerBlueGnu(this, this));
 	}
 
     protected ResourceLocation getEntityTexture(EntityBlueGnu entity)
     {
     	if(entity.isChild()) {
-    		return texturechild;
+    		return ZAWARenderUtils.none;
     	}
     	else {
     		if(entity.goldenTexture==2) {
@@ -55,6 +59,35 @@ public class RenderBlueGnu extends RenderLivingZAWA<EntityBlueGnu> {
 			case 2:
 				return texture3;
 		}
+	}
+    
+    public class LayerBlueGnu implements LayerRenderer<EntityBlueGnu>{
+		
+		private final RenderBlueGnu render;
+		private final ModelBlueGnuChild modelF = new ModelBlueGnuChild();
+		
+		public LayerBlueGnu(RenderBlueGnu e, RenderBlueGnu re)
+		{
+		    this.render = re;
+		}
+
+		@Override
+		public void doRenderLayer(EntityBlueGnu e, float f, float f1, float f2, float f3, float f4, float f5, float f6) {
+			if(!e.isInvisible()) {
+				if(e.isChild()) {
+					this.render.bindTexture(RenderBlueGnu.texturechild);
+			        this.modelF.setModelAttributes(this.render.getMainModel());
+			        this.modelF.render(e, f, f1, f2, f3, f4, f6);
+			        this.modelF.setRotationAngles(f, f1, f3, f4, f5, f6, e);
+				}
+			}
+		}
+
+		@Override
+		public boolean shouldCombineTextures() {
+			return true;
+		}
+		
 	}
 	
     public static class RenderFactory implements IRenderFactory<EntityBlueGnu>{

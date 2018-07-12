@@ -1,6 +1,6 @@
 package com.ikerleon.naturalfaunamod.entity;
 
-import org.zawamod.entity.base.ZAWABaseLand;
+import org.zawamod.entity.base.ZAWABaseFlying;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
@@ -18,10 +18,12 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityCourser extends ZAWABaseLand {
+public class EntityCourser extends ZAWABaseFlying {
+	
+	  private int standNum;
 	
 	public EntityCourser(World worldIn) {		
-		super(worldIn, 0.30D);
+		super(worldIn);
 		this.setSize(0.5F, 1F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.30D));
@@ -36,6 +38,11 @@ public class EntityCourser extends ZAWABaseLand {
 	@Override
 	public int setVariants() {
 		return 3;
+	}
+	
+	public int setFlyTicks()
+	{
+	    return 3;
 	}
 	
 	@Override
@@ -62,7 +69,23 @@ public class EntityCourser extends ZAWABaseLand {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(7.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.30D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+	}
+	
+	@Override
+	public void onLivingUpdate() {
+		this.standNum=rand.nextInt(45);
+  		
+	     if(this.stand && this.standNum==2) {
+	  		this.stand=false;
+	     }
+		super.onLivingUpdate();
+	}
+	
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		this.stand=true;
+		return super.attackEntityFrom(source, amount);
 	}
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {

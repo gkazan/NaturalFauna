@@ -5,6 +5,7 @@ import java.util.Random;
 import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
+import org.zawamod.entity.core.Gender;
 import org.zawamod.init.ZAWAItems;
 
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
@@ -17,6 +18,7 @@ import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
@@ -25,7 +27,6 @@ public class EntityOstrich extends ZAWABaseLand {
 	
 	  Random random = new Random();
 	  public int boomingNum;
-	  
 	  private boolean isThreatening=false;
 	
 	public EntityOstrich(World worldIn) {		
@@ -117,10 +118,47 @@ public class EntityOstrich extends ZAWABaseLand {
 		this.dropItem(ItemInit.OSTRICH_FEATHER, 1);
 	}
 	
+	public boolean getThreatening() {
+		return this.isThreatening;
+    }
+
+	
 	@Override
 	public void onLivingUpdate() {
-		double distance = 6.0D;
-	    Entity entityFound = null;
+		double distance2 = 7.0D;
+	    Entity entityFound2 = null;
+	    
+	    double d4 = -1.0D;
+	    for (int i = 0; i < this.world.loadedEntityList.size(); i++)
+	    {
+	      Entity CuEnt = (Entity)this.world.loadedEntityList.get(i);
+	        
+	      if (((CuEnt instanceof Entity)) && (CuEnt != this)) {
+	        double d5 = CuEnt.getDistanceSq(this.posX, this.posY, this.posZ);
+	          
+	        if (((distance2 < 0.0D) || (d5 < distance2 * distance2)) && ((d4 == -1.0D) || (d5 < d4)))
+	        {
+	          d4 = d5;
+	          entityFound2 = CuEnt;
+	        }
+	      }
+	    }
+	    
+	    if (!isChild() && getGender()==Gender.MALE)
+	    {
+	      if (entityFound2 instanceof EntityPlayer) {
+	        this.isThreatening = true;
+	      }
+	      else {
+	        this.isThreatening = false;
+	      }
+	      if (this.isThreatening) {
+	        getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.26D);
+	      } else
+	        getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.24D);
+	    }
+
+
 		super.onLivingUpdate();
 	}
 	

@@ -56,7 +56,7 @@ public class EntityHyena extends EntityAmurLeopard {
 	
 	@Override
 	public int setVariants() {
-		return 5;
+		return 3;
 	}
 	
 	@Override

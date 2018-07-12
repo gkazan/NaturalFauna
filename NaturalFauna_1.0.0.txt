@@ -1,0 +1,14 @@
+-ADDED
+ - Camel texture
+ - Secret function to feathers(apart from the crafting recipe)
+ - Living sound to puffin
+ - New animals!(3 species of turaco, red-billed hornbill, red-billed tropicbird)
+ - Flying AI, poses and animations to birds
+-CHANGED
+ - Hyena model
+ - Gnu model
+ - Puma model
+-FIXED
+ - Xenopus movement direction(until now it moved backwards)
+-REMOVED
+ - Jackfish
