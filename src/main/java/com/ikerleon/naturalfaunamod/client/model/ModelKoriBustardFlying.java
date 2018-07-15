@@ -142,10 +142,5 @@ public class ModelKoriBustardFlying extends AdvancedModelBase {
     	flap(rightwing, 0.4f * globalSpeed, 0.7f * globalDegree, true, 0, 0f, f, f1);
     	flap(leftwing2, 0.6f * globalSpeed, 0.4f * globalDegree, false, 0, 0f, f, f1);
     	flap(rightwing2, 0.6f * globalSpeed, 0.4f * globalDegree, true, 0, 0f, f, f1);
-
-    	walk(leftleg, 0.5f * globalSpeed, 0.3f * globalDegree, false, 0, 0f, f, f1);
-    	walk(leftleg2, 0.5f * globalSpeed, 0.1f * globalDegree, false, 0, 0f, f, f1);
-    	walk(rightleg, 0.5f * globalSpeed, 0.3f * globalDegree, true, 0, 0f, f, f1);
-    	walk(rightleg2, 0.5f * globalSpeed, 0.1f * globalDegree, false, 0, 0f, f, f1);
     }
 }
