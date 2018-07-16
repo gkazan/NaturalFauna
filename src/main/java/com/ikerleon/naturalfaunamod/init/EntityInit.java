@@ -13,7 +13,6 @@ import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
 import com.ikerleon.naturalfaunamod.entity.EntityGreySeal;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
-import com.ikerleon.naturalfaunamod.entity.EntityLittleBustard;
 import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
 import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
@@ -44,7 +43,6 @@ public class EntityInit {
 		createEntity(EntityGreySeal.class, "grey_seal", 11382189, 5658198);
 		createEntity(EntityHyena.class, "spotted_hyena", 10191180, 11038720);
 		createEntity(EntityCantabricCapercaillie.class, "cantabric_capercaillie", 0, 15534345);
-		createEntity(EntityLittleBustard.class, "little_bustard", 11900255, 16777215);
 		createEntity(EntityGrantsGazelle.class, "grants_gazelle", 16767134, 16771012);
 		createEntity(EntityNautilus.class, "nautilus", 14840691, 16777215);
 		createEntity(EntityPuma.class, "puma", 13870196, 16378843);
@@ -55,10 +53,10 @@ public class EntityInit {
 		createEntity(EntityXenopus.class, "xenopus_frog", 16375134, 16773032);
 		createEntity(EntityBushbuck.class, "cape_bushbuck", 7356945, 8347969);
 		createEntity(EntityCheetah.class, "african_cheetah", 16769440, 2959648);
-		createEntity(EntityRedBilledTropicbird.class, "Red-Billed_Tropicbird", 16777215, 5197391);
-		createEntity(EntityRedBilledHornbill.class, "Red-Billed_hornbill", 14208687, 14854656);
+		createEntity(EntityRedBilledTropicbird.class, "red_Billed_Tropicbird", 16777215, 5197391);
+		createEntity(EntityRedBilledHornbill.class, "red_Billed_hornbill", 14208687, 14854656);
 		createEntity(EntityTuraco.class, "turaco", 4362558, 4946595);
-		createEntity(EntitySaddlebillStork.class, "Saddlebilled_stork", 0, 16375134);
+		createEntity(EntitySaddlebillStork.class, "saddlebilled_stork", 0, 16375134);
 	}
 	
 	private static void createEntity(Class entityClass , String entityName, int Color1,int Color2) {

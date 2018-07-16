@@ -1,9 +1,14 @@
 package com.ikerleon.naturalfaunamod.entity;
 
+import java.util.Random;
+
 import org.zawamod.entity.base.ZAWABaseFlying;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.init.ZAWAItems;
+
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
+import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -13,9 +18,13 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityRedBilledTropicbird extends ZAWABaseFlying{
+	
+	Random random = new Random();
+	public final int redtailedTexture=random.nextInt(30) + 1;
 
 	public EntityRedBilledTropicbird(World worldIn) {		
 		super(worldIn);
@@ -39,6 +48,17 @@ public class EntityRedBilledTropicbird extends ZAWABaseFlying{
 	public int setFlyTicks()
 	{
 	    return 350;
+	}
+	
+	@Override
+	protected SoundEvent getAmbientSound()
+	{
+	    if(!this.onGround && !this.isInWater()) {
+	    	return SoundHandler.TROPICBIRD_FLYING;
+	    }
+	    else {
+	    	return null;
+	    }
 	}
 	
 	@Override
@@ -85,10 +105,15 @@ public class EntityRedBilledTropicbird extends ZAWABaseFlying{
 	}
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
-		if(this.isBurning())
+		if(this.isBurning()) {
 			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
-		else
+		}
+		else {
 			this.dropItem(ZAWAItems.bird_meat, 1);
+			if(this.redtailedTexture!=1) {
+				this.dropItem(ItemInit.REDBILLEDTROPICBIRD_FEATHER, 1);
+			}
+		}	    
 	}
 	
 	@Override

@@ -17,6 +17,7 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 public class RenderRedBilledTropicbird extends RenderLivingZAWA<EntityRedBilledTropicbird>{
 
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/tropicbird/texture.png");
+	public static final ResourceLocation texture2 = new ResourceLocation(NFReference.MOD_ID, "textures/entity/tropicbird/texture2.png");
 
 	public RenderRedBilledTropicbird(RenderManager rm) {
 		super(rm, new ModelRedBilledTropicbird(), 0.4F);
@@ -28,14 +29,17 @@ public class RenderRedBilledTropicbird extends RenderLivingZAWA<EntityRedBilledT
 		if(!entity.isChild() && entity.onGround==false && entity.isInWater()==false) {
 			return ZAWARenderUtils.none;
 		}
-	    else {
-//	    	if(entity.isChild()) {
-//    		  return texturechild;
-//    	    }
-//    	    else {
-    		  return getTextureOfVar(entity.getAnimalType());
-//    	    }
-        }
+		else if(entity.isChild()) {
+			return texture;
+		}
+		else {
+    		if(entity.redtailedTexture==1) {
+    			return texture2;
+    		}
+    		else {
+    		return getTextureOfVar(entity.getAnimalType());
+    		}
+		}
     }
 
 	@Override
@@ -61,7 +65,12 @@ public class RenderRedBilledTropicbird extends RenderLivingZAWA<EntityRedBilledT
 		public void doRenderLayer(EntityRedBilledTropicbird e, float f, float f1, float f2, float f3, float f4, float f5, float f6) {
 			if(!e.isInvisible()) {
 				if(e.onGround==false && !e.isChild() && e.isInWater()==false) {
-					this.render.bindTexture(this.render.getTextureOfVar(e.getAnimalType()));
+					if(e.redtailedTexture==1) {
+						this.render.bindTexture(RenderRedBilledTropicbird.texture2);
+					}
+					else {
+					    this.render.bindTexture(this.render.getTextureOfVar(e.getAnimalType()));
+					}
 			        this.modelF.setModelAttributes(this.render.getMainModel());
 			        this.modelF.render(e, f, f1, f2, f3, f4, f6);
 			        this.modelF.setRotationAngles(f, f1, f3, f4, f5, f6, e);

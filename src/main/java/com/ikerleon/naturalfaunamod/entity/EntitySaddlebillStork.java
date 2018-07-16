@@ -7,6 +7,8 @@ import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.init.ItemInit;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -21,7 +23,7 @@ public class EntitySaddlebillStork extends ZAWABaseFlying {
 	
 	  public int sitNum;
 	  public int norNum;
-	  private int chance = 1000;
+	  private int chance = 10000;
 	  private World world;
 	  private int standNum;
 	  Random random = new Random();
@@ -30,7 +32,7 @@ public class EntitySaddlebillStork extends ZAWABaseFlying {
 
 	public EntitySaddlebillStork(World worldIn) {		
 		super(worldIn);
-		this.setSize(0.7F, 0.7F);
+		this.setSize(0.7F, 1.4F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAILookIdle(this));
@@ -66,7 +68,7 @@ public class EntitySaddlebillStork extends ZAWABaseFlying {
     
 	public int setFlyTicks()
 	{
-	    return 4;
+	    return 3;
 	}
 
     public enum SaddlebillStorkState
@@ -82,14 +84,20 @@ public class EntitySaddlebillStork extends ZAWABaseFlying {
     
     public EntitySaddlebillStork.SaddlebillStorkState getStatus() {
         return this.state;
-      } 
+    } 
+    
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20D);
+	}
     
     @Override
     public void onLivingUpdate()
     {
     	long i = world.getWorldTime();
     	
-      if ((!this.inWater) && (this.onGround) && (this.isChild()==false) && !(i>=14000 || i<=8000)) {
+      if ((!this.inWater) && (this.onGround) && (this.isChild()==false) && !(i>=14000 || i<=1000)) {
         if ((this.sitNum != 2) || (this.norNum != 2)) {
           this.sitNum = (this.random.nextInt(this.chance) + 1);
           this.norNum = (this.random.nextInt(this.chance) + 1);
@@ -103,19 +111,22 @@ public class EntitySaddlebillStork extends ZAWABaseFlying {
         {
           setStatus(EntitySaddlebillStork.SaddlebillStorkState.SIT);
         }
-        else if ((this.state == EntitySaddlebillStork.SaddlebillStorkState.SIT))
+        else if ((this.state == EntitySaddlebillStork.SaddlebillStorkState.SIT) && norNum==2)
         {
           setStatus(EntitySaddlebillStork.SaddlebillStorkState.NORMAL);
         }
       }
-      else {
+      else if(i>=14000 || i<=1000){
         setStatus(EntitySaddlebillStork.SaddlebillStorkState.SIT);
       }
-      if(this.state==EntitySaddlebillStork.SaddlebillStorkState.SIT ) {
+      else {
+    	  setStatus(EntitySaddlebillStork.SaddlebillStorkState.NORMAL);  
+      }
+      if(this.state==EntitySaddlebillStork.SaddlebillStorkState.SIT) {
     	  this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.0D);
       }
     	  
-     this.standNum=rand.nextInt(60);
+     this.standNum=rand.nextInt(55);
   		
      if(this.stand && this.standNum==2) {
   		this.stand=false;
@@ -137,13 +148,7 @@ public class EntitySaddlebillStork extends ZAWABaseFlying {
 	
 	@Override
 	public boolean isFoodItem(ItemStack stack) {
-		return BreedItems.FishItems(stack);
-	}
-	
-	protected void applyEntityAttributes() {
-		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20D);
+		return BreedItems.OmnivoreItems(stack);
 	}
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
@@ -151,6 +156,7 @@ public class EntitySaddlebillStork extends ZAWABaseFlying {
 			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.bird_meat, 1);
+		this.dropItem(ItemInit.SADDLEBILLEDSTORK_FEATHER, 1);
 	}
 	
 	@Override

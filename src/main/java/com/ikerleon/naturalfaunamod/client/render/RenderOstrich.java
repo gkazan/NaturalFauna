@@ -22,6 +22,7 @@ public class RenderOstrich extends RenderLivingZAWA<EntityOstrich> {
 	
 	public static final ResourceLocation texturemale = new ResourceLocation(NFReference.MOD_ID, "textures/entity/ostrich/texturemale.png");
 	public static final ResourceLocation texturefemale = new ResourceLocation(NFReference.MOD_ID, "textures/entity/ostrich/texturefemale.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/ostrich/texturechild.png");
 	
 	public RenderOstrich(RenderManager rm) {
 		super(rm, new ModelOstrich(), 0.4F);
@@ -33,8 +34,8 @@ public class RenderOstrich extends RenderLivingZAWA<EntityOstrich> {
     	if(entity.getThreatening()) {
     		return ZAWARenderUtils.none;
     	}
-        else if(entity.isChild() || entity.getGender()==Gender.FEMALE) {
-    		return texturefemale;
+        else if(entity.isChild()) {
+    		return texturechild;
     	}
     	else if(entity.getGender()==Gender.FEMALE) {
     		return texturefemale;

@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
+import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelSaddlebillStork;
@@ -20,6 +21,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderSaddlebillStork extends RenderLivingZAWA<EntitySaddlebillStork> {
 	
 	public static final ResourceLocation texture = new ResourceLocation(NFReference.MOD_ID, "textures/entity/saddlebill/texture.png");
+	public static final ResourceLocation texturechild = new ResourceLocation(NFReference.MOD_ID, "textures/entity/saddlebill/texturechild.png");
 	
 	public RenderSaddlebillStork(RenderManager rm) {
 		super(rm, new ModelSaddlebillStork(), 0.4F);
@@ -28,7 +30,15 @@ public class RenderSaddlebillStork extends RenderLivingZAWA<EntitySaddlebillStor
 	
 	protected ResourceLocation getEntityTexture(EntitySaddlebillStork entity)
     {
-            return getTextureOfVar(entity.getAnimalType());
+        if(((entity.onGround==false && entity.isInWater()==false) || entity.getStatus() == EntitySaddlebillStork.SaddlebillStorkState.SIT) && !entity.isChild()) {
+        	return ZAWARenderUtils.none;
+        }
+        else if(entity.isChild()) {
+        	return texturechild;
+        }
+        else {
+        	return getTextureOfVar(entity.getAnimalType());
+        }
     }
 	
 	@Override
@@ -57,7 +67,7 @@ public class RenderSaddlebillStork extends RenderLivingZAWA<EntitySaddlebillStor
 	  {
 	    if (!kat.isInvisible() && kat.isChild()==false)
 	    {
-	      if (kat.getStatus() == EntitySaddlebillStork.SaddlebillStorkState.SIT) {
+	      if (kat.getStatus() == EntitySaddlebillStork.SaddlebillStorkState.SIT && kat.onGround) {
 	        this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));
 	        this.modelF.setModelAttributes(this.render.getMainModel());
 	        this.modelF.render(kat, f, f1, f2, f3, f4, f6);

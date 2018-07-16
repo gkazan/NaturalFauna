@@ -45,6 +45,12 @@ public class EntityTuraco extends ZAWABaseFlying {
 	    return 15;
 	}
 	
+	public boolean hasValidSit()
+	{
+	    return true;
+	}
+
+	
 	@Override
 	protected SoundEvent getAmbientSound()
 	{

@@ -10,7 +10,6 @@
    "entity.gnu.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/gnu/hurt", "stream": true}]},
    "entity.courser.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/courser/hurt", "stream": true}]},
    "entity.greyseal.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/greyseal/living", "stream": true}]},
-   "entity.littlebustard.song":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/littlebustard/song", "stream": true}]},
    "entity.roedeer.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/roedeer/living", "stream": true}]},
    "entity.roedeer.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/roedeer/hurt", "stream": true}]},
    "entity.ostrich.booming":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/ostrich/booming", "stream": true}]},
@@ -26,15 +25,16 @@
    "entity.turaco.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/turaco/living", "stream": true}]},
    "entity.turaco.living2":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/turaco/living2", "stream": true}]},
    "entity.turaco.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/turaco/flying", "stream": true}]},
+   "entity.tropicbird.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/tropicbird/flying", "stream": true}]},
    
    "record.male_capercaillie_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/male_capercaillie_record", "stream": true}]},
    "record.female_capercaillie_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/female_capercaillie_record", "stream": true}]},
    "record.avocet_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/avocet_record", "stream": true}]},
    "record.courser_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/courser_record", "stream": true}]},
    "record.koribustard_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/koribustard_record", "stream": true}]},
-   "record.littlebustard_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/littlebustard_record", "stream": true}]},
    "record.ostrich_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/ostrich_record", "stream": true}]},
    "record.hornbill_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/redbilledhornbill_record", "stream": true}]},
    "record.puffin_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/puffin_record", "stream": true}]},
-   "record.turaco_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/turaco_record", "stream": true}]}
+   "record.turaco_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/turaco_record", "stream": true}]},
+   "record.tropicbird_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/tropicbird_record", "stream": true}]}
 }

@@ -35,6 +35,7 @@ public class SoundHandler {
 	public static SoundEvent TURACO_FLYING;
 	public static SoundEvent TURACO_LIVING;
 	public static SoundEvent TURACO_LIVING2;
+	public static SoundEvent TROPICBIRD_FLYING;
 	
 	public static SoundEvent MALE_CAPERCAILLIE_STREAM;
 	public static SoundEvent FEMALE_CAPERCAILLIE_STREAM;
@@ -46,6 +47,7 @@ public class SoundHandler {
 	public static SoundEvent PUFFIN_STREAM;
 	public static SoundEvent HORNBILL_STREAM;
 	public static SoundEvent TURACO_STREAM;
+	public static SoundEvent TROPICBIRD_STREAM;
 
 	
 	public static void registerSounds() {
@@ -79,6 +81,7 @@ public class SoundHandler {
 		TURACO_LIVING = registerSound("entity.turaco.living");
 		TURACO_LIVING2 = registerSound("entity.turaco.living2");
 		TURACO_FLYING = registerSound("entity.turaco.flying");
+		TROPICBIRD_FLYING = registerSound("entity.tropicbird.flying");
 		
 		MALE_CAPERCAILLIE_STREAM = registerSound("record.male_capercaillie_record");
 		FEMALE_CAPERCAILLIE_STREAM = registerSound("record.female_capercaillie_record");
@@ -90,6 +93,7 @@ public class SoundHandler {
 		PUFFIN_STREAM = registerSound("record.puffin_record");
 		HORNBILL_STREAM = registerSound("record.hornbill_record");
 		TURACO_STREAM = registerSound("record.turaco_record");
+		TROPICBIRD_STREAM = registerSound("record.tropicbird_record");
 	}
 	
 	  private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("faunanatural:" + s);
