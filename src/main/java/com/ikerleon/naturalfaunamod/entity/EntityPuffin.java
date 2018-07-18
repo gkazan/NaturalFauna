@@ -43,12 +43,7 @@ public class EntityPuffin extends ZAWABaseFlying {
 	{
 	    return 4;
 	}
-	
-	@Override
-	public boolean getWaterBelow(World arg0, int arg1, int arg2) {
-		return false;
-	}
-	
+
 	@Override
 	protected SoundEvent getAmbientSound()
 	{

@@ -79,8 +79,8 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	      }
 	      if (kat.getGender()==Gender.FEMALE) {
 	    	    GlStateManager.pushMatrix();
-	    	    GlStateManager.scale(0.7F, 0.7F, 0.7F);
-	    	    GlStateManager.translate(0.0F, 0.6F, 0.0F);
+	    	    GlStateManager.scale(0.8F, 0.8F, 0.8F);
+	    	    GlStateManager.translate(0.0F, 0.34F, 0.0F);
 	    	    if(kat.onGround==false && kat.isInWater()==false) {
 	    	    	this.render.bindTexture(ZAWARenderUtils.none);
 	    	    }
@@ -101,8 +101,8 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	    	  }
 	    	  else {
 	    		GlStateManager.pushMatrix();
-		    	GlStateManager.scale(0.7F, 0.7F, 0.7F);
-		    	GlStateManager.translate(0.0F, 0.6F, 0.0F);
+		    	GlStateManager.scale(0.8F, 0.8F, 0.8F);
+		    	GlStateManager.translate(0.0F, 0.34F, 0.0F);
 		    	this.render.bindTexture(RenderCantabricCapercaillie.textureFemale);
 	    		this.modelflying.setModelAttributes(this.render.getMainModel());
 			    this.modelflying.render(kat, f, f1, f2, f3, f4, f6);

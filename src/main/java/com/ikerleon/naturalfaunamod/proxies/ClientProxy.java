@@ -13,6 +13,7 @@ import com.ikerleon.naturalfaunamod.client.render.RenderHyena;
 import com.ikerleon.naturalfaunamod.client.render.RenderKoriBustard;
 import com.ikerleon.naturalfaunamod.client.render.RenderNautilus;
 import com.ikerleon.naturalfaunamod.client.render.RenderOstrich;
+import com.ikerleon.naturalfaunamod.client.render.RenderPeregrineFalcon;
 import com.ikerleon.naturalfaunamod.client.render.RenderPuffin;
 import com.ikerleon.naturalfaunamod.client.render.RenderPuma;
 import com.ikerleon.naturalfaunamod.client.render.RenderRedBilledHornbill;
@@ -34,6 +35,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
 import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
 import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
+import com.ikerleon.naturalfaunamod.entity.EntityPeregrineFalcon;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 import com.ikerleon.naturalfaunamod.entity.EntityPuma;
 import com.ikerleon.naturalfaunamod.entity.EntityRedBilledHornbill;
@@ -75,6 +77,7 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityRedBilledHornbill.class, new RenderRedBilledHornbill.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityTuraco.class, new RenderTuraco.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntitySaddlebillStork.class, new RenderSaddlebillStork.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityPeregrineFalcon.class, new RenderPeregrineFalcon.RenderFactory());
 	}
 	
 	@Override

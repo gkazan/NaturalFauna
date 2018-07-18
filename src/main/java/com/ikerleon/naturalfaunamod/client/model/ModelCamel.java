@@ -1,190 +1,137 @@
 package com.ikerleon.naturalfaunamod.client.model;
 
-import org.zawamod.client.model.llibrary.AdvancedModelBase;
-import org.zawamod.client.model.llibrary.AdvancedModelRenderer;
-
-import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 /**
  * dromadaire - Undefined
  * Created using Tabula 7.0.0
  */
-public class ModelCamel extends AdvancedModelBase {
-    public AdvancedModelRenderer body;
-    public AdvancedModelRenderer shape18;
-    public AdvancedModelRenderer shape17;
-    public AdvancedModelRenderer shape21;
-    public AdvancedModelRenderer shape22;
-    public AdvancedModelRenderer shape8;
-    public AdvancedModelRenderer shape10;
-    public AdvancedModelRenderer shape9;
-    public AdvancedModelRenderer shape11;
-    public AdvancedModelRenderer tails;
-    public AdvancedModelRenderer shape19;
-    public AdvancedModelRenderer shape12;
-    public AdvancedModelRenderer shape14;
-    public AdvancedModelRenderer shape15;
-    public AdvancedModelRenderer shape13;
-    public AdvancedModelRenderer shape2;
-    public AdvancedModelRenderer head;
-    public AdvancedModelRenderer head2;
-    public AdvancedModelRenderer shape5;
-    public AdvancedModelRenderer shape4;
+public class ModelCamel extends ModelBase {
+    public ModelRenderer body;
+    public ModelRenderer shape18;
+    public ModelRenderer shape17;
+    public ModelRenderer shape21;
+    public ModelRenderer shape22;
+    public ModelRenderer shape8;
+    public ModelRenderer shape10;
+    public ModelRenderer shape9;
+    public ModelRenderer shape11;
+    public ModelRenderer tails;
+    public ModelRenderer shape19;
+    public ModelRenderer shape12;
+    public ModelRenderer shape14;
+    public ModelRenderer shape15;
+    public ModelRenderer shape13;
+    public ModelRenderer shape2;
+    public ModelRenderer head;
+    public ModelRenderer head2;
+    public ModelRenderer shape5;
+    public ModelRenderer shape4;
 
     public ModelCamel() {
         this.textureWidth = 128;
         this.textureHeight = 128;
-        this.shape19 = new AdvancedModelRenderer(this, 58, 95);
-        this.shape19.setRotationPoint(0.5F, 9.0F, 0.1F);
-        this.shape19.addBox(0.0F, 0.0F, 0.0F, 9, 5, 7, 0.0F);
-        this.setRotateAngle(shape19, 2.1945770014576698F, 0.01658062789394613F, 0.0F);
-        this.shape21 = new AdvancedModelRenderer(this, 103, 69);
+        this.shape21 = new ModelRenderer(this, 92, 69);
         this.shape21.setRotationPoint(0.8F, -2.6F, 14.9F);
         this.shape21.addBox(0.0F, 0.0F, 0.0F, 8, 3, 4, 0.0F);
         this.setRotateAngle(shape21, -1.0522590060273813F, 0.0F, 0.0F);
-        this.shape2 = new AdvancedModelRenderer(this, 102, 20);
-        this.shape2.setRotationPoint(4.7F, 2.4F, 11.2F);
-        this.shape2.addBox(-3.0F, -6.0F, -3.5F, 5, 11, 5, 0.0F);
-        this.setRotateAngle(shape2, 1.4203489452729852F, 0.0F, 0.0F);
-        this.shape11 = new AdvancedModelRenderer(this, 15, 25);
-        this.shape11.setRotationPoint(7.1F, 4.3F, 14.1F);
-        this.shape11.addBox(0.0F, -0.5F, -2.0F, 4, 6, 4, 0.0F);
-        this.shape22 = new AdvancedModelRenderer(this, 103, 69);
-        this.shape22.setRotationPoint(0.9F, -2.0F, 6.7F);
-        this.shape22.addBox(0.0F, 0.0F, 0.0F, 8, 2, 2, 0.0F);
-        this.shape8 = new AdvancedModelRenderer(this, 71, 24);
-        this.shape8.setRotationPoint(3.1F, 5.6F, 3.2F);
-        this.shape8.addBox(-4.0F, -2.0F, -2.0F, 4, 6, 4, 0.0F);
-        this.shape15 = new AdvancedModelRenderer(this, 55, 2);
-        this.shape15.setRotationPoint(2.3F, 2.4F, 0.0F);
-        this.shape15.addBox(-2.0F, 0.0F, -1.5F, 3, 13, 3, 0.0F);
-        this.shape12 = new AdvancedModelRenderer(this, 72, 2);
-        this.shape12.setRotationPoint(-2.3F, 2.4F, 0.0F);
-        this.shape12.addBox(-1.5F, 0.0F, -1.5F, 3, 13, 3, 0.0F);
-        this.tails = new AdvancedModelRenderer(this, 80, 80);
+        this.tails = new ModelRenderer(this, 80, 80);
         this.tails.setRotationPoint(5.0F, 2.7F, 17.0F);
         this.tails.addBox(-1.1F, -0.5F, 0.1F, 2, 2, 6, 0.0F);
         this.setRotateAngle(tails, -1.3566444275751923F, 0.0F, 0.0F);
-        this.shape4 = new AdvancedModelRenderer(this, 90, 5);
-        this.shape4.setRotationPoint(1.4F, 5.3F, -0.6F);
+        this.shape12 = new ModelRenderer(this, 72, 2);
+        this.shape12.setRotationPoint(-2.3F, 2.4F, 0.0F);
+        this.shape12.addBox(-1.5F, 0.0F, -1.5F, 3, 13, 3, 0.0F);
+        this.shape22 = new ModelRenderer(this, 103, 53);
+        this.shape22.setRotationPoint(0.9F, -2.0F, 6.7F);
+        this.shape22.addBox(0.0F, 0.0F, 0.0F, 8, 2, 2, 0.0F);
+        this.shape19 = new ModelRenderer(this, 38, 95);
+        this.shape19.setRotationPoint(0.5F, 9.0F, 0.1F);
+        this.shape19.addBox(0.0F, 0.0F, 0.0F, 9, 5, 7, 0.0F);
+        this.setRotateAngle(shape19, 2.1945770014576698F, 0.01658062789394613F, 0.0F);
+        this.shape17 = new ModelRenderer(this, 20, 69);
+        this.shape17.setRotationPoint(0.9F, -2.9F, 8.2F);
+        this.shape17.addBox(0.0F, 0.0F, 0.0F, 8, 3, 7, 0.0F);
+        this.shape15 = new ModelRenderer(this, 55, 2);
+        this.shape15.setRotationPoint(2.3F, 2.4F, 0.0F);
+        this.shape15.addBox(-2.0F, 0.0F, -1.5F, 3, 13, 3, 0.0F);
+        this.shape13 = new ModelRenderer(this, 20, 2);
+        this.shape13.setRotationPoint(2.9F, 3.9F, 0.0F);
+        this.shape13.addBox(-2.3F, 0.0F, -1.5F, 3, 13, 3, 0.0F);
+        this.shape2 = new ModelRenderer(this, 102, 20);
+        this.shape2.setRotationPoint(4.7F, 2.4F, 11.2F);
+        this.shape2.addBox(-3.0F, -6.0F, -3.5F, 5, 11, 5, 0.0F);
+        this.setRotateAngle(shape2, 1.4203489452729852F, 0.0F, 0.0F);
+        this.shape4 = new ModelRenderer(this, 90, 5);
+        this.shape4.setRotationPoint(1.4F, 3.0F, -7.7F);
         this.shape4.addBox(-1.0F, -3.0F, -0.5F, 2, 3, 1, 0.0F);
         this.setRotateAngle(shape4, -0.6045820528908358F, 0.02565634000431664F, -0.4241150082346221F);
-        this.shape17 = new AdvancedModelRenderer(this, 103, 69);
-        this.shape17.setRotationPoint(0.9F, -2.8F, 8.2F);
-        this.shape17.addBox(0.0F, 0.0F, 0.0F, 8, 3, 7, 0.0F);
-        this.body = new AdvancedModelRenderer(this, 58, 95);
-        this.body.setRotationPoint(-5.0F, 2.9F, -7.3F);
-        this.body.addBox(0.0F, 0.0F, 0.0F, 10, 9, 17, 0.0F);
-        this.setRotateAngle(body, 0.0F, 0.01658062789394613F, 0.0F);
-        this.shape9 = new AdvancedModelRenderer(this, 51, 24);
+        this.shape9 = new ModelRenderer(this, 51, 24);
         this.shape9.setRotationPoint(7.8F, 5.8F, 3.6F);
         this.shape9.addBox(-0.6F, -2.0F, -2.0F, 4, 6, 4, 0.0F);
         this.setRotateAngle(shape9, 0.0F, 0.0F, -2.3252456653390877E-17F);
-        this.shape10 = new AdvancedModelRenderer(this, 33, 24);
-        this.shape10.setRotationPoint(3.0F, 5.8F, 14.0F);
-        this.shape10.addBox(-4.0F, -2.0F, -2.0F, 4, 6, 4, 0.0F);
-        this.shape18 = new AdvancedModelRenderer(this, 103, 69);
-        this.shape18.setRotationPoint(0.9F, -2.8F, 0.8F);
-        this.shape18.addBox(0.0F, 0.0F, 0.0F, 8, 3, 6, 0.0F);
-        this.shape13 = new AdvancedModelRenderer(this, 20, 2);
-        this.shape13.setRotationPoint(2.9F, 3.9F, 0.0F);
-        this.shape13.addBox(-2.3F, 0.0F, -1.5F, 3, 13, 3, 0.0F);
-        this.shape5 = new AdvancedModelRenderer(this, 90, 12);
-        this.shape5.setRotationPoint(-3.8F, 5.3F, -0.6F);
-        this.shape5.addBox(-1.0F, -3.0F, -0.5F, 2, 3, 1, 0.0F);
-        this.setRotateAngle(shape5, -0.3993313328563026F, 0.0F, 0.5462880558742251F);
-        this.head = new AdvancedModelRenderer(this, 98, 3);
-        this.head.setRotationPoint(0.5F, 2.2F, -1.6F);
-        this.head.addBox(-3.0F, -1.6F, 0.0F, 4, 5, 7, 0.0F);
-        this.setRotateAngle(head, -0.4635594493296939F, 0.0F, 0.0F);
-        this.head2 = new AdvancedModelRenderer(this, 98, 3);
-        this.head2.setRotationPoint(-0.1F, -0.5F, 5.7F);
-        this.head2.addBox(-3.0F, 0.0F, -4.0F, 4, 3, 5, 0.0F);
-        this.setRotateAngle(head2, 1.8994418249454288F, 0.0F, 0.0F);
-        this.shape14 = new AdvancedModelRenderer(this, 38, 2);
+        this.shape14 = new ModelRenderer(this, 38, 2);
         this.shape14.setRotationPoint(-2.3F, 2.4F, 0.0F);
         this.shape14.addBox(-1.5F, 0.0F, -1.5F, 3, 13, 3, 0.0F);
-        this.body.addChild(this.shape19);
+        this.shape10 = new ModelRenderer(this, 33, 24);
+        this.shape10.setRotationPoint(3.0F, 5.8F, 14.0F);
+        this.shape10.addBox(-4.0F, -2.0F, -2.0F, 4, 6, 4, 0.0F);
+        this.shape11 = new ModelRenderer(this, 15, 25);
+        this.shape11.setRotationPoint(7.1F, 4.3F, 14.1F);
+        this.shape11.addBox(0.0F, -0.5F, -2.0F, 4, 6, 4, 0.0F);
+        this.shape5 = new ModelRenderer(this, 90, 12);
+        this.shape5.setRotationPoint(-3.8F, 3.1F, -7.3F);
+        this.shape5.addBox(-1.0F, -3.0F, -0.5F, 2, 3, 1, 0.0F);
+        this.setRotateAngle(shape5, -0.3993313328563026F, 0.0F, 0.5462880558742251F);
+        this.head2 = new ModelRenderer(this, 10, 50);
+        this.head2.setRotationPoint(-0.1F, -6.7F, 1.7F);
+        this.head2.addBox(-3.0F, -3.9F, -6.8F, 4, 3, 5, 0.0F);
+        this.setRotateAngle(head2, 1.8994418249454288F, 0.0F, 0.0F);
+        this.shape18 = new ModelRenderer(this, 53, 69);
+        this.shape18.setRotationPoint(0.9F, -2.8F, 0.8F);
+        this.shape18.addBox(0.0F, 0.0F, 0.0F, 8, 3, 6, 0.0F);
+        this.body = new ModelRenderer(this, 58, 95);
+        this.body.setRotationPoint(0.7F, 2.9F, 1.3F);
+        this.body.addBox(0.0F, 0.0F, 0.0F, 10, 9, 17, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.01658062789394613F, 0.0F);
+        this.head = new ModelRenderer(this, 101, 3);
+        this.head.setRotationPoint(0.5F, 7.4F, 3.6F);
+        this.head.addBox(-3.0F, -3.9F, -6.8F, 4, 5, 7, 0.0F);
+        this.setRotateAngle(head, -0.4635594493296939F, 0.0F, 0.0F);
+        this.shape8 = new ModelRenderer(this, 71, 24);
+        this.shape8.setRotationPoint(3.1F, 5.6F, 3.2F);
+        this.shape8.addBox(-4.0F, -2.0F, -2.0F, 4, 6, 4, 0.0F);
         this.body.addChild(this.shape21);
-        this.shape19.addChild(this.shape2);
-        this.body.addChild(this.shape11);
-        this.body.addChild(this.shape22);
-        this.body.addChild(this.shape8);
-        this.shape9.addChild(this.shape15);
-        this.shape8.addChild(this.shape12);
         this.body.addChild(this.tails);
-        this.head.addChild(this.shape4);
+        this.shape8.addChild(this.shape12);
+        this.body.addChild(this.shape22);
+        this.body.addChild(this.shape19);
         this.body.addChild(this.shape17);
-        this.body.addChild(this.shape9);
-        this.body.addChild(this.shape10);
-        this.body.addChild(this.shape18);
+        this.shape9.addChild(this.shape15);
         this.shape11.addChild(this.shape13);
-        this.head.addChild(this.shape5);
-        this.shape2.addChild(this.head);
-        this.head.addChild(this.head2);
+        this.shape19.addChild(this.shape2);
+        this.head.addChild(this.shape4);
+        this.body.addChild(this.shape9);
         this.shape10.addChild(this.shape14);
-        updateDefaultPose();
+        this.body.addChild(this.shape10);
+        this.body.addChild(this.shape11);
+        this.head.addChild(this.shape5);
+        this.head.addChild(this.head2);
+        this.body.addChild(this.shape18);
+        this.shape2.addChild(this.head);
+        this.body.addChild(this.shape8);
     }
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
-    	setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    	if(this.isChild) {
-    		float scaleFactor= 0.7F;
-    	    	
-    	    GlStateManager.pushMatrix();
-    	    GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
-    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
-    	    this.body.render(f5);
-    	    GlStateManager.popMatrix();
-    	}
-    	else {
-            float scaleFactor= 1.4F;
-    	
-    	    GlStateManager.pushMatrix();
-    	    GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
-    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
-            this.body.render(f5);
-            GlStateManager.popMatrix();
-    	}
+        this.body.render(f5);
     }
 
-    public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
-        AdvancedAdvancedModelRenderer.rotateAngleX = x;
-        AdvancedAdvancedModelRenderer.rotateAngleY = y;
-        AdvancedAdvancedModelRenderer.rotateAngleZ = z;
-    }
-    
-    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) 
-    {
-    	resetToDefaultPose();
-
-    	float globalSpeed = 1.75f;
-    	float globalHeight = 0.5f;
-    	float globalDegree = 0.75F;
-    	
-        this.head.rotateAngleY = (f3 * 0.017453292F);
-        this.head.rotateAngleX = (f4 * 0.017453292F)-0.4F;
-    	
-    	bob(body, 1 * globalSpeed, 0.5f * globalHeight, false, f, f1);
-    	
-    	walk(shape9, 0.5f * globalSpeed, 0.2f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(shape8, 0.5f * globalSpeed, 0.2f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(shape11, 0.5f * globalSpeed, 0.2f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(shape10, 0.5f * globalSpeed, 0.2f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(shape12, 0.5f * globalSpeed, 0.3f * globalDegree, false, 2.5f, 0f, f, f1);
-    	walk(shape15, 0.5f * globalSpeed, 0.3f * globalDegree, true, 2.5f, 0f, f, f1);
-    	walk(shape14, 0.5f * globalSpeed, 0.3f * globalDegree, false, 2.5f, 0f, f, f1);
-    	walk(shape13, 0.5f * globalSpeed, 0.3f * globalDegree, true, 2.5f, 0f, f, f1);
-    	walk(shape19, 0.4f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
-    	walk(head, 0.4f * globalSpeed, 0.3f * globalDegree, false, 2.5f, 0f, f, f1);
-    	walk(shape2, 0.5f * globalSpeed, 0.2f * globalDegree, true, 2.5f, 0f, f, f1);
-
-    	walk(shape19, 0.10f, 0.06f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  	
-    	walk(head, 0.4f * globalSpeed, 0.3f * globalDegree, false, 2.5f, 0f, f, f1);
-    	walk(shape2, 0.5f * globalSpeed, 0.2f * globalDegree, false, 2.5f, 0f, f, f1);
-    	
-    	flap(tails, 0.2f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        modelRenderer.rotateAngleX = x;
+        modelRenderer.rotateAngleY = y;
+        modelRenderer.rotateAngleZ = z;
     }
 }

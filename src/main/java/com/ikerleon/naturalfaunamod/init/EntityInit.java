@@ -15,6 +15,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
 import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
 import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
+import com.ikerleon.naturalfaunamod.entity.EntityPeregrineFalcon;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 import com.ikerleon.naturalfaunamod.entity.EntityPuma;
 import com.ikerleon.naturalfaunamod.entity.EntityRedBilledHornbill;
@@ -57,6 +58,7 @@ public class EntityInit {
 		createEntity(EntityRedBilledHornbill.class, "red_Billed_hornbill", 14208687, 14854656);
 		createEntity(EntityTuraco.class, "turaco", 4362558, 4946595);
 		createEntity(EntitySaddlebillStork.class, "saddlebilled_stork", 0, 16375134);
+		createEntity(EntityPeregrineFalcon.class, "peregrine_falcon", 6711144, 15723587);
 	}
 	
 	private static void createEntity(Class entityClass , String entityName, int Color1,int Color2) {

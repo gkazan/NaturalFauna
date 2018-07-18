@@ -9,7 +9,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
-
 public class BiomeDictionaryUtil {
 	
 	public static Biome[] getBiomesFromTypes(Type type1, Type type2) {
