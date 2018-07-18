@@ -10,7 +10,6 @@ import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.entity.EntityCheetah;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
-import com.ikerleon.naturalfaunamod.entity.EntityGreySeal;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
 import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
@@ -41,7 +40,6 @@ public class EntityInit {
 		createEntity(EntityCourser.class, "cream-coloured_courser",16764783, 2241888);
 		createEntity(EntityAvocet.class, "avocet", 16777215, 0);
 		createEntity(EntityCamel.class, "camel", 11701829, 6504960);
-		createEntity(EntityGreySeal.class, "grey_seal", 11382189, 5658198);
 		createEntity(EntityHyena.class, "spotted_hyena", 10191180, 11038720);
 		createEntity(EntityCantabricCapercaillie.class, "cantabric_capercaillie", 0, 15534345);
 		createEntity(EntityGrantsGazelle.class, "grants_gazelle", 16767134, 16771012);

@@ -9,7 +9,6 @@
    "entity.gnu.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/gnu/living", "stream": true}]},
    "entity.gnu.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/gnu/hurt", "stream": true}]},
    "entity.courser.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/courser/hurt", "stream": true}]},
-   "entity.greyseal.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/greyseal/living", "stream": true}]},
    "entity.roedeer.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/roedeer/living", "stream": true}]},
    "entity.roedeer.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/roedeer/hurt", "stream": true}]},
    "entity.ostrich.booming":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/ostrich/booming", "stream": true}]},
