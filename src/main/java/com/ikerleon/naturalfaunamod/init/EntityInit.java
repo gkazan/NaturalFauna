@@ -9,6 +9,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityCamel;
 import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.entity.EntityCheetah;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
+import com.ikerleon.naturalfaunamod.entity.EntityEstuaryStingray;
 import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
@@ -22,6 +23,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityRedBilledTropicbird;
 import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
 import com.ikerleon.naturalfaunamod.entity.EntitySaddlebillStork;
 import com.ikerleon.naturalfaunamod.entity.EntityTuraco;
+import com.ikerleon.naturalfaunamod.entity.EntityWillowPtarmigan;
 import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 
 import net.minecraft.util.ResourceLocation;
@@ -57,6 +59,8 @@ public class EntityInit {
 		createEntity(EntityTuraco.class, "turaco", 4362558, 4946595);
 		createEntity(EntitySaddlebillStork.class, "saddlebilled_stork", 0, 16375134);
 		createEntity(EntityPeregrineFalcon.class, "peregrine_falcon", 6711144, 15723587);
+		createEntity(EntityEstuaryStingray.class, "estuary_stingray", 8676357, 10713600);
+		createEntity(EntityWillowPtarmigan.class, "willow_ptarmigan", 16382457, 9315602);
 	}
 	
 	private static void createEntity(Class entityClass , String entityName, int Color1,int Color2) {

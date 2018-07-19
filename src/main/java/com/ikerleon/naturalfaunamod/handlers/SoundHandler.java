@@ -36,6 +36,8 @@ public class SoundHandler {
 	public static SoundEvent TURACO_LIVING;
 	public static SoundEvent TURACO_LIVING2;
 	public static SoundEvent TROPICBIRD_FLYING;
+	public static SoundEvent FALCON_HURT;
+	public static SoundEvent FALCON_FLYING;
 	
 	public static SoundEvent MALE_CAPERCAILLIE_STREAM;
 	public static SoundEvent FEMALE_CAPERCAILLIE_STREAM;
@@ -82,6 +84,8 @@ public class SoundHandler {
 		TURACO_LIVING2 = registerSound("entity.turaco.living2");
 		TURACO_FLYING = registerSound("entity.turaco.flying");
 		TROPICBIRD_FLYING = registerSound("entity.tropicbird.flying");
+		FALCON_FLYING = registerSound("entity.falcon.flying");
+		FALCON_HURT = registerSound("entity.falcon.hurt");
 		
 		MALE_CAPERCAILLIE_STREAM = registerSound("record.male_capercaillie_record");
 		FEMALE_CAPERCAILLIE_STREAM = registerSound("record.female_capercaillie_record");

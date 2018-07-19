@@ -18,6 +18,9 @@ entity.red_Billed_Tropicbird.name=Rabijunco etéreo
 entity.red_Billed_hornbill.name=Toco piquirrojo
 entity.turaco.name=Turaco
 entity.saddlebilled_stork.name=Jabirú africano
+entity.peregrine_falcon.name=Halcón peregrino
+entity.estuary_stingray.name=Raya de estuario
+entity.willow_ptarmigan.name=Lagopodo común
 
 item.feather_capercaillie_male.name=Pluma de urogallo macho
 item.feather_capercaillie_female.name=Pluma de urogallo hembra

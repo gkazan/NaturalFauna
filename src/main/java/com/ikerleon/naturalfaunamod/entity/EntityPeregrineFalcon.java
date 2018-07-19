@@ -1,9 +1,11 @@
 package com.ikerleon.naturalfaunamod.entity;
 
 import org.zawamod.entity.base.ZAWABaseFlying;
-import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.core.AnimalData.EnumNature;
+import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
+
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -13,6 +15,7 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityPeregrineFalcon extends ZAWABaseFlying{
@@ -40,17 +43,17 @@ public class EntityPeregrineFalcon extends ZAWABaseFlying{
 	{
 	    return 200;
 	}
-	
-	/*@Override
+
+	@Override
 	protected SoundEvent getAmbientSound()
 	{
 	    if(!this.onGround && !this.isInWater()) {
-	    	return SoundHandler.TROPICBIRD_FLYING;
+	    	return SoundHandler.FALCON_FLYING;
 	    }
 	    else {
 	    	return null;
 	    }
-	}*/
+	}
 	
 	@Override
 	public boolean isFoodItem(ItemStack stack) {
@@ -75,6 +78,9 @@ public class EntityPeregrineFalcon extends ZAWABaseFlying{
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		this.stand=true;
+		if(!this.isChild()) {
+			this.playSound(SoundHandler.FALCON_HURT, 1, 1);
+		}
 		return super.attackEntityFrom(source, amount);
 	}
 	

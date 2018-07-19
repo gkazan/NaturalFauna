@@ -25,6 +25,8 @@
    "entity.turaco.living2":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/turaco/living2", "stream": true}]},
    "entity.turaco.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/turaco/flying", "stream": true}]},
    "entity.tropicbird.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/tropicbird/flying", "stream": true}]},
+   "entity.falcon.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/falcon/flying", "stream": true}]},
+   "entity.falcon.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/falcon/hurt", "stream": true}]},
    
    "record.male_capercaillie_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/male_capercaillie_record", "stream": true}]},
    "record.female_capercaillie_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/female_capercaillie_record", "stream": true}]},

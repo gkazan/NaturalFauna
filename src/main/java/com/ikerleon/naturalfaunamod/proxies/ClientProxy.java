@@ -7,6 +7,7 @@ import com.ikerleon.naturalfaunamod.client.render.RenderCamel;
 import com.ikerleon.naturalfaunamod.client.render.RenderCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.client.render.RenderCheetah;
 import com.ikerleon.naturalfaunamod.client.render.RenderCourser;
+import com.ikerleon.naturalfaunamod.client.render.RenderEstuaryStingray;
 import com.ikerleon.naturalfaunamod.client.render.RenderGrantsGazelle;
 import com.ikerleon.naturalfaunamod.client.render.RenderHyena;
 import com.ikerleon.naturalfaunamod.client.render.RenderKoriBustard;
@@ -20,6 +21,7 @@ import com.ikerleon.naturalfaunamod.client.render.RenderRedBilledTropicbird;
 import com.ikerleon.naturalfaunamod.client.render.RenderRoeDeer;
 import com.ikerleon.naturalfaunamod.client.render.RenderSaddlebillStork;
 import com.ikerleon.naturalfaunamod.client.render.RenderTuraco;
+import com.ikerleon.naturalfaunamod.client.render.RenderWillowPtarmigan;
 import com.ikerleon.naturalfaunamod.client.render.RenderXenopus;
 import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
 import com.ikerleon.naturalfaunamod.entity.EntityBlueGnu;
@@ -28,6 +30,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityCamel;
 import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.entity.EntityCheetah;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
+import com.ikerleon.naturalfaunamod.entity.EntityEstuaryStingray;
 import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
@@ -41,6 +44,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityRedBilledTropicbird;
 import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
 import com.ikerleon.naturalfaunamod.entity.EntitySaddlebillStork;
 import com.ikerleon.naturalfaunamod.entity.EntityTuraco;
+import com.ikerleon.naturalfaunamod.entity.EntityWillowPtarmigan;
 import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -75,6 +79,8 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityTuraco.class, new RenderTuraco.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntitySaddlebillStork.class, new RenderSaddlebillStork.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityPeregrineFalcon.class, new RenderPeregrineFalcon.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityEstuaryStingray.class, new RenderEstuaryStingray.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityWillowPtarmigan.class, new RenderWillowPtarmigan.RenderFactory());
 	}
 	
 	@Override

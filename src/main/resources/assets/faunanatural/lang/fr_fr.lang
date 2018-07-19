@@ -18,6 +18,9 @@ entity.red_Billed_Tropicbird.name=Phaéton à bec rouge
 entity.red_Billed_hornbill.name=Calao à bec rouge
 entity.turaco.name=Touraco
 entity.saddlebilled_stork.name=Jabiru d'Afrique
+entity.peregrine_falcon.name=Faucon pèlerin
+entity.estuary_stingray.name=Dasyatis fluviorum
+entity.willow_ptarmigan.name=Lagopède des saules
 
 item.feather_capercaillie_male.name=Plume du grand tétras mâle
 item.feather_capercaillie_female.name=Plume du grand tétras femelle

@@ -12,6 +12,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
 import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
 import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
+import com.ikerleon.naturalfaunamod.entity.EntityPeregrineFalcon;
 import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
 import com.ikerleon.naturalfaunamod.entity.EntityPuma;
 import com.ikerleon.naturalfaunamod.entity.EntityRedBilledHornbill;
@@ -19,6 +20,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityRedBilledTropicbird;
 import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
 import com.ikerleon.naturalfaunamod.entity.EntitySaddlebillStork;
 import com.ikerleon.naturalfaunamod.entity.EntityTuraco;
+import com.ikerleon.naturalfaunamod.entity.EntityWillowPtarmigan;
 import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.EntityInit;
@@ -44,7 +46,7 @@ public class CommonProxy {
 	
 	public void init(FMLInitializationEvent event) {
 		
-		EntityRegistry.addSpawn(EntityCantabricCapercaillie.class, 50, 1, 6, EnumCreatureType.CREATURE, BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD), new Biome[] {Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.FOREST}));
+		EntityRegistry.addSpawn(EntityCantabricCapercaillie.class, 50, 1, 6, EnumCreatureType.CREATURE, BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD), new Biome[] {Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.FOREST, Biomes.EXTREME_HILLS_WITH_TREES}));
 		EntityRegistry.addSpawn(EntityAvocet.class, 90, 1, 9, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.RIVER));
 		EntityRegistry.addSpawn(EntityPuffin.class, 70, 1, 10, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.OCEAN));
 		EntityRegistry.addSpawn(EntityCourser.class, 60, 1, 6, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.HOT, BiomeDictionary.Type.SANDY));
@@ -64,6 +66,8 @@ public class CommonProxy {
 		EntityRegistry.addSpawn(EntityRedBilledHornbill.class, 50, 1, 3, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.HOT, BiomeDictionary.Type.SAVANNA));
 		EntityRegistry.addSpawn(EntityRedBilledTropicbird.class, 70, 1, 7, EnumCreatureType.CREATURE,BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.OCEAN), BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.BEACH)));
 		EntityRegistry.addSpawn(EntitySaddlebillStork.class, 50, 1, 2, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.HOT, BiomeDictionary.Type.SAVANNA));
+		EntityRegistry.addSpawn(EntityPeregrineFalcon.class, 50, 1, 3, EnumCreatureType.CREATURE, BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.MOUNTAIN), BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.SPARSE)));
+		EntityRegistry.addSpawn(EntityWillowPtarmigan.class, 60, 1, 6, EnumCreatureType.CREATURE, BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.MOUNTAIN), new Biome[] {Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.REDWOOD_TAIGA, Biomes.REDWOOD_TAIGA_HILLS, Biomes.COLD_TAIGA, Biomes.COLD_TAIGA_HILLS}));
 	}
 	
 	public void postInit(FMLPostInitializationEvent event) {
