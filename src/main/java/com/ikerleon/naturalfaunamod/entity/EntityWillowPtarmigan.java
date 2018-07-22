@@ -5,7 +5,10 @@ import java.util.Random;
 import org.zawamod.entity.base.ZAWABaseFlying;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
+import org.zawamod.entity.core.Gender;
 import org.zawamod.init.ZAWAItems;
+
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -14,6 +17,7 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
@@ -43,11 +47,18 @@ public class EntityWillowPtarmigan extends ZAWABaseFlying {
 	  return true;
 	}
 
-	/*@Override
+	@Override
 	protected SoundEvent getAmbientSound()
 	{
-
-	}*/
+        long i= world.getWorldTime();
+		
+        if(((i>=0 && i<=4000) || (i>=12000 && i<=16000))&&(this.isChild()==false)&&(this.getGender()==Gender.MALE)) {
+        	return SoundHandler.PTARMIGAN_SONG;
+        }
+        else {
+        	return null;
+        }
+	}
 	
 	@Override
 	public ItemStack setVial() {
@@ -61,7 +72,7 @@ public class EntityWillowPtarmigan extends ZAWABaseFlying {
     
 	public int setFlyTicks()
 	{
-	    return 3;
+	    return 4;
 	}
     
     @Override
@@ -69,7 +80,7 @@ public class EntityWillowPtarmigan extends ZAWABaseFlying {
     {
      this.biome=world.getBiome(getPosition());
     	  
-     this.standNum=rand.nextInt(45);
+     this.standNum=rand.nextInt(75);
   		
      if(this.stand && this.standNum==2) {
   		this.stand=false;
@@ -82,7 +93,7 @@ public class EntityWillowPtarmigan extends ZAWABaseFlying {
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		this.stand=true;
 		if(!this.isChild()) {
-			//this.playSound(SoundHandler.CAPERCAILLIE_FLYING, 1, 1);
+			this.playSound(SoundHandler.PTARMIGAN_HURT, 1, 1);
 		}
 		return super.attackEntityFrom(source, amount);
 	}

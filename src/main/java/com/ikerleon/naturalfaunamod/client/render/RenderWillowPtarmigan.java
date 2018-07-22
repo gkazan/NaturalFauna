@@ -5,6 +5,7 @@ import org.zawamod.entity.core.Gender;
 import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
+import com.ikerleon.naturalfaunamod.client.model.ModelPtargimanChild;
 import com.ikerleon.naturalfaunamod.client.model.ModelPtarmigan;
 import com.ikerleon.naturalfaunamod.client.model.ModelPtarmiganFlying;
 import com.ikerleon.naturalfaunamod.entity.EntityWillowPtarmigan;
@@ -35,11 +36,8 @@ public class RenderWillowPtarmigan extends RenderLivingZAWA<EntityWillowPtarmiga
 	
 	protected ResourceLocation getEntityTexture(EntityWillowPtarmigan entity)
     {
-    	if((entity.getGender()== Gender.FEMALE) || (!entity.isChild() && entity.onGround==false && entity.isInWater()==false)){
+    	if((entity.getGender()== Gender.FEMALE) || (!entity.isChild() && entity.onGround==false && entity.isInWater()==false) || entity.isChild()){
     		return ZAWARenderUtils.none;
-    	}
-    	else if(entity.isChild()) {
-    		return texturechild;
     	}
     	else if(entity.biome == Biomes.TAIGA) {
     		return texture;
@@ -82,6 +80,7 @@ public class RenderWillowPtarmigan extends RenderLivingZAWA<EntityWillowPtarmiga
 	  private final RenderWillowPtarmigan render;
 	  private final ModelPtarmigan modelfemale = new ModelPtarmigan();
 	  private final ModelPtarmiganFlying modelflying = new ModelPtarmiganFlying();
+	  private final ModelPtargimanChild modelchild = new ModelPtargimanChild();
 	  
 	  public LayerWillowPtarmigan(RenderWillowPtarmigan re)
 	  {
@@ -138,7 +137,6 @@ public class RenderWillowPtarmigan extends RenderLivingZAWA<EntityWillowPtarmiga
 	    	    	else {
 	    	    		this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));
 	    	    	}
-	    		this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));
 	  	        this.modelflying.setModelAttributes(this.render.getMainModel());
 	  	        this.modelflying.render(kat, f, f1, f2, f3, f4, f6);
 	  	        this.modelflying.setRotationAngles(f, f1, f3, f4, f5, f6, kat);
@@ -168,6 +166,16 @@ public class RenderWillowPtarmigan extends RenderLivingZAWA<EntityWillowPtarmiga
 			    GlStateManager.popMatrix(); 
 	    	  }
 	      }
+	    }
+	    else if (!kat.isInvisible() && kat.isChild()==true) {
+	    	GlStateManager.pushMatrix();
+    	    GlStateManager.scale(0.5F, 0.5F, 0.5F);
+    	    GlStateManager.translate(0.0F, 1.44F, 0.0F);
+	        this.render.bindTexture(this.render.texturechild);
+	        this.modelchild.setModelAttributes(this.render.getMainModel());
+	        this.modelchild.render(kat, f, f1, f2, f3, f4, f6);
+	        this.modelchild.setRotationAngles(f, f1, f3, f4, f5, f6, kat);
+	        GlStateManager.popMatrix();
 	    }
 	  }
 	  

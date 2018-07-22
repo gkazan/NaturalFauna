@@ -24,8 +24,6 @@ import net.minecraft.world.World;
 public class EntityBlueGnu extends ZAWABaseLand {
 	
 	Random random = new Random();
-	public final int goldenTexture=random.nextInt(20) + 1;
-	public final int albinoTexture=random.nextInt(20) + 1;
 	
 	public EntityBlueGnu(World worldIn) {		
 		super(worldIn, 0.28D);

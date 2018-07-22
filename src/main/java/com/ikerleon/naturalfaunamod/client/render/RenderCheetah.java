@@ -39,13 +39,7 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
     		return texturechild;
     	}
     	else {
-    		if(entity.kingTexture==2) {
-    			return textureking;
-    		}
-    		else if(entity.spotlessTexture==2) {
-    			return texturespotless;
-    		}
-    		else if(entity.getGender()==Gender.FEMALE){
+    		if(entity.getGender()==Gender.FEMALE){
     			switch (entity.getAnimalType()) {
     			case 0:
     				default: return texturefemale;
@@ -57,6 +51,10 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
     				return texturefemale4;
     			case 4:
     				return texturefemale;
+    			case 5:
+    				return textureking;
+    			case 6:
+    				return texturespotless;
     		    }
         	}
     		else {
@@ -78,6 +76,10 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
 				return texturemale4;
 			case 4:
 				return texturemale5;
+			case 5:
+				return textureking;
+			case 6:
+				return texturespotless;
 		}
 	}
 	

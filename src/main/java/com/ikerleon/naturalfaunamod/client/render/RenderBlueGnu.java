@@ -37,15 +37,7 @@ public class RenderBlueGnu extends RenderLivingZAWA<EntityBlueGnu> {
     		return ZAWARenderUtils.none;
     	}
     	else {
-    		if(entity.goldenTexture==2) {
-    			return texturegolden;
-    		}
-    		else if(entity.albinoTexture==2) {
-    			return texturealbino;
-    		}
-    		else {
     		return getTextureOfVar(entity.getAnimalType());
-    		}
     	}
     }
 

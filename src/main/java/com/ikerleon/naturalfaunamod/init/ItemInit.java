@@ -23,6 +23,7 @@ public class ItemInit {
 	  public static ItemFeather REDBILLEDHORNBILL_FEATHER = new ItemFeather("feather_redbilledhornbill", SoundHandler.HORNBILL_STREAM);
 	  public static ItemFeather REDBILLEDTROPICBIRD_FEATHER = new ItemFeather("feather_tropicbird", SoundHandler.TROPICBIRD_STREAM);
 	  public static ItemFeather SADDLEBILLEDSTORK_FEATHER = new ItemFeather("feather_saddlebilledstork", SoundHandler.HORNBILL_STREAM);
+	  public static ItemFeather VIOLETTURACO_FEATHER = new ItemFeather("feather_turaco_violet", SoundHandler.TURACO_STREAM);
 	  public static Item HORN_DAGGER = new ItemDagger("dagger_horn");
 	  public static Item TOOTH_DAGGER = new ItemDagger("dagger_tooth");
 	  public static Item CARNIVORE_TOOTH = new ItemNaturalFauna("tooth_carnivore");

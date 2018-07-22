@@ -3,6 +3,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 import org.zawamod.client.model.llibrary.AdvancedModelBase;
 import org.zawamod.client.model.llibrary.AdvancedModelRenderer;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 /**
@@ -162,7 +163,18 @@ public class ModelRedBilledTropicbird extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
     	setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        this.body.render(f5);
+     	if(this.isChild) {
+    		float scaleFactor= 0.6F;
+    	    	
+    	    GlStateManager.pushMatrix();
+    	    GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
+    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+    	    this.body.render(f5);
+    	    GlStateManager.popMatrix();
+    	}
+    	else {
+            this.body.render(f5);
+    	}
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

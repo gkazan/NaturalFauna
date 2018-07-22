@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.entity;
 
 import org.zawamod.entity.base.ZAWABaseFlying;
-
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;

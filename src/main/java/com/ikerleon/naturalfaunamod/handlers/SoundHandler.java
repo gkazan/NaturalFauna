@@ -38,6 +38,8 @@ public class SoundHandler {
 	public static SoundEvent TROPICBIRD_FLYING;
 	public static SoundEvent FALCON_HURT;
 	public static SoundEvent FALCON_FLYING;
+	public static SoundEvent PTARMIGAN_HURT;
+	public static SoundEvent PTARMIGAN_SONG;
 	
 	public static SoundEvent MALE_CAPERCAILLIE_STREAM;
 	public static SoundEvent FEMALE_CAPERCAILLIE_STREAM;
@@ -86,6 +88,8 @@ public class SoundHandler {
 		TROPICBIRD_FLYING = registerSound("entity.tropicbird.flying");
 		FALCON_FLYING = registerSound("entity.falcon.flying");
 		FALCON_HURT = registerSound("entity.falcon.hurt");
+		PTARMIGAN_HURT = registerSound("entity.ptarmigan.flying");
+		PTARMIGAN_SONG = registerSound("entity.ptarmigan.song");
 		
 		MALE_CAPERCAILLIE_STREAM = registerSound("record.male_capercaillie_record");
 		FEMALE_CAPERCAILLIE_STREAM = registerSound("record.female_capercaillie_record");

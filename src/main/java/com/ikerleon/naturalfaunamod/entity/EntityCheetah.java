@@ -23,8 +23,6 @@ public class EntityCheetah extends ZAWABaseLand {
 	
 	Random random = new Random();
 	public int chirpNum;
-	public final int kingTexture=random.nextInt(20) + 1;
-	public final int spotlessTexture=random.nextInt(20) + 1;
 	
 	public EntityCheetah(World worldIn) {		
 		super(worldIn, 0.28D);
@@ -41,7 +39,7 @@ public class EntityCheetah extends ZAWABaseLand {
 	
 	@Override
 	public int setVariants() {
-		return 5;
+		return 7;
 	}
 	
 	@Override

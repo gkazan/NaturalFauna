@@ -2,9 +2,9 @@ package com.ikerleon.naturalfaunamod.entity;
 
 import org.zawamod.entity.ai.EntityAIAttackEnts;
 import org.zawamod.entity.core.AnimalData.EnumNature;
+import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.land.EntityAmurLeopard;
 import org.zawamod.entity.land.EntityMeerkat;
-import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
 import com.google.common.base.Predicate;
@@ -75,7 +75,7 @@ public class EntityHyena extends EntityAmurLeopard {
 	{
 		long i = world.getWorldTime();
 		
-	    if((i>=14000)&&(this.isChild()==false)) {
+	    if((i>=14000 && i<=23000)&&(this.isChild()==false)) {
 	    	return SoundHandler.HYENA_LIVING;
 	    }
 	    else {

@@ -6,6 +6,7 @@ import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
+import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -112,7 +113,9 @@ public class EntityTuraco extends ZAWABaseFlying {
 			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.bird_meat, 1);
-		//this.dropItem(ItemInit.REDBILLEDHORNBILL_FEATHER, 1);
+		if(this.getAnimalType()<=1) {
+		    this.dropItem(ItemInit.VIOLETTURACO_FEATHER, 1);
+		}
 	}
 	
 	@Override

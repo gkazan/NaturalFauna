@@ -3,8 +3,8 @@ package com.ikerleon.naturalfaunamod.entity;
 import java.util.Random;
 
 import org.zawamod.entity.base.ZAWABaseFlying;
-import org.zawamod.entity.core.BreedItems;
 import org.zawamod.entity.core.AnimalData.EnumNature;
+import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
