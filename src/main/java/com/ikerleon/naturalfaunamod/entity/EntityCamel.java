@@ -17,7 +17,7 @@ public class EntityCamel extends ZAWABaseLand {
 	
 	public EntityCamel(World worldIn) {		
 		super(worldIn, 0.28D);
-		this.setSize(2F, 2F);
+		this.setSize(1.6F, 1.8F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
@@ -50,7 +50,7 @@ public class EntityCamel extends ZAWABaseLand {
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28D);
 	}
 	

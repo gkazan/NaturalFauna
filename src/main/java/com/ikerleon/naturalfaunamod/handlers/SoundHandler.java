@@ -52,6 +52,8 @@ public class SoundHandler {
 	public static SoundEvent HORNBILL_STREAM;
 	public static SoundEvent TURACO_STREAM;
 	public static SoundEvent TROPICBIRD_STREAM;
+	public static SoundEvent FALCON_STREAM;
+	public static SoundEvent PTARMIGAN_STREAM;
 
 	
 	public static void registerSounds() {
@@ -102,6 +104,8 @@ public class SoundHandler {
 		HORNBILL_STREAM = registerSound("record.hornbill_record");
 		TURACO_STREAM = registerSound("record.turaco_record");
 		TROPICBIRD_STREAM = registerSound("record.tropicbird_record");
+		FALCON_STREAM = registerSound("record.falcon_record");
+		PTARMIGAN_STREAM = registerSound("record.ptarmigan_record");
 	}
 	
 	  private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("faunanatural:" + s);

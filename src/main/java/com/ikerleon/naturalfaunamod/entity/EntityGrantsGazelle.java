@@ -29,6 +29,7 @@ public class EntityGrantsGazelle extends ZAWABaseLand {
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
         this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity<>(this, EntityAfricanLion.class, 10.0F, 2.2D, 2.2D));
         this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity<>(this, EntityHyena.class, 10.0F, 2.2D, 2.2D));
+        this.tasks.addTask(4, new ZAWABaseLand.AIAvoidEntity<>(this, EntityCheetah.class, 10.0F, 2.2D, 2.2D));
 	}
     
     public float getEyeHeight()

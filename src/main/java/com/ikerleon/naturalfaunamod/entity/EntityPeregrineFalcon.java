@@ -1,38 +1,58 @@
 package com.ikerleon.naturalfaunamod.entity;
 
+import org.zawamod.entity.ai.EntityAIAttackEnts;
 import org.zawamod.entity.base.ZAWABaseFlying;
+import org.zawamod.entity.base.ZAWABaseLand;
+import org.zawamod.entity.base.ZAWABaseLand.AIFight;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
 import org.zawamod.init.ZAWAItems;
 
-import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
+import com.google.common.base.Predicate;
 
+import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
+import com.ikerleon.naturalfaunamod.init.ItemInit;
+
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIFollowParent;
-import net.minecraft.entity.ai.EntityAIHurtByTarget;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityPeregrineFalcon extends ZAWABaseFlying{
-
+	
+	protected ZAWABaseLand.AIFight FightAI = new ZAWABaseLand.AIFight();
+	
 	public EntityPeregrineFalcon(World worldIn) {		
 		super(worldIn);
-		this.setSize(0.75F, 0.5F);
-        this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
-        this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.20D));
-        this.tasks.addTask(0, new EntityAILookIdle(this));
+		this.targetTasks.addTask(4, new EntityAIAttackEnts(this, EntityLiving.class, false, new EntityPeregrineFalconAttack(this)));
+	    this.tasks.addTask(1, this.FightAI);
 	}
-    
-    public float getEyeHeight()
-    {
-        return this.height * 0.85F - 0.1F;
-    }
+	
+	public class EntityPeregrineFalconAttack
+	  implements Predicate
+	  {
+		EntityPeregrineFalconAttack(EntityPeregrineFalcon this$0) {}
+	    
+	    public boolean func_180094_a(Entity e)
+	    {
+	      return ((e instanceof EntityWillowPtarmigan)) || ((e instanceof EntityRedBilledTropicbird)) ||  ((e instanceof EntityTuraco));
+	    }
+	    
+	    public boolean apply(Object o) {
+	      return func_180094_a((Entity)o);
+	    }
+	  }
+	
+	@Override
+	public boolean attackEntityAsMob(Entity p_70652_1_)
+	{
+	    this.world.setEntityState(this, (byte)4);
+	    return p_70652_1_.attackEntityFrom(DamageSource.causeMobDamage(this), 7.0F);
+	}
 	
 	@Override
 	public int setVariants() {
@@ -71,11 +91,6 @@ public class EntityPeregrineFalcon extends ZAWABaseFlying{
 	}
 	
 	@Override
-	public void onLivingUpdate() {
-		super.onLivingUpdate();
-	}
-	
-	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		this.stand=true;
 		if(!this.isChild()) {
@@ -87,7 +102,7 @@ public class EntityPeregrineFalcon extends ZAWABaseFlying{
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(14.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.18D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.15D);
 	}
 	
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
@@ -96,6 +111,7 @@ public class EntityPeregrineFalcon extends ZAWABaseFlying{
 		}
 		else {
 			this.dropItem(ZAWAItems.bird_meat, 1);
+			this.dropItem(ItemInit.FALCON_FEATHER, 1);
 		}	    
 	}
 	

@@ -7,6 +7,7 @@ import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelCamel;
 import com.ikerleon.naturalfaunamod.entity.EntityCamel;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -26,7 +27,7 @@ public class RenderCamel extends RenderLivingZAWA<EntityCamel> {
     protected ResourceLocation getEntityTexture(EntityCamel entity)
     {
     	if(entity.isChild()) {
-    		return ZAWARenderUtils.none;
+    		return texture;
     	}
     	else {
     		return getTextureOfVar(entity.getAnimalType());

@@ -113,8 +113,14 @@ public class EntityTuraco extends ZAWABaseFlying {
 			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.bird_meat, 1);
-		if(this.getAnimalType()<=1) {
+		if(this.getAnimalType()==0) {
+		    this.dropItem(ItemInit.REDCRESTEDTURACO_FEATHER, 1);
+		}
+		else if(this.getAnimalType()==1) {
 		    this.dropItem(ItemInit.VIOLETTURACO_FEATHER, 1);
+		}
+		if(this.getAnimalType()==2) {
+		    this.dropItem(ItemInit.GREATBLUETURACO_FEATHER, 1);
 		}
 	}
 	

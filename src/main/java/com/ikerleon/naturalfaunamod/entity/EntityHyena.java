@@ -1,9 +1,10 @@
 package com.ikerleon.naturalfaunamod.entity;
 
 import org.zawamod.entity.ai.EntityAIAttackEnts;
+
+import org.zawamod.entity.base.ZAWABaseLand;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.entity.core.BreedItems;
-import org.zawamod.entity.land.EntityAmurLeopard;
 import org.zawamod.entity.land.EntityMeerkat;
 import org.zawamod.init.ZAWAItems;
 
@@ -16,6 +17,9 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIFollowParent;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.EntityPig;
@@ -27,18 +31,22 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class EntityHyena extends EntityAmurLeopard {
+public class EntityHyena extends ZAWABaseLand {
 	
-	  private World world;
+	  protected World world;
 	
 	public EntityHyena(World worldIn) {		
-		super(worldIn);
+		super(worldIn, 0.28F);
+		this.setSize(1.8F, 1.7F);
+        this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
+        this.tasks.addTask(0, new EntityAISwimming(this));
+        this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
 		this.targetTasks.addTask(4, new EntityAIAttackEnts(this, EntityLiving.class, false, new EntityHyenaAttack(this)));
         this.world=worldIn;
 	}
 	
 	public class EntityHyenaAttack
-	  implements Predicate<Object>
+	  implements Predicate
 	  {
 		EntityHyenaAttack(EntityHyena this$0) {}
 	    
@@ -51,6 +59,14 @@ public class EntityHyena extends EntityAmurLeopard {
 	      return func_180094_a((Entity)o);
 	    }
 	  }
+	
+	public boolean attackEntityAsMob(Entity e)
+	  {
+	    this.world.setEntityState(this, (byte)4);
+	    onAttack();
+	    return e.attackEntityFrom(DamageSource.causeMobDamage(this), 7.0F);
+	  }
+
     
     public float getEyeHeight()
     {

@@ -9,6 +9,7 @@ import org.zawamod.entity.core.Gender;
 import org.zawamod.init.ZAWAItems;
 
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
+import com.ikerleon.naturalfaunamod.init.ItemInit;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -119,6 +120,7 @@ public class EntityWillowPtarmigan extends ZAWABaseFlying {
 			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
 		else
 			this.dropItem(ZAWAItems.bird_meat, 1);
+		this.dropItem(ItemInit.PTARMIGAN_FEATHER, 1);
 	}
 	
 	@Override

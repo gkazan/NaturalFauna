@@ -22,7 +22,7 @@ public class EntityXenopus extends ZAWABaseWater {
 	{
 	    super.applyEntityAttributes();
 		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.01D);
-		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6.0D);
     }
 
 	protected void dropFewItems(boolean b, int i)

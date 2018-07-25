@@ -39,5 +39,7 @@
    "record.hornbill_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/redbilledhornbill_record", "stream": true}]},
    "record.puffin_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/puffin_record", "stream": true}]},
    "record.turaco_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/turaco_record", "stream": true}]},
+   "record.falcon_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/falcon_record", "stream": true}]},
+   "record.ptarmigan_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/ptarmigan_record", "stream": true}]},
    "record.tropicbird_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/tropicbird_record", "stream": true}]}
 }
