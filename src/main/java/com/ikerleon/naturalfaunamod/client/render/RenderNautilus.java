@@ -28,7 +28,7 @@ public class RenderNautilus extends RenderLivingZAWA<EntityNautilus> {
 	{
 		if(!entitylivingbaseIn.isInWater() && !entitylivingbaseIn.isInLava())
 	    GlStateManager.rotate (90,0,0,1);
-		GlStateManager.translate (-0.1,0.2,0.3);
+		GlStateManager.translate (-0.1,0.3,0.4);
 	    super.preRenderCallback(entitylivingbaseIn, partialTickTime);
 	}
 
