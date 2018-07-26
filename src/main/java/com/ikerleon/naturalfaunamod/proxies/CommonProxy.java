@@ -46,7 +46,7 @@ public class CommonProxy {
 	
 	public void init(FMLInitializationEvent event) {
 		
-		EntityRegistry.addSpawn(EntityCantabricCapercaillie.class, 50, 1, 6, EnumCreatureType.CREATURE, BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD), new Biome[] {Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.FOREST, Biomes.EXTREME_HILLS_WITH_TREES}));
+		EntityRegistry.addSpawn(EntityCantabricCapercaillie.class, 40, 1, 6, EnumCreatureType.CREATURE, BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD), new Biome[] {Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.FOREST, Biomes.EXTREME_HILLS_WITH_TREES}));
 		EntityRegistry.addSpawn(EntityAvocet.class, 90, 1, 9, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.RIVER));
 		EntityRegistry.addSpawn(EntityPuffin.class, 70, 1, 10, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.OCEAN));
 		EntityRegistry.addSpawn(EntityCourser.class, 60, 1, 6, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.HOT, BiomeDictionary.Type.SANDY));

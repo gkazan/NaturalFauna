@@ -104,6 +104,8 @@ public class ModelStingray extends AdvancedModelBase {
     	
     	float globalSpeed = 1.75f;
     	float globalDegree = 2.5F;
+    	
+    	bob(shape1, 1 * globalSpeed, 1f, false, f, f1);
 
      	swing(tail, 1f * globalSpeed, 0.2f * globalDegree, false, 0, 0f, f, f1);
      	swing(tail2, 1f * globalSpeed, 0.2f * globalDegree, false, 0, 0f, f, f1);

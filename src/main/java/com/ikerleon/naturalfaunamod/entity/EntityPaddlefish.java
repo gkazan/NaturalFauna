@@ -10,19 +10,24 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class EntityXenopus extends ZAWABaseWater {
+public class EntityPaddlefish extends ZAWABaseWater {
 	
-	public EntityXenopus(World worldIn)	
+	public EntityPaddlefish(World worldIn)	
 	{
 		super(worldIn, false);
-		setSize(0.4F, 0.4F);
+		setSize(1.3F, 0.4F);
+	}
+	
+	@Override
+	public boolean hopToWater() {
+		return true;
 	}
 
 	protected void applyEntityAttributes()
 	{
 	    super.applyEntityAttributes();
-		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.01D);
-		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6.0D);
+		getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.18D);
+		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(14.0D);
     }
 
 	protected void dropFewItems(boolean b, int i)
@@ -35,22 +40,17 @@ public class EntityXenopus extends ZAWABaseWater {
 	}
 	
 	public EntityAgeable createChild(EntityAgeable ageable) {
-	    return new EntityXenopus(this.world);
-	}
-
-	public boolean hopToWater()
-	{
-	    return false;
+	    return new EntityPaddlefish(this.world);
 	}
 
 	@Override
 	public EnumNature setNature() {
-		return EnumNature.PASSIVE;
+		return EnumNature.NEUTRAL;
 	}
 
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.frog_kibble, 1);
+		return new ItemStack(ZAWAItems.tortoise_kibble, 1);
 	}
 
 	@Override
@@ -60,6 +60,7 @@ public class EntityXenopus extends ZAWABaseWater {
 
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.frog_vial, 1);
+		return new ItemStack(ZAWAItems.tortoise_vial, 1);
 	}
+
 }
