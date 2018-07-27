@@ -73,11 +73,11 @@ public class EntityCamel extends ZAWABaseLand {
 	public boolean processInteract(EntityPlayer player, EnumHand hand) {
 		ItemStack stack = player.getHeldItem(hand);
 		
-		if(stack != null && stack.getItem() == Items.SPAWN_EGG) {
+		if(stack != null && (stack.getItem() == Items.SPAWN_EGG || stack.getItem()== ZAWAItems.data_book || stack.getItem()==ZAWAItems.unglate_kibble || stack.getItem()==ZAWAItems.unglate_vial)) {
 			return super.processInteract(player, hand);
 		}
 		else {
-			if(!this.isBeingRidden()) {
+			if(!this.isBeingRidden() && this.getIsZooAnimal()) {
 				if(stack != null && stack.interactWithEntity(player, this, hand)) {
 					return true;
 				}

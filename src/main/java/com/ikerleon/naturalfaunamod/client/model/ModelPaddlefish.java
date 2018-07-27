@@ -120,10 +120,12 @@ public class ModelPaddlefish extends AdvancedModelBase {
     	    GlStateManager.pushMatrix();
     	    GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
     	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+    	    GlStateManager.translate(0F, 0.2F, 0F);
     	    this.body.render(f5);
     	    GlStateManager.popMatrix();
      	}
      	else {
+    	    GlStateManager.translate(0F, 0.2F, 0F); 
             this.body.render(f5);
      	}
     }
@@ -140,9 +142,9 @@ public class ModelPaddlefish extends AdvancedModelBase {
 
     	swing(body2, 0.3f, 0.5f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  
     	swing(tail, 0.6f, 0.75f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  	
-    	flap(shape17, 0.6f, 0.75f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  	
-    	flap(shape18, 0.6f, 0.75f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);  	
-    	walk(shape17, 0.6f, -0.5f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  	
-    	walk(shape18, 0.6f, -0.5f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   
+    	flap(shape17, 0.6f, 0.75f, false, 2.5f, 0f, f, f1);  	
+    	flap(shape18, 0.6f, 0.75f, true, 2.5f, 0f, f, f1);  	
+    	walk(shape17, 0.6f, -0.5f, false, 2.5f, 0f, f, f1);  	
+    	walk(shape18, 0.6f, -0.5f, false, 2.5f, 0f, f, f1);   
     }
 }

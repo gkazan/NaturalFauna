@@ -147,7 +147,6 @@ public class ModelCamel extends AdvancedModelBase {
     	    GlStateManager.pushMatrix();
     	    GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F); 
     	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
-    	    GlStateManager.translate (-0.5,0,-0.7);
     	    this.body.render(f5);
     	    GlStateManager.popMatrix();
         }

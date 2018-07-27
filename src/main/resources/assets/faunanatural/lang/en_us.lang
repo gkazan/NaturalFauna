@@ -21,6 +21,7 @@ entity.saddlebilled_stork.name=Saddle-billed stork
 entity.peregrine_falcon.name=Peregrine falcon
 entity.estuary_stingray.name=Estuary stingray
 entity.willow_ptarmigan.name=Willow ptarmigan
+entity.american_paddlefish.name=American paddlefish
 
 item.feather_capercaillie_male.name=Male capercaillie feather
 item.feather_capercaillie_female.name=Female capercaillie feather
