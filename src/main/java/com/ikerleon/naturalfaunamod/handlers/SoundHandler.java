@@ -40,6 +40,7 @@ public class SoundHandler {
 	public static SoundEvent FALCON_FLYING;
 	public static SoundEvent PTARMIGAN_HURT;
 	public static SoundEvent PTARMIGAN_SONG;
+	public static SoundEvent GROUNDHORNBILL_LIVING;
 	
 	public static SoundEvent MALE_CAPERCAILLIE_STREAM;
 	public static SoundEvent FEMALE_CAPERCAILLIE_STREAM;
@@ -54,6 +55,7 @@ public class SoundHandler {
 	public static SoundEvent TROPICBIRD_STREAM;
 	public static SoundEvent FALCON_STREAM;
 	public static SoundEvent PTARMIGAN_STREAM;
+	public static SoundEvent GROUNDHORNBILL_STREAM;
 
 	
 	public static void registerSounds() {
@@ -92,6 +94,7 @@ public class SoundHandler {
 		FALCON_HURT = registerSound("entity.falcon.hurt");
 		PTARMIGAN_HURT = registerSound("entity.ptarmigan.flying");
 		PTARMIGAN_SONG = registerSound("entity.ptarmigan.song");
+		GROUNDHORNBILL_LIVING = registerSound("entity.groundhornbill.living");
 		
 		MALE_CAPERCAILLIE_STREAM = registerSound("record.male_capercaillie_record");
 		FEMALE_CAPERCAILLIE_STREAM = registerSound("record.female_capercaillie_record");
@@ -106,6 +109,7 @@ public class SoundHandler {
 		TROPICBIRD_STREAM = registerSound("record.tropicbird_record");
 		FALCON_STREAM = registerSound("record.falcon_record");
 		PTARMIGAN_STREAM = registerSound("record.ptarmigan_record");
+		GROUNDHORNBILL_STREAM = registerSound("record.groundhornbill_record");
 	}
 	
 	  private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("faunanatural:" + s);

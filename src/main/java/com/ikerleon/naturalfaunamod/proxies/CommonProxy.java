@@ -8,8 +8,10 @@ import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
 import com.ikerleon.naturalfaunamod.entity.EntityCheetah;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
+import com.ikerleon.naturalfaunamod.entity.EntityGroundHornbill;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
+import com.ikerleon.naturalfaunamod.entity.EntityMarmoset;
 import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
 import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
 import com.ikerleon.naturalfaunamod.entity.EntityPeregrineFalcon;
@@ -24,6 +26,8 @@ import com.ikerleon.naturalfaunamod.entity.EntityWillowPtarmigan;
 import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.EntityInit;
+import com.ikerleon.naturalfaunamod.init.ItemInit;
+import com.ikerleon.naturalfaunamod.init.NaturalFaunaCrafting;
 import com.ikerleon.naturalfaunamod.util.BiomeDictionaryUtil;
 
 import net.minecraft.entity.EnumCreatureType;
@@ -35,6 +39,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
 	
@@ -45,6 +50,23 @@ public class CommonProxy {
 	}
 	
 	public void init(FMLInitializationEvent event) {
+		
+	    OreDictionary.registerOre("feather", ItemInit.MALE_CAPERCAILLIE_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.FEMALE_CAPERCAILLIE_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.AVOCET_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.COURSER_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.KORIBUSTARD_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.OSTRICH_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.PUFFIN_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.REDBILLEDHORNBILL_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.REDBILLEDTROPICBIRD_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.SADDLEBILLEDSTORK_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.VIOLETTURACO_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.REDCRESTEDTURACO_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.GREATBLUETURACO_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.FALCON_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.PTARMIGAN_FEATHER);
+	    OreDictionary.registerOre("feather", ItemInit.GROUND_HORNBILL_FEATHER);
 		
 		EntityRegistry.addSpawn(EntityCantabricCapercaillie.class, 40, 1, 6, EnumCreatureType.CREATURE, BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD), new Biome[] {Biomes.BIRCH_FOREST, Biomes.BIRCH_FOREST_HILLS, Biomes.FOREST, Biomes.EXTREME_HILLS_WITH_TREES}));
 		EntityRegistry.addSpawn(EntityAvocet.class, 90, 1, 9, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.RIVER));
@@ -68,6 +90,11 @@ public class CommonProxy {
 		EntityRegistry.addSpawn(EntitySaddlebillStork.class, 50, 1, 2, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.HOT, BiomeDictionary.Type.SAVANNA));
 		EntityRegistry.addSpawn(EntityPeregrineFalcon.class, 50, 1, 3, EnumCreatureType.CREATURE, BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.MOUNTAIN), BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.SPARSE)));
 		EntityRegistry.addSpawn(EntityWillowPtarmigan.class, 60, 1, 6, EnumCreatureType.CREATURE, BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.MOUNTAIN), new Biome[] {Biomes.TAIGA, Biomes.TAIGA_HILLS, Biomes.REDWOOD_TAIGA, Biomes.REDWOOD_TAIGA_HILLS, Biomes.COLD_TAIGA, Biomes.COLD_TAIGA_HILLS}));
+		EntityRegistry.addSpawn(EntityGroundHornbill.class, 60, 1, 4, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.HOT, BiomeDictionary.Type.SAVANNA));
+		EntityRegistry.addSpawn(EntityGroundHornbill.class, 60, 1, 2, EnumCreatureType.CREATURE, BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.SWAMP), BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.RIVER)));		
+		EntityRegistry.addSpawn(EntityMarmoset.class, 60, 1, 4, EnumCreatureType.CREATURE, BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.JUNGLE));
+		
+		NaturalFaunaCrafting.Init(event);
 	}
 	
 	public void postInit(FMLPostInitializationEvent event) {

@@ -22,6 +22,7 @@ entity.peregrine_falcon.name=Faucon pèlerin
 entity.estuary_stingray.name=Dasyatis fluviorum
 entity.willow_ptarmigan.name=Lagopède des saules
 entity.american_paddlefish.name=Polyodon spathula
+entity.southern_ground_hornbill.name=Bucorve du Sud
 
 item.feather_capercaillie_male.name=Plume du grand tétras mâle
 item.feather_capercaillie_female.name=Plume du grand tétras femelle
@@ -38,6 +39,7 @@ item.feather_turaco_redcrested.name=Plume du touraco de Pauline
 item.feather_turaco_greatblue.name=Plume du touraco géant
 item.feather_falcon.name=Plume du faucon pèlerin
 item.feather_ptarmigan.name=Plume du lagopède des saules
+item.feather_groundhornbill.name=Plume du Bucorve du Sud
 item.dagger_horn.name=Poignard en corne
 item.dagger_tooth.name=Poignard en dent de carnivore
 item.horn.name=Corne
@@ -46,6 +48,8 @@ item.fur_cheetah.name=Fourrure de guépard
 item.fur_hyena.name=Fourrure de hyène
 item.hide_gnu.name=Peau de Gnou
 item.hide_gazelle.name=Peau de Gazelle
+item.meat_rawstingray.name=Viande du Dasyatis fluviorum cru
+item.meat_cookedstingray.name=Viande du Dasyatis fluviorum cuite
 
 itemGroup.natural_fauna_feathers_tab=Natural Fauna: Plumes
 itemGroup.natural_fauna_items_tab=Natural Fauna: Objets

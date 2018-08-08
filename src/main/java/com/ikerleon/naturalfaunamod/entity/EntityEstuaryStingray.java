@@ -4,9 +4,10 @@ import org.zawamod.entity.base.ZAWABaseWater;
 import org.zawamod.entity.core.AnimalData.EnumNature;
 import org.zawamod.init.ZAWAItems;
 
+import com.ikerleon.naturalfaunamod.init.ItemInit;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -28,9 +29,9 @@ public class EntityEstuaryStingray extends ZAWABaseWater {
 	protected void dropFewItems(boolean b, int i)
 	{
 		if (isBurning()) {
-			 dropItem(Items.COOKED_FISH, 1);
+			 dropItem(ItemInit.STINGRAY_MEAT_COOKED, 1);
 		} else {
-			 dropItem(Items.FISH, 1);
+			 dropItem(ItemInit.STINGRAY_MEAT_RAW, 1);
 		}
 	}
 	

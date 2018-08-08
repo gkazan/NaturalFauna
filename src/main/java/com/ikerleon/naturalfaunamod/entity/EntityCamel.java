@@ -29,6 +29,7 @@ public class EntityCamel extends ZAWABaseLand {
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.28D));
+        this.stepHeight=1;
 	}
     
     public float getEyeHeight()
@@ -73,11 +74,11 @@ public class EntityCamel extends ZAWABaseLand {
 	public boolean processInteract(EntityPlayer player, EnumHand hand) {
 		ItemStack stack = player.getHeldItem(hand);
 		
-		if(stack != null && (stack.getItem() == Items.SPAWN_EGG || stack.getItem()== ZAWAItems.data_book || stack.getItem()==ZAWAItems.unglate_kibble || stack.getItem()==ZAWAItems.unglate_vial)) {
+		if(this.isChild() || stack != null && (stack.getItem() == Items.SPAWN_EGG || stack.getItem()== ZAWAItems.data_book || stack.getItem()==ZAWAItems.unglate_kibble || stack.getItem()==ZAWAItems.unglate_vial)) {
 			return super.processInteract(player, hand);
 		}
 		else {
-			if(!this.isBeingRidden() && this.getIsZooAnimal()) {
+			if(!this.isBeingRidden()) {
 				if(stack != null && stack.interactWithEntity(player, this, hand)) {
 					return true;
 				}

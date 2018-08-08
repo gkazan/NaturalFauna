@@ -22,6 +22,7 @@ entity.peregrine_falcon.name=Peregrine falcon
 entity.estuary_stingray.name=Estuary stingray
 entity.willow_ptarmigan.name=Willow ptarmigan
 entity.american_paddlefish.name=American paddlefish
+entity.southern_ground_hornbill.name=Southern ground hornbill
 
 item.feather_capercaillie_male.name=Male capercaillie feather
 item.feather_capercaillie_female.name=Female capercaillie feather
@@ -38,6 +39,7 @@ item.feather_turaco_redcrested.name=Red-crested turaco feather
 item.feather_turaco_greatblue.name=Great blue turaco feather
 item.feather_falcon.name=Peregrine falcon feather
 item.feather_ptarmigan.name=Willow ptarmigan feather
+item.feather_groundhornbill.name=Southern ground hornbill feather
 item.dagger_horn.name=Horn dagger
 item.dagger_tooth.name=Carnivore tooth dagger
 item.horn.name=Horn
@@ -46,6 +48,8 @@ item.fur_cheetah.name=Cheetah fur
 item.fur_hyena.name=Hyena fur
 item.hide_gnu.name=Gnu hide
 item.hide_gazelle.name=Gazelle hide
+item.meat_rawstingray.name=Raw stingray meat
+item.meat_cookedstingray.name=Cooked stingray meat
 
 itemGroup.natural_fauna_feathers_tab=Natural Fauna: Feathers
 itemGroup.natural_fauna_items_tab=Natural Fauna: Items

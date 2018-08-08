@@ -40,7 +40,7 @@ public class EntityPuffin extends ZAWABaseFlying {
 	
 	public int setFlyTicks()
 	{
-	    return 4;
+	    return 200;
 	}
 
 	@Override
@@ -76,13 +76,8 @@ public class EntityPuffin extends ZAWABaseFlying {
 	}
 	
 	@Override
-	public void onLivingUpdate() {
-		this.standNum=rand.nextInt(45);
-  		
-	     if(this.stand && this.standNum==2) {
-	  		this.stand=false;
-	     }
-		super.onLivingUpdate();
+	public boolean getWaterBelow(World arg0, int arg1, int arg2) {
+		return false;
 	}
 	
 	@Override

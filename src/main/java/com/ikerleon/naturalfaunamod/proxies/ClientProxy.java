@@ -9,8 +9,10 @@ import com.ikerleon.naturalfaunamod.client.render.RenderCheetah;
 import com.ikerleon.naturalfaunamod.client.render.RenderCourser;
 import com.ikerleon.naturalfaunamod.client.render.RenderEstuaryStingray;
 import com.ikerleon.naturalfaunamod.client.render.RenderGrantsGazelle;
+import com.ikerleon.naturalfaunamod.client.render.RenderGroundHornbill;
 import com.ikerleon.naturalfaunamod.client.render.RenderHyena;
 import com.ikerleon.naturalfaunamod.client.render.RenderKoriBustard;
+import com.ikerleon.naturalfaunamod.client.render.RenderMarmoset;
 import com.ikerleon.naturalfaunamod.client.render.RenderNautilus;
 import com.ikerleon.naturalfaunamod.client.render.RenderOstrich;
 import com.ikerleon.naturalfaunamod.client.render.RenderPaddlefish;
@@ -33,8 +35,10 @@ import com.ikerleon.naturalfaunamod.entity.EntityCheetah;
 import com.ikerleon.naturalfaunamod.entity.EntityCourser;
 import com.ikerleon.naturalfaunamod.entity.EntityEstuaryStingray;
 import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
+import com.ikerleon.naturalfaunamod.entity.EntityGroundHornbill;
 import com.ikerleon.naturalfaunamod.entity.EntityHyena;
 import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
+import com.ikerleon.naturalfaunamod.entity.EntityMarmoset;
 import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
 import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
 import com.ikerleon.naturalfaunamod.entity.EntityPaddlefish;
@@ -84,6 +88,8 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityEstuaryStingray.class, new RenderEstuaryStingray.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityWillowPtarmigan.class, new RenderWillowPtarmigan.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityPaddlefish.class, new RenderPaddlefish.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityGroundHornbill.class, new RenderGroundHornbill.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityMarmoset.class, new RenderMarmoset.RenderFactory());
 	}
 	
 	@Override

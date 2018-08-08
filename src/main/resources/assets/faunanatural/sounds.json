@@ -29,6 +29,7 @@
    "entity.falcon.hurt":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/falcon/hurt", "stream": true}]},
    "entity.ptarmigan.flying":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/ptarmigan/flying", "stream": true}]},
    "entity.ptarmigan.song":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/ptarmigan/song", "stream": true}]},
+   "entity.groundhornbill.living":{"category":"ambient", "sounds":[{"name": "faunanatural:entity/groundhornbill/living", "stream": true}]},
    
    "record.male_capercaillie_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/male_capercaillie_record", "stream": true}]},
    "record.female_capercaillie_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/female_capercaillie_record", "stream": true}]},
@@ -41,5 +42,6 @@
    "record.turaco_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/turaco_record", "stream": true}]},
    "record.falcon_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/falcon_record", "stream": true}]},
    "record.ptarmigan_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/ptarmigan_record", "stream": true}]},
+   "record.groundhornbill_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/groundhornbill_record", "stream": true}]},
    "record.tropicbird_record":{"category":"ambient", "sounds":[{"name": "faunanatural:record/tropicbird_record", "stream": true}]}
 }

@@ -22,6 +22,7 @@ entity.peregrine_falcon.name=Halcón peregrino
 entity.estuary_stingray.name=Raya de estuario
 entity.willow_ptarmigan.name=Lagopodo común
 entity.american_paddlefish.name=Pez espatula
+entity.southern_ground_hornbill.name=Calao terrestre sureño
 
 item.feather_capercaillie_male.name=Pluma de urogallo macho
 item.feather_capercaillie_female.name=Pluma de urogallo hembra
@@ -38,6 +39,7 @@ item.feather_turaco_redcrested.name=Pluma de turaco crestirrojo
 item.feather_turaco_greatblue.name=Pluma de turaco gigante
 item.feather_falcon.name=Pluma de halcón peregrino
 item.feather_ptarmigan.name=Pluma de lagópodo común
+item.feather_groundhornbill.name=Pluma de Calao terrestre sureño
 item.dagger_horn.name=Daga de cuerno
 item.dagger_tooth.name=Daga de diente de carnívoro
 item.horn.name=Cuerno
@@ -46,6 +48,8 @@ item.fur_cheetah.name=Pelaje de guepardo
 item.fur_hyena.name=Pelaje de hiena
 item.hide_gnu.name=Piel de ñu
 item.hide_gazelle.name=Piel de gazela
+item.meat_rawstingray.name=Carne de raya cruda
+item.meat_cookedstingray.name=Carne de raya cocinada
 
 
 itemGroup.natural_fauna_feathers_tab=Natural Fauna: Plumas

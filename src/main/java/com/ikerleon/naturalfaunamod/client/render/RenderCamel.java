@@ -25,7 +25,12 @@ public class RenderCamel extends RenderLivingZAWA<EntityCamel> {
 	
 	@Override
 	protected void preRenderCallback(EntityCamel arg0, float arg1) {
-	    GlStateManager.translate (-0.5,0,-0.7);
+		if(arg0.isChild()) {
+			GlStateManager.translate (-0.2,0,-0.5);
+		}
+		else {
+	        GlStateManager.translate (-0.5,0,-0.7);
+		}
 		super.preRenderCallback(arg0, arg1);
 	}
 
