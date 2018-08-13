@@ -23,6 +23,10 @@ entity.estuary_stingray.name=Estuary stingray
 entity.willow_ptarmigan.name=Willow ptarmigan
 entity.american_paddlefish.name=American paddlefish
 entity.southern_ground_hornbill.name=Southern ground hornbill
+entity.marmoset.name=Marmoset
+entity.axolotl.name=Axolotl
+entity.american_bison.name=American bison
+entity.barbary_partridge.name=Barbary partridge
 
 item.feather_capercaillie_male.name=Male capercaillie feather
 item.feather_capercaillie_female.name=Female capercaillie feather

@@ -1,22 +1,30 @@
 package com.ikerleon.naturalfaunamod;
 
-import org.zawamod.addon.ZAWAAddon;
+import org.zawamod.addon.ZAWAAddon; 
 import org.zawamod.addon.ZAWAAddonHandler;
 import org.zawamod.entity.base.ZAWABaseLand;
 
+import com.ikerleon.naturalfaunamod.entity.EntityBasiliskLizard;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 import com.ikerleon.naturalfaunamod.proxies.CommonProxy;
 
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.event.world.GetCollisionBoxesEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod(modid = NFReference.MOD_ID, name = NFReference.NAME, version = NFReference.VERSION, dependencies = NFReference.DENPEND)
+//@Mod.EventBusSubscriber
 public class NaturalFaunaMain {
 
 	private static ZAWAAddon mod = new ZAWAAddon(NFReference.MOD_ID);
@@ -30,6 +38,22 @@ public class NaturalFaunaMain {
 	public static void addAnimal(Class<? extends ZAWABaseLand> animal) {
 		mod.addAnimalToAddon(animal);
 	}
+	
+//	@SubscribeEvent
+//	public static void onAddCollisionBoxes(GetCollisionBoxesEvent event) {
+//		if (event.getEntity() instanceof EntityBasiliskLizard) {
+//			Entity entity = event.getEntity();
+//			AxisAlignedBB aabb = event.getAabb();
+//			BlockPos pos = new BlockPos(entity.posX, aabb.minY - 1.0, entity.posZ);
+//			/*if (entity.world.getBlockState(pos).getMaterial() == Material.WATER) {
+//				//event.getCollisionBoxesList().add(new AxisAlignedBB(aabb.minX, aabb.minY - 1.0, aabb.minZ, aabb.maxX, aabb.minY, aabb.maxZ));
+//			    entity.motionY=0;
+//			}
+//			else if(entity.world.getBlockState(pos.up()).getMaterial() == Material.WATER) {
+//				entity.motionY=1;
+//			}*/
+//		}
+//	}
 	
 	@EventHandler()
 	public static void preInit(FMLPreInitializationEvent event) {

@@ -23,6 +23,10 @@ entity.estuary_stingray.name=Dasyatis fluviorum
 entity.willow_ptarmigan.name=Lagopède des saules
 entity.american_paddlefish.name=Polyodon spathula
 entity.southern_ground_hornbill.name=Bucorve du Sud
+entity.marmoset.name=Ouistiti pygmée
+entity.axolotl.name=Axolotl
+entity.american_bison.name=Bison d'Amérique
+entity.barbary_partridge.name=Perdrix gambra
 
 item.feather_capercaillie_male.name=Plume du grand tétras mâle
 item.feather_capercaillie_female.name=Plume du grand tétras femelle

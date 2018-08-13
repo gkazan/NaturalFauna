@@ -3,6 +3,10 @@ package com.ikerleon.naturalfaunamod.init;
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.NaturalFaunaMain;
 import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
+import com.ikerleon.naturalfaunamod.entity.EntityAxolotl;
+import com.ikerleon.naturalfaunamod.entity.EntityBarbaryPartridge;
+import com.ikerleon.naturalfaunamod.entity.EntityBasiliskLizard;
+import com.ikerleon.naturalfaunamod.entity.EntityBison;
 import com.ikerleon.naturalfaunamod.entity.EntityBlueGnu;
 import com.ikerleon.naturalfaunamod.entity.EntityBushbuck;
 import com.ikerleon.naturalfaunamod.entity.EntityCamel;
@@ -67,6 +71,10 @@ public class EntityInit {
 		createEntity(EntityPaddlefish.class, "american_paddlefish", 6517902, 4149096);
 		createEntity(EntityGroundHornbill.class, "southern_ground_hornbill", 0, 16711680);
 		createEntity(EntityMarmoset.class, "marmoset", 8352073, 15056201);
+		createEntity(EntityAxolotl.class, "axolotl", 16770533, 14692657);
+		createEntity(EntityBison.class, "american_bison", 12217364, 6829824);
+		createEntity(EntityBarbaryPartridge.class, "barbary_partridge", 10518363, 8024682);
+		createEntity(EntityBasiliskLizard.class, "basilisk_lizard", 10518363, 8024682);
 	}
 	
 	private static void createEntity(Class entityClass , String entityName, int Color1,int Color2) {

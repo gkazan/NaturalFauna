@@ -1,6 +1,10 @@
 package com.ikerleon.naturalfaunamod.proxies;
 
 import com.ikerleon.naturalfaunamod.client.render.RenderAvocet;
+import com.ikerleon.naturalfaunamod.client.render.RenderAxolotl;
+import com.ikerleon.naturalfaunamod.client.render.RenderBarbaryPartridge;
+import com.ikerleon.naturalfaunamod.client.render.RenderBasiliskLizard;
+import com.ikerleon.naturalfaunamod.client.render.RenderBison;
 import com.ikerleon.naturalfaunamod.client.render.RenderBlueGnu;
 import com.ikerleon.naturalfaunamod.client.render.RenderBushbuck;
 import com.ikerleon.naturalfaunamod.client.render.RenderCamel;
@@ -27,6 +31,10 @@ import com.ikerleon.naturalfaunamod.client.render.RenderTuraco;
 import com.ikerleon.naturalfaunamod.client.render.RenderWillowPtarmigan;
 import com.ikerleon.naturalfaunamod.client.render.RenderXenopus;
 import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
+import com.ikerleon.naturalfaunamod.entity.EntityAxolotl;
+import com.ikerleon.naturalfaunamod.entity.EntityBarbaryPartridge;
+import com.ikerleon.naturalfaunamod.entity.EntityBasiliskLizard;
+import com.ikerleon.naturalfaunamod.entity.EntityBison;
 import com.ikerleon.naturalfaunamod.entity.EntityBlueGnu;
 import com.ikerleon.naturalfaunamod.entity.EntityBushbuck;
 import com.ikerleon.naturalfaunamod.entity.EntityCamel;
@@ -90,6 +98,10 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityPaddlefish.class, new RenderPaddlefish.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityGroundHornbill.class, new RenderGroundHornbill.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityMarmoset.class, new RenderMarmoset.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityAxolotl.class, new RenderAxolotl.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityBison.class, new RenderBison.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityBarbaryPartridge.class, new RenderBarbaryPartridge.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityBasiliskLizard.class, new RenderBasiliskLizard.RenderFactory());
 	}
 	
 	@Override

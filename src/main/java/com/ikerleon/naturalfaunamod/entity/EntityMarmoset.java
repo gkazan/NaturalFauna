@@ -4,9 +4,11 @@ import java.util.Random;
 
 import org.zawamod.entity.land.EntityBlackSpiderMonkey;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -18,15 +20,21 @@ public class EntityMarmoset extends EntityBlackSpiderMonkey{
 	
 	  public int standNum;
 	  public int norNum;
-	  private int chance = 600;
+	  private int chance = 1000;
 	  Random random = new Random();
 	  Random random2 = new Random();
 	  private EntityMarmoset.MarmosetState state;
+	  private boolean isStanding=false;
 
 	public EntityMarmoset(World worldIn) {
 		super(worldIn);
 		setSize(0.4F, 0.3F);
 	}
+	
+    public float getEyeHeight()
+    {
+        return this.height;
+    }
 	
 	public int setVariants()
 	{
@@ -78,6 +86,40 @@ public class EntityMarmoset extends EntityBlackSpiderMonkey{
         }     
     	super.onUpdate();
     }
+    
+	public boolean getStanding() {
+		return this.isStanding;
+    }
+    
+	@Override
+	public void onLivingUpdate() {
+		double distance2 = 1.7D;
+	    Entity entityFound2 = null;
+	    
+	    double d4 = -1.0D;
+	    for (int i = 0; i < this.world.loadedEntityList.size(); i++)
+	    {
+	      Entity CuEnt = (Entity)this.world.loadedEntityList.get(i);
+	        
+	      if (((CuEnt instanceof Entity)) && (CuEnt != this)) {
+	        double d5 = CuEnt.getDistanceSq(this.posX, this.posY, this.posZ);
+	          
+	        if (((distance2 < 0.0D) || (d5 < distance2 * distance2)) && ((d4 == -1.0D) || (d5 < d4)))
+	        {
+	          d4 = d5;
+	          entityFound2 = CuEnt;
+	        }
+	      }
+	    }
+	    if (entityFound2 instanceof EntityPlayer) {
+	      this.setStatus(EntityMarmoset.MarmosetState.STANDING);
+	    }
+	    else {
+	    	this.setStatus(EntityMarmoset.MarmosetState.NORMAL);
+	    }
+	      
+		super.onLivingUpdate();
+	}
 	
 	@Override
 	protected SoundEvent getAmbientSound() {

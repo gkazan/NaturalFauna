@@ -23,6 +23,10 @@ entity.estuary_stingray.name=Raya de estuario
 entity.willow_ptarmigan.name=Lagopodo común
 entity.american_paddlefish.name=Pez espatula
 entity.southern_ground_hornbill.name=Calao terrestre sureño
+entity.marmoset.name=Tití
+entity.axolotl.name=Ajolote
+entity.american_bison.name=Bisonte americano
+entity.barbary_partridge.name=Perdíz moruna
 
 item.feather_capercaillie_male.name=Pluma de urogallo macho
 item.feather_capercaillie_female.name=Pluma de urogallo hembra
