@@ -22,7 +22,7 @@ public class EntityBasiliskLizard extends ZAWABaseLand {
 	
 	public EntityBasiliskLizard(World worldIn) {		
 		super(worldIn, 0.26D);
-		this.setSize(0.6WF, 0.3F);
+		this.setSize(0.6F, 0.3F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIPanic(this, 1.5D));
