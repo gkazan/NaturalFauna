@@ -2,7 +2,6 @@ package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 
-
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelPaddlefish;
 import com.ikerleon.naturalfaunamod.entity.EntityPaddlefish;

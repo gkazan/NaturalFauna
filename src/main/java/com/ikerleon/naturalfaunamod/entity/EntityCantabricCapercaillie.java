@@ -148,9 +148,6 @@ public class EntityCantabricCapercaillie extends ZAWABaseFlying {
     {	  
      this.standNum=rand.nextInt(45);
   		
-     if(this.stand && this.standNum==2) {
-  		this.stand=false;
-     }
      super.onLivingUpdate();
      
      }
@@ -190,7 +187,6 @@ public class EntityCantabricCapercaillie extends ZAWABaseFlying {
     
     @Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		this.stand=true;
 		if(!this.isChild()) {
 			this.playSound(SoundHandler.CAPERCAILLIE_FLYING, 1, 1);
 		}

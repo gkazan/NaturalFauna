@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelXenopus;
@@ -16,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.soggymustache.bookworm.util.BookwormRenderUtils;
 
 @SideOnly(Side.CLIENT)
 public class RenderXenopus extends RenderLivingZAWA<EntityXenopus> {
@@ -37,7 +37,7 @@ public class RenderXenopus extends RenderLivingZAWA<EntityXenopus> {
     protected ResourceLocation getEntityTexture(EntityXenopus entity)
     {
     	if(entity.isChild()) {
-    		return ZAWARenderUtils.none;
+    		return BookwormRenderUtils.none;
     	}
     	else {
     		return getTextureOfVar(0);

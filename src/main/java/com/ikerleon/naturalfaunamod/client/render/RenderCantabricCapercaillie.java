@@ -2,7 +2,6 @@ package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 import org.zawamod.entity.core.Gender;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelCantabricCapercaillie;
@@ -18,6 +17,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.soggymustache.bookworm.util.BookwormRenderUtils;
 
 @SideOnly(Side.CLIENT)
 public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabricCapercaillie> {
@@ -34,7 +34,7 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	protected ResourceLocation getEntityTexture(EntityCantabricCapercaillie entity)
     {
     	if((entity.getStatus() != EntityCantabricCapercaillie.CantabricCapercaillieState.NORMAL) || (entity.getGender()==Gender.FEMALE && entity.isChild()==false) || (!entity.isChild() && entity.onGround==false && entity.isInWater()==false)) {
-    		return ZAWARenderUtils.none;
+    		return BookwormRenderUtils.none;
     	}
     	else if(entity.isChild()) {
     		return texturechild;
@@ -82,7 +82,7 @@ public class RenderCantabricCapercaillie extends RenderLivingZAWA<EntityCantabri
 	    	    GlStateManager.scale(0.8F, 0.8F, 0.8F);
 	    	    GlStateManager.translate(0.0F, 0.34F, 0.0F);
 	    	    if(kat.onGround==false && kat.isInWater()==false) {
-	    	    	this.render.bindTexture(ZAWARenderUtils.none);
+	    	    	this.render.bindTexture(BookwormRenderUtils.none);
 	    	    }
 	    	    else {
 		            this.render.bindTexture(RenderCantabricCapercaillie.textureFemale);

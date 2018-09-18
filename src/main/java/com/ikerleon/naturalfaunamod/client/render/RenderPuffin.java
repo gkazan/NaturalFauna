@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelPuffin;
@@ -16,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.soggymustache.bookworm.util.BookwormRenderUtils;
 
 @SideOnly(Side.CLIENT)
 public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
@@ -31,7 +31,7 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
     protected ResourceLocation getEntityTexture(EntityPuffin entity)
     {
     	if(!entity.isChild() && !entity.onGround) {
-    		return ZAWARenderUtils.none;
+    		return BookwormRenderUtils.none;
     	}
     	else if(entity.isChild()) {
     		return texturechild;
@@ -73,7 +73,7 @@ public class RenderPuffin extends RenderLivingZAWA<EntityPuffin> {
 	        	}
 	        	if(!kat.onGround && !kat.isChild()) {
 	        		if(kat.isInWater()) {
-	        			this.render.bindTexture(ZAWARenderUtils.none);
+	        			this.render.bindTexture(BookwormRenderUtils.none);
 	        		}
 	        		else {
 	        			this.render.bindTexture(this.render.getTextureOfVar(kat.getAnimalType()));

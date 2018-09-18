@@ -92,7 +92,6 @@ public class EntityPeregrineFalcon extends ZAWABaseFlying{
 	
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		this.stand=true;
 		if(!this.isChild()) {
 			this.playSound(SoundHandler.FALCON_HURT, 1, 1);
 		}

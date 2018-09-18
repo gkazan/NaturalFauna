@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelCourser;
@@ -15,6 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.soggymustache.bookworm.util.BookwormRenderUtils;
 
 @SideOnly(Side.CLIENT)
 public class RenderCourser extends RenderLivingZAWA<EntityCourser> {
@@ -32,7 +32,7 @@ public class RenderCourser extends RenderLivingZAWA<EntityCourser> {
     protected ResourceLocation getEntityTexture(EntityCourser entity)
     { 	
     	if(!entity.isChild() && !entity.onGround) {
-			return ZAWARenderUtils.none;
+			return BookwormRenderUtils.none;
 		}
     	else if(entity.isChild()) {
     		return texturechild;

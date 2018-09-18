@@ -31,7 +31,7 @@ public class RenderGrantsGazelle extends RenderLivingZAWA<EntityGrantsGazelle> {
     	if(entity.isChild()) {
     		return texturechild;
     	}
-    	else {
+    	else { 
     		return getTextureOfVar(entity.getAnimalType());
     	}
     }

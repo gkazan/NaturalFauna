@@ -2,7 +2,6 @@ package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 import org.zawamod.entity.core.Gender;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelPtargimanChild;
@@ -19,6 +18,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.soggymustache.bookworm.util.BookwormRenderUtils;
 
 @SideOnly(Side.CLIENT)
 public class RenderWillowPtarmigan extends RenderLivingZAWA<EntityWillowPtarmigan> {
@@ -37,7 +37,7 @@ public class RenderWillowPtarmigan extends RenderLivingZAWA<EntityWillowPtarmiga
 	protected ResourceLocation getEntityTexture(EntityWillowPtarmigan entity)
     {
     	if((entity.getGender()== Gender.FEMALE) || (!entity.isChild() && entity.onGround==false && entity.isInWater()==false) || entity.isChild()){
-    		return ZAWARenderUtils.none;
+    		return BookwormRenderUtils.none;
     	}
     	else if(entity.biome == Biomes.TAIGA) {
     		return texture;
@@ -96,7 +96,7 @@ public class RenderWillowPtarmigan extends RenderLivingZAWA<EntityWillowPtarmiga
 	    	    GlStateManager.scale(0.9F, 0.9F, 0.9F);
 	    	    GlStateManager.translate(0.0F, 0.14F, 0.0F);
 	    	    if(kat.onGround==false && kat.isInWater()==false) {
-	    	    	this.render.bindTexture(ZAWARenderUtils.none);
+	    	    	this.render.bindTexture(BookwormRenderUtils.none);
 	    	    }
 	    	    else {
 	    	    	if(kat.biome == Biomes.TAIGA) {

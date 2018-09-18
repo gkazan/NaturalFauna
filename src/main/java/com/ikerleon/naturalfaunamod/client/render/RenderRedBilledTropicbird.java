@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelRedBilledTropicbird;
@@ -13,6 +12,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
+import net.soggymustache.bookworm.util.BookwormRenderUtils;
 
 public class RenderRedBilledTropicbird extends RenderLivingZAWA<EntityRedBilledTropicbird>{
 
@@ -28,7 +28,7 @@ public class RenderRedBilledTropicbird extends RenderLivingZAWA<EntityRedBilledT
 	protected ResourceLocation getEntityTexture(EntityRedBilledTropicbird entity)
     {
 		if(!entity.isChild() && entity.onGround==false && entity.isInWater()==false) {
-			return ZAWARenderUtils.none;
+			return BookwormRenderUtils.none;
 		}
 		else if(entity.isChild()) {
 			return texturechild;

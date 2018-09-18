@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelBarbaryPartridge;
@@ -15,6 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.soggymustache.bookworm.util.BookwormRenderUtils;
 
 @SideOnly(Side.CLIENT)
 public class RenderBarbaryPartridge extends RenderLivingZAWA<EntityBarbaryPartridge> {
@@ -25,12 +25,12 @@ public class RenderBarbaryPartridge extends RenderLivingZAWA<EntityBarbaryPartri
 	public RenderBarbaryPartridge(RenderManager rm) {
 		super(rm, new ModelBarbaryPartridge(), 0.3F);
 		addLayer(new LayerBarbaryPartridge(this, this));
-	}
+	} 
 	
     protected ResourceLocation getEntityTexture(EntityBarbaryPartridge entity)
     {
     	if(!entity.onGround) {
-			return ZAWARenderUtils.none;
+			return BookwormRenderUtils.none;
 		}
         else if(entity.isChild()) {
     		return texturechild;

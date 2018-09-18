@@ -76,15 +76,11 @@ public class EntityCourser extends ZAWABaseFlying {
 	public void onLivingUpdate() {
 		this.standNum=rand.nextInt(45);
   		
-	     if(this.stand && this.standNum==2) {
-	  		this.stand=false;
-	     }
 		super.onLivingUpdate();
 	}
 	
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		this.stand=true;
 		return super.attackEntityFrom(source, amount);
 	}
 	

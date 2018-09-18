@@ -128,16 +128,12 @@ public class EntitySaddlebillStork extends ZAWABaseFlying {
     	  
      this.standNum=rand.nextInt(55);
   		
-     if(this.stand && this.standNum==2) {
-  		this.stand=false;
-     }
      super.onLivingUpdate();
      
      }
     
     @Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		this.stand=true;
 		return super.attackEntityFrom(source, amount);
 	}
     

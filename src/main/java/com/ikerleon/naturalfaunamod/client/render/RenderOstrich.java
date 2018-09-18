@@ -2,7 +2,6 @@ package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 import org.zawamod.entity.core.Gender;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelOstrich;
@@ -16,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.soggymustache.bookworm.util.BookwormRenderUtils;
 
 @SideOnly(Side.CLIENT)
 public class RenderOstrich extends RenderLivingZAWA<EntityOstrich> {
@@ -32,9 +32,9 @@ public class RenderOstrich extends RenderLivingZAWA<EntityOstrich> {
     protected ResourceLocation getEntityTexture(EntityOstrich entity)
     {
     	if(entity.getThreatening()) {
-    		return ZAWARenderUtils.none;
+    		return BookwormRenderUtils.none;
     	}
-        else if(entity.isChild()) {
+        else if(entity.isChild()) { 
     		return texturechild;
     	}
     	else if(entity.getGender()==Gender.FEMALE) {

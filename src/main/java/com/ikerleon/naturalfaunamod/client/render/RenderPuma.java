@@ -1,4 +1,4 @@
-package com.ikerleon.naturalfaunamod.client.render;
+ package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
 

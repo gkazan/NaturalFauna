@@ -22,7 +22,7 @@ public class RenderAxolotl extends RenderLivingZAWA<EntityAxolotl> {
 
 	public RenderAxolotl(RenderManager rm) {
 		super(rm, new ModelAxolotl(), 0.1F);
-	}
+	} 
 
     protected ResourceLocation getEntityTexture(EntityAxolotl entity)
     {

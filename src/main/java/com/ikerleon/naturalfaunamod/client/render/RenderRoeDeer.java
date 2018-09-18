@@ -37,7 +37,7 @@ public class RenderRoeDeer extends RenderLivingZAWA<EntityRoeDeer> {
 			case 0:
 			default:
 				return texturefemale;
-			case 1:
+			case 1: 
 				return texturefemale2;
 		    }
     	}

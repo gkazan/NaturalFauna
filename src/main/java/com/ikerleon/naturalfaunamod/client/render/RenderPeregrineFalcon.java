@@ -1,7 +1,6 @@
 package com.ikerleon.naturalfaunamod.client.render;
 
 import org.zawamod.client.render.entity.base.RenderLivingZAWA;
-import org.zawamod.util.ZAWARenderUtils;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.client.model.ModelPeregrineFalcon;
@@ -15,6 +14,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
+import net.soggymustache.bookworm.util.BookwormRenderUtils;
 
 public class RenderPeregrineFalcon extends RenderLivingZAWA<EntityPeregrineFalcon>{
 
@@ -31,7 +31,7 @@ public class RenderPeregrineFalcon extends RenderLivingZAWA<EntityPeregrineFalco
 	protected ResourceLocation getEntityTexture(EntityPeregrineFalcon entity)
     {
 		if((!entity.isChild() && entity.onGround==false && entity.isInWater()==false)||entity.isChild()) {
-			return ZAWARenderUtils.none;
+			return BookwormRenderUtils.none;
 		}
 		else {
             return getTextureOfVar(entity.getAnimalType());	

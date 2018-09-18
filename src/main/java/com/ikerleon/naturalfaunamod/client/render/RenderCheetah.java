@@ -30,7 +30,7 @@ public class RenderCheetah extends RenderLivingZAWA<EntityCheetah> {
 	public static final ResourceLocation textureking = new ResourceLocation(NFReference.MOD_ID, "textures/entity/cheetah/textureking.png");
 	
 	public RenderCheetah(RenderManager rm) {
-		super(rm, new ModelCheetah(), 0.4F);
+		super(rm, new ModelCheetah(), 0.4F); 
 	}
 
     protected ResourceLocation getEntityTexture(EntityCheetah entity)

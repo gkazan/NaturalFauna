@@ -61,11 +61,6 @@ public class EntityRedBilledTropicbird extends ZAWABaseFlying{
 	}
 	
 	@Override
-	public boolean getWaterBelow(World arg0, int arg1, int arg2) {
-		return false;
-	}
-	
-	@Override
 	public boolean isFoodItem(ItemStack stack) {
 		return BreedItems.PescatarianItems(stack);
 	}
@@ -93,7 +88,6 @@ public class EntityRedBilledTropicbird extends ZAWABaseFlying{
 	
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		this.stand=true;
 		return super.attackEntityFrom(source, amount);
 	}
 	

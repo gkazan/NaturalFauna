@@ -93,14 +93,10 @@ public class EntityKoriBustard extends ZAWABaseFlying {
 	public void onLivingUpdate() {
 		this.standNum=rand.nextInt(45);
 		
-		if(this.stand && this.standNum==2) {
-			this.stand=false;
-		}
 		super.onLivingUpdate();
 	}
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		this.stand=true;
 		if(!this.isChild()) {
 			this.playSound(SoundHandler.KORIBUSTARD_FLYING, 1, 1);
 		}

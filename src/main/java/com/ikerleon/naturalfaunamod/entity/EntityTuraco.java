@@ -95,15 +95,11 @@ public class EntityTuraco extends ZAWABaseFlying {
 	public void onLivingUpdate() {
 		this.standNum=rand.nextInt(45);
   		
-	     if(this.stand && this.standNum==2) {
-	  		this.stand=false;
-	     }
 		super.onLivingUpdate();
 	}
 	
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		this.stand=true;
 		this.playSound(SoundHandler.TURACO_FLYING, 1, 1);
 		return super.attackEntityFrom(source, amount);
 	}

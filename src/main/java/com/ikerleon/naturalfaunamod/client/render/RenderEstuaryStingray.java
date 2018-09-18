@@ -30,7 +30,7 @@ public class RenderEstuaryStingray extends RenderLivingZAWA<EntityEstuaryStingra
 	@Override
 	public ResourceLocation getTextureOfVar(int varient) {
 		switch (varient) {
-			case 0:
+			case 0: 
 			default:
 				return texture;
 		}

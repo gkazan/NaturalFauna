@@ -29,7 +29,7 @@ public class RenderCamel extends RenderLivingZAWA<EntityCamel> {
 			GlStateManager.translate (-0.2,0,-0.5);
 		}
 		else {
-	        GlStateManager.translate (-0.5,0,-0.7);
+	        GlStateManager.translate (-0.5,0,-0.7); 
 		}
 		super.preRenderCallback(arg0, arg1);
 	}

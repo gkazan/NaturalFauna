@@ -60,16 +60,12 @@ public class EntityBarbaryPartridge extends ZAWABaseFlying {
     {	  
      this.standNum=rand.nextInt(75);
   		
-     if(this.stand && this.standNum==2) {
-  		this.stand=false;
-     }
      super.onLivingUpdate();
      
      }
     
     @Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
-		this.stand=true;
 		if(!this.isChild()) {
 			//this.playSound(SoundHandler.PTARMIGAN_HURT, 1, 1);
 		}
