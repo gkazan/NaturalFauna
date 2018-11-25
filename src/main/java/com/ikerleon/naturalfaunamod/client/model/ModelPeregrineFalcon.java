@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -133,16 +134,15 @@ public class ModelPeregrineFalcon extends BookwormModelBase {
     	float globalSpeed = 1.75f;
     	float globalHeight = 0.5f;
     	float globalDegree = 1.5F;
-    	
-    	
-    	walk(rightleg, 0.5f * globalSpeed, 0.8f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(leftleg, 0.5f * globalSpeed, 0.8f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(head, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
-    	walk(body2, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
 
-    	walk(body2, 0.17f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	walk(head, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
-    	walk(rightwing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	walk(leftwing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
+        this.rightleg.rotateAngleX = 1F * f1 * (0.8f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 0.8206538142877338F;
+        this.leftleg.rotateAngleX = -1F * f1 * (0.8f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 0.8346164483036883F;
+        this.head.rotateAngleX = -1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.8f * globalSpeed) + 2.5f) + 0.8293804605477054F;
+        this.body2.rotateAngleX = -1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.8f * globalSpeed) + 2.5f) + 0.6108652381980153F;
+
+        this.body2.rotateAngleX = 1F * 0.5F * (0.08f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 0.6108652381980153F;
+        this.head.rotateAngleX = 1F * 0.5F * (0.08f) * MathHelper.cos(entity.ticksExisted * (0.2f) + 2.5f) + 0.8293804605477054F;
+        this.rightwing.rotateAngleX = -1F * 0.5F * (0.04f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 0.5235987755982988F;
+        this.leftwing.rotateAngleX = -1F * 0.5F * (0.04f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 0.5235987755982988F;
     }
 }

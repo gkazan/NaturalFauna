@@ -3,6 +3,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -149,16 +150,15 @@ public class ModelCantabricCapercaillie extends BookwormModelBase {
     	float globalSpeed = 1.75f;
     	float globalHeight = 0.5f;
     	float globalDegree = 2.5F;
-    	
-    	
-    	walk(LeftLeg, 1.5f * globalSpeed, 0.25f * globalDegree, false, 0, 0.2f, f, f1);
-     	walk(RightLeg, 1.5f * globalSpeed, 0.25f * globalDegree, true, 0, 0.2f, f, f1);
-     	walk(Neck, 1f * globalSpeed, 0.25f * globalDegree, false, 0, 0f, f, f1);
-     	walk(Body2, 1f * globalSpeed, 0.35f * globalDegree, false, 0, 0f, f, f1);
-     	
-     	walk(Neck, 0.17f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
-     	walk(Body2, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
-     	walk(LeftWing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-     	walk(RightWing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
+
+        this.LeftLeg.rotateAngleX = 1F * f1 * (0.25f * globalDegree) * MathHelper.cos(f * (1.5f * globalSpeed) + 0) + 0F;
+        this.RightLeg.rotateAngleX = -1F * f1 * (0.25f * globalDegree) * MathHelper.cos(f * (1.5f * globalSpeed) + 0) + 0F;
+        this.Neck.rotateAngleX = 1F * f1 * (0.25f * globalDegree) * MathHelper.cos(f * (1f * globalSpeed) + 0) + 0.22759093446006054F;
+        this.Body2.rotateAngleX = 1F * f1 * (0.35f * globalDegree) * MathHelper.cos(f * (1f * globalSpeed) + 0) + 0f;
+
+        this.Neck.rotateAngleX = 1F * 0.5F * (0.08f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 0.22759093446006054F;
+        this.Body2.rotateAngleX = 1F * 0.5F * (0.08f) * MathHelper.cos(entity.ticksExisted * (0.2f) + 2.5f) + 0f;
+        this.LeftWing.rotateAngleX = this.RightWing.rotateAngleX =
+                -1F * 0.5F * (0.04f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + -0.23387411976724018F;
     }
 }

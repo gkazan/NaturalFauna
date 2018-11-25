@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -139,11 +140,12 @@ public class ModelPaddlefish extends BookwormModelBase {
     {
     	reset();
 
-    	swing(body2, 0.3f, 0.5f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  
-    	swing(tail, 0.6f, 0.75f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  	
-    	flap(shape17, 0.6f, 0.75f, false, 2.5f, 0f, f, f1);  	
-    	flap(shape18, 0.6f, 0.75f, true, 2.5f, 0f, f, f1);  	
-    	walk(shape17, 0.6f, -0.5f, false, 2.5f, 0f, f, f1);  	
-    	walk(shape18, 0.6f, -0.5f, false, 2.5f, 0f, f, f1);   
+
+        this.body2.rotateAngleY = 1F * (MathHelper.cos(entity.ticksExisted * (0.3f) + 2.5f) * (0.5f) * 0.5F) + (0f * 0.5F);
+        this.tail.rotateAngleY = 1F * (MathHelper.cos(entity.ticksExisted * (0.6f) + 2.5f) * (0.75f) * 0.5F) + (0f * 0.5F);
+        this.shape17.rotateAngleZ = 1F * (MathHelper.cos(f * (0.6f) + 2.5f) * (0.75f) * f1) + (0.4808382089244378F * f1);
+        this.shape18.rotateAngleZ = -1F * (MathHelper.cos(f * (0.6f) + 2.5f) * (0.75f) * f1) + (-0.4808382089244378F * f1);
+        this.shape17.rotateAngleX = this.shape18.rotateAngleX =
+                1F * f1 * (-0.5f) * MathHelper.cos(f * (0.6f) + 2.5f) + 0.18884462506578648F;
     }
 }

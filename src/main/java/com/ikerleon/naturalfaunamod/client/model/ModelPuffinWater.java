@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -124,13 +125,12 @@ public class ModelPuffinWater extends BookwormModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) 
     {
     	reset();
-
-    	walk(neck, 0.17f, 0.3f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	walk(bodyChildChild, 0.17f, 0.15f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	walk(body2, 0.2f, 0.15f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
-    	walk(leftwing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	walk(rightwing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	walk(leftleg, 0.25f, 1.3f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(rightleg, 0.25f, 1.3f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+        this.neck.rotateAngleX = 1F * 0.5F * (0.3f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 0.31869712141416456F;
+        this.bodyChildChild.rotateAngleX = -1F * 0.5F * (0.15f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + -0.039968039870670144F;
+        this.body2.rotateAngleX = 1F * 0.5F * (0.15f) * MathHelper.cos(entity.ticksExisted * (0.2f) + 2.5f) + 0.3042108886226116F;
+        this.leftwing.rotateAngleX = -1F * 0.5F * (0.04f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + -0.016057029118347832F;
+        this.rightwing.rotateAngleX = -1F * 0.5F * (0.04f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + -0.016057029118347832F;
+        this.leftleg.rotateAngleX = 1F * 0.5F * (1.3f) * MathHelper.cos(entity.ticksExisted * (0.25f) + 0f) + 1.0471975511965976F;
+        this.rightleg.rotateAngleX = -1F * 0.5F * (1.3f) * MathHelper.cos(entity.ticksExisted * (0.25f) + 0f) + 1.0471975511965976F;
     }
 }

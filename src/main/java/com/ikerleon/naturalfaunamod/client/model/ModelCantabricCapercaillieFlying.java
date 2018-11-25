@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -113,16 +114,14 @@ public class ModelCantabricCapercaillieFlying extends BookwormModelBase {
     	
     	float globalSpeed = 1.75f;
     	float globalDegree = 1F;
-    	
-    	walk(leftwing, 0.5f * globalSpeed, 0.3f * globalDegree, false, 0, 0f, f, f1);
-    	walk(rightwing, 0.5f * globalSpeed, 0.3f * globalDegree, true, 0, 0f, f, f1);
-    	flap(leftwing, 0.6f * globalSpeed, 0.7f * globalDegree, false, 0, 0f, f, f1);
-    	flap(rightwing, 0.6f * globalSpeed, 0.7f * globalDegree, true, 0, 0f, f, f1);
- 
-    	walk(BodyChildChild, 0.2f * globalSpeed, 0.3f * globalDegree, true, 0f, 0f, f, f1);
-    	walk(BodyChildChild_1, 0.2f * globalSpeed, 0.3f * globalDegree, true, 0f, 0f, f, f1);
-    	walk(BodyChildChild_2, 0.2f * globalSpeed, 0.3f * globalDegree, true, 0f, 0f, f, f1);
-    	walk(BodyChildChild_3, 0.2f * globalSpeed, 0.3f * globalDegree, true, 0f, 0f, f, f1);
-    	walk(BodyChildChild_4, 0.2f * globalSpeed, 0.3f * globalDegree, true, 0f, 0f, f, f1);
+
+        this.leftwing.rotateAngleX = this.rightwing.rotateAngleX =
+                1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.0927506446736497F;
+        this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.6f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (-1.5481070465189704F * f1);
+        this.rightwing.rotateAngleZ = -1F * (MathHelper.cos(f * (0.6f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (1.593485607070823F * f1);
+
+        this.BodyChildChild.rotateAngleX = this.BodyChildChild_1.rotateAngleX = this.BodyChildChild_2.rotateAngleX = this.BodyChildChild_4.rotateAngleX =
+                -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + 0f) + 0f;
+        this.BodyChildChild_3.rotateAngleX = -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + 0f) + 0.045553093477052F;
     }
 }

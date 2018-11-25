@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -137,17 +138,15 @@ public class ModelRoeDeer extends BookwormModelBase {
     	float globalHeight = 0.5f;
     	float globalDegree = 1F;
     	
-        this.shape3.rotateAngleY = (f3 * 0.017453292F);
-        this.shape3.rotateAngleX = (f4 * 0.017453292F)+0.7F;
-    	
-    	//bob(shape1, 1 * globalSpeed, 0.5f * globalHeight, false, f, f1);
-    	
-    	walk(shape14, 0.5f * globalSpeed, 0.5f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(shape14_1, 0.5f * globalSpeed, 0.5f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(shape14_2, 0.5f * globalSpeed, 0.5f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(shape14_3, 0.5f * globalSpeed, 0.5f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(shape2, 0.4f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
+        this.shape2.rotateAngleY = (f3 * 0.017453292F) / 2F;
+        this.shape3.rotateAngleX = (f4 * 0.017453292F) + 0.7F;
 
-    	walk(shape2, 0.10f, 0.06f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  	
+        this.shape14.rotateAngleX = this.shape14_2.rotateAngleX =
+                1F * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0F;
+        this.shape14_1.rotateAngleX = this.shape14_3.rotateAngleX =
+                -1F * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0F;
+        this.shape2.rotateAngleX = -1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.4f * globalSpeed) + 2.5f) + -0.6829473363053812F;
+
+        this.shape2.rotateAngleX = 1F * 0.5F * (0.06f) * MathHelper.cos(entity.ticksExisted * (0.10f) + 2.5f) + -0.6829473363053812F;
     }
 }

@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -149,22 +150,20 @@ public class ModelAvocet extends BookwormModelBase {
     	
         this.shape5.rotateAngleY = (f3 * 0.017453292F);
         this.shape5.rotateAngleX = (f4 * 0.017453292F);
-    	
-    	//bob(shape2, 1 * globalSpeed, 0.5f * globalHeight, false, f, f1);
-    	
-    	walk(shape15, 0.5f * globalSpeed, 0.8f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(shape15_1, 0.5f * globalSpeed, 0.8f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(shape19, 0.5f * globalSpeed, 0.5f * globalDegree, false, 2.5f, 0f, f, f1);
-    	walk(shape19_1, 0.5f * globalSpeed, 0.5f * globalDegree, true, 2.5f, 0f, f, f1);
-    	walk(shape16, 0.5f * globalSpeed, 0.5f * globalDegree, false, 2.5f, 0f, f, f1);
-    	walk(shape16_1, 0.5f * globalSpeed, 0.5f * globalDegree, true, 2.5f, 0f, f, f1);
-    	walk(shape10, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
-    	walk(shape4, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
 
-    	walk(shape4, 0.17f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	walk(shape5, 0.17f, 0.1f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	walk(shape10, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
-    	walk(shape11, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	walk(shape11_1, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
+    	this.shape15.rotateAngleX = 1F * f1 * (0.8F * globalDegree) * MathHelper.cos(f * (0.5F * globalSpeed) + 0F) + 0.2F;
+    	this.shape15_1.rotateAngleX = -1F * f1 * (0.8F * globalDegree) * MathHelper.cos(f * (0.5F * globalSpeed) + 0F) + 0.2F;
+    	this.shape19.rotateAngleX = 1F * f1 * (0.5F * globalDegree) * MathHelper.cos(f * (0.5F * globalSpeed) + 2.5F) + 0F;
+        this.shape16.rotateAngleX = 1F * f1 * (0.5F * globalDegree) * MathHelper.cos(f * (0.5F * globalSpeed) + 2.5F) + -0.14F;
+        this.shape19_1.rotateAngleX = -1F * f1 * (0.5F * globalDegree) * MathHelper.cos(f * (0.5F * globalSpeed) + 2.5F) + 0F;
+        this.shape16_1.rotateAngleX = -1F * f1 * (0.5F * globalDegree) * MathHelper.cos(f * (0.5F * globalSpeed) + 2.5F) + -0.14F;
+    	this.shape10.rotateAngleX = -1F * f1 * (0.1F * globalDegree) * MathHelper.cos(f * (0.8F * globalSpeed) + 2.5F) + 0.3F;
+        this.shape4.rotateAngleX = -1F * f1 * (0.1F * globalDegree) * MathHelper.cos(f * (0.8F * globalSpeed) + 2.5F) + -0.1F;
+
+    	this.shape4.rotateAngleX = 1F * 0.5F * 0.08F * MathHelper.cos(entity.ticksExisted * (0.17f * globalSpeed) + 2.5F) + -0.1F;
+    	this.shape5.rotateAngleX = -1F * 0.5F * 0.1F * MathHelper.cos(entity.ticksExisted * (0.17f * globalSpeed) + 2.5F) + 0.2F;
+    	this.shape10.rotateAngleX = 1F * 0.5F * 0.08F * MathHelper.cos(entity.ticksExisted * (0.2F * globalSpeed) + 2.5F) + 0.3F;
+    	this.shape11.rotateAngleX = this.shape11_1.rotateAngleX =
+                -1F * 0.5F * 0.04F * MathHelper.cos(entity.ticksExisted * (0.17f * globalSpeed) + 2.5F) + -0.05F;
     }
 }

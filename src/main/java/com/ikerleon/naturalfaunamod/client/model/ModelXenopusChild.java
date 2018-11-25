@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -69,7 +70,7 @@ public class ModelXenopusChild extends BookwormModelBase {
 
     	float globalSpeed = 1.75f;
     	float globalDegree = 1.5F;
-    	
-    	walk(tail, 0.5f * globalSpeed, 0.8f * globalDegree, false, 0, 0.2f, f, f1);;
+
+        this.tail.rotateAngleX = 1F * f1 * (0.8f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 0F;
     }
 }

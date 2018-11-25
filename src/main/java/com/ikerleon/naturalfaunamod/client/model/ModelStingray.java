@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -103,15 +104,14 @@ public class ModelStingray extends BookwormModelBase {
     	
     	float globalSpeed = 1.75f;
     	float globalDegree = 2.5F;
-    	
 
-     	swing(tail, 1f * globalSpeed, 0.2f * globalDegree, false, 0, 0f, f, f1);
-     	swing(tail2, 1f * globalSpeed, 0.2f * globalDegree, false, 0, 0f, f, f1);
-     	flap(tail, 0.5f * globalSpeed, 0.2f * globalDegree, false, 0, 0f, f, f1);
-     	flap(tail2, 0.5f * globalSpeed, 0.2f * globalDegree, false, 0, 0f, f, f1);
-     	
-     	flap(left, 1f * globalSpeed, 0.1f * globalDegree, false, 0, 0f, f, f1);
-     	flap(right, 1f * globalSpeed, 0.1f * globalDegree, true, 0, 0f, f, f1);
-     	flap(front, 1f * globalSpeed, 0.1f * globalDegree, false, 0, 0f, f, f1);
+        this.tail.rotateAngleY = this.tail2.rotateAngleX =
+                1F * (MathHelper.cos(f * (1f * globalSpeed) + 0) * (0.2f * globalDegree) * f1) + (0f * f1);
+        this.tail.rotateAngleX = this.tail2.rotateAngleX =
+                1F * f1 * (0.2f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 0f;
+
+        this.left.rotateAngleZ = this.front.rotateAngleZ =
+                1F * (MathHelper.cos(f * (1f * globalSpeed) + 0) * (0.1f * globalDegree) * f1) + (0f * f1);
+        this.right.rotateAngleZ = -1F * (MathHelper.cos(f * (1f * globalSpeed) + 0) * (0.1f * globalDegree) * f1) + (0f * f1);
     }
 }

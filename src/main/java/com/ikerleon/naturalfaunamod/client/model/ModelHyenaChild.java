@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -232,32 +233,28 @@ public class ModelHyenaChild extends BookwormModelBase {
     	float globalSpeed = 1.75f;
     	float globalHeight = 0.5f;
     	float globalDegree = 1F;
-    	
-    	
-    	walk(frontrightleg, 0.3f * globalSpeed, 0.4f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(frontleftleg, 0.3f * globalSpeed, 0.4f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(backrightleg, 0.3f * globalSpeed, 0.4f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(backleftleg, 0.3f * globalSpeed, 0.4f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(frontrightleg2, 0.5f * globalSpeed, 0.2f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(frontleftleg2, 0.5f * globalSpeed, 0.2f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(backrightleg3, 0.5f * globalSpeed, 0.2f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(backleftleg3, 0.5f * globalSpeed, 0.2f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(backrightleg2, 0.5f * globalSpeed, 0.4f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(backleftleg2, 0.5f * globalSpeed, 0.4f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(backrightfoot, 2f * globalSpeed, 2f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(backleftfoot, 2f * globalSpeed, 2f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(backrightfoot, 2f * globalSpeed, 2f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(backleftfoot, 2f * globalSpeed, 2f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(neck, 0.2f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
 
-    	walk(neck, 0.10f, 0.06f, false, 2.5f, 0f, entity.ticksExisted, 0.5F); 
-    	
-    	flap(tail, 0.2f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	flap(tail2, 0.15f, 0.4f, false, 0f, 0f, entity.ticksExisted, 0.5F);
+
+        this.frontrightleg.rotateAngleX = -1F * f1 * (0.4f * globalDegree) * MathHelper.cos(f * (0.3f * globalSpeed) + 0f) + 0F;
+        this.frontleftleg.rotateAngleX = 1F * f1 * (0.4f * globalDegree) * MathHelper.cos(f * (0.3f * globalSpeed) + 0f) + 0F;
+        this.backrightleg.rotateAngleX = -1F * f1 * (0.4f * globalDegree) * MathHelper.cos(f * (0.3f * globalSpeed) + 0f) + 0.091106186954104F;
+        this.backleftleg.rotateAngleX = 1F * f1 * (0.4f * globalDegree) * MathHelper.cos(f * (0.3f * globalSpeed) + 0f) + 0.091106186954104F;
+        this.frontrightleg2.rotateAngleX = 1F * f1 * (0.2f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0.03490658503988659F;
+        this.frontleftleg2.rotateAngleX = -1F * f1 * (0.2f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0.03490658503988659F;
+        this.backrightleg3.rotateAngleX = 1F * f1 * (0.2f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + -0.4553564018453205F;
+        this.backleftleg3.rotateAngleX = -1F * f1 * (0.2f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + -0.4553564018453205F;
+        this.backrightleg2.rotateAngleX = this.backleftleg2.rotateAngleX =
+                -1F * f1 * (0.4f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0.4553564018453205F;
+        this.neck.rotateAngleX = -1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + 2.5f) + -0.40980330836826856F;
+
+        this.neck.rotateAngleX = 1F * 0.5F * (0.06f) * MathHelper.cos(entity.ticksExisted * (0.10f) + 2.5f) + -0.40980330836826856F;
+
+        this.tail.rotateAngleZ = -1F * (MathHelper.cos(entity.ticksExisted * (0.2f) + 0f) * (0.2f) * 0.5F) + (0f * 0.5F);
+        this.tail2.rotateAngleZ = 1F * (MathHelper.cos(entity.ticksExisted * (0.15f) + 0f) * (0.4f) * 0.5F) + (0f * 0.5F);
     	
     	if(earNum==2) {
-    	swing(rightear, 0.5f, 0.6f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	swing(leftear, 0.5f, 0.6f, false, 0f, 0f, entity.ticksExisted, 0.5F);
+            this.rightear.rotateAngleY = -1F * (MathHelper.cos(entity.ticksExisted * (0.5f) + 0f) * (0.6f) * 0.5F) + (-0.40980330836826856F * 0.5F);
+            this.leftear.rotateAngleY = 1F * (MathHelper.cos(entity.ticksExisted * (0.5f) + 0f) * (0.6f) * 0.5F) + (0.40980330836826856F * 0.5F);
     	}
     }
 }

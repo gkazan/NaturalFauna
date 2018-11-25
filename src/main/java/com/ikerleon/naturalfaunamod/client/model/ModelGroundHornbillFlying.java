@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -215,12 +216,12 @@ public class ModelGroundHornbillFlying extends BookwormModelBase {
     	
     	float globalSpeed = 1.75f;
     	float globalDegree = 1F;
-    	
-    	walk(leftwing, 0.2f * globalSpeed, 0.2f * globalDegree, false, 0, 0f, f, f1);
-    	walk(rightwing, 0.2f * globalSpeed, 0.2f * globalDegree, true, 0, 0f, f, f1);
-    	swing(leftwing, 0.4f * globalSpeed, 0.7f * globalDegree, false, 0, 0f, f, f1);
-    	swing(rightwing, 0.4f * globalSpeed, 0.7f * globalDegree, true, 0, 0f, f, f1);
-    	swing(leftwing2, 0.6f * globalSpeed, 0.4f * globalDegree, false, 0, 0f, f, f1);
-    	swing(rightwing2, 0.6f * globalSpeed, 0.4f * globalDegree, true, 0, 0f, f, f1);
+
+        this.leftwing.rotateAngleX = this.rightwing.rotateAngleX =
+                -1F * f1 * (0.2f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + 0) + -1.3151055913777272F;
+        this.leftwing.rotateAngleY = 1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (4.71238898038469F * f1);
+        this.rightwing.rotateAngleY = -1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (1.5707963267948966F * f1);
+        this.leftwing2.rotateAngleY = 1F * (MathHelper.cos(f * (0.6f * globalSpeed) + 0) * (0.4f * globalDegree) * f1) + (0f * f1);
+        this.rightwing2.rotateAngleY = -1F * (MathHelper.cos(f * (0.6f * globalSpeed) + 0) * (0.4f * globalDegree) * f1) + (0f * f1);
     }
 }

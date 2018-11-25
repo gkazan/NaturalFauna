@@ -2,11 +2,12 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
 /**
- * Affe - Mürbis
+ * Affe - Mï¿½rbis
  * Created using Tabula 7.0.0
  */
 public class ModelMarmosetStanding extends BookwormModelBase {
@@ -201,18 +202,18 @@ public class ModelMarmosetStanding extends BookwormModelBase {
     {   	
     	reset();
 
-    	walk(Neck, 0.1f, 0.06f, false, 2.5f, 0f, entity.ticksExisted, 0.5F); 
-    	
-    	walk(Foot31, 0.2f , 0.3f , false, 0, 0f, entity.ticksExisted, 0.5F);
-    	walk(Foot41, 0.2f , 0.3f , true, 0, 0f, entity.ticksExisted, 0.5F);
-    	walk(Foot33, 0.3f , 0.4f , false, 0, 0f, entity.ticksExisted, 0.5F);
-    	walk(Foot43, 0.3f , 0.4f , true, 0, 0f, entity.ticksExisted, 0.5F);
-    	
-    	walk(Tail1, 0.1f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(Tail2, 0.07f, 0.4f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(Tail3, 0.1f, 0.3f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	swing(Tail1, 0.1f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	swing(Tail2, 0.07f, 0.4f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	swing(Tail3, 0.1f, 0.3f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+        this.Neck.rotateAngleX = 1F * 0.5F * (0.06f) * MathHelper.cos(entity.ticksExisted * (0.1f) + 2.5f) + -0.5462880558742251F;
+
+        this.Foot31.rotateAngleX = 1F * 0.5F * (0.3f ) * MathHelper.cos(entity.ticksExisted * (0.2f ) + 0) + 0.27314402793711257F;
+        this.Foot41.rotateAngleX = -1F * 0.5F * (0.3f ) * MathHelper.cos(entity.ticksExisted * (0.2f ) + 0) + 0.27314402793711257F;
+        this.Foot33.rotateAngleX = 1F * 0.5F * (0.4f ) * MathHelper.cos(entity.ticksExisted * (0.3f ) + 0) + -0.7285004297824331F;
+        this.Foot43.rotateAngleX = -1F * 0.5F * (0.4f ) * MathHelper.cos(entity.ticksExisted * (0.3f ) + 0) + -0.7285004297824331F;
+
+        this.Tail1.rotateAngleX = -1F * 0.5F * (0.2f) * MathHelper.cos(entity.ticksExisted * (0.1f) + 0f) + 0.31869712141416456F;
+        this.Tail2.rotateAngleX = 1F * 0.5F * (0.4f) * MathHelper.cos(entity.ticksExisted * (0.07f) + 0f) + 0.36425021489121656F;
+        this.Tail3.rotateAngleX = -1F * 0.5F * (0.3f) * MathHelper.cos(entity.ticksExisted * (0.1f) + 0f) + 0.31869712141416456F;
+        this.Tail1.rotateAngleY = -1F * (MathHelper.cos(entity.ticksExisted * (0.1f) + 0f) * (0.2f) * 0.5F) + (0.36425021489121656F * 0.5F);
+        this.Tail2.rotateAngleY = 1F * (MathHelper.cos(entity.ticksExisted * (0.07f) + 0f) * (0.4f) * 0.5F) + (0.36425021489121656F * 0.5F);
+        this.Tail3.rotateAngleY = -1F * (MathHelper.cos(entity.ticksExisted * (0.1f) + 0f) * (0.3f) * 0.5F) + (0.31869712141416456F * 0.5F);
     }
 }

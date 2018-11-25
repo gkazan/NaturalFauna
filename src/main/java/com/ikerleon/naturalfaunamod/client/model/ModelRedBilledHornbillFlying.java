@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -110,10 +111,10 @@ public class ModelRedBilledHornbillFlying extends BookwormModelBase {
     	
     	float globalSpeed = 1.75f;
     	float globalDegree = 1F;
-    	
-    	walk(shape14, 0.5f * globalSpeed, 0.3f * globalDegree, true, 0, 0f, f, f1);
-    	walk(shape14_1, 0.5f * globalSpeed, 0.3f * globalDegree, false, 0, 0f, f, f1);
-    	flap(shape14, 0.4f * globalSpeed, 0.5f * globalDegree, false, 0, 0f, f, f1);
-    	flap(shape14_1, 0.4f * globalSpeed, 0.5f * globalDegree, true, 0, 0f, f, f1);
+
+        this.shape14.rotateAngleX = this.shape14_1.rotateAngleX =
+                1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.7756979809790308F;
+        this.shape14.rotateAngleZ = 1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (1.593485607070823F * f1);
+        this.shape14_1.rotateAngleZ = -1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (-1.5481070465189704F * f1);
     }
 }

@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -185,22 +186,22 @@ public class ModelRedBilledTropicbird extends BookwormModelBase {
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
     	reset();
-    	
-    	walk(neck, 0.15f, 0.06f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(neck2, 0.15f, 0.1f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(head, 0.15f, 0.12f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	
-    	walk(leftwing2, 0.1f, 0.15f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(rightwing2, 0.1f, 0.15f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(leftwing3, 0.05f, 0.07f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(rightwing3, 0.05f, 0.07f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	
-    	walk(body2, 0.15f, 0.06f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(lefttail, 0.17f, 0.07f, true, -3f, 0f, entity.ticksExisted, 0.5F);
-    	walk(righttail, 0.17f, 0.07f, true, -3f, 0f, entity.ticksExisted, 0.5F);
-    	walk(middletail12, 0.15f, 0.2f, true, -3f, 0f, entity.ticksExisted, 0.5F);
-    	walk(middletail22, 0.15f, 0.2f, true, -3f, 0f, entity.ticksExisted, 0.5F);
-    	walk(miggletail13, 0.15f, 0.4f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(middletail23, 0.15f, 0.4f, false, 0f, 0f, entity.ticksExisted, 0.5F);
+
+        this.neck.rotateAngleX = 1F * 0.5F * (0.06f) * MathHelper.cos(entity.ticksExisted * (0.15f) + 0f) + -0.5009094953223726F;
+        this.neck2.rotateAngleX = -1F * 0.5F * (0.1f) * MathHelper.cos(entity.ticksExisted * (0.15f) + 0f) + 0.7740535232594852F;
+        this.head.rotateAngleX = 1F * 0.5F * (0.12f) * MathHelper.cos(entity.ticksExisted * (0.15f) + 0f) + 0f;
+
+        this.leftwing2.rotateAngleX = 1F * 0.5F * (0.15f) * MathHelper.cos(entity.ticksExisted * (0.1f) + 0f) + 0f;
+        this.rightwing2.rotateAngleX = -1F * 0.5F * (0.15f) * MathHelper.cos(entity.ticksExisted * (0.1f) + 0f) + 0f;
+        this.leftwing3.rotateAngleX = 1F * 0.5F * (0.07f) * MathHelper.cos(entity.ticksExisted * (0.05f) + 0f) + -0.27314402793711257F;
+        this.rightwing3.rotateAngleX = -1F * 0.5F * (0.07f) * MathHelper.cos(entity.ticksExisted * (0.05f) + 0f) + 0.27314402793711257F;
+
+        this.body2.rotateAngleX = 1F * 0.5F * (0.06f) * MathHelper.cos(entity.ticksExisted * (0.15f) + 0f) + -0.27314402793711257F;
+        this.lefttail.rotateAngleX = this.righttail.rotateAngleX =
+                -1F * 0.5F * (0.07f) * MathHelper.cos(entity.ticksExisted * (0.17f) + -3f) + 0.5462880558742251F;
+        this.middletail12.rotateAngleX = this.middletail22.rotateAngleX =
+                -1F * 0.5F * (0.2f) * MathHelper.cos(entity.ticksExisted * (0.15f) + -3f) + -0.31869712141416456F;
+        this.miggletail13.rotateAngleX = this.middletail23.rotateAngleX =
+                1F * 0.5F * (0.4f) * MathHelper.cos(entity.ticksExisted * (0.15f) + 0f) + -0.4553564018453205F;
     }
 }

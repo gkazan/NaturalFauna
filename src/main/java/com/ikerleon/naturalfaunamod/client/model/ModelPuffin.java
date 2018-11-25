@@ -3,6 +3,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -130,30 +131,27 @@ public class ModelPuffin extends BookwormModelBase {
      
      public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) 
      {
-     	reset();
+        reset();
+        float globalSpeed = 1.75f;
+        float globalHeight = 0.5f;
+        float globalDegree = 2.5F;
 
-     	float globalSpeed = 1.75f;
-     	float globalHeight = 0.5f;
-     	float globalDegree = 2.5F;
-   
-        this.head.rotateAngleX = (f4 / 57.295776F);
+        this.head.rotateAngleX = (f4 / 57.295776F) - 0.04834562028F;
         this.head.rotateAngleY = (f3 / 57.295776F);
-     	
-     	
-     	walk(leftleg, 0.5f * globalSpeed, 0.8f * globalDegree, false, 0, 0.2f, f, f1);
-     	walk(rightleg, 0.5f * globalSpeed, 0.8f * globalDegree, true, 0, 0.2f, f, f1);
-     	walk(leftfoot, 0.5f * globalSpeed, 0.5f * globalDegree, false, 2.5f, 0f, f, f1);
-     	walk(rightfoot, 0.5f * globalSpeed, 0.5f * globalDegree, true, 2.5f, 0f, f, f1);
-     	walk(body2, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
-     	walk(neck, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
-     	
-     	flap(body, globalSpeed*1f, 0.15f*globalDegree, false, 0f, 0f, f, f1 );
 
-     	walk(neck, 0.17f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
-     	walk(head, 0.17f, 0.1f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-     	walk(body2, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
-     	walk(leftwing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-     	walk(rightwing, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
+        this.leftleg.rotateAngleX = 1F * f1 * (0.8f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 0.7285004297824331F;
+        this.rightleg.rotateAngleX = -1F * f1 * (0.8f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 0.7285004297824331F;
+        this.leftfoot.rotateAngleX = 1F * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 2.5f) + 0f;
+        this.rightfoot.rotateAngleX = -1F * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 2.5f) + 0f;
+        this.body2.rotateAngleX = -1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.8f * globalSpeed) + 2.5f) + 0.272096830385916F;
+        this.neck.rotateAngleX = -1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.8f * globalSpeed) + 2.5f) + 0.7813839061178613F;
+
+        this.body.rotateAngleZ = 1F * (MathHelper.cos(f * (globalSpeed*1f) + 0f) * (0.15f*globalDegree) * f1) + (-0.0017453292519943296F * f1);
+
+        this.neck.rotateAngleX = 1F * 0.5F * (0.08f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 0.7813839061178613F;
+        this.head.rotateAngleX = -1F * 0.5F * (0.1f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + -0.04834562028F;
+        this.body2.rotateAngleX = 1F * 0.5F * (0.08f) * MathHelper.cos(entity.ticksExisted * (0.2f) + 2.5f) + 0.272096830385916F;
+        this.leftwing.rotateAngleX = -1F * 0.5F * (0.04f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 0f;
+        this.rightwing.rotateAngleX = -1F * 0.5F * (0.04f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 0f;
      }
 }
-     

@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -217,18 +218,17 @@ public class ModelGroundHornbill extends BookwormModelBase {
     	float globalSpeed = 1.75f;
     	float globalHeight = 0.5f;
     	float globalDegree = 2.5F;
-    	
-    	
-    	walk(leftleg, 1.5f * globalSpeed, 0.25f * globalDegree, false, 0, 0.2f, f, f1);
-     	walk(rightleg, 1.5f * globalSpeed, 0.25f * globalDegree, true, 0, 0.2f, f, f1);
-     	walk(neck, 1f * globalSpeed, 0.1f * globalDegree, false, 0, 0f, f, f1);
-     	walk(shape27, 1f * globalSpeed, 0.25f * globalDegree, false, 0, 0f, f, f1);
-     	walk(shape12, 1f * globalSpeed, 0.25f * globalDegree, false, 0, 0f, f, f1);
-     	
-     	walk(neck, 0.15f, 0.05f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
-     	walk(shape27, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  
-     	walk(shape12, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
-     	walk(shape11, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-     	walk(shape10, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
+
+        this.leftleg.rotateAngleX = 1F * f1 * (0.25f * globalDegree) * MathHelper.cos(f * (1.5f * globalSpeed) + 0) + 2.211855761052414F;
+        this.rightleg.rotateAngleX = -1F * f1 * (0.25f * globalDegree) * MathHelper.cos(f * (1.5f * globalSpeed) + 0) + 2.211855761052414F;
+        this.neck.rotateAngleX = 1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (1f * globalSpeed) + 0) + 2.2001620550640517F;
+        this.shape27.rotateAngleX = 1F * f1 * (0.25f * globalDegree) * MathHelper.cos(f * (1f * globalSpeed) + 0) + 2.5569073541716927F;
+        this.shape12.rotateAngleX = 1F * f1 * (0.25f * globalDegree) * MathHelper.cos(f * (1f * globalSpeed) + 0) + 2.6162485487395F;
+
+        this.neck.rotateAngleX = 1F * 0.5F * (0.05f) * MathHelper.cos(entity.ticksExisted * (0.15f) + 2.5f) + 2.2001620550640517F;
+        this.shape27.rotateAngleX = this.shape12.rotateAngleX =
+                1F * 0.5F * (0.08f) * MathHelper.cos(entity.ticksExisted * (0.2f) + 2.5f) + 2.6162485487395F;
+        this.shape11.rotateAngleX = this.shape10.rotateAngleX =
+                -1F * 0.5F * (0.04f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 0.06405358354819189F;
     }
 }

@@ -2,11 +2,12 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
 /**
- * Affe - Mürbis
+ * Affe - Mï¿½rbis
  * Created using Tabula 7.0.0
  */
 public class ModelMarmoset extends BookwormModelBase {
@@ -207,27 +208,26 @@ public class ModelMarmoset extends BookwormModelBase {
     	
         this.Head.rotateAngleY = (f3 * 0.017453292F);
         this.Head.rotateAngleX = (f4 * 0.017453292F);
-    	
-    	
-    	walk(Foot11, 0.4f * globalSpeed, 0.3f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(Foot21, 0.4f * globalSpeed, 0.3f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(Foot31, 0.4f * globalSpeed, 0.3f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(Foot41, 0.4f * globalSpeed, 0.3f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(Foot12, 0.5f * globalSpeed, 0.2f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(Foot22, 0.5f * globalSpeed, 0.2f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(Foot33, 0.5f * globalSpeed, 0.2f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(Foot43, 0.5f * globalSpeed, 0.2f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(Foot32, 0.5f * globalSpeed, 0.4f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(Foot42, 0.5f * globalSpeed, 0.4f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(Neck, 0.5f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
 
-    	walk(Neck, 0.1f, 0.06f, false, 2.5f, 0f, entity.ticksExisted, 0.5F); 
-    	
-    	walk(Tail1, 0.1f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(Tail2, 0.07f, 0.4f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	walk(Tail3, 0.1f, 0.3f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	swing(Tail1, 0.1f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	swing(Tail2, 0.07f, 0.4f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	swing(Tail3, 0.1f, 0.3f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+        this.Foot11.rotateAngleX = this.Foot31.rotateAngleX =
+                -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.4f * globalSpeed) + 0f) + 0.27314402793711257F;
+        this.Foot21.rotateAngleX = this.Foot41.rotateAngleX =
+                1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.4f * globalSpeed) + 0f) + 0.27314402793711257F;
+        this.Foot12.rotateAngleX = this.Foot33.rotateAngleX =
+                1F * f1 * (0.2f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + -0.8196066167365371F;
+        this.Foot22.rotateAngleX = this.Foot43.rotateAngleX =
+                -1F * f1 * (0.2f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + -0.8196066167365371F;
+        this.Foot32.rotateAngleX = -1F * f1 * (0.4f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + -0.8196066167365371F;
+        this.Foot42.rotateAngleX = 1F * f1 * (0.4f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + -0.8196066167365371F;
+        this.Neck.rotateAngleX = -1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 2.5f) + -0.5462880558742251F;
+
+        this.Neck.rotateAngleX = 1F * 0.5F * (0.06f) * MathHelper.cos(entity.ticksExisted * (0.1f) + 2.5f) + -0.5462880558742251F;
+
+        this.Tail1.rotateAngleX = -1F * 0.5F * (0.2f) * MathHelper.cos(entity.ticksExisted * (0.1f) + 0f) + -0.136659280431156F;
+        this.Tail2.rotateAngleX = 1F * 0.5F * (0.4f) * MathHelper.cos(entity.ticksExisted * (0.07f) + 0f) + 0.31869712141416456F;
+        this.Tail3.rotateAngleX = -1F * 0.5F * (0.3f) * MathHelper.cos(entity.ticksExisted * (0.1f) + 0f) + 0.31869712141416456F;
+        this.Tail1.rotateAngleY = -1F * (MathHelper.cos(entity.ticksExisted * (0.1f) + 0f) * (0.2f) * 0.5F) + (-0.136659280431156F * 0.5F);
+        this.Tail2.rotateAngleY = 1F * (MathHelper.cos(entity.ticksExisted * (0.07f) + 0f) * (0.4f) * 0.5F) + (0.31869712141416456F * 0.5F);
+        this.Tail3.rotateAngleY = -1F * (MathHelper.cos(entity.ticksExisted * (0.1f) + 0f) * (0.3f) * 0.5F) + (0.31869712141416456F * 0.5F);
     }
 }

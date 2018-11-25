@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -156,19 +157,18 @@ public class ModelGrantsGazelle extends BookwormModelBase {
     	float globalHeight = 0.5f;
     	float globalDegree = 1F;
     	
-        this.head.rotateAngleY = (f3 * 0.017453292F);
-        this.head.rotateAngleX = (f4 * 0.017453292F)-0.4F;
-    	
-    	
-    	walk(Leg1, 0.5f * globalSpeed, 0.5f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(Leg2, 0.5f * globalSpeed, 0.5f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(Leg3, 0.5f * globalSpeed, 0.5f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(Leg4, 0.5f * globalSpeed, 0.5f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(Neck, 0.4f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
+        this.Neck.rotateAngleY = (f3 * 0.017453292F) / 2F;
+        this.head.rotateAngleX = (f4 * 0.017453292F) - 0.4F;
 
-    	walk(Neck, 0.10f, 0.06f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  	
-    	
-    	flap(Tail1, 0.2f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-    	flap(Tail2, 0.15f, 0.4f, false, 0f, 0f, entity.ticksExisted, 0.5F);
+        this.Leg1.rotateAngleX = 1F * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 0F;
+        this.Leg2.rotateAngleX = -1F * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 0F;
+        this.Leg3.rotateAngleX = 1F * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0F;
+        this.Leg4.rotateAngleX = -1F * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0F;
+        this.Neck.rotateAngleX = -1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.4f * globalSpeed) + 2.5f) + 0.6108652381980153F;
+
+        this.Neck.rotateAngleX = 1F * 0.5F * (0.06f) * MathHelper.cos(entity.ticksExisted * (0.10f) + 2.5f) + 0.6108652381980153F;
+
+        this.Tail1.rotateAngleZ = -1F * (MathHelper.cos(entity.ticksExisted * (0.2f) + 0f) * (0.2f) * 0.5F) + (0f * 0.5F);
+        this.Tail2.rotateAngleZ = 1F * (MathHelper.cos(entity.ticksExisted * (0.15f) + 0f) * (0.4f) * 0.5F) + (0f * 0.5F);
     }
 }

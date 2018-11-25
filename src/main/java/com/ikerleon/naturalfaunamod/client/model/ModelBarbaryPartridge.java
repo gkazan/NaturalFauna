@@ -2,11 +2,12 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
 /**
- * Barbary Partridge - Mürbis
+ * Barbary Partridge - Mï¿½rbis
  * Created using Tabula 7.0.0
  */
 public class ModelBarbaryPartridge extends BookwormModelBase {
@@ -202,21 +203,17 @@ public class ModelBarbaryPartridge extends BookwormModelBase {
     	float globalSpeed = 1.75f;
     	float globalHeight = 0.5f;
     	float globalDegree = 2.5F;
-    	
-    	//bob(Body1, globalSpeed, globalHeight, true, f, f1);
-    	
-    	walk(Foot11, 1.5f * globalSpeed, 0.25f * globalDegree, false, 0, 0.2f, f, f1);
-     	walk(Foot21, 1.5f * globalSpeed, 0.25f * globalDegree, true, 0, 0.2f, f, f1);
-     	walk(Neck1, 1f * globalSpeed, 0.25f * globalDegree, false, 0, 0f, f, f1);
-     	walk(Tailfeather1, 1f * globalSpeed, 0.35f * globalDegree, false, 0, 0f, f, f1);
-     	walk(Tailfeather2, 1f * globalSpeed, 0.35f * globalDegree, false, 0, 0f, f, f1);
-     	walk(Tailfeather3, 1f * globalSpeed, 0.35f * globalDegree, false, 0, 0f, f, f1);
-     	
-     	walk(Neck1, 0.17f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
-     	walk(Tailfeather1, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  
-     	walk(Tailfeather2, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
-     	walk(Tailfeather3, 0.2f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);   	
-     	walk(Wing11, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-     	walk(Wing12, 0.17f, 0.04f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
+
+    	this.Foot11.rotateAngleX = 1f * f1 * (0.25f * globalDegree) * MathHelper.cos(f * (1.5f * globalSpeed) + 0f) + 0.2f + 1.0471975511965976F;
+     	this.Foot21.rotateAngleX = -1f * f1 * (0.25f * globalDegree) * MathHelper.cos(f * (1.5f * globalSpeed) + 0f) + 0.2f + 1.0471975511965976F;
+     	this.Neck1.rotateAngleX = 1f * f1 * (0.25f * globalDegree) * MathHelper.cos(f * (1f * globalSpeed) + 0f) + 0f - 0.5918411493512771F;
+     	this.Tailfeather1.rotateAngleX = this.Tailfeather2.rotateAngleX = this.Tailfeather3.rotateAngleX =
+                1f * f1 * (0.35f * globalDegree) * MathHelper.cos(f * (1f * globalSpeed) + 0f) + 0f;
+
+     	this.Neck1.rotateAngleX = 1f * 0.5F * (0.08f * globalDegree) * MathHelper.cos(entity.ticksExisted * (0.17f * globalSpeed) + 2.5f) + 0f - 0.5918411493512771F;
+     	this.Tailfeather1.rotateAngleX = this.Tailfeather2.rotateAngleX = this.Tailfeather3.rotateAngleX =
+                1f * 0.5F * (0.08f * globalDegree) * MathHelper.cos(entity.ticksExisted * (0.2f * globalSpeed) + 2.5f) + 0f;
+     	this.Wing11.rotateAngleX = this.Wing12.rotateAngleX =
+                -1f * 0.5F * (0.04f * globalDegree) * MathHelper.cos(entity.ticksExisted * (0.17f * globalSpeed) + 2.5f) + 0f - 1.1838568316277536F;
     }
 }

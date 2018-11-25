@@ -2,11 +2,12 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
 /**
- * Barbary Partridge - Mürbis
+ * Barbary Partridge - Mï¿½rbis
  * Created using Tabula 7.0.0
  */
 public class ModelBarbaryPartridgeFlying extends BookwormModelBase {
@@ -198,16 +199,15 @@ public class ModelBarbaryPartridgeFlying extends BookwormModelBase {
     	
     	float globalSpeed = 1.75f;
     	float globalDegree = 1F;
-    	
-    	walk(Wing11, 0.5f * globalSpeed, 0.3f * globalDegree, false, 0, 0f, f, f1);
-    	walk(Wing12, 0.5f * globalSpeed, 0.3f * globalDegree, true, 0, 0f, f, f1);
-    	flap(Wing11, 0.4f * globalSpeed, 0.7f * globalDegree, true, 0, 0f, f, f1);
-    	flap(Wing12, 0.4f * globalSpeed, 0.7f * globalDegree, false, 0, 0f, f, f1);
-    	flap(Wing12_1, 0.5f * globalSpeed, 0.35f * globalDegree, false, 0, 0f, f, f1);
-    	flap(Wing22, 0.5f * globalSpeed, 0.35f * globalDegree, true, 0, 0f, f, f1);
- 
-    	walk(Tailfeather1, 0.2f * globalSpeed, 0.3f * globalDegree, true, 0f, 0f, f, f1);
-    	walk(Tailfeather2, 0.2f * globalSpeed, 0.3f * globalDegree, true, 0f, 0f, f, f1);
-    	walk(Tailfeather3, 0.2f * globalSpeed, 0.3f * globalDegree, true, 0f, 0f, f, f1);
+
+    	this.Wing11.rotateAngleX = this.Wing12.rotateAngleX =
+                1f * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0f - 1.1838568316277536F;
+    	this.Wing11.rotateAngleZ = -1f * (MathHelper.cos(f * (0.4f * globalSpeed) + 0f) * (0.7f * globalDegree) * f1) + (-1.6845917940249266F * f1);
+    	this.Wing12.rotateAngleZ = 1f * (MathHelper.cos(f * (0.4f * globalSpeed) + 0f) * (0.7f * globalDegree) * f1) + (1.6845917940249266F * f1);
+    	this.Wing12_1.rotateAngleZ = 1f * (MathHelper.cos(f * (0.5f * globalSpeed) + 0f) * (0.35f * globalDegree) * f1) + (0f * f1);
+    	this.Wing22.rotateAngleZ = -1f * (MathHelper.cos(f * (0.5f * globalSpeed) + 0f) * (0.35f * globalDegree) * f1) + (0f * f1);
+
+    	this.Tailfeather1.rotateAngleX = this.Tailfeather2.rotateAngleX = this.Tailfeather3.rotateAngleX =
+                -1f * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + 0f) + 0f;
     }
 }

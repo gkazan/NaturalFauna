@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -126,14 +127,13 @@ public class ModelPeregrineFalconFlying extends BookwormModelBase {
     	
     	float globalSpeed = 1.75f;
     	float globalDegree = 1F;
-    	
-    	walk(leftwing, 0.2f * globalSpeed, 0.3f * globalDegree, false, 0, 0f, f, f1);
-    	walk(rightwing, 0.2f * globalSpeed, 0.3f * globalDegree, true, 0, 0f, f, f1);
-    	flap(leftwing, 0.2f * globalSpeed, 0.7f * globalDegree, false, 0, 0f, f, f1);
-    	flap(rightwing, 0.2f * globalSpeed, 0.7f * globalDegree, true, 0, 0f, f, f1);
-    	flap(leftwing2, 0.3f * globalSpeed, 0.35f * globalDegree, false, 0, 0f, f, f1);
-    	flap(rightwing2, 0.3f * globalSpeed, 0.35f * globalDegree, true, 0, 0f, f, f1);
- 
-    	walk(body2, 0.2f * globalSpeed, 0.3f * globalDegree, true, 0f, 0f, f, f1);
+        this.leftwing.rotateAngleX = this.rightwing.rotateAngleX =
+                -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + 0) + -1.3962634015954636F;
+        this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.2f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (-1.5707963267948966F * f1);
+        this.rightwing.rotateAngleZ = -1F * (MathHelper.cos(f * (0.2f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (1.5707963267948966F * f1);
+        this.leftwing2.rotateAngleZ = 1F * (MathHelper.cos(f * (0.3f * globalSpeed) + 0) * (0.35f * globalDegree) * f1) + (0f * f1);
+        this.rightwing2.rotateAngleZ = -1F * (MathHelper.cos(f * (0.3f * globalSpeed) + 0) * (0.35f * globalDegree) * f1) + (0f * f1);
+
+        this.body2.rotateAngleX = -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + 0f) + 0.08726646259971647F;
     }
 }

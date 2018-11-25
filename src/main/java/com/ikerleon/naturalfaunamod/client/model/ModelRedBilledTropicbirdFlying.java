@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -170,17 +171,17 @@ public class ModelRedBilledTropicbirdFlying extends BookwormModelBase {
     	
     	float globalSpeed = 1.75f;
     	float globalDegree = 1F;
-    	
-    	walk(leftwing, 0.5f * globalSpeed, 0.3f * globalDegree, false, 0, 0f, f, f1);
-    	walk(rightwing, 0.5f * globalSpeed, 0.3f * globalDegree, true, 0, 0f, f, f1);
-    	flap(leftwing, 0.3f * globalSpeed, 0.6f * globalDegree, false, 0, 0f, f, f1);
-    	flap(rightwing, 0.3f * globalSpeed, 0.6f * globalDegree, true, 0, 0f, f, f1);
- 
-    	walk(middletail1, 0.2f * globalSpeed, 0.3f * globalDegree, true, -3f, 0f, f, f1);
-    	walk(middletail2, 0.2f * globalSpeed, 0.3f * globalDegree, true, -3f, 0f, f, f1);
-    	walk(middletail12, 0.3f, 0.6f, true, -3f, 0f, f, f1);
-    	walk(middletail22, 0.3f, 0.6f, true, -3f, 0f, f, f1);
-    	walk(miggletail13, 0.3f, 0.5f, false, 0f, 0f, f, f1);
-    	walk(middletail23, 0.3f, 0.5f, false, 0f, 0f, f, f1);
+
+        this.leftwing.rotateAngleX = 1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 1.3658946726107624F;
+        this.rightwing.rotateAngleX = -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.3658946726107624F;
+        this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.3f * globalSpeed) + 0) * (0.6f * globalDegree) * f1) + (1.5481070465189704F * f1);
+        this.rightwing.rotateAngleZ = -1F * (MathHelper.cos(f * (0.3f * globalSpeed) + 0) * (0.6f * globalDegree) * f1) + (1.593485607070823F * f1);
+
+        this.middletail1.rotateAngleX = this.middletail2.rotateAngleX =
+                -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + -3f) + 0f;
+        this.middletail12.rotateAngleX = this.middletail22.rotateAngleX =
+                -1F * f1 * (0.6f) * MathHelper.cos(f * (0.3f) + -3f) + -0.136659280431156F;
+        this.miggletail13.rotateAngleX = this.middletail23.rotateAngleX =
+                1F * f1 * (0.5f) * MathHelper.cos(f * (0.3f) + 0f) + -0.31869712141416456F;
     }
 }

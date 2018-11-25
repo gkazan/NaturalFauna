@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -142,18 +143,17 @@ public class ModelOstrichThreatening extends BookwormModelBase {
     	float globalSpeed = 1.75f;
     	float globalHeight = 0.5f;
     	float globalDegree = 1.5F;
-    	
-    	
-    	walk(rightleg, 0.2f * globalSpeed, 0.4f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(leftleg, 0.2f * globalSpeed, 0.4f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(rightleg2, 0.1f * globalSpeed, 0.3f * globalDegree, true, 2.5f, 0f, f, f1);
-    	walk(leftleg2, 0.1f * globalSpeed, 0.3f * globalDegree, false, 2.5f, 0f, f, f1);
-    	walk(neck, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
-    	walk(body2, 0.8f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
 
-    	walk(body2, 0.17f, 0.08f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	walk(neck, 0.17f, 0.1f, true, 2.5f, 0f, entity.ticksExisted, 0.5F);
-    	swing(rightwing, 0.6f, 0.8f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-    	swing(leftwing, 0.6f, 0.8f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+        this.rightleg.rotateAngleX = 1F * f1 * (0.4f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + 0) + 0.36425021489121656F;
+        this.leftleg.rotateAngleX = -1F * f1 * (0.4f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + 0) + 0.31869712141416456F;
+        this.rightleg2.rotateAngleX = -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.1f * globalSpeed) + 2.5f) + -0.31869712141416456F;
+        this.leftleg2.rotateAngleX = 1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.1f * globalSpeed) + 2.5f) + -0.27314402793711257F;
+        this.neck.rotateAngleX = -1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.8f * globalSpeed) + 2.5f) + 1.3658946726107624F;
+        this.body2.rotateAngleX = -1F * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.8f * globalSpeed) + 2.5f) + 0.18203784098300857F;
+
+        this.body2.rotateAngleX = 1F * 0.5F * (0.08f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 0.18203784098300857F;
+        this.neck.rotateAngleX = -1F * 0.5F * (0.1f) * MathHelper.cos(entity.ticksExisted * (0.17f) + 2.5f) + 1.3658946726107624F;
+        this.rightwing.rotateAngleY = 1F * (MathHelper.cos(entity.ticksExisted * (0.6f) + 0f) * (0.8f) * 0.5F) + (-1.4570008595648662F * 0.5F);
+        this.leftwing.rotateAngleY = -1F * (MathHelper.cos(entity.ticksExisted * (0.6f) + 0f) * (0.8f) * 0.5F) + (1.4570008595648662F * 0.5F);
     }
 }

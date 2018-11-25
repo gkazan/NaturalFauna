@@ -1,6 +1,7 @@
 package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -190,10 +191,10 @@ public class ModelSaddlebillStorkFly extends BookwormModelBase {
     	
     	float globalSpeed = 1.75f;
     	float globalDegree = 1F;
-    	
-    	walk(leftwing, 0.5f * globalSpeed, 0.3f * globalDegree, false, 0, 0f, f, f1);
-    	walk(rightwing, 0.5f * globalSpeed, 0.3f * globalDegree, true, 0, 0f, f, f1);
-    	flap(leftwing, 0.2f * globalSpeed, 0.5f * globalDegree, false, 0, 0f, f, f1);
-    	flap(rightwing, 0.2f * globalSpeed, 0.5f * globalDegree, true, 0, 0f, f, f1);
+
+        this.leftwing.rotateAngleX = 1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 1.4570008595648662F;
+        this.rightwing.rotateAngleX = 1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 1.4570008595648662F;
+        this.leftwing.rotateAngleZ = -1F * (MathHelper.cos(f * (0.2f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (1.5121532639278872F * f1);
+        this.rightwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.2f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (-1.5566591598537425F * f1);
     }
 }

@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -163,16 +164,17 @@ public class ModelCamel extends BookwormModelBase {
     	float globalSpeed = 1.75f;
     	float globalHeight = 0.5f;
     	float globalDegree = 1F;
-    	
-    	
-    	walk(shape9, 0.5f * globalSpeed, 0.5f * globalDegree, false, 0, 0.2f, f, f1);
-    	walk(shape8, 0.5f * globalSpeed, 0.5f * globalDegree, true, 0, 0.2f, f, f1);
-    	walk(shape11, 0.5f * globalSpeed, 0.5f * globalDegree, false, 0f, 0.2f, f, f1);
-    	walk(shape10, 0.5f * globalSpeed, 0.5f * globalDegree, true, 0f, 0.2f, f, f1);
-    	walk(shape2, 0.4f * globalSpeed, 0.1f * globalDegree, true, 2.5f, 0f, f, f1);
 
-    	walk(shape2, 0.10f, 0.06f, false, 2.5f, 0f, entity.ticksExisted, 0.5F);  	
-    	
-    	flap(tails, 0.2f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+    	this.shape9.rotateAngleX = 1f * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0F;
+    	this.shape8.rotateAngleX = -1f * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0F;
+    	this.shape11.rotateAngleX = 1f * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0F;
+    	this.shape10.rotateAngleX = -1f * f1 * (0.5f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0F;
+    	this.shape2.rotateAngleX = -1f * f1 * (0.1f * globalDegree) * MathHelper.cos(f * (0.4f * globalSpeed) + 2.5f) + 1.4203489452729852F;
+
+        this.shape2.rotateAngleX = 1f * 0.5F * (0.06f * globalDegree) * MathHelper.cos(entity.ticksExisted * (0.1f * globalSpeed) + 2.5f) + 1.4203489452729852F;
+
+
+        this.tails.rotateAngleZ = -1f * (MathHelper.cos(entity.ticksExisted * (0.2f * globalSpeed) + 0f) * (0.2f * globalDegree) * 0.5F) + (0f * 0.5F);
+
     }
 }
