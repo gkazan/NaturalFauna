@@ -3,14 +3,16 @@
   "modid": "faunanatural",
   "name": "NaturalFauna",
   "description": "A ZAWA addon that will provide it some other animals",
-  "version": "1.0.0",
-  "mcversion": "1.12.2",
-  "url": "",
+  "version": "1.2.0",
+  "mcversion": "${mcversion}",
+  "url": "https://minecraft.curseforge.com/projects/natural-fauna-mod-a-zawa-addon",
   "updateUrl": "",
-  "authorList": ["Ikerleon02", "SoggyMoustache"],
+  "authorList": ["Ikerleon02", "SoggyMoustache", "Mnesikos"],
   "credits": "Starcook le perroquet for modding, texturing and basically create this mod, Douillet and Haflar_7 for modelling such fantastic animals, Doctor Hyena and Lukamas233 for modelling and texturing many naturalFauna animals",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": []
+  "requiredMods": ["forge", "bookworm", "zawa"],
+  "dependencies": ["forge", "bookworm", "zawa"],
+  "useDependencyInformation": "true"
 }
 ]

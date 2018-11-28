@@ -79,7 +79,6 @@ public class EntityInit {
 	
 	private static void createEntity(Class entityClass , String entityName, int Color1,int Color2) {
 		EntityRegistry.registerModEntity(new ResourceLocation(NFReference.MOD_ID + ":" + entityName), entityClass, entityName, id++, NaturalFaunaMain.instance, 50, 1, true, Color1, Color2);
-		NaturalFaunaMain.addAnimal(entityClass);
 	}
 
 }

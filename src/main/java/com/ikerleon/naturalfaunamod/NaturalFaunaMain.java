@@ -1,43 +1,25 @@
 package com.ikerleon.naturalfaunamod;
 
-import org.zawamod.addon.ZAWAAddon; 
-import org.zawamod.addon.ZAWAAddonHandler;
-import org.zawamod.entity.base.ZAWABaseLand;
-
-import com.ikerleon.naturalfaunamod.entity.EntityBasiliskLizard;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 import com.ikerleon.naturalfaunamod.proxies.CommonProxy;
 
-import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.event.world.GetCollisionBoxesEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(modid = NFReference.MOD_ID, name = NFReference.NAME, version = NFReference.VERSION, dependencies = NFReference.DENPEND)
-//@Mod.EventBusSubscriber
+@Mod(modid = NFReference.MOD_ID, name = NFReference.NAME, version = NFReference.VERSION, acceptedMinecraftVersions = NFReference.MCVERSION,
+		dependencies = NFReference.DENPEND)
 public class NaturalFaunaMain {
-
-	private static ZAWAAddon mod = new ZAWAAddon(NFReference.MOD_ID);
-	
 	@SidedProxy(serverSide = NFReference.SERVER_PROXY_CLASS, clientSide = NFReference.CLIENT_PROXY_CLASS)
 	public static CommonProxy proxy;
 	
-	@Mod.Instance(NFReference.MOD_ID)
+	@Mod.Instance
 	public static NaturalFaunaMain instance;
-	
-	public static void addAnimal(Class<? extends ZAWABaseLand> animal) {
-		mod.addAnimalToAddon(animal);
-	}
 	
 //	@SubscribeEvent
 //	public static void onAddCollisionBoxes(GetCollisionBoxesEvent event) {
@@ -57,11 +39,6 @@ public class NaturalFaunaMain {
 	
 	@EventHandler()
 	public static void preInit(FMLPreInitializationEvent event) {
-		mod.setModelPath("com.ikerleon.naturalfaunamod.client.model");
-		mod.setRenderPath("com.ikerleon.naturalfaunamod.client.render");
-		
-		ZAWAAddonHandler.addMod(mod);
-		
 		proxy.preInit(event);
 		proxy.registerRenders();
 	}
