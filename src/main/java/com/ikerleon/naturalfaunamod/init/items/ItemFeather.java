@@ -4,11 +4,11 @@ import com.ikerleon.naturalfaunamod.NaturalFaunaMain;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 import com.ikerleon.naturalfaunamod.util.IHasModel;
 
+import net.minecraft.client.resources.I18n;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemRecord;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -27,7 +27,7 @@ public class ItemFeather extends ItemRecord implements IHasModel
 
   @Override
   public void registerModels() {
-    NaturalFaunaMain.proxy.registerItemRenderer(this, 0, "inventory");;
+    NaturalFaunaMain.proxy.registerItemRenderer(this, 0, "inventory");
   }
   
   public EnumRarity getRarity(ItemStack stack)
@@ -38,6 +38,6 @@ public class ItemFeather extends ItemRecord implements IHasModel
   @SideOnly(Side.CLIENT)
   public String getRecordNameLocal()
   {
-      return I18n.translateToLocal("Feathers with a secret function!");
+      return I18n.format("Feathers with a secret function!");
   }
 }

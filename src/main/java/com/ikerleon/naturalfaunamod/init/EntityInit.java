@@ -33,6 +33,7 @@ import com.ikerleon.naturalfaunamod.entity.EntityTuraco;
 import com.ikerleon.naturalfaunamod.entity.EntityWillowPtarmigan;
 import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
@@ -77,7 +78,7 @@ public class EntityInit {
 		createEntity(EntityBasiliskLizard.class, "basilisk_lizard", 10518363, 8024682);
 	}
 	
-	private static void createEntity(Class entityClass , String entityName, int Color1,int Color2) {
+	private static void createEntity(Class<? extends Entity> entityClass , String entityName, int Color1, int Color2) {
 		EntityRegistry.registerModEntity(new ResourceLocation(NFReference.MOD_ID + ":" + entityName), entityClass, entityName, id++, NaturalFaunaMain.instance, 50, 1, true, Color1, Color2);
 	}
 
