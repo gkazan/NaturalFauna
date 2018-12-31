@@ -82,12 +82,12 @@ public class EntityPeregrineFalcon extends ZAWABaseFlying{
 	
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.raptor_kibble, 1);
+		return new ItemStack(ZAWAItems.RAPTOR_KIBBLE, 1);
 	}
 	
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.raptor_vial, 1);
+		return new ItemStack(ZAWAItems.RAPTOR_VIAL, 1);
 	}
 	
 	@Override
@@ -103,13 +103,14 @@ public class EntityPeregrineFalcon extends ZAWABaseFlying{
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(14.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.15D);
 	}
-	
-	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
+
+	@Override
+	public void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		if(this.isBurning()) {
-			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
+			this.dropItem(ZAWAItems.BIRD_MEAT_COOKED, 1);
 		}
 		else {
-			this.dropItem(ZAWAItems.bird_meat, 1);
+			this.dropItem(ZAWAItems.BIRD_MEAT, 1);
 			this.dropItem(ItemInit.FALCON_FEATHER, 1);
 		}	    
 	}

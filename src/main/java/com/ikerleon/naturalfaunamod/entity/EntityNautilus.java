@@ -25,7 +25,8 @@ public class EntityNautilus extends ZAWABaseWater {
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(16.0D);
     }
 
-	protected void dropFewItems(boolean b, int i)
+	@Override
+	public void dropFewItems(boolean b, int i)
 	{
 		if (isBurning()) {
 			 dropItem(Items.COOKED_FISH, 1);
@@ -50,7 +51,7 @@ public class EntityNautilus extends ZAWABaseWater {
 
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.tortoise_kibble, 1);
+		return new ItemStack(ZAWAItems.TORTOISE_KIBBLE, 1);
 	}
 
 	@Override
@@ -60,7 +61,7 @@ public class EntityNautilus extends ZAWABaseWater {
 
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.tortoise_vial, 1);
+		return new ItemStack(ZAWAItems.TORTOISE_VIAL, 1);
 	}
 	
 }

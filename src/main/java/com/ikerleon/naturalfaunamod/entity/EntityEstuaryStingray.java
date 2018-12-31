@@ -26,7 +26,8 @@ public class EntityEstuaryStingray extends ZAWABaseWater {
 		getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
     }
 
-	protected void dropFewItems(boolean b, int i)
+	@Override
+	public void dropFewItems(boolean b, int i)
 	{
 		if (isBurning()) {
 			 dropItem(ItemInit.STINGRAY_MEAT_COOKED, 1);
@@ -51,7 +52,7 @@ public class EntityEstuaryStingray extends ZAWABaseWater {
 
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.tortoise_kibble, 1);
+		return new ItemStack(ZAWAItems.TORTOISE_KIBBLE, 1);
 	}
 
 	@Override
@@ -70,6 +71,6 @@ public class EntityEstuaryStingray extends ZAWABaseWater {
 
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.tortoise_vial, 1);
+		return new ItemStack(ZAWAItems.TORTOISE_VIAL, 1);
 	}
 }

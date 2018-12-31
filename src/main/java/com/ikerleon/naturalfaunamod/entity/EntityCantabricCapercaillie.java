@@ -48,7 +48,7 @@ public class EntityCantabricCapercaillie extends ZAWABaseFlying {
 	
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.bird_kibble, 1);
+		return new ItemStack(ZAWAItems.BIRD_KIBBLE, 1);
 	}
 	
 	@Override
@@ -93,7 +93,7 @@ public class EntityCantabricCapercaillie extends ZAWABaseFlying {
 	public boolean processInteract(EntityPlayer player, EnumHand hand) {
 		ItemStack stack = player.getHeldItem(hand);
 		
-		if(!this.getIsZooAnimal() || this.isChild() || stack.getItem() == Items.SPAWN_EGG || stack.getItem()== ZAWAItems.data_book || stack.getItem()==ZAWAItems.bird_kibble || stack.getItem()==ZAWAItems.bird_vial) {
+		if(!this.getIsZooAnimal() || this.isChild() || stack.getItem() == Items.SPAWN_EGG || stack.getItem()== ZAWAItems.DATA_BOOK || stack.getItem()==ZAWAItems.BIRD_KIBBLE || stack.getItem()==ZAWAItems.BIRD_VIAL) {
 			return super.processInteract(player, hand);
 		}		
 		else {
@@ -115,7 +115,7 @@ public class EntityCantabricCapercaillie extends ZAWABaseFlying {
 	
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.bird_vial, 1);
+		return new ItemStack(ZAWAItems.BIRD_VIAL, 1);
 	}
     
     public float getEyeHeight()
@@ -218,12 +218,13 @@ public class EntityCantabricCapercaillie extends ZAWABaseFlying {
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20D);
 	}
-	
-	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
+
+	@Override
+	public void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		if(this.isBurning())
-			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
+			this.dropItem(ZAWAItems.BIRD_MEAT_COOKED, 1);
 		else
-			this.dropItem(ZAWAItems.bird_meat, 1);
+			this.dropItem(ZAWAItems.BIRD_MEAT, 1);
 		if(this.getGender()==Gender.MALE) {
 			this.dropItem(ItemInit.MALE_CAPERCAILLIE_FEATHER, 1);
 		}

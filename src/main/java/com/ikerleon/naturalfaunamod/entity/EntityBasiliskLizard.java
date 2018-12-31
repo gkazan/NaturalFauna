@@ -64,12 +64,12 @@ public class EntityBasiliskLizard extends ZAWABaseLand {
 	
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.frog_kibble, 1);
+		return new ItemStack(ZAWAItems.FROG_KIBBLE, 1);
 	}
 	
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.frog_vial, 1);
+		return new ItemStack(ZAWAItems.FROG_VIAL, 1);
 	}
 	
 	@Override
@@ -87,12 +87,13 @@ public class EntityBasiliskLizard extends ZAWABaseLand {
     protected SoundEvent getSplashSound() {
     	return null;
     }
-	
-	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
+
+	@Override
+	public void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		if(this.isBurning())
-			this.dropItem(ZAWAItems.cooked_frog_leg, 1);
+			this.dropItem(ZAWAItems.COOKED_FROG_LEG, 1);
 		else
-			this.dropItem(ZAWAItems.raw_frog_leg, 1);
+			this.dropItem(ZAWAItems.RAW_FROG_LEG, 1);
 	}
 	
 	@Override

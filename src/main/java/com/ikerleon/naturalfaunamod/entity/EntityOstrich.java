@@ -96,12 +96,12 @@ public class EntityOstrich extends ZAWABaseLand {
 	
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.bird_kibble, 1);
+		return new ItemStack(ZAWAItems.BIRD_KIBBLE, 1);
 	}
 	
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.bird_vial, 1);
+		return new ItemStack(ZAWAItems.BIRD_VIAL, 1);
 	}
 	
 	protected void applyEntityAttributes() {
@@ -109,12 +109,13 @@ public class EntityOstrich extends ZAWABaseLand {
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(18.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.22D);
 	}
-	
-	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
+
+	@Override
+	public void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		if(this.isBurning())
-			this.dropItem(ZAWAItems.bird_meat_cooked, 1);
+			this.dropItem(ZAWAItems.BIRD_MEAT_COOKED, 1);
 		else
-			this.dropItem(ZAWAItems.bird_meat, 1);
+			this.dropItem(ZAWAItems.BIRD_MEAT, 1);
 		this.dropItem(ItemInit.OSTRICH_FEATHER, 1);
 	}
 	

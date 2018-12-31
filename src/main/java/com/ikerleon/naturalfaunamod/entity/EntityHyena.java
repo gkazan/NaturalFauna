@@ -118,12 +118,12 @@ public class EntityHyena extends ZAWABaseLand {
 	
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.canine_kibble, 1);
+		return new ItemStack(ZAWAItems.CANINE_KIBBLE, 1);
 	}
 	
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.canine_vial, 1);
+		return new ItemStack(ZAWAItems.CANINE_VIAL, 1);
 	}
 	
 	protected void applyEntityAttributes() {
@@ -131,12 +131,13 @@ public class EntityHyena extends ZAWABaseLand {
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28D);
 	}
-	
-	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
+
+	@Override
+	public void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		if(this.isBurning())
-			this.dropItem(ZAWAItems.carnivore_meat_cooked, 1);
+			this.dropItem(ZAWAItems.CARNIVORE_MEAT_COOKED, 1);
 		else
-			this.dropItem(ZAWAItems.carnivore_meat_raw, 1);
+			this.dropItem(ZAWAItems.CARNIVORE_MEAT_RAW, 1);
 		this.dropItem(ItemInit.HYENA_FUR, 1);
 		this.dropItem(ItemInit.CARNIVORE_TOOTH, 1);
 	}

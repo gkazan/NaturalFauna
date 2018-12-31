@@ -82,12 +82,12 @@ public class EntityPuma extends ZAWABaseLand{
 	
 	@Override
 	public ItemStack setTameItem() {
-		return new ItemStack(ZAWAItems.big_cat_kibble, 1);
+		return new ItemStack(ZAWAItems.BIG_CAT_KIBBLE, 1);
 	}
 	
 	@Override
 	public ItemStack setVial() {
-		return new ItemStack(ZAWAItems.bigcat_vial, 1);
+		return new ItemStack(ZAWAItems.BIG_CAT_KIBBLE, 1);
 	}
 	
 	protected void applyEntityAttributes() {
@@ -95,13 +95,14 @@ public class EntityPuma extends ZAWABaseLand{
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(19.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28D);
 	}
-	
-	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
+
+	@Override
+	public void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		if(this.isBurning())
-			this.dropItem(ZAWAItems.carnivore_meat_cooked, 1);
+			this.dropItem(ZAWAItems.CARNIVORE_MEAT_COOKED, 1);
 		else
-			this.dropItem(ZAWAItems.carnivore_meat_raw, 1);
-		this.dropItem(ZAWAItems.thick_fur, 1);
+			this.dropItem(ZAWAItems.CARNIVORE_MEAT_RAW, 1);
+		this.dropItem(ZAWAItems.THICK_FUR, 1);
 		this.dropItem(ItemInit.CARNIVORE_TOOTH, 1);
 	}
 	
