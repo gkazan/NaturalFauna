@@ -17,6 +17,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -123,6 +124,11 @@ public class EntityPeregrineFalcon extends ZAWABaseFlying{
 	@Override
 	public EnumNature setNature() {
 		return EnumNature.NEUTRAL;
+	}
+	
+	@Override
+	public Item getLaidEgg() {
+		return null;
 	}
 }
 

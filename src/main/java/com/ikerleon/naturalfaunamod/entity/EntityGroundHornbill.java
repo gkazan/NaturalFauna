@@ -15,6 +15,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -107,5 +108,10 @@ public class EntityGroundHornbill extends ZAWABaseFlying {
 	@Override
 	public EnumNature setNature() {
 		return EnumNature.PASSIVE;
+	}
+	
+	@Override
+	public Item getLaidEgg() {
+		return null;
 	}
 }
