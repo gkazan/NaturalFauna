@@ -219,7 +219,7 @@ public class ModelGroundHornbillFlying extends BookwormModelBase {
 
         this.leftwing.rotateAngleX = this.rightwing.rotateAngleX =
                 -1F * f1 * (0.2f * globalDegree) * MathHelper.cos(f * (0.2f * globalSpeed) + 0) + -1.3151055913777272F;
-        this.leftwing.rotateAngleY = 1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (4.71238898038469F * f1);
+        this.leftwing.rotateAngleY = 1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (-1.5707963267948966F * f1);
         this.rightwing.rotateAngleY = -1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (1.5707963267948966F * f1);
         this.leftwing2.rotateAngleY = 1F * (MathHelper.cos(f * (0.6f * globalSpeed) + 0) * (0.4f * globalDegree) * f1) + (0f * f1);
         this.rightwing2.rotateAngleY = -1F * (MathHelper.cos(f * (0.6f * globalSpeed) + 0) * (0.4f * globalDegree) * f1) + (0f * f1);

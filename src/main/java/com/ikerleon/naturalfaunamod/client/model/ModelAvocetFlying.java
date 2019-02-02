@@ -136,8 +136,8 @@ public class ModelAvocetFlying extends BookwormModelBase {
     	float globalSpeed = 1.75f;
     	float globalDegree = 1F;
 
-    	this.leftwing.rotateAngleX = 1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0F) + -1.27F;
-    	this.rightwing.rotateAngleX = -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0F) + -1.23F;
+    	this.leftwing.rotateAngleX = this.rightwing.rotateAngleX =
+                -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0F) + -1.23F;
     	this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0F) * (0.7f * globalDegree) * f1) + (-1.55F * f1);
     	this.rightwing.rotateAngleZ = -1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0F) * (0.7f * globalDegree) * f1) + (1.55F * f1);
     }

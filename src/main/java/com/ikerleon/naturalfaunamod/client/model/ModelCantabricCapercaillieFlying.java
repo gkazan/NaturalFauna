@@ -116,8 +116,8 @@ public class ModelCantabricCapercaillieFlying extends BookwormModelBase {
     	float globalDegree = 1F;
 
         this.leftwing.rotateAngleX = this.rightwing.rotateAngleX =
-                1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.0927506446736497F;
-        this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.6f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (-1.5481070465189704F * f1);
+                -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.0927506446736497F;
+        this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.6f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (-1.593485607070823F * f1);
         this.rightwing.rotateAngleZ = -1F * (MathHelper.cos(f * (0.6f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (1.593485607070823F * f1);
 
         this.BodyChildChild.rotateAngleX = this.BodyChildChild_1.rotateAngleX = this.BodyChildChild_2.rotateAngleX = this.BodyChildChild_4.rotateAngleX =

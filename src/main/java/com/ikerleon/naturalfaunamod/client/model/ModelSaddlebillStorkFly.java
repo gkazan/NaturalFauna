@@ -192,9 +192,9 @@ public class ModelSaddlebillStorkFly extends BookwormModelBase {
     	float globalSpeed = 1.75f;
     	float globalDegree = 1F;
 
-        this.leftwing.rotateAngleX = 1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 1.4570008595648662F;
-        this.rightwing.rotateAngleX = 1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 1.4570008595648662F;
-        this.leftwing.rotateAngleZ = -1F * (MathHelper.cos(f * (0.2f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (1.5121532639278872F * f1);
-        this.rightwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.2f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (-1.5566591598537425F * f1);
+        this.leftwing.rotateAngleX = this.rightwing.rotateAngleX =
+                -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.4570008595648662F;
+        this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.2f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (-1.5566591598537425F * f1);
+        this.rightwing.rotateAngleZ = -1F * (MathHelper.cos(f * (0.2f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (1.5566591598537425F * f1);
     }
 }

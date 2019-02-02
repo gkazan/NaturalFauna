@@ -134,8 +134,8 @@ public class ModelTuracoFlying extends BookwormModelBase {
     	float globalDegree = 1F;
 
         this.shape14.rotateAngleX = this.shape14_1.rotateAngleX =
-                1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.6845917940249266F;
-        this.shape14.rotateAngleZ = 1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (1.7756979809790308F * f1);
-        this.shape14_1.rotateAngleZ = -1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (-1.7756979809790308F * f1);
+                -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.6845917940249266F;
+        this.shape14.rotateAngleZ = 1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (-1.7756979809790308F * f1);
+        this.shape14_1.rotateAngleZ = -1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.5f * globalDegree) * f1) + (1.7756979809790308F * f1);
     }
 }

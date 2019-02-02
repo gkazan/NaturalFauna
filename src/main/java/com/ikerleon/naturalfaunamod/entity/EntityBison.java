@@ -204,9 +204,9 @@ public class EntityBison extends ZAWABaseLand {
 	@Override
 	public void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		if(this.isBurning())
-			this.dropItem(ZAWAItems.CARNIVORE_MEAT_COOKED, 1);
+			this.dropItem(ZAWAItems.LARGE_MEAT_COOKED, 1);
 		else
-			this.dropItem(ZAWAItems.CARNIVORE_MEAT_RAW, 1);
+			this.dropItem(ZAWAItems.LARGE_MEAT_RAW, 1);
 	}
 	
 	public boolean attackEntityFrom(DamageSource source, float amount)

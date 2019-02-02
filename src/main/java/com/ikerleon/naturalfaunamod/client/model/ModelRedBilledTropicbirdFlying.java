@@ -172,9 +172,9 @@ public class ModelRedBilledTropicbirdFlying extends BookwormModelBase {
     	float globalSpeed = 1.75f;
     	float globalDegree = 1F;
 
-        this.leftwing.rotateAngleX = 1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + 1.3658946726107624F;
-        this.rightwing.rotateAngleX = -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.3658946726107624F;
-        this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.3f * globalSpeed) + 0) * (0.6f * globalDegree) * f1) + (1.5481070465189704F * f1);
+        this.leftwing.rotateAngleX = this.rightwing.rotateAngleX =
+                -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.3658946726107624F;
+        this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.3f * globalSpeed) + 0) * (0.6f * globalDegree) * f1) + (-1.593485607070823F * f1);
         this.rightwing.rotateAngleZ = -1F * (MathHelper.cos(f * (0.3f * globalSpeed) + 0) * (0.6f * globalDegree) * f1) + (1.593485607070823F * f1);
 
         this.middletail1.rotateAngleX = this.middletail2.rotateAngleX =

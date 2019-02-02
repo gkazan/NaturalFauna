@@ -111,8 +111,8 @@ public class ModelCourserFlying extends BookwormModelBase {
     	float globalDegree = 1F;
 
         this.leftwing.rotateAngleX = this.rightwing.rotateAngleX =
-                1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.0471975511965976F;
-        this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (-1.6845917940249266F * f1);
+                -1F * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0) + -1.0471975511965976F;
+        this.leftwing.rotateAngleZ = 1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (-1.6390387005478748F * f1);
         this.rightwing.rotateAngleZ = -1F * (MathHelper.cos(f * (0.4f * globalSpeed) + 0) * (0.7f * globalDegree) * f1) + (1.6390387005478748F * f1);
     }
 }

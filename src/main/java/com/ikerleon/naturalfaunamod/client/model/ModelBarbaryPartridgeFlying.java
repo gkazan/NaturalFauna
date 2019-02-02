@@ -201,9 +201,9 @@ public class ModelBarbaryPartridgeFlying extends BookwormModelBase {
     	float globalDegree = 1F;
 
     	this.Wing11.rotateAngleX = this.Wing12.rotateAngleX =
-                1f * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0f - 1.1838568316277536F;
-    	this.Wing11.rotateAngleZ = -1f * (MathHelper.cos(f * (0.4f * globalSpeed) + 0f) * (0.7f * globalDegree) * f1) + (-1.6845917940249266F * f1);
-    	this.Wing12.rotateAngleZ = 1f * (MathHelper.cos(f * (0.4f * globalSpeed) + 0f) * (0.7f * globalDegree) * f1) + (1.6845917940249266F * f1);
+                -1f * f1 * (0.3f * globalDegree) * MathHelper.cos(f * (0.5f * globalSpeed) + 0f) + 0f + -1.1838568316277536F;
+    	this.Wing11.rotateAngleZ = 1f * (MathHelper.cos(f * (0.4f * globalSpeed) + 0f) * (0.7f * globalDegree) * f1) + (-1.6845917940249266F * f1);
+    	this.Wing12.rotateAngleZ = -1f * (MathHelper.cos(f * (0.4f * globalSpeed) + 0f) * (0.7f * globalDegree) * f1) + (1.6845917940249266F * f1);
     	this.Wing12_1.rotateAngleZ = 1f * (MathHelper.cos(f * (0.5f * globalSpeed) + 0f) * (0.35f * globalDegree) * f1) + (0f * f1);
     	this.Wing22.rotateAngleZ = -1f * (MathHelper.cos(f * (0.5f * globalSpeed) + 0f) * (0.35f * globalDegree) * f1) + (0f * f1);
 
