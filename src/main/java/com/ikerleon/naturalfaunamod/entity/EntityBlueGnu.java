@@ -26,7 +26,7 @@ public class EntityBlueGnu extends ZAWABaseLand {
 	Random random = new Random();
 	
 	public EntityBlueGnu(World worldIn) {		
-		super(worldIn, 0.28D);
+		super(worldIn);
 		this.setSize(1.7F, 1.4F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));

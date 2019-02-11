@@ -15,7 +15,7 @@ public class EntityEstuaryStingray extends ZAWABaseWater {
 	
 	public EntityEstuaryStingray(World worldIn)	
 	{
-		super(worldIn, false);
+		super(worldIn);
 		setSize(0.6F, 0.2F);
 	}
 

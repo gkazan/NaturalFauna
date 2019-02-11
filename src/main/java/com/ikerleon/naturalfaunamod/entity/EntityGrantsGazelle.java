@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 public class EntityGrantsGazelle extends ZAWABaseLand {
 	
 	public EntityGrantsGazelle(World worldIn) {		
-		super(worldIn, 0.28D);
+		super(worldIn);
 		this.setSize(1F, 1.3F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));

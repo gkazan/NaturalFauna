@@ -14,7 +14,7 @@ public class EntityNautilus extends ZAWABaseWater {
 	
 	public EntityNautilus(World worldIn)	
 	{
-		super(worldIn, false);
+		super(worldIn);
 		setSize(0.4F, 0.4F);
 	}
 

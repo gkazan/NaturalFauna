@@ -24,7 +24,7 @@ public class EntityRoeDeer extends ZAWABaseLand {
 	private World world;
 	
 	public EntityRoeDeer(World worldIn) {		
-		super(worldIn, 0.28D);
+		super(worldIn);
 		this.setSize(1.4F, 1.2F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));

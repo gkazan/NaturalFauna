@@ -14,7 +14,7 @@ public class EntityPaddlefish extends ZAWABaseWater {
 	
 	public EntityPaddlefish(World worldIn)	
 	{
-		super(worldIn, false);
+		super(worldIn);
 		setSize(0.7F, 0.4F);
 	}
 	

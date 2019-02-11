@@ -14,7 +14,7 @@ public class EntityXenopus extends ZAWABaseWater {
 	
 	public EntityXenopus(World worldIn)	
 	{
-		super(worldIn, false);
+		super(worldIn);
 		setSize(0.4F, 0.4F);
 	}
 
