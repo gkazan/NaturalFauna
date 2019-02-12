@@ -36,7 +36,7 @@ public class EntityHyena extends ZAWABaseLand {
 	  protected World world;
 	
 	public EntityHyena(World worldIn) {		
-		super(worldIn, 0.28F);
+		super(worldIn);
 		this.setSize(1.8F, 1.7F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));

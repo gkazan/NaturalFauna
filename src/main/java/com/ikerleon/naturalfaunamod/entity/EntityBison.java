@@ -28,7 +28,7 @@ public class EntityBison extends ZAWABaseLand {
 	  protected EntityBison target = null;
 	
 	public EntityBison(World worldIn) {		
-		super(worldIn, 0.26f);
+		super(worldIn);
 		this.setSize(2.5F, 2.2F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
 	}
