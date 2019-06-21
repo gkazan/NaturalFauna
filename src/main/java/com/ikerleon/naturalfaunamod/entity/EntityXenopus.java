@@ -39,11 +39,6 @@ public class EntityXenopus extends ZAWABaseWater {
 	    return new EntityXenopus(this.world);
 	}
 
-	public boolean hopToWater()
-	{
-	    return false;
-	}
-
 	@Override
 	public EnumNature setNature() {
 		return EnumNature.PASSIVE;

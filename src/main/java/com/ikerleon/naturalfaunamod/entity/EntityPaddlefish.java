@@ -17,11 +17,6 @@ public class EntityPaddlefish extends ZAWABaseWater {
 		super(worldIn);
 		setSize(0.7F, 0.4F);
 	}
-	
-	@Override
-	public boolean hopToWater() {
-		return true;
-	}
 
 	protected void applyEntityAttributes()
 	{
@@ -39,7 +34,7 @@ public class EntityPaddlefish extends ZAWABaseWater {
 			 dropItem(Items.FISH, 1);
 		}
 	}
-	
+
 	public EntityAgeable createChild(EntityAgeable ageable) {
 	    return new EntityPaddlefish(this.world);
 	}

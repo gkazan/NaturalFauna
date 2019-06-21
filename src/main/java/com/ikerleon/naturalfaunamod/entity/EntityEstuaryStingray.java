@@ -40,11 +40,6 @@ public class EntityEstuaryStingray extends ZAWABaseWater {
 	    return new EntityEstuaryStingray(this.world);
 	}
 
-	public boolean hopToWater()
-	{
-	    return false;
-	}
-
 	@Override
 	public EnumNature setNature() {
 		return EnumNature.NEUTRAL;

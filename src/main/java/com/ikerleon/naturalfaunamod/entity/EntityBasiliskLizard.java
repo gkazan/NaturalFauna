@@ -28,7 +28,7 @@ public class EntityBasiliskLizard extends ZAWABaseLand {
         this.tasks.addTask(1, new EntityAIPanic(this, 1.5D));
 
 	}
-    
+
     public float getEyeHeight()
     {
         return this.height;

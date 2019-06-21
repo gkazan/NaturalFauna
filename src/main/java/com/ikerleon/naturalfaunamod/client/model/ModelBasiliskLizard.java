@@ -2,6 +2,7 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
 
@@ -225,6 +226,7 @@ public class ModelBasiliskLizard extends BookwormModelBase {
         this.Foot32.addChild(this.Foot35);
         this.Tail1.addChild(this.Tail2);
         this.Head.addChild(this.HeadHorn2);
+        save();
     }
 
     @Override
@@ -257,5 +259,37 @@ public class ModelBasiliskLizard extends BookwormModelBase {
         BookwormModelRenderer.rotateAngleX = x;
         BookwormModelRenderer.rotateAngleY = y;
         BookwormModelRenderer.rotateAngleZ = z;
+    }
+
+    @Override
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entity) {
+        reset();
+
+        float globalSpeed = 3f;
+        float globalHeight = 0.5f;
+        float globalDegree = 3F;
+
+        this.Head.rotateAngleY = (netHeadYaw * 0.017453292F);
+        this.Head.rotateAngleX = (headPitch * 0.017453292F);
+
+
+        this.Foot11.rotateAngleX = 1f * limbSwingAmount * (0.5f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0f) + 0.045553093477052F;
+        this.Foot21.rotateAngleX = -1f * limbSwingAmount * (0.5f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0f) + 0.045553093477052F;
+        this.Foot31.rotateAngleX = 1f * limbSwingAmount * (0.5f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0f) + 0.0F;
+        this.Foot41.rotateAngleX = -1f * limbSwingAmount * (0.5f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0f) + 0.0F;
+        this.Foot11.rotateAngleX = -1f * limbSwingAmount * (0.1f * globalDegree) * MathHelper.cos(limbSwing * (0.4f * globalSpeed) + 2.5f) + 0.045553093477052F;
+        this.Foot12.rotateAngleX = 1f * limbSwingAmount * (0.2f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0f) + 0.045553093477052F;
+        this.Foot22.rotateAngleX = -1f * limbSwingAmount * (0.2f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0f) + 0.045553093477052F;
+        this.Foot33.rotateAngleX = 1f * limbSwingAmount * (0.2f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0f) + -1.4570008595648662F;
+        this.Foot43.rotateAngleX = -1f * limbSwingAmount * (0.2f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0f) + -1.4570008595648662F;
+        this.Foot32.rotateAngleX = -1f * limbSwingAmount * (0.4f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0f) + 0.0F;
+        this.Foot42.rotateAngleX = 1f * limbSwingAmount * (0.4f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0f) + 0.0F;
+        this.Neck1.rotateAngleX = -1f * limbSwingAmount * (0.1f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 2.5f) + -0.31869712141416456F;
+
+        this.Neck1.rotateAngleX = 1f * 0.5F * (0.06f * globalDegree * 0.5f) * MathHelper.cos(entity.ticksExisted * (0.1f * globalSpeed) + 2.5f) + -0.31869712141416456F;
+
+        this.Tail1.rotateAngleY = -1f * (MathHelper.cos(entity.ticksExisted * (0.1f * globalSpeed * 0.5f) + 0f) * (0.2f * globalDegree) * 0.5F) + 0f;
+        this.Tail2.rotateAngleY = 1f * (MathHelper.cos(entity.ticksExisted * (0.07f * globalSpeed * 0.5f) + 0f) * (0.4f * globalDegree) * 0.5F) + 0f;
+        this.Tail3.rotateAngleY = -1f * (MathHelper.cos(entity.ticksExisted * (0.1f * globalSpeed * 0.5f) + 0f) * (0.3f * globalDegree) * 0.5F) + 0f;
     }
 }

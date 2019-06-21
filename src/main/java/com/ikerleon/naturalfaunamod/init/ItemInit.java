@@ -12,7 +12,7 @@ import com.ikerleon.naturalfaunamod.init.items.ItemNaturalFaunaFood;
 import net.minecraft.item.Item;
 
 public class ItemInit {
-	  public static final List<Item> ITEMS = new ArrayList<Item>();
+	  public static final List<Item> ITEMS = new ArrayList<>();
 
 	  public static ItemFeather MALE_CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie_male", SoundHandler.MALE_CAPERCAILLIE_STREAM);
 	  public static ItemFeather FEMALE_CAPERCAILLIE_FEATHER = new ItemFeather("feather_capercaillie_female", SoundHandler.FEMALE_CAPERCAILLIE_STREAM);

@@ -14,7 +14,7 @@ public class BiomeDictionaryUtil {
 	public static Biome[] getBiomesFromTypes(Type type1, Type type2) {
 		
 		Biome[] biomesArray = SpawnData.getBiomesOfType(type1);
-		List<Biome> biomesList = new ArrayList<Biome>();
+		List<Biome> biomesList = new ArrayList<>();
 
 		for(int i = 0; i < biomesArray.length; i++)
 		{
@@ -33,7 +33,7 @@ public class BiomeDictionaryUtil {
     public static Biome[] getBiomesFromType(Type type) {
 		
 		Biome[] biomesArray = SpawnData.getBiomesOfType(type);
-		List<Biome> biomesList = new ArrayList<Biome>();
+		List<Biome> biomesList = new ArrayList<>();
 
 		for(int i = 0; i < biomesArray.length; i++)
 		{
@@ -47,7 +47,7 @@ public class BiomeDictionaryUtil {
 	}
     
 	public static Biome[] FusionBiomes(Biome[] Biomes1, Biome[] Biomes2) {
-		List<Biome> biomesList = new ArrayList<Biome>();
+		List<Biome> biomesList = new ArrayList<>();
 		
 		for(int i = 0; i < Biomes2.length; i++)
 		{
