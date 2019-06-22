@@ -111,6 +111,8 @@ public class CommonProxy {
                     SpawnData.mergeBiomes(new Biome[][]{getBiomes(NaturalFaunaConfig.spawns.barbary_partridge.biomes)}));
 			EntityRegistry.addSpawn(EntityBasiliskLizard.class, NaturalFaunaConfig.spawns.basilisk_lizard.spawnChance, NaturalFaunaConfig.spawns.basilisk_lizard.minGroup, NaturalFaunaConfig.spawns.basilisk_lizard.maxGroup, EnumCreatureType.CREATURE,
 					SpawnData.mergeBiomes(new Biome[][]{getBiomes(NaturalFaunaConfig.spawns.basilisk_lizard.biomes)}));
+			EntityRegistry.addSpawn(EntityCommonLoon.class, NaturalFaunaConfig.spawns.common_loon.spawnChance, NaturalFaunaConfig.spawns.common_loon.minGroup, NaturalFaunaConfig.spawns.common_loon.maxGroup, EnumCreatureType.CREATURE,
+					SpawnData.mergeBiomes(new Biome[][]{getBiomes(NaturalFaunaConfig.spawns.common_loon.biomes)}));
 		}
 		
 		NaturalFaunaCrafting.Init(event);
@@ -122,10 +124,10 @@ public class CommonProxy {
         for (String s : strings) {
             try {
                 b[i] = ForgeRegistries.BIOMES.getValue(new ResourceLocation(s));
+                i++;
             } catch (NullPointerException e) {
                 System.out.println("The specified biome \'" + s + "\' does not exist. This is an error of the player-set config.");
             }
-            i++;
         }
         return b;
     }

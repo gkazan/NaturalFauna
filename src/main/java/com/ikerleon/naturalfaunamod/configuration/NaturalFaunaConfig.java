@@ -93,6 +93,8 @@ public class NaturalFaunaConfig {
         public final SpawnSettings barbary_partridge = new SpawnSettings(10, 2, 12, SpawnData.getBiomeIDS(BiomeDictionaryUtil.FusionBiomes(BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.SAVANNA), BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.SANDY, BiomeDictionary.Type.HOT))));
         @Config.Name("basilisk_lizard")
         public final SpawnSettings basilisk_lizard = new SpawnSettings(10, 1, 2, SpawnData.getBiomeIDS(BiomeDictionaryUtil.getBiomesFromType(BiomeDictionary.Type.JUNGLE)));
+        @Config.Name("common_loon")
+        public final SpawnSettings common_loon = new SpawnSettings(30, 2, 6, SpawnData.getBiomeIDS(BiomeDictionaryUtil.getBiomesFromTypes(BiomeDictionary.Type.RIVER, BiomeDictionary.Type.OCEAN)));
     }
 
     public static class SpawnSettings {

@@ -72,8 +72,8 @@ public class SoundHandler {
 		GNU_LIVING = registerSound("entity.gnu.living");
 		GNU_HURT = registerSound("entity.gnu.hurt");
 		COURSER_HURT = registerSound("entity.courser.hurt");
-		SEAL_LIVING = registerSound("entity.greyseal.living");
-		LITTLE_BUSTARD_SONG = registerSound("entity.littlebustard.song");
+		//SEAL_LIVING = registerSound("entity.greyseal.living");
+		//LITTLE_BUSTARD_SONG = registerSound("entity.littlebustard.song");
 		ROE_DEER_LIVING = registerSound("entity.roedeer.living");
 		ROE_DEER_HURT = registerSound("entity.roedeer.hurt");
 		OSTRICH_BOOMING = registerSound("entity.ostrich.booming");
@@ -101,7 +101,7 @@ public class SoundHandler {
 		AVOCET_STREAM = registerSound("record.avocet_record");
 		COURSER_STREAM = registerSound("record.courser_record");
 		KORIBUSTARD_STREAM = registerSound("record.koribustard_record");
-		LITTLEBUSTARD_STREAM = registerSound("record.littlebustard_record");
+		//LITTLEBUSTARD_STREAM = registerSound("record.littlebustard_record");
 		OSTRICH_STREAM = registerSound("record.ostrich_record");
 		PUFFIN_STREAM = registerSound("record.puffin_record");
 		HORNBILL_STREAM = registerSound("record.hornbill_record");

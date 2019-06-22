@@ -1,65 +1,7 @@
 package com.ikerleon.naturalfaunamod.proxies;
 
-import com.ikerleon.naturalfaunamod.client.render.RenderAvocet;
-import com.ikerleon.naturalfaunamod.client.render.RenderAxolotl;
-import com.ikerleon.naturalfaunamod.client.render.RenderBarbaryPartridge;
-import com.ikerleon.naturalfaunamod.client.render.RenderBasiliskLizard;
-import com.ikerleon.naturalfaunamod.client.render.RenderBison;
-import com.ikerleon.naturalfaunamod.client.render.RenderBlueGnu;
-import com.ikerleon.naturalfaunamod.client.render.RenderBushbuck;
-import com.ikerleon.naturalfaunamod.client.render.RenderCamel;
-import com.ikerleon.naturalfaunamod.client.render.RenderCantabricCapercaillie;
-import com.ikerleon.naturalfaunamod.client.render.RenderCheetah;
-import com.ikerleon.naturalfaunamod.client.render.RenderCourser;
-import com.ikerleon.naturalfaunamod.client.render.RenderEstuaryStingray;
-import com.ikerleon.naturalfaunamod.client.render.RenderGrantsGazelle;
-import com.ikerleon.naturalfaunamod.client.render.RenderGroundHornbill;
-import com.ikerleon.naturalfaunamod.client.render.RenderHyena;
-import com.ikerleon.naturalfaunamod.client.render.RenderKoriBustard;
-import com.ikerleon.naturalfaunamod.client.render.RenderMarmoset;
-import com.ikerleon.naturalfaunamod.client.render.RenderNautilus;
-import com.ikerleon.naturalfaunamod.client.render.RenderOstrich;
-import com.ikerleon.naturalfaunamod.client.render.RenderPaddlefish;
-import com.ikerleon.naturalfaunamod.client.render.RenderPeregrineFalcon;
-import com.ikerleon.naturalfaunamod.client.render.RenderPuffin;
-import com.ikerleon.naturalfaunamod.client.render.RenderPuma;
-import com.ikerleon.naturalfaunamod.client.render.RenderRedBilledHornbill;
-import com.ikerleon.naturalfaunamod.client.render.RenderRedBilledTropicbird;
-import com.ikerleon.naturalfaunamod.client.render.RenderRoeDeer;
-import com.ikerleon.naturalfaunamod.client.render.RenderSaddlebillStork;
-import com.ikerleon.naturalfaunamod.client.render.RenderTuraco;
-import com.ikerleon.naturalfaunamod.client.render.RenderWillowPtarmigan;
-import com.ikerleon.naturalfaunamod.client.render.RenderXenopus;
-import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
-import com.ikerleon.naturalfaunamod.entity.EntityAxolotl;
-import com.ikerleon.naturalfaunamod.entity.EntityBarbaryPartridge;
-import com.ikerleon.naturalfaunamod.entity.EntityBasiliskLizard;
-import com.ikerleon.naturalfaunamod.entity.EntityBison;
-import com.ikerleon.naturalfaunamod.entity.EntityBlueGnu;
-import com.ikerleon.naturalfaunamod.entity.EntityBushbuck;
-import com.ikerleon.naturalfaunamod.entity.EntityCamel;
-import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
-import com.ikerleon.naturalfaunamod.entity.EntityCheetah;
-import com.ikerleon.naturalfaunamod.entity.EntityCourser;
-import com.ikerleon.naturalfaunamod.entity.EntityEstuaryStingray;
-import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
-import com.ikerleon.naturalfaunamod.entity.EntityGroundHornbill;
-import com.ikerleon.naturalfaunamod.entity.EntityHyena;
-import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
-import com.ikerleon.naturalfaunamod.entity.EntityMarmoset;
-import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
-import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
-import com.ikerleon.naturalfaunamod.entity.EntityPaddlefish;
-import com.ikerleon.naturalfaunamod.entity.EntityPeregrineFalcon;
-import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
-import com.ikerleon.naturalfaunamod.entity.EntityPuma;
-import com.ikerleon.naturalfaunamod.entity.EntityRedBilledHornbill;
-import com.ikerleon.naturalfaunamod.entity.EntityRedBilledTropicbird;
-import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
-import com.ikerleon.naturalfaunamod.entity.EntitySaddlebillStork;
-import com.ikerleon.naturalfaunamod.entity.EntityTuraco;
-import com.ikerleon.naturalfaunamod.entity.EntityWillowPtarmigan;
-import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
+import com.ikerleon.naturalfaunamod.client.render.*;
+import com.ikerleon.naturalfaunamod.entity.*;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -102,6 +44,7 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityBison.class, new RenderBison.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBarbaryPartridge.class, new RenderBarbaryPartridge.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBasiliskLizard.class, new RenderBasiliskLizard.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityCommonLoon.class, new RenderCommonLoon.RenderFactory());
 	}
 	
 	@Override

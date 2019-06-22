@@ -30,7 +30,7 @@ public class EntityAvocet extends ZAWABaseFlying {
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.26D));
 	}
-    
+
     public float getEyeHeight()
     {
         return this.height * 0.85F - 0.1F;

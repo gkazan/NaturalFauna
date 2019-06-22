@@ -2,36 +2,7 @@ package com.ikerleon.naturalfaunamod.init;
 
 import com.ikerleon.naturalfaunamod.NFReference;
 import com.ikerleon.naturalfaunamod.NaturalFaunaMain;
-import com.ikerleon.naturalfaunamod.entity.EntityAvocet;
-import com.ikerleon.naturalfaunamod.entity.EntityAxolotl;
-import com.ikerleon.naturalfaunamod.entity.EntityBarbaryPartridge;
-import com.ikerleon.naturalfaunamod.entity.EntityBasiliskLizard;
-import com.ikerleon.naturalfaunamod.entity.EntityBison;
-import com.ikerleon.naturalfaunamod.entity.EntityBlueGnu;
-import com.ikerleon.naturalfaunamod.entity.EntityBushbuck;
-import com.ikerleon.naturalfaunamod.entity.EntityCamel;
-import com.ikerleon.naturalfaunamod.entity.EntityCantabricCapercaillie;
-import com.ikerleon.naturalfaunamod.entity.EntityCheetah;
-import com.ikerleon.naturalfaunamod.entity.EntityCourser;
-import com.ikerleon.naturalfaunamod.entity.EntityEstuaryStingray;
-import com.ikerleon.naturalfaunamod.entity.EntityGrantsGazelle;
-import com.ikerleon.naturalfaunamod.entity.EntityGroundHornbill;
-import com.ikerleon.naturalfaunamod.entity.EntityHyena;
-import com.ikerleon.naturalfaunamod.entity.EntityKoriBustard;
-import com.ikerleon.naturalfaunamod.entity.EntityMarmoset;
-import com.ikerleon.naturalfaunamod.entity.EntityNautilus;
-import com.ikerleon.naturalfaunamod.entity.EntityOstrich;
-import com.ikerleon.naturalfaunamod.entity.EntityPaddlefish;
-import com.ikerleon.naturalfaunamod.entity.EntityPeregrineFalcon;
-import com.ikerleon.naturalfaunamod.entity.EntityPuffin;
-import com.ikerleon.naturalfaunamod.entity.EntityPuma;
-import com.ikerleon.naturalfaunamod.entity.EntityRedBilledHornbill;
-import com.ikerleon.naturalfaunamod.entity.EntityRedBilledTropicbird;
-import com.ikerleon.naturalfaunamod.entity.EntityRoeDeer;
-import com.ikerleon.naturalfaunamod.entity.EntitySaddlebillStork;
-import com.ikerleon.naturalfaunamod.entity.EntityTuraco;
-import com.ikerleon.naturalfaunamod.entity.EntityWillowPtarmigan;
-import com.ikerleon.naturalfaunamod.entity.EntityXenopus;
+import com.ikerleon.naturalfaunamod.entity.*;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
@@ -75,7 +46,8 @@ public class EntityInit {
 		createEntity(EntityAxolotl.class, "axolotl", 16770533, 14692657);
 		createEntity(EntityBison.class, "american_bison", 12217364, 6829824);
 		createEntity(EntityBarbaryPartridge.class, "barbary_partridge", 10518363, 8024682);
-		createEntity(EntityBasiliskLizard.class, "basilisk_lizard", 10518363, 8024682);
+		createEntity(EntityBasiliskLizard.class, "basilisk_lizard", 0x21610B, 0x81F79F);
+		createEntity(EntityCommonLoon.class, "common_loon", 0x2E2E2E, 0xA4A4A4);
 	}
 	
 	private static void createEntity(Class<? extends Entity> entityClass , String entityName, int Color1, int Color2) {
