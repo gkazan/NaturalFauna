@@ -2,9 +2,11 @@ package com.ikerleon.naturalfaunamod.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.MathHelper;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelBase;
 import net.soggymustache.bookworm.client.animation.part.BookwormModelRenderer;
+import net.soggymustache.bookworm.util.BookwormUtils;
 
 public class ModelCommonLoonFlying extends BookwormModelBase {
     public BookwormModelRenderer body;
@@ -118,13 +120,7 @@ public class ModelCommonLoonFlying extends BookwormModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        float scaleFactor= 0.7F;
-
-        GlStateManager.pushMatrix();
-        GlStateManager.translate(0F, 1.5F-1.5F*scaleFactor, 0F);
-        GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
         this.body.render(f5);
-        GlStateManager.popMatrix();
     }
 
     /**
@@ -142,9 +138,27 @@ public class ModelCommonLoonFlying extends BookwormModelBase {
         float globalSpeed = 1.0f;
         float globalDegree = 4F;
 
-        this.rightWing.rotateAngleY = 1.57F;
-        this.leftWing.rotateAngleY = -1.57F;
-        this.leftWing.rotateAngleY = -1F * limbSwingAmount * (0.3f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0F) + -1.5707963267948966F;
-        this.rightWing.rotateAngleY = 1F * limbSwingAmount * (0.3f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0F) + 1.5707963267948966F;
+        if (entity.isInWater() || BookwormUtils.blockAtPos(entity.world, Blocks.WATER, entity.posX, entity.posY, entity.posZ)) {
+            this.setRotateAngle(rightLeg, 0.5235987755982988F, 0.0F, 0.0F);
+            this.setRotateAngle(rightToes, -1.5114551322270893F, 0.0F, 0.0F);
+            this.setRotateAngle(leftLeg, 0.5235987755982988F, 0.0F, 0.0F);
+            this.setRotateAngle(body, 1.5695745963185008F, 0.0F, 0.0F);
+            this.setRotateAngle(neckBase, 2.2947589005221443F, 0.0F, 0.0F);
+            this.setRotateAngle(neck, -0.7222172444752536F, 0.0F, 0.0F);
+            this.setRotateAngle(head, 1.7748253163530339F, 0.0F, 0.0F);
+            this.setRotateAngle(tail, -0.11868238913561441F, 0.0F, 0.0F);
+            this.setRotateAngle(tail2, 0.619591884457987F, 0.0F, 0.0F);
+            this.setRotateAngle(leftWing, 0F, 0F, 0F);
+            this.setRotateAngle(rightWing, 0F, 0F, 0F);
+            this.rightLeg.rotateAngleX = 1F * 0.3F * MathHelper.cos(entity.ticksExisted * (0.2f * globalSpeed) + 2.5F) + 0.3f;
+            this.leftLeg.rotateAngleX = -1F * 0.3F * MathHelper.cos(entity.ticksExisted * (0.2f * globalSpeed) + 2.5F) + 0.3f;
+            this.rightToes.rotateAngleX = 1F * 0.8F * MathHelper.cos(entity.ticksExisted * (0.2f * globalSpeed) + 2.5F) + -0.4f;
+            this.leftToes.rotateAngleX = -1F * 0.8F * MathHelper.cos(entity.ticksExisted * (0.2f * globalSpeed) + 2.5F) + -0.4f;
+        } else {
+            this.rightWing.rotateAngleY = 1.57F;
+            this.leftWing.rotateAngleY = -1.57F;
+            this.leftWing.rotateAngleY = -1F * limbSwingAmount * (0.3f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0F) + -1.5707963267948966F;
+            this.rightWing.rotateAngleY = 1F * limbSwingAmount * (0.3f * globalDegree) * MathHelper.cos(limbSwing * (0.5f * globalSpeed) + 0F) + 1.5707963267948966F;
+        }
     }
 }

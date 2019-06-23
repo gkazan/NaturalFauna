@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import org.zawamod.entity.base.ZAWABaseFlying;
 import org.zawamod.entity.core.AnimalData;
 import org.zawamod.entity.core.BreedItems;
@@ -17,19 +18,27 @@ import org.zawamod.init.ZAWAItems;
 import javax.annotation.Nullable;
 
 public class EntityCommonLoon extends ZAWABaseFlying {
+    private World world;
     private int standNum;
+    public Biome biome;
 
     public EntityCommonLoon(World world) {
         super(world);
-        this.setSize(0.5F, 0.9F);
+        this.setSize(0.5F, 0.6F);
         this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(0, new EntityAIFollowParent(this, 0.26D));
+        this.world=world;
     }
 
     public float getEyeHeight()
     {
-        return this.height * 0.85F - 0.1F;
+        return this.height * 0.85F;
+    }
+
+    @Override
+    public boolean sexualDimorphism() {
+        return true;
     }
 
     @Override
@@ -77,7 +86,12 @@ public class EntityCommonLoon extends ZAWABaseFlying {
 
     @Override
     public void onLivingUpdate() {
+        this.biome = world.getBiome(getPosition());
         this.standNum=rand.nextInt(45);
+
+        if(this.inWater && !this.isChild()){
+            this.motionY=0;
+        }
 
         super.onLivingUpdate();
     }

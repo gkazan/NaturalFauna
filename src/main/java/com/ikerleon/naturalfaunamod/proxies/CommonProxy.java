@@ -6,14 +6,11 @@ import com.ikerleon.naturalfaunamod.handlers.SoundHandler;
 import com.ikerleon.naturalfaunamod.init.EntityInit;
 import com.ikerleon.naturalfaunamod.init.ItemInit;
 import com.ikerleon.naturalfaunamod.init.NaturalFaunaCrafting;
-import com.ikerleon.naturalfaunamod.util.BiomeDictionaryUtil;
 
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Biomes;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

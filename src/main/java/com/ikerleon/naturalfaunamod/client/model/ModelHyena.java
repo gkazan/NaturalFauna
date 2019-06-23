@@ -247,10 +247,10 @@ public class ModelHyena extends BookwormModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
     	setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    	float scaleFactor= 0.75F;
+    	float scaleFactor= 0.7F;
     	
 	    GlStateManager.pushMatrix();
-	    GlStateManager.translate(0F, 0.2F, 0F); 
+	    GlStateManager.translate(0F, 0.5F*scaleFactor, 0F);
 	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
         this.body.render(f5);
         GlStateManager.popMatrix();
