@@ -11,9 +11,9 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import static org.zawamod.util.SpawnData.getBiomeIDS;
-import static org.zawamod.util.SpawnData.getBiomesOfType;
-import static org.zawamod.util.SpawnData.mergeBiomes;
+import static org.zawamod.util.SpawnUtils.getBiomeIDS;
+import static org.zawamod.util.SpawnUtils.getBiomesOfType;
+import static org.zawamod.util.SpawnUtils.mergeBiomes;
 
 @Config(modid = NFReference.MOD_ID, name = NFReference.NAME+"/"+NFReference.VERSION+"/"+NFReference.MOD_ID)
 @Config.LangKey("config.naturalfauna.title")

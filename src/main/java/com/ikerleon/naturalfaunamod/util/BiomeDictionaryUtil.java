@@ -1,20 +1,18 @@
 package com.ikerleon.naturalfaunamod.util;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import net.minecraft.init.Biomes;
-import org.zawamod.util.SpawnData;
-
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
+import org.zawamod.util.SpawnUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BiomeDictionaryUtil {
 	
 	public static Biome[] getBiomesFromTypes(Type type1, Type type2) {
 		
-		Biome[] biomesArray = SpawnData.getBiomesOfType(type1);
+		Biome[] biomesArray = SpawnUtils.getBiomesOfType(type1);
 		List<Biome> biomesList = new ArrayList<>();
 
 		for(int i = 0; i < biomesArray.length; i++)
